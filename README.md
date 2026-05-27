@@ -31,9 +31,17 @@ python 02_extract_refs/fetch_references.py
 python 03_top_cited/fetch_top_cited.py
 python 04_overlap/compute_overlap.py
 python 05_explain_gaps/analyze_gaps.py
+python report/build_figures.py
 ```
 
-Outputs land in `data/processed/`. Final writeup in `report/report.md`.
+Outputs land in `data/processed/`. Figures in `report/figures/`. Final writeup in `report/report.md`.
+
+## Tests
+
+```bash
+pip install -r requirements-dev.txt
+pytest -q
+```
 
 ## Layout
 
@@ -46,8 +54,10 @@ Outputs land in `data/processed/`. Final writeup in `report/report.md`.
 | `05_explain_gaps/` | Investigate gaps (venue, year, access) |
 | `data/raw/` | Cached API JSON (gitignored) |
 | `data/processed/` | Merged tracked outputs |
-| `data/manual/` | Human-coded SLR-vs-survey decisions |
-| `report/` | Final 3,000-word writeup |
+| `data/manual/` | Human-coded SLR-vs-survey decisions + rubric |
+| `lib/` | Shared helpers (SS client, paper-ID normalisation, config) |
+| `tests/` | Pytest suite (67 tests as of Phase 7) |
+| `report/` | Final 3,000-word writeup + figures |
 | `docs/plans/` | Design + implementation plans |
 
 ## Method notes

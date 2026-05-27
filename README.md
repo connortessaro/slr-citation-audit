@@ -12,11 +12,22 @@ pip install -r requirements.txt
 cp config/subfield.example.yaml config/subfield.yaml
 ```
 
-Set Semantic Scholar API key (optional, raises rate limits):
+### API keys
+
+| Source | Key required? | How to get |
+|--------|---------------|-----------|
+| **Semantic Scholar** | strongly recommended — anon pool returns `429 Too Many Requests` during peak hours | Request: <https://www.semanticscholar.org/product/api#api-key-form> (free, ~days wait) |
+| **IEEE Xplore** | required for API path, else fall back to manual BibTeX export | Register: <https://developer.ieee.org/member/register> (free, instant) |
+| **ACM Digital Library** | no public API exists | Manual workflow: search <https://dl.acm.org/action/doSearch> → export results as BibTeX → drop into `data/raw/acm_exports/` |
+
+Export keys before running:
 
 ```bash
-export SEMANTIC_SCHOLAR_API_KEY=...
+export SEMANTIC_SCHOLAR_API_KEY=...   # strongly recommended
+export IEEE_XPLORE_API_KEY=...        # optional; manual export fallback works
 ```
+
+Without the SS key, expect frequent 429s and aborted runs. Without IEEE/ACM keys, populate `data/raw/{ieee,acm}_exports/*.bib` from web exports.
 
 ## Run
 

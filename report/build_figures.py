@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import argparse
 import logging
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -22,6 +23,8 @@ import matplotlib
 matplotlib.use("Agg")  # headless
 import matplotlib.pyplot as plt  # noqa: E402
 import pandas as pd  # noqa: E402
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from lib.config import REPO_ROOT  # noqa: E402
 

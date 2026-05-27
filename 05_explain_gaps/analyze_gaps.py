@@ -22,13 +22,16 @@ from __future__ import annotations
 import csv
 import json
 import logging
+import sys
 from collections import Counter
 from pathlib import Path
 
 import pandas as pd
 
-from lib.config import REPO_ROOT
-from lib.paperid import normalize_doi
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from lib.config import REPO_ROOT  # noqa: E402
+from lib.paperid import normalize_doi  # noqa: E402
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")

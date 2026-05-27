@@ -3,3 +3,5 @@ pandas>=2.0
 pyyaml>=6.0
 ratelimit>=2.2
 tqdm>=4.66
+semanticscholar>=0.7
+bibtexparser>=1.4

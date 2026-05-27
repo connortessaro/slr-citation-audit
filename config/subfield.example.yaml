@@ -1,0 +1,25 @@
+subfield: technical_debt
+
+# Keywords used across all source searches.
+keywords:
+  - "technical debt"
+  - "code debt"
+  - "design debt"
+  - "architectural debt"
+
+# Inclusion bounds.
+year_min: 2000
+year_max: 2025
+
+# SLR identification heuristics (manual review required after).
+slr_title_patterns:
+  - "systematic literature review"
+  - "systematic review"
+  - "systematic mapping"
+
+# Top-cited corpus size.
+top_n: 50
+
+# Semantic Scholar API.
+ss_base_url: "https://api.semanticscholar.org/graph/v1"
+# API key read from $SEMANTIC_SCHOLAR_API_KEY if set.

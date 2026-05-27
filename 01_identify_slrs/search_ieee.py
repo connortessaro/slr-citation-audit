@@ -13,6 +13,7 @@ import json
 import logging
 import os
 import re
+import sys
 from pathlib import Path
 from typing import Iterable
 
@@ -20,8 +21,10 @@ import bibtexparser
 import requests
 from ratelimit import limits, sleep_and_retry
 
-from lib.config import REPO_ROOT, load as load_config
-from lib.paperid import dedup_by_key
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from lib.config import REPO_ROOT, load as load_config  # noqa: E402
+from lib.paperid import dedup_by_key  # noqa: E402
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")

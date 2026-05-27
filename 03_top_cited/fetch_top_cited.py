@@ -12,11 +12,14 @@ from __future__ import annotations
 
 import json
 import logging
+import sys
 from pathlib import Path
 
-from lib.config import REPO_ROOT, load as load_config
-from lib.paperid import dedup_by_key, paper_key
-from lib.ss_client import SSClient
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from lib.config import REPO_ROOT, load as load_config  # noqa: E402
+from lib.paperid import dedup_by_key, paper_key  # noqa: E402
+from lib.ss_client import SSClient  # noqa: E402
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")

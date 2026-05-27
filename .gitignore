@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# Editors
+.vscode/
+.idea/
+.DS_Store
+
+# Data caches (raw API dumps not tracked)
+data/raw/*
+!data/raw/.gitkeep
+
+# Local config with API keys
+config/subfield.yaml
+
+# Jupyter
+.ipynb_checkpoints/

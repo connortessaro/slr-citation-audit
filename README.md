@@ -9,25 +9,21 @@ Compares papers cited by published SLRs against the most-cited papers in the sam
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-cp config/subfield.example.yaml config/subfield.yaml
+cp .env.example .env
+# Edit .env to add your API keys.
 ```
 
-### API keys
+### Configuration via `.env`
 
-| Source | Key required? | How to get |
-|--------|---------------|-----------|
-| **Semantic Scholar** | strongly recommended — anon pool returns `429 Too Many Requests` during peak hours | Request: <https://www.semanticscholar.org/product/api#api-key-form> (free, ~days wait) |
-| **IEEE Xplore** | required for API path, else fall back to manual BibTeX export | Register: <https://developer.ieee.org/member/register> (free, instant) |
-| **ACM Digital Library** | no public API exists | Manual workflow: search <https://dl.acm.org/action/doSearch> → export results as BibTeX → drop into `data/raw/acm_exports/` |
+All configuration lives in `.env` (gitignored). `.env.example` is the tracked template — copy it and fill in values.
 
-Export keys before running:
+| Variable | Required? | Purpose |
+|----------|-----------|---------|
+| `SEMANTIC_SCHOLAR_API_KEY` | strongly recommended | Anon pool returns `429 Too Many Requests` during peak hours. Request: <https://www.semanticscholar.org/product/api#api-key-form> |
+| `IEEE_XPLORE_API_KEY` | optional | Without it, IEEE search falls back to manual BibTeX exports in `data/raw/ieee_exports/`. Register: <https://developer.ieee.org/member/register> |
+| `SUBFIELD`, `KEYWORDS`, `YEAR_MIN`, `YEAR_MAX`, `SLR_TITLE_PATTERNS`, `TOP_N`, `SS_BASE_URL` | optional | Retarget the pipeline to a different subfield without code changes |
 
-```bash
-export SEMANTIC_SCHOLAR_API_KEY=...   # strongly recommended
-export IEEE_XPLORE_API_KEY=...        # optional; manual export fallback works
-```
-
-Without the SS key, expect frequent 429s and aborted runs. Without IEEE/ACM keys, populate `data/raw/{ieee,acm}_exports/*.bib` from web exports.
+ACM Digital Library has no public API. Workflow: search <https://dl.acm.org/action/doSearch> → export results as BibTeX → drop into `data/raw/acm_exports/`.
 
 ## Run
 

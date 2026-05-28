@@ -31,7 +31,8 @@ def paper_key(paper: dict) -> str:
 
     Priority: normalized DOI > Semantic Scholar paperId > normalized title.
     """
-    doi = normalize_doi(paper.get("doi") or paper.get("externalIds", {}).get("DOI"))
+    ext = paper.get("externalIds") or {}
+    doi = normalize_doi(paper.get("doi") or ext.get("DOI"))
     if doi:
         return f"doi:{doi}"
     pid = paper.get("paperId") or paper.get("id")

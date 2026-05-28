@@ -76,7 +76,8 @@ def open_access_flag(paper: dict) -> bool:
 
 
 def doi_block(paper: dict) -> tuple[bool, bool]:
-    doi = normalize_doi(paper.get("doi") or paper.get("externalIds", {}).get("DOI"))
+    ext = paper.get("externalIds") or {}
+    doi = normalize_doi(paper.get("doi") or ext.get("DOI"))
     if not doi:
         return False, False
     return doi.startswith("10.1145"), doi.startswith("10.1109")

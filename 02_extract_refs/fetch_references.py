@@ -60,7 +60,8 @@ def _resolve_paper_id(slr: dict) -> str | None:
     pid = slr.get("paperId")
     if pid:
         return pid
-    doi = normalize_doi(slr.get("doi") or slr.get("externalIds", {}).get("DOI"))
+    ext = slr.get("externalIds") or {}
+    doi = normalize_doi(slr.get("doi") or ext.get("DOI"))
     if doi:
         return f"DOI:{doi}"
     return None
@@ -74,14 +75,15 @@ def _normalise_reference(ref_record: dict) -> dict | None:
         cited = ref_record
     if not cited:
         return None
+    ext = cited.get("externalIds") or {}
     return {
         "paper_key": paper_key(cited),
         "paperId": cited.get("paperId"),
         "title": cited.get("title"),
         "year": cited.get("year"),
         "venue": cited.get("venue"),
-        "doi": normalize_doi(cited.get("doi") or cited.get("externalIds", {}).get("DOI")),
-        "externalIds": cited.get("externalIds", {}),
+        "doi": normalize_doi(cited.get("doi") or ext.get("DOI")),
+        "externalIds": ext,
         "citationCount": cited.get("citationCount"),
         "openAccessPdf": cited.get("openAccessPdf"),
     }

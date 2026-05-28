@@ -15,8 +15,6 @@ venv/
 data/raw/*
 !data/raw/.gitkeep
 
-# Local config with API keys
-config/subfield.yaml
 
 # Jupyter
 .ipynb_checkpoints/

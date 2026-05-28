@@ -42,6 +42,12 @@ class TestPaperKey:
     def test_uses_external_ids_doi(self):
         assert paper_key({"externalIds": {"DOI": "10.1/Z"}, "title": "T"}) == "doi:10.1/z"
 
+    def test_handles_none_external_ids(self):
+        # Semantic Scholar returns externalIds=null when no IDs are present;
+        # paper.get("externalIds", {}) would NOT default in that case.
+        assert paper_key({"externalIds": None, "paperId": "X"}) == "ss:X"
+        assert paper_key({"externalIds": None, "title": "Hello"}) == "title:hello"
+
 
 class TestDedup:
     def test_dedup_removes_duplicates(self):

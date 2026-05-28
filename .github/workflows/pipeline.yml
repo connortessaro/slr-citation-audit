@@ -45,9 +45,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements-dev.txt
 
-      - name: Activate config
-        run: cp config/subfield.example.yaml config/subfield.yaml
-
       - name: Stage 1a — Semantic Scholar SLR search
         run: python 01_identify_slrs/search_semantic_scholar.py
 

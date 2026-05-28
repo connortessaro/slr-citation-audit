@@ -1,0 +1,119 @@
+name: pipeline
+
+# Manual-trigger only. Runs all 7 stages of the slr-citation-audit pipeline
+# against the live Semantic Scholar API using `secrets.SEMANTIC_SCHOLAR_API_KEY`
+# (and optionally `secrets.IEEE_XPLORE_API_KEY`). Produces data/processed/,
+# data/manual/slr_decisions.csv, and report/figures/* as build artifacts and
+# pushes them back to a dedicated branch `pipeline/results/<run_id>`.
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_results:
+        description: "Push outputs back to a pipeline/results branch"
+        required: true
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+
+permissions:
+  contents: write
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+      IEEE_XPLORE_API_KEY: ${{ secrets.IEEE_XPLORE_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            requirements-dev.txt
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+
+      - name: Activate config
+        run: cp config/subfield.example.yaml config/subfield.yaml
+
+      - name: Stage 1a — Semantic Scholar SLR search
+        run: python 01_identify_slrs/search_semantic_scholar.py
+
+      - name: Stage 1b — ACM BibTeX parse
+        run: python 01_identify_slrs/search_acm.py
+
+      - name: Stage 1c — IEEE search
+        run: python 01_identify_slrs/search_ieee.py
+
+      - name: Stage 1d — Merge and classify
+        run: python 01_identify_slrs/merge_and_classify.py
+
+      - name: Stage 2 — Reference extraction
+        run: python 02_extract_refs/fetch_references.py
+
+      - name: Stage 3 — Top-cited corpus
+        run: python 03_top_cited/fetch_top_cited.py
+
+      - name: Stage 4 — Overlap computation
+        run: python 04_overlap/compute_overlap.py
+
+      - name: Stage 5 — Gap explanation
+        run: python 05_explain_gaps/analyze_gaps.py
+
+      - name: Stage 6 — Report figures
+        run: python report/build_figures.py
+
+      - name: Summarise outputs
+        run: |
+          echo '## Pipeline outputs' >> $GITHUB_STEP_SUMMARY
+          echo '' >> $GITHUB_STEP_SUMMARY
+          echo '### data/processed/' >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          ls -la data/processed/ 2>/dev/null | tee -a $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          echo '' >> $GITHUB_STEP_SUMMARY
+          echo '### report/figures/' >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          ls -la report/figures/ 2>/dev/null | tee -a $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload pipeline outputs (artifact)
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-outputs-${{ github.run_id }}
+          path: |
+            data/processed/
+            data/manual/slr_decisions.csv
+            report/figures/
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Push outputs to results branch
+        if: ${{ inputs.commit_results == 'true' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RESULTS_BRANCH: pipeline/results/${{ github.run_id }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$RESULTS_BRANCH"
+          git add -f data/processed/ data/manual/slr_decisions.csv report/figures/
+          if git diff --cached --quiet; then
+            echo "No outputs produced; skipping push"
+            exit 0
+          fi
+          git commit -m "pipeline run ${{ github.run_id }}: outputs"
+          git push origin "$RESULTS_BRANCH"
+          echo "Outputs pushed to branch: $RESULTS_BRANCH" >> $GITHUB_STEP_SUMMARY

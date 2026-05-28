@@ -9,7 +9,7 @@ keywords:
 
 # Inclusion bounds.
 year_min: 2000
-year_max: 2025
+year_max: 2026
 
 # SLR identification heuristics (manual review required after).
 slr_title_patterns:

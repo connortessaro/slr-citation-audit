@@ -22,12 +22,13 @@ from ratelimit import limits, sleep_and_retry
 
 from lib.config import REPO_ROOT, load as load_config
 from lib.paperid import dedup_by_key
+from lib.paths import candidates_output_path, exports_dir
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
-IEEE_EXPORTS_DIR = REPO_ROOT / "data" / "raw" / "ieee_exports"
-OUTPUT_PATH = REPO_ROOT / "data" / "raw" / "ieee_slr_candidates.json"
+IEEE_EXPORTS_DIR = exports_dir("ieee")
+OUTPUT_PATH = candidates_output_path("ieee")
 IEEE_API_URL = "https://ieeexploreapi.ieee.org/api/v1/search/articles"
 
 _YEAR_PATTERN = re.compile(r"\b(19|20)\d{2}\b")

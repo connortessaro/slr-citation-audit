@@ -48,9 +48,8 @@ A candidate is included in the SLR corpus only if **all** of the following hold:
 
 1. The title or abstract mentions a subfield keyword (subfield fit).
 2. The title (or, exceptionally, the abstract) contains a systematic-review/mapping self-label.
-3. The abstract contains methodology signal vocabulary: PRISMA, Kitchenham, search string, inclusion criteria, exclusion criteria, primary studies, snowballing, or similar.
-4. Publication year falls in `[year_min, year_max]`.
-5. Venue is peer-reviewed (gray literature excluded unless heavily cited; documented).
+3. Publication year falls in `[year_min, year_max]`.
+4. Venue is peer-reviewed (gray literature excluded unless heavily cited; documented).
 
 Narrative surveys, editorials, tertiary reviews of unrelated topics, and any non-English studies were excluded. Per-candidate decisions and justifications are recorded in `data/manual/slr_decisions.csv`.
 
@@ -86,6 +85,8 @@ All analysis is implemented in Python and reproducible from the pipeline scripts
 ### 3.1 SLR corpus overview
 
 We identified `{{n_slrs_raw}}` candidates across the three sources and `{{n_slrs}}` met the inclusion criteria after dedup and classification. The corpus spans `{{slr_year_min}}–{{slr_year_max}}` and includes both SLRs (n=`{{n_slr_type}}`) and systematic mapping studies (n=`{{n_sms_type}}`).
+
+**Semantic Scholar (SS) trimming update.** The SS discovery step intentionally over-collects a broad candidate pool. In the current SS-only run, the raw SS candidate file contained 8,417 records (8,417 unique after deduplication by `paper_key`). Applying the classification gates in §2.3 (subfield keyword fit; SLR/SMS self-label; and year bounds) reduced this to **74 included SLR/SMS papers** in the SS corpus (`data/processed/ss/slr_corpus.json`). The full exclusion audit trail (including per-paper reasons) is recorded in `data/manual/ss/slr_decisions.csv`.
 
 ### 3.2 Coverage of top-cited papers
 

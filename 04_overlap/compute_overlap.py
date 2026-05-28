@@ -9,16 +9,17 @@ For each SLR:
     4. Emit a row per SLR with coverage stats and a row per (SLR, missed paper)
        pair for the gap analysis stage.
 
-Inputs:
-    data/processed/slr_corpus.json
-    data/processed/slr_references.json
+Inputs (per source):
+    data/processed/<source>/slr_corpus.json
+    data/processed/<source>/slr_references.json
     data/processed/top_cited_techdebt.json
 Outputs:
-    data/processed/overlap_matrix.csv   -- one row per SLR
-    data/processed/missed_pairs.csv     -- one row per (SLR, missed paper)
+    data/processed/<source>/overlap_matrix.csv   -- one row per SLR
+    data/processed/<source>/missed_pairs.csv     -- one row per (SLR, missed paper)
 """
 from __future__ import annotations
 
+import argparse
 import csv
 import json
 import logging
@@ -30,15 +31,16 @@ from date_controls import filter_by_year  # noqa: E402
 
 from lib.config import REPO_ROOT  # noqa: E402
 from lib.paperid import paper_key  # noqa: E402
+from lib.paths import SourcePaths  # noqa: E402
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
-CORPUS_PATH = REPO_ROOT / "data" / "processed" / "slr_corpus.json"
-REFS_PATH = REPO_ROOT / "data" / "processed" / "slr_references.json"
+CORPUS_PATH = REPO_ROOT / "data" / "processed" / "slr_corpus.json"  # legacy default
+REFS_PATH = REPO_ROOT / "data" / "processed" / "slr_references.json"  # legacy default
 TOP_CITED_PATH = REPO_ROOT / "data" / "processed" / "top_cited_techdebt.json"
-OVERLAP_MATRIX_PATH = REPO_ROOT / "data" / "processed" / "overlap_matrix.csv"
-MISSED_PAIRS_PATH = REPO_ROOT / "data" / "processed" / "missed_pairs.csv"
+OVERLAP_MATRIX_PATH = REPO_ROOT / "data" / "processed" / "overlap_matrix.csv"  # legacy default
+MISSED_PAIRS_PATH = REPO_ROOT / "data" / "processed" / "missed_pairs.csv"  # legacy default
 
 
 def _ref_keys(refs: list[dict]) -> set[str]:
@@ -142,9 +144,35 @@ def run(
 
 
 def main() -> None:
-    overlap, missed = run()
-    print(f"Wrote {len(overlap)} SLR rows to {OVERLAP_MATRIX_PATH.relative_to(REPO_ROOT)}")
-    print(f"Wrote {len(missed)} missed-pair rows to {MISSED_PAIRS_PATH.relative_to(REPO_ROOT)}")
+    parser = argparse.ArgumentParser(description="Compute date-controlled overlap between SLR references and top-cited corpus.")
+    parser.add_argument("--source", choices=["acm", "ss", "ieee"], default=None)
+    parser.add_argument("--corpus", type=Path, default=None)
+    parser.add_argument("--refs", type=Path, default=None)
+    parser.add_argument("--top", type=Path, default=TOP_CITED_PATH)
+    parser.add_argument("--overlap-out", type=Path, default=None)
+    parser.add_argument("--missed-out", type=Path, default=None)
+    args = parser.parse_args()
+
+    corpus_path = args.corpus
+    refs_path = args.refs
+    overlap_path = args.overlap_out
+    missed_path = args.missed_out
+    if args.source:
+        sp = SourcePaths(args.source)  # type: ignore[arg-type]
+        corpus_path = corpus_path or sp.corpus
+        refs_path = refs_path or sp.refs_out
+        overlap_path = overlap_path or sp.overlap_out
+        missed_path = missed_path or sp.missed_out
+
+    overlap, missed = run(
+        corpus_path=corpus_path or CORPUS_PATH,
+        refs_path=refs_path or REFS_PATH,
+        top_cited_path=args.top,
+        overlap_path=overlap_path or OVERLAP_MATRIX_PATH,
+        missed_path=missed_path or MISSED_PAIRS_PATH,
+    )
+    print(f"Wrote {len(overlap)} SLR rows to {(overlap_path or OVERLAP_MATRIX_PATH).relative_to(REPO_ROOT)}")
+    print(f"Wrote {len(missed)} missed-pair rows to {(missed_path or MISSED_PAIRS_PATH).relative_to(REPO_ROOT)}")
 
 
 if __name__ == "__main__":

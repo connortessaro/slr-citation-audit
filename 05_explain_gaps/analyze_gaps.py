@@ -10,15 +10,16 @@ Features attached per pair:
     is_top10      -- True if missed paper is in top-10 of the corpus
 
 Inputs:
-    data/processed/missed_pairs.csv
+    data/processed/<source>/missed_pairs.csv
     data/processed/top_cited_techdebt.json
 Outputs:
-    data/processed/gap_analysis.csv          -- one row per (SLR, missed paper)
-    data/processed/gap_summary_by_venue.csv  -- aggregated miss counts by venue type
-    data/processed/gap_summary_by_age.csv    -- aggregated miss counts by year-delta bucket
+    data/processed/<source>/gap_analysis.csv          -- one row per (SLR, missed paper)
+    data/processed/<source>/gap_summary_by_venue.csv  -- aggregated miss counts by venue type
+    data/processed/<source>/gap_summary_by_age.csv    -- aggregated miss counts by year-delta bucket
 """
 from __future__ import annotations
 
+import argparse
 import csv
 import json
 import logging
@@ -29,15 +30,16 @@ import pandas as pd
 
 from lib.config import REPO_ROOT
 from lib.paperid import normalize_doi
+from lib.paths import SourcePaths
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
-MISSED_PAIRS_PATH = REPO_ROOT / "data" / "processed" / "missed_pairs.csv"
+MISSED_PAIRS_PATH = REPO_ROOT / "data" / "processed" / "missed_pairs.csv"  # legacy default
 TOP_CITED_PATH = REPO_ROOT / "data" / "processed" / "top_cited_techdebt.json"
-OUTPUT_PATH = REPO_ROOT / "data" / "processed" / "gap_analysis.csv"
-SUMMARY_VENUE_PATH = REPO_ROOT / "data" / "processed" / "gap_summary_by_venue.csv"
-SUMMARY_AGE_PATH = REPO_ROOT / "data" / "processed" / "gap_summary_by_age.csv"
+OUTPUT_PATH = REPO_ROOT / "data" / "processed" / "gap_analysis.csv"  # legacy default
+SUMMARY_VENUE_PATH = REPO_ROOT / "data" / "processed" / "gap_summary_by_venue.csv"  # legacy default
+SUMMARY_AGE_PATH = REPO_ROOT / "data" / "processed" / "gap_summary_by_age.csv"  # legacy default
 
 
 def classify_venue(paper: dict) -> str:
@@ -199,10 +201,36 @@ def run(
 
 
 def main() -> None:
-    rows = run()
-    print(f"Wrote {len(rows)} enriched gaps to {OUTPUT_PATH.relative_to(REPO_ROOT)}")
-    print(f"Venue summary: {SUMMARY_VENUE_PATH.relative_to(REPO_ROOT)}")
-    print(f"Age summary: {SUMMARY_AGE_PATH.relative_to(REPO_ROOT)}")
+    parser = argparse.ArgumentParser(description="Enrich missed-pair rows with explanatory features.")
+    parser.add_argument("--source", choices=["acm", "ss", "ieee"], default=None)
+    parser.add_argument("--missed", type=Path, default=None)
+    parser.add_argument("--top", type=Path, default=TOP_CITED_PATH)
+    parser.add_argument("--out", type=Path, default=None)
+    parser.add_argument("--summary-venue", type=Path, default=None)
+    parser.add_argument("--summary-age", type=Path, default=None)
+    args = parser.parse_args()
+
+    missed_path = args.missed
+    out_path = args.out
+    venue_path = args.summary_venue
+    age_path = args.summary_age
+    if args.source:
+        sp = SourcePaths(args.source)  # type: ignore[arg-type]
+        missed_path = missed_path or sp.missed_out
+        out_path = out_path or sp.gaps_out
+        venue_path = venue_path or sp.gaps_out.parent / "gap_summary_by_venue.csv"
+        age_path = age_path or sp.gaps_out.parent / "gap_summary_by_age.csv"
+
+    rows = run(
+        missed_pairs_path=missed_path or MISSED_PAIRS_PATH,
+        top_cited_path=args.top,
+        output_path=out_path or OUTPUT_PATH,
+        summary_venue_path=venue_path or SUMMARY_VENUE_PATH,
+        summary_age_path=age_path or SUMMARY_AGE_PATH,
+    )
+    print(f"Wrote {len(rows)} enriched gaps to {(out_path or OUTPUT_PATH).relative_to(REPO_ROOT)}")
+    print(f"Venue summary: {(venue_path or SUMMARY_VENUE_PATH).relative_to(REPO_ROOT)}")
+    print(f"Age summary: {(age_path or SUMMARY_AGE_PATH).relative_to(REPO_ROOT)}")
 
 
 if __name__ == "__main__":

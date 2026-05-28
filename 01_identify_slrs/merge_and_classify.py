@@ -9,6 +9,10 @@ automated verdict + reason. Decisions are persisted to
 Outputs:
     data/manual/slr_decisions.csv  -- audit trail (one row per candidate)
     data/processed/slr_corpus.json -- included papers only
+
+NOTE: The pipeline has moved to a per-source ("siloed") architecture.
+Prefer `01_identify_slrs/classify_slrs.py --source {acm,ss,ieee}` which writes to
+`data/processed/<source>/...` and `data/manual/<source>/...`.
 """
 from __future__ import annotations
 

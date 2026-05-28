@@ -56,10 +56,11 @@ def run(top_n: int | None = None, robustness_n: int = 100) -> list[dict]:
     pooled: list[dict] = []
     for keyword in cfg.keywords:
         logger.info("Top-cited search: %r year=%s", keyword, year_range)
+        # lib hard-caps page size at 100; max_results bounds total materialised.
         hits = client.search_papers(
             keyword,
             year=year_range,
-            limit=WIDE_LIMIT,
+            limit=100,
             fields=FIELDS,
             bulk=True,
             max_results=WIDE_LIMIT,

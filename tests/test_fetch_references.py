@@ -61,6 +61,12 @@ class TestNormaliseReference:
         assert out["year"] == 2010
         assert out["doi"] == "10.1/a"
 
+    def test_handles_null_external_ids(self):
+        rec = {"citedPaper": {"paperId": "p1", "title": "A", "year": 2010, "externalIds": None}}
+        out = fr._normalise_reference(rec)
+        assert out is not None
+        assert out["externalIds"] == {}
+
     def test_handles_missing_cited_paper(self):
         assert fr._normalise_reference({}) is None
         assert fr._normalise_reference({"citedPaper": None}) is None

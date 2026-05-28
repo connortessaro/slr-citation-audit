@@ -24,7 +24,7 @@ gaps. Output: 3,000-word report with implications for SLR practice.
 - **SLR sources:** ACM DL, IEEE Xplore, Semantic Scholar.
 - **Citation source:** Semantic Scholar exclusively (acknowledged limitation).
 - **Top-cited corpus size:** N = 50.
-- **Year range:** 2000–2025 (subject to refinement at Day 2 sign-off).
+- **Year range:** 2000–2026.
 
 ## Pipeline (5 stages)
 

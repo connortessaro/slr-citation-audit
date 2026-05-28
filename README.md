@@ -20,21 +20,71 @@ export SEMANTIC_SCHOLAR_API_KEY=...
 
 ## Run
 
+From the repo root, set `PYTHONPATH=.` (or `export PYTHONPATH=.` for the session) so `lib` imports resolve.
+
+### Database-first entrypoints (recommended)
+
+Run each dataset fully independently:
+
+```bash
+PYTHONPATH=. python sources/ss/run.py
+PYTHONPATH=. python sources/acm/run.py
+PYTHONPATH=. python sources/ieee/run.py
+```
+
+Each writes to:
+
+- `data/raw/<source>/...`
+- `data/processed/<source>/...`
+- `data/manual/<source>/...`
+
+### Stage-by-stage (advanced / debugging)
+
 Pipeline is staged. Run each in order:
 
 ```bash
-python 01_identify_slrs/search_semantic_scholar.py
-python 01_identify_slrs/search_acm.py
-python 01_identify_slrs/search_ieee.py
-python 01_identify_slrs/merge_and_classify.py
-python 02_extract_refs/fetch_references.py
-python 03_top_cited/fetch_top_cited.py
-python 04_overlap/compute_overlap.py
-python 05_explain_gaps/analyze_gaps.py
-python report/build_figures.py
+PYTHONPATH=. python 01_identify_slrs/search_semantic_scholar.py
 ```
 
-Outputs land in `data/processed/`. Figures in `report/figures/`. Final writeup in `report/report.md`.
+Preview Semantic Scholar results (one search, five papers, prints a sample):
+
+```bash
+PYTHONPATH=. python 01_identify_slrs/search_semantic_scholar.py --max-searches 1 --limit 5 --preview
+```
+
+Writes `data/raw/ss/slr_candidates.preview.json` when `--max-searches` is set; full runs use `data/raw/ss/slr_candidates.json`.
+
+Publication years are controlled in `config/subfield.yaml` (`year_min`–`year_max`, default **2000–2026**). Changing the range requires re-running SS searches (cache keys include the year string). To keep an older candidate file while fetching a wider range:
+
+```bash
+cp data/raw/ss/slr_candidates.json data/raw/ss/slr_candidates.backup.json
+PYTHONPATH=. python 01_identify_slrs/search_semantic_scholar.py --append
+```
+
+`--append` dedupes the new fetch with the existing `slr_candidates.json` by paper id / DOI / title.
+
+```bash
+PYTHONPATH=. python 01_identify_slrs/search_acm.py
+PYTHONPATH=. python 01_identify_slrs/search_ieee.py
+PYTHONPATH=. python 01_identify_slrs/classify_slrs.py --source ss
+PYTHONPATH=. python 01_identify_slrs/classify_slrs.py --source acm
+PYTHONPATH=. python 01_identify_slrs/classify_slrs.py --source ieee
+PYTHONPATH=. python 02_extract_refs/fetch_references.py --source ss
+PYTHONPATH=. python 02_extract_refs/fetch_references.py --source acm
+PYTHONPATH=. python 02_extract_refs/fetch_references.py --source ieee
+PYTHONPATH=. python 03_top_cited/fetch_top_cited.py
+PYTHONPATH=. python 04_overlap/compute_overlap.py --source ss
+PYTHONPATH=. python 04_overlap/compute_overlap.py --source acm
+PYTHONPATH=. python 04_overlap/compute_overlap.py --source ieee
+PYTHONPATH=. python 05_explain_gaps/analyze_gaps.py --source ss
+PYTHONPATH=. python 05_explain_gaps/analyze_gaps.py --source acm
+PYTHONPATH=. python 05_explain_gaps/analyze_gaps.py --source ieee
+PYTHONPATH=. python report/build_figures.py --source ss
+PYTHONPATH=. python report/build_figures.py --source acm
+PYTHONPATH=. python report/build_figures.py --source ieee
+```
+
+Outputs land in `data/processed/<source>/`. Figures in `report/figures/<source>/`. Final writeup in `report/report.md`.
 
 ## Tests
 
@@ -52,9 +102,9 @@ pytest -q
 | `03_top_cited/` | Identify top-50 cited papers in subfield |
 | `04_overlap/` | Compute overlap with date controls |
 | `05_explain_gaps/` | Investigate gaps (venue, year, access) |
-| `data/raw/` | Cached API JSON (gitignored) |
-| `data/processed/` | Merged tracked outputs |
-| `data/manual/` | Human-coded SLR-vs-survey decisions + rubric |
+| `data/raw/<source>/` | Per-source cached API JSON + exports |
+| `data/processed/<source>/` | Per-source outputs (corpus, refs, overlap, gaps) |
+| `data/manual/<source>/` | Per-source SLR inclusion decisions + audit trail |
 | `lib/` | Shared helpers (SS client, paper-ID normalisation, config) |
 | `tests/` | Pytest suite (67 tests as of Phase 7) |
 | `report/` | Final 3,000-word writeup + figures |

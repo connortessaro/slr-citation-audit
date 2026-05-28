@@ -56,7 +56,14 @@ def run(top_n: int | None = None, robustness_n: int = 100) -> list[dict]:
     pooled: list[dict] = []
     for keyword in cfg.keywords:
         logger.info("Top-cited search: %r year=%s", keyword, year_range)
-        hits = client.search_papers(keyword, year=year_range, limit=WIDE_LIMIT, fields=FIELDS)
+        hits = client.search_papers(
+            keyword,
+            year=year_range,
+            limit=WIDE_LIMIT,
+            fields=FIELDS,
+            bulk=True,
+            max_results=WIDE_LIMIT,
+        )
         pooled.extend(hits)
 
     unique = dedup_by_key(pooled)

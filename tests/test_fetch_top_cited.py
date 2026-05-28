@@ -24,7 +24,7 @@ class StubClient:
     def __init__(self, by_keyword: dict[str, list[dict]]):
         self.by_keyword = by_keyword
 
-    def search_papers(self, query: str, year=None, limit=100, fields=None):
+    def search_papers(self, query: str, year=None, limit=100, fields=None, bulk=False, max_results=None):
         return list(self.by_keyword.get(query, []))
 
 

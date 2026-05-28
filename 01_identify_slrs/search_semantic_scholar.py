@@ -55,18 +55,25 @@ def run() -> list[dict]:
     year_range = f"{cfg.year_min}-{cfg.year_max}"
     candidates: list[dict] = []
 
-    # Targeted: keyword + SLR phrase
+    # Targeted: keyword + SLR phrase. Use bulk endpoint for speed; cap at 1000
+    # which is well above the universe of SLRs in any single subfield.
     for keyword in cfg.keywords:
         for pattern in cfg.slr_title_patterns:
             query = f"{keyword} {pattern}"
             logger.info("SS targeted search: %r year=%s", query, year_range)
-            hits = client.search_papers(query, year=year_range, limit=100, fields=FIELDS)
+            hits = client.search_papers(
+                query, year=year_range, limit=1000, fields=FIELDS, bulk=True, max_results=1000,
+            )
             candidates.extend(hits)
 
-    # Broad: keyword only, then title-pattern prefilter
+    # Broad: keyword-only, title-pattern prefilter. We only need title hits, so
+    # capping pagination at 2000 results is more than enough; otherwise broad
+    # queries spend ~5 min enumerating 8000+ pages at 1 RPS.
     for keyword in cfg.keywords:
         logger.info("SS broad search: %r year=%s", keyword, year_range)
-        hits = client.search_papers(keyword, year=year_range, limit=100, fields=FIELDS)
+        hits = client.search_papers(
+            keyword, year=year_range, limit=1000, fields=FIELDS, bulk=True, max_results=2000,
+        )
         candidates.extend(h for h in hits if _title_matches_slr(h.get("title"), cfg.slr_title_patterns))
 
     unique = dedup_by_key(candidates)

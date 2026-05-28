@@ -45,6 +45,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements-dev.txt
 
+      - name: Restore Semantic Scholar API cache
+        id: ss-cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            data/raw/ss_cache
+            data/raw/refs
+          # Cache key bound to config + the SS client itself, so an upgrade or
+          # subfield change invalidates the cache.
+          key: ss-cache-${{ hashFiles('.env.example', 'lib/ss_client.py') }}
+          restore-keys: |
+            ss-cache-
+
       - name: Stage 1a — Semantic Scholar SLR search
         run: python 01_identify_slrs/search_semantic_scholar.py
 

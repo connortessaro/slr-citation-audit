@@ -84,21 +84,49 @@ class SSClient:
         assert last_exc is not None
         raise last_exc
 
-    def search_papers(self, query: str, year: str | None = None, limit: int = 100, fields: Iterable[str] | None = None) -> list[dict]:
-        """Bulk keyword search, returns list of paper dicts."""
-        cache = _cache_key("search", {"q": query, "year": year, "limit": limit, "fields": sorted(fields or [])})
+    def search_papers(
+        self,
+        query: str,
+        year: str | None = None,
+        limit: int = 100,
+        fields: Iterable[str] | None = None,
+        bulk: bool = False,
+        max_results: int | None = None,
+    ) -> list[dict]:
+        """Keyword search, returns list of paper dicts.
+
+        - `bulk=True` uses the `/paper/search/bulk` endpoint (up to 1000 results
+          per request, no pagination cost) when supported by the library.
+        - `max_results` caps how many results we materialize from the lib's
+          paginator — important because broad queries (e.g. "technical debt")
+          would otherwise enumerate thousands of pages at 1 RPS.
+        """
+        cache_key_payload = {
+            "q": query,
+            "year": year,
+            "limit": limit,
+            "fields": sorted(fields or []),
+            "bulk": bulk,
+            "max_results": max_results,
+        }
+        cache = _cache_key("search", cache_key_payload)
         cached = _read_cache(cache)
         if cached is not None:
             return cached
-        results = self._call(
-            self._client.search_paper,
-            query,
-            year=year,
-            limit=limit,
-            fields=list(fields) if fields else None,
-        )
-        # Library returns a PaginatedResults object; materialise first page-set.
-        papers = [_as_dict(p) for p in results]
+        call_kwargs: dict[str, Any] = {
+            "query": query,
+            "year": year,
+            "limit": limit,
+            "fields": list(fields) if fields else None,
+        }
+        if bulk:
+            call_kwargs["bulk"] = True
+        results = self._call(self._client.search_paper, **call_kwargs)
+        papers: list[dict] = []
+        for paper in results:
+            papers.append(_as_dict(paper))
+            if max_results is not None and len(papers) >= max_results:
+                break
         _write_cache(cache, papers)
         return papers
 

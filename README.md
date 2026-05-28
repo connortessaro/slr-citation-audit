@@ -47,6 +47,20 @@ python report/build_figures.py
 
 Outputs land in `data/processed/`. Figures in `report/figures/`. Final writeup in `report/report.md`.
 
+## CI / hosted pipeline
+
+Two GitHub Actions workflows:
+
+- **`tests`** — runs pytest on every push / PR.
+- **`pipeline`** — manual trigger (`workflow_dispatch`). Runs all 7 stages against live Semantic Scholar (and IEEE if `secrets.IEEE_XPLORE_API_KEY` is set), uploads `data/processed/` + `report/figures/` as build artifacts, and (if `commit_results=true`) pushes outputs to a `pipeline/results/<run_id>` branch.
+
+Required repo secrets:
+
+- `SEMANTIC_SCHOLAR_API_KEY` (already added).
+- `IEEE_XPLORE_API_KEY` (optional; manual BibTeX export is the fallback).
+
+Trigger the pipeline: **Actions → pipeline → Run workflow**.
+
 ## Tests
 
 ```bash

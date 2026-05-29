@@ -1,0 +1,96 @@
+slr_id,slr_title,slr_year,slr_venue,slr_type,n_refs,eligible_top_n,hits,misses,coverage_pct
+doi:10.48550/arxiv.2301.07803,"Relating Edge Computing and Microservices by means of Architecture Approaches and Features, Orchestration, Choreography, and Offloading: A Systematic Literature Review",2023,arXiv.org,slr,157,30,2,28,6.67
+doi:10.1002/spe.2967,A systematic gray literature review: The technologies and concerns of microservice application programming interfaces,2021,"Software, Practice & Experience",slr,39,27,2,25,7.41
+doi:10.5753/jserd.2025.5224,From Detection to Refactoring of Microservice Bad Smells: A Systematic Literature Review,2025,Journal of Software Engineering Research and Development,slr,41,30,1,29,3.33
+doi:10.1109/access.2025.3618990,Semantic Approaches to Microservice Identification: A Systematic Literature Review,2025,IEEE Access,slr,0,30,0,30,0.0
+doi:10.1109/incet57972.2023.10170375,A Systematic Review on the Identification and Classification of Patterns in Microservices,2023,2023 4th International Conference for Emerging Technology (INCET),slr,22,30,0,30,0.0
+ss:2cd8b447b8f6e78036414934332923fe2538ce74,Adoption of microservices in industrial information systems: a systematic literature review,2018,,slr,0,15,0,15,0.0
+doi:10.1109/iccit62134.2024.10701144,Comprehensive Framework for Transitioning Monolithic to Microservices in MVC Context,2024,International Conference on Communications and Information Technology,slr,25,30,0,30,0.0
+doi:10.1016/j.jss.2025.112500,Assessment of performance and its scalability in microservice architectures: Systematic literature review,2025,Journal of Systems and Software,slr,51,30,1,29,3.33
+doi:10.24215/16666038.25.e11,Scalability in Microservices: A systematic literature review,2025,Journal of Computational Science and Technology,slr,0,30,0,30,0.0
+doi:10.14569/ijacsa.2024.0151218,Security Gap in Microservices: A Systematic Literature Review,2024,International Journal of Advanced Computer Science and Applications,slr,0,30,0,30,0.0
+doi:10.1016/j.infsof.2020.106449,Understanding and addressing quality attributes of microservices architecture: A Systematic literature review,2021,Information and Software Technology,slr,33,27,0,27,0.0
+doi:10.1109/access.2024.3389064,Energy Consumption in Microservices Architectures: A Systematic Literature Review,2024,IEEE Access,slr,63,30,1,29,3.33
+doi:10.14569/ijacsa.2024.0151013,Migrating from Monolithic to Microservice Architectures: A Systematic Literature Review,2024,International Journal of Advanced Computer Science and Applications,slr,58,30,1,29,3.33
+doi:10.1109/icts67612.2025.11369715,Challenges and Mitigation Strategies in Migrating from Monolithic Systems to Microservices: a Systematic Literature Review,2025,2025 15th International Conference on Information & Communication Technology and System (ICTS),slr,0,30,0,30,0.0
+doi:10.1109/conisoft.2019.00034,Quality attributes in patterns related to microservice architecture: a Systematic Literature Review,2019,2019 7th International Conference in Software Engineering Research and Innovation (CONISOFT),slr,23,22,0,22,0.0
+doi:10.1109/tse.2025.3603897,A Systematic Literature Review of Machine Learning Approaches for Migrating Monolithic Systems to Microservices,2025,IEEE Transactions on Software Engineering,slr,126,30,0,30,0.0
+ss:5919c846bd909c3676afa212fdb8ce629b1bd290,Selection Methods for Criticality in Microservices Architectures: A Systematic Mapping,2020,Conferencia Iberoamericana de Software Engineering,sms,0,23,0,23,0.0
+doi:10.1109/inciscos49368.2019.00056,A Systematic Literature Review on Composition of Microservices through the Use of Semantic Annotations: Solutions and Techniques,2019,International Conference Information Systems and Computer Science,slr,48,22,0,22,0.0
+doi:10.21275/es24809100005,Automation of Microservices Testing: Effective Strategies and Tools,2024,International Journal of Science and Research (IJSR),slr,0,30,0,30,0.0
+doi:10.53469/jrse.2025.07(05).01,Automated Validation Framework for Microservice Architectures,2025,Journal of Research in Science and Engineering,slr,0,30,0,30,0.0
+doi:10.1109/conisoft63288.2024.00026,System-Oriented Testing on the Microservices Architecture: A Systematic Literature Review,2024,2024 12th International Conference in Software Engineering Research and Innovation (CONISOFT),slr,37,30,1,29,3.33
+doi:10.15514/ispras-2021-33(1)-6,Patterns Related to Microservice Architecture: a Multivocal Literature Review,2021,Proceedings of the Institute for System Programming of RAS,slr,29,27,0,27,0.0
+doi:10.1109/ic2ie60547.2023.10331155,"Analyzing Microservices and Monolithic Systems: Key Factors in Architecture, Development, and Operations",2023,2023 6th International Conference of Computer and Informatics Engineering (IC2IE),slr,20,30,2,28,6.67
+doi:10.1002/smr.2433,The operation and maintenance governance of microservices architecture systems: A systematic literature review,2022,J. Softw. Evol. Process.,slr,116,29,5,24,17.24
+doi:10.1134/s0361768825700422,Software Testing on Microservices-Based Systems: A Systematic Literature Review and Thematic Analysis,2025,Programming and computer software,slr,101,30,4,26,13.33
+doi:10.1134/s0361768824700749,Domain-Driven Design in Microservices-Based Systems Development: A Systematic Literature Review and Thematic Analysis,2024,Programming and computer software,slr,20,30,0,30,0.0
+doi:10.5121/csit.2021.111701,Confidentiality and Integrity Mechanisms for Microservices Communication,2021,Computer Science and Information Technology Trends,slr,29,27,1,26,3.7
+doi:10.12720/jait.14.5.991-1002,Research Opportunities in Microservices Quality Assessment: A Systematic Literature Review,2023,Journal of Advances in Information Technology,slr,87,30,3,27,10.0
+doi:10.1007/978-3-319-62407-5_14,A Systematic Literature Review on Microservices,2017,Communication Systems and Applications,slr,45,8,1,7,12.5
+doi:10.1016/j.jss.2021.111014,Deployment and communication patterns in microservice architectures: A systematic literature review,2021,Journal of Systems and Software,slr,31,27,1,26,3.7
+doi:10.1007/s10586-025-05690-6,Full stack optimization of microservice architecture: systematic review and research opportunity,2025,Cluster Computing,slr,139,30,2,28,6.67
+doi:10.1109/icicyta68677.2025.11362635,"Resilient Microservices: A Systematic Review of Recovery Patterns, Strategies, and Evaluation Frameworks",2025,2025 5th International Conference on Intelligent Cybernetics Technology & Applications (ICICyTA),slr,37,30,0,30,0.0
+doi:10.1016/j.infsof.2025.107732,Reengineering software systems into microservices: State-of-the-art and future directions,2025,Information and Software Technology,slr,102,30,1,29,3.33
+doi:10.1109/access.2024.3365079,Evolution of Microservices Identification in Monolith Decomposition: A Systematic Review,2024,IEEE Access,slr,116,30,3,27,10.0
+doi:10.37547/tajet/volume07issue05-10,Optimization of Microservices Architecture Performance in High-Load Systems,2025,The American Journal of Engineering and Technology,slr,0,30,0,30,0.0
+doi:10.1109/access.2024.3406500,A Systematic Literature Review of Inter-Service Security Threats and Mitigation Strategies in Microservice Architectures,2024,IEEE Access,slr,52,30,2,28,6.67
+doi:10.23919/cisti49556.2020.9141150,Microservices identification strategies : A review focused on Model-Driven Engineering and Domain Driven Design approaches,2020,Iberian Conference on Information Systems and Technologies,slr,34,23,2,21,8.7
+doi:10.1109/icsa-c54293.2022.00030,A Systematic Literature Review on Migration to Microservices: a Quality Attributes perspective,2022,2022 IEEE 19th International Conference on Software Architecture Companion (ICSA-C),slr,56,29,0,29,0.0
+doi:10.3390/app12115507,Challenges and Solution Directions of Microservice Architectures: A Systematic Literature Review,2022,Applied Sciences,slr,106,29,1,28,3.45
+doi:10.1109/tse.2023.3287297,Decomposition of Monolith Applications Into Microservices Architectures: A Systematic Review,2023,IEEE Transactions on Software Engineering,slr,145,30,4,26,13.33
+doi:10.1109/icicas53977.2021.00059,A Review of Bad Smells in Cloud-based Applications and Microservices,2021,"2021 International Conference on Intelligent Computing, Automation and Systems (ICICAS)",slr,30,27,0,27,0.0
+doi:10.1109/sccc67219.2025.11420492,Machine Learning Techniques in Microservices: A Systematic Mapping,2025,International Conference of the Chilean Computer Science Society,sms,45,30,0,30,0.0
+doi:10.5121/ijnsa.2021.13607,Information and Communication Security Mechanisms For Microservices-based Systems,2021,International journal of network security and its applications,slr,58,27,1,26,3.7
+ss:d5d90cbd31901aa93c41f5b58498bf5eb4cbf11d,An Exploratory Study of Academic Architectural Tactics and Patterns in Microservices: A systematic literature review,2018,Conferencia Iberoamericana de Software Engineering,slr,0,15,0,15,0.0
+doi:10.3390/app12063023,Authentication and Authorization in Microservices Architecture: A Systematic Literature Review,2022,Applied Sciences,slr,57,29,1,28,3.45
+doi:10.15381/risi.v17i2.29666,Una revisión sistemática de la literatura: análisis de riesgos en la migración de arquitectura monolitica a microservicio,2024,Revista de investigación de Sistemas e Informática,slr,0,30,0,30,0.0
+doi:10.7717/peerj-cs.779,Microservice security: a systematic literature review,2022,PeerJ Computer Science,slr,316,29,5,24,17.24
+doi:10.7717/peerj-cs.695,Defining and measuring microservice granularity—a literature overview,2021,PeerJ Computer Science,slr,79,27,4,23,14.81
+doi:10.1016/j.jss.2020.110798,A Systematic Mapping Study on Microservices Architecture in DevOps,2020,Journal of Systems and Software,sms,103,23,2,21,8.7
+doi:10.3390/software4010006,Designing Microservices Using AI: A Systematic Literature Review,2025,Software,slr,45,30,0,30,0.0
+doi:10.1016/j.infsof.2025.107870,Microservices testing: A systematic literature review,2025,Information and Software Technology,slr,77,30,0,30,0.0
+doi:10.1109/tla.2018.8789551,Review of Architectural Patterns and Tactics for Microservices in Academic and Industrial Literature,2018,IEEE Latin America Transactions,slr,15,15,0,15,0.0
+doi:10.5753/cibse.2024.28435,Migration of Monolithic Systems to Microservices using AI: A Systematic Mapping Study,2024,Conferencia Iberoamericana de Software Engineering,sms,38,30,1,29,3.33
+doi:10.52589/ajste-o1g0v4go,Migrating Monolithic E-commerce Systems to Microservices: A Systematic Review of Event-Driven Architecture Approaches,2025,"Advanced Journal of Science, Technology and Engineering",slr,10,30,1,29,3.33
+doi:10.14445/22315381/ijett-v70i3p225,Taxonomical Classification and Systematic Review on Microservices,2022,international journal of engineering trends and technology,slr,0,29,0,29,0.0
+doi:10.3390/electronics14071397,"Systematic Mapping Study of Test Generation for Microservices: Approaches, Challenges, and Impact on System Quality",2025,Electronics,sms,23,30,1,29,3.33
+doi:10.1002/spe.2869,Microservice transition and its granularity problem: A systematic mapping study,2019,"Software, Practice & Experience",sms,318,22,4,18,18.18
+doi:10.1016/j.compeleceng.2025.110550,A systematic review of QoS enhancement techniques in microservices architecture,2025,Computers & electrical engineering,slr,135,30,3,27,10.0
+doi:10.30574/ijsra.2025.15.3.1826,Systematic review of microservice architecture: Advantages over monolithic systems in cloud environments,2025,International Journal of Science and Research Archive,slr,0,30,0,30,0.0
+doi:10.1109/sita67914.2025.11273589,Intelligent Autoscaling Strategies for Cloud-Native Microservices: A Systematic Review,2025,2025 International Conference on Intelligent Systems: Theories and Applications (SITA),slr,43,30,0,30,0.0
+doi:10.3390/computers14040133,The Ontology-Based Mapping of Microservice Identification Approaches: A Systematic Study of Migration Strategies from Monolithic to Microservice Architectures,2025,De Computis,sms,82,30,1,29,3.33
+doi:10.1109/access.2022.3221130,Visualizing Microservice Architecture in the Dynamic Perspective: A Systematic Mapping Study,2022,IEEE Access,sms,35,29,1,28,3.45
+ss:13dcdba274acb14ade18dee8350e8385c3d3307c,Metrics and Models for Developer Collaboration Analysis in Microservice-Based Systems. A Systematic Mapping Study,2023,IWSM-Mensura,sms,0,30,0,30,0.0
+doi:10.1007/978-3-030-32022-5_9,Migration of Monolithic Applications Towards Microservices Under the Vision of the Information Hiding Principle: A Systematic Mapping Study,2019,Advances in Intelligent Systems and Computing,sms,26,22,1,21,4.55
+doi:10.5220/0010578905210532,Microservices Adaptation using Machine Learning: A Systematic Mapping Study,2021,International Conference on Software and Data Technologies,sms,74,27,2,25,7.41
+doi:10.1007/s00607-025-01540-w,"A systematic mapping study on observability of microservices-based applications: fundamentals, classifications, and challenges",2025,Computing,sms,76,30,2,28,6.67
+doi:10.1016/j.jss.2019.01.001,Architecting with microservices: A systematic mapping study,2019,Journal of Systems and Software,sms,34,22,0,22,0.0
+doi:10.1016/j.cosrev.2021.100415,Securing Microservices and Microservice Architectures: A Systematic Mapping Study,2020,Computer Science Review,sms,73,23,4,19,17.39
+doi:10.3390/app11177856,On Microservice Analysis and Architecture Evolution: A Systematic Mapping Study,2021,Applied Sciences,sms,78,27,2,25,7.41
+doi:10.1007/978-3-031-66326-0_1,Tools Reconstructing Microservice Architecture: A Systematic Mapping Study,2023,European Conference on Software Architecture,sms,25,30,0,30,0.0
+doi:10.5220/0012633300003690,Modernization of Legacy Systems to Microservice Architecture: A Tertiary Study,2024,International Conference on Enterprise Information Systems,slr,0,30,0,30,0.0
+doi:10.1109/icws67624.2025.00072,Generative AI-Based Adaptation in Microservices Architectures: A Systematic Mapping Study,2025,2025 IEEE International Conference on Web Services (ICWS),sms,56,30,0,30,0.0
+doi:10.1007/s00607-025-01432-z,AI Techniques in the Microservices Life-Cycle: a Systematic Mapping Study,2023,Computing,sms,309,30,7,23,23.33
+doi:10.1109/apsec51365.2020.00020,Testing Microservices Architecture-Based Applications: A Systematic Mapping Study,2020,Asia-Pacific Software Engineering Conference,sms,55,23,2,21,8.7
+doi:10.1016/j.jss.2024.112232,"Unveiling the microservices testing methods, challenges, solutions, and solutions gaps: A systematic mapping study",2024,Journal of Systems and Software,sms,100,30,0,30,0.0
+doi:10.1145/3564982.3564995,Using Database Schemas of Legacy Applications for Microservices Identification: A Mapping Study,2022,International Conference on Advancements in Computational Sciences,sms,15,29,0,29,0.0
+doi:10.1016/j.infsof.2024.107590,Migration of monolithic systems to microservices: A systematic mapping study,2024,Information and Software Technology,sms,112,30,4,26,13.33
+doi:10.1109/conisoft58849.2023.00014,Domain-Driven Design for Microservices Architecture Systems Development: A Systematic Mapping Study,2023,2023 11th International Conference in Software Engineering Research and Innovation (CONISOFT),sms,19,30,0,30,0.0
+doi:10.1109/soca.2016.15,A Systematic Mapping Study in Microservice Architecture,2016,IEEE International Conference on Service-Oriented Computing and Applications,sms,46,4,1,3,25.0
+doi:10.1109/conisoft55708.2022.00032,A Systematic Mapping Study on Technical Debt in Microservices,2022,2022 10th International Conference in Software Engineering Research and Innovation (CONISOFT),sms,22,29,0,29,0.0
+doi:10.1145/3644032.3644445,An Overview of Microservice-Based Systems Used for Evaluation in Testing and Monitoring: A Systematic Mapping Study,2024,International Conference/Workshop on Automation of Software Test,sms,22,30,1,29,3.33
+doi:10.1109/access.2023.3236165,Visualizing Anti-Patterns in Microservices at Runtime: A Systematic Mapping Study,2023,IEEE Access,sms,50,30,1,29,3.33
+doi:10.1145/3538641.3561486,Architectural languages in the microservice era: a systematic mapping study,2022,Research in Adaptive and Convergent Systems,sms,26,29,2,27,6.9
+doi:10.1007/978-3-319-99007-1_100,A Systematic Mapping Study on Microservices,2018,Advances in Intelligent Systems and Computing,sms,18,15,0,15,0.0
+doi:10.1109/conisoft52520.2021.00016,Microservices Deployment: A Systematic Mapping Study,2021,2021 9th International Conference in Software Engineering Research and Innovation (CONISOFT),sms,29,27,1,26,3.7
+doi:10.23919/cisti58278.2023.10211834,A Systemic Mapping of Methods and Tools for Performance Analysis of Data Streaming with Containerized Microservices Architecture,2023,Iberian Conference on Information Systems and Technologies,sms,23,30,0,30,0.0
+doi:10.1002/cae.22586,A systematic mapping study: The new age of software architecture from monolithic to microservice architecture—awareness and challenges,2022,Computer Applications in Engineering Education,sms,32,29,2,27,6.9
+doi:10.3390/asi8040086,A Systematic Mapping Study on the Modernization of Legacy Systems to Microservice Architecture,2025,Applied System Innovation,sms,57,30,1,29,3.33
+doi:10.1109/clei47609.2019.235060,Security Mechanisms Used in Microservices-Based Systems: A Systematic Mapping,2019,Latin American Computing Conference / Conferencia Latinoamericana En Informatica,sms,40,22,1,21,4.55
+doi:10.5220/0005785501370146,Microservices: A Systematic Mapping Study,2016,International Conference on Cloud Computing and Services Science,sms,17,4,1,3,25.0
+doi:10.5220/0006798302210232,Architectural Patterns for Microservices: A Systematic Mapping Study,2018,International Conference on Cloud Computing and Services Science,sms,58,15,1,14,6.67
+doi:10.1109/conisoft55708.2022.00033,Architectural Languages for the Microservices Architecture: A systematic mapping study,2022,2022 10th International Conference in Software Engineering Research and Innovation (CONISOFT),sms,13,29,1,28,3.45
+doi:10.1145/3528226.3528371,How Blockchain and Microservices are Being Used Together: a Systematic Mapping Study,2022,International Workshop on Emerging Trends in Software Engineering for Blockchain,sms,39,29,0,29,0.0
+doi:10.4236/ojapps.2024.149167,Current Trends in the Management of Distributed Transactions in Micro-Services Architectures: A Systematic Literature Review,2024,Open Journal of Applied Sciences,slr,36,30,0,30,0.0
+doi:10.17081/invinno.9.3.5314,Problemas en la Implementación de Pruebas en Sistemas de Microservicios: Estudio de Mapeo Sistemático,2021,Investigación e Innovación en Ingenierías,slr,45,27,2,25,7.41

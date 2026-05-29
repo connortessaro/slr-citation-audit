@@ -1,0 +1,1672 @@
+[
+  {
+    "_paper_key": "ss:0174c967eeea5a0c1e8d389c790242cb07424b80",
+    "_rank": 1,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "32111337",
+        "name": "S. Newman"
+      }
+    ],
+    "citationCount": 793,
+    "externalIds": {
+      "CorpusId": 86418149,
+      "MAG": "2914775513"
+    },
+    "openAccessPdf": {
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "0174c967eeea5a0c1e8d389c790242cb07424b80",
+    "publicationTypes": null,
+    "publicationVenue": null,
+    "title": "Building Microservices",
+    "venue": "",
+    "year": 2015
+  },
+  {
+    "_paper_key": "ss:09aaa85c6fe92ec2e894700dc2bab4d481c5b27d",
+    "_rank": 2,
+    "abstract": "Modern user-facing latency-sensitive web services include numerous distributed, intercommunicating microservices that promise to simplify software development and operation. However, multiplexing of compute resources across microservices is still challenging in production because contention for shared resources can cause latency spikes that violate the service-level objectives (SLOs) of user requests. This paper presents FIRM, an intelligent fine-grained resource management framework for predictable sharing of resources across microservices to drive up overall utilization. FIRM leverages online telemetry data and machine-learning methods to adaptively (a) detect/localize microservices that cause SLO violations, (b) identify low-level resources in contention, and (c) take actions to mitigate SLO violations via dynamic reprovisioning. Experiments across four microservice benchmarks demonstrate that FIRM reduces SLO violations by up to 16x while reducing the overall requested CPU limit by up to 62%. Moreover, FIRM improves performance predictability by reducing tail latencies by up to 11x.",
+    "authors": [
+      {
+        "authorId": "13320299",
+        "name": "Haoran Qiu"
+      },
+      {
+        "authorId": "153564553",
+        "name": "Subho Sankar Banerjee"
+      },
+      {
+        "authorId": "152350098",
+        "name": "Saurabh Jha"
+      },
+      {
+        "authorId": "1687748",
+        "name": "Z. Kalbarczyk"
+      },
+      {
+        "authorId": "2172471887",
+        "name": "R. Iyer"
+      }
+    ],
+    "citationCount": 350,
+    "externalIds": {
+      "ArXiv": "2008.08509",
+      "CorpusId": 221172892,
+      "DBLP": "conf/osdi/QiuBJKI20",
+      "MAG": "3128014076"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2008.08509, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "09aaa85c6fe92ec2e894700dc2bab4d481c5b27d",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Oper Syst Des Implement",
+        "Operating Systems Design and Implementation",
+        "OSDI",
+        "USENIX Symp Oper Syst Des Implement"
+      ],
+      "id": "86c43745-31d9-4c1a-b33f-ce3aa0042dbb",
+      "name": "USENIX Symposium on Operating Systems Design and Implementation",
+      "type": "conference"
+    },
+    "title": "FIRM: An Intelligent Fine-Grained Resource Management Framework for SLO-Oriented Microservices",
+    "venue": "USENIX Symposium on Operating Systems Design and Implementation",
+    "year": 2020
+  },
+  {
+    "_paper_key": "doi:10.1145/3338906.3338961",
+    "_rank": 3,
+    "abstract": "In the production environment, a large part of microservice failures are related to the complex and dynamic interactions and runtime environments, such as those related to multiple instances, environmental configurations, and asynchronous interactions of microservices. Due to the complexity and dynamism of these failures, it is often hard to reproduce and diagnose them in testing environments. It is desirable yet still challenging that these failures can be detected and the faults can be located at runtime of the production environment to allow developers to resolve them efficiently. To address this challenge, in this paper, we propose MEPFL, an approach of latent error prediction and fault localization for microservice applications by learning from system trace logs. Based on a set of features defined on the system trace logs, MEPFL trains prediction models at both the trace level and the microservice level using the system trace logs collected from automatic executions of the target application and its faulty versions produced by fault injection. The prediction models thus can be used in the production environment to predict latent errors, faulty microservices, and fault types for trace instances captured at runtime. We implement MEPFL based on the infrastructure systems of container orchestrator and service mesh, and conduct a series of experimental studies with two opensource microservice applications (one of them being the largest open-source microservice application to our best knowledge). The results indicate that MEPFL can achieve high accuracy in intraapplication prediction of latent errors, faulty microservices, and fault types, and outperforms a state-of-the-art approach of failure diagnosis for distributed systems. The results also show that MEPFL can effectively predict latent errors caused by real-world fault cases.",
+    "authors": [
+      {
+        "authorId": "2116448683",
+        "name": "Xiang Zhou"
+      },
+      {
+        "authorId": "143621878",
+        "name": "Xin Peng"
+      },
+      {
+        "authorId": "145906750",
+        "name": "Tao Xie"
+      },
+      {
+        "authorId": "39838927",
+        "name": "Jun Sun"
+      },
+      {
+        "authorId": "2052295742",
+        "name": "Chao Ji"
+      },
+      {
+        "authorId": "122914303",
+        "name": "Dewei Liu"
+      },
+      {
+        "authorId": "9643283",
+        "name": "Qilin Xiang"
+      },
+      {
+        "authorId": "2111837949",
+        "name": "Chuan He"
+      }
+    ],
+    "citationCount": 263,
+    "externalIds": {
+      "CorpusId": 199458012,
+      "DBLP": "conf/sigsoft/Zhou0X0JLXH19",
+      "DOI": "10.1145/3338906.3338961",
+      "MAG": "2966971704"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1145/3338906.3338961?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1145/3338906.3338961, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBYNCND",
+      "status": "GREEN",
+      "url": "https://ink.library.smu.edu.sg/sis_research/4636"
+    },
+    "paperId": "24eae66fcae35c140d5f6a1ff61386d26743d13e",
+    "publicationTypes": [
+      "JournalArticle",
+      "Book"
+    ],
+    "publicationVenue": null,
+    "title": "Latent error prediction and fault localization for microservice applications by learning from system trace logs",
+    "venue": "ESEC/SIGSOFT FSE",
+    "year": 2019
+  },
+  {
+    "_paper_key": "doi:10.1109/access.2019.2911732",
+    "_rank": 4,
+    "abstract": "Containers emerged as a lightweight alternative to virtual machines (VMs) that offer better microservice architecture support. The value of the container market is expected to reach $2.7 billion in 2020 as compared to $762 million in 2016. Although they are considered the standardized method for microservices deployment, playing an important role in cloud computing emerging fields such as service meshes, market surveys show that container security is the main concern and adoption barrier for many companies. In this paper, we survey the literature on container security and solutions. We have derived four generalized use cases that should cover security requirements within the host-container threat landscape. The use cases include: (I) protecting a container from applications inside it, (II) inter-container protection, (III) protecting the host from containers, and (IV) protecting containers from a malicious or semi-honest host. We found that the first three use cases utilize a software-based solutions that mainly rely on Linux kernel features (e.g., namespaces, CGroups, capabilities, and seccomp) and Linux security modules (e.g., AppArmor). The last use case relies on hardware-based solutions such as trusted platform modules (TPMs) and trusted platform support (e.g., Intel SGX). We hope that our analysis will help researchers understand container security requirements and obtain a clearer picture of possible vulnerabilities and attacks. Finally, we highlight open research problems and future research directions that may spawn further research in this area.",
+    "authors": [
+      {
+        "authorId": "40278108",
+        "name": "Sari Sultan"
+      },
+      {
+        "authorId": "2074278616",
+        "name": "Imtiaz Ahmad"
+      },
+      {
+        "authorId": "2804083",
+        "name": "T. Dimitriou"
+      }
+    ],
+    "citationCount": 245,
+    "externalIds": {
+      "CorpusId": 139108538,
+      "DBLP": "journals/access/SultanAD19",
+      "DOI": "10.1109/ACCESS.2019.2911732",
+      "MAG": "2936268283"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/ACCESS.2019.2911732?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/ACCESS.2019.2911732, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBYNCND",
+      "status": "GOLD",
+      "url": "https://ieeexplore.ieee.org/ielx7/6287639/8600701/08693491.pdf"
+    },
+    "paperId": "1421f8f8acf962bb6785fd41d27e1886fc07c7a3",
+    "publicationTypes": [
+      "JournalArticle",
+      "Review"
+    ],
+    "publicationVenue": {
+      "alternate_urls": [
+        "http://ieeexplore.ieee.org/servlet/opac?punumber=6287639"
+      ],
+      "id": "2633f5b2-c15c-49fe-80f5-07523e770c26",
+      "issn": "2169-3536",
+      "name": "IEEE Access",
+      "type": "journal",
+      "url": "http://www.ieee.org/publications_standards/publications/ieee_access.html"
+    },
+    "title": "Container Security: Issues, Challenges, and the Road Ahead",
+    "venue": "IEEE Access",
+    "year": 2019
+  },
+  {
+    "_paper_key": "doi:10.1145/3501297",
+    "_rank": 5,
+    "abstract": "The proliferation of services and service interactions within microservices and cloud-native applications, makes it harder to detect failures and to identify their possible root causes, which is, on the other hand crucial to promptly recover and fix applications. Various techniques have been proposed to promptly detect failures based on their symptoms, viz., observing anomalous behaviour in one or more application services, as well as to analyse logs or monitored performance of such services to determine the possible root causes for observed anomalies. The objective of this survey is to provide a structured overview and qualitative analysis of currently available techniques for anomaly detection and root cause analysis in modern multi-service applications. Some open challenges and research directions stemming out from the analysis are also discussed.",
+    "authors": [
+      {
+        "authorId": "2265546",
+        "name": "J. Soldani"
+      },
+      {
+        "authorId": "1787701",
+        "name": "Antonio Brogi"
+      }
+    ],
+    "citationCount": 233,
+    "externalIds": {
+      "ArXiv": "2105.12378",
+      "CorpusId": 235195790,
+      "DBLP": "journals/corr/abs-2105-12378",
+      "DOI": "10.1145/3501297"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2105.12378, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "GREEN",
+      "url": "https://arxiv.org/pdf/2105.12378"
+    },
+    "paperId": "144b9bc80570da1acf83bb6fb26dcbdbc229e217",
+    "publicationTypes": [
+      "JournalArticle",
+      "Review"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "ACM Comput Surv"
+      ],
+      "alternate_urls": [
+        "http://portal.acm.org/csur",
+        "https://csur.acm.org/",
+        "http://csur.acm.org/"
+      ],
+      "id": "7b2adce0-d53f-49d6-8784-b0645604fe62",
+      "issn": "0360-0300",
+      "name": "ACM Computing Surveys",
+      "type": "journal",
+      "url": "http://www.acm.org/pubs/surveys/"
+    },
+    "title": "Anomaly Detection and Failure Root Cause Analysis in (Micro) Service-Based Cloud Applications: A Survey",
+    "venue": "ACM Computing Surveys",
+    "year": 2021
+  },
+  {
+    "_paper_key": "doi:10.1109/icsaw.2017.11",
+    "_rank": 6,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "1712950",
+        "name": "W. Hasselbring"
+      },
+      {
+        "authorId": "16924799",
+        "name": "Guido Steinacker"
+      }
+    ],
+    "citationCount": 216,
+    "externalIds": {
+      "CorpusId": 3815405,
+      "DBLP": "conf/icsa/HasselbringS17",
+      "DOI": "10.1109/ICSAW.2017.11",
+      "MAG": "2613170448"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/ICSAW.2017.11?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/ICSAW.2017.11, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "20e85acc05e61f9b9b3e44406943fb7c9359289c",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "ICSAW",
+        "IEEE Int Conf Softw Archit Work"
+      ],
+      "id": "aefcf093-f5b1-41e9-b2c3-6ab33c37397b",
+      "name": "IEEE International Conference on Software Architecture Workshops",
+      "type": "conference"
+    },
+    "title": "Microservice Architectures for Scalability, Agility and Reliability in E-Commerce",
+    "venue": "IEEE International Conference on Software Architecture Workshops",
+    "year": 2017
+  },
+  {
+    "_paper_key": "doi:10.1016/j.jss.2019.01.001",
+    "_rank": 7,
+    "abstract": "Abstract Context A microservice architecture is composed of a set of small services, each running in its own process and communicating with lightweight mechanisms. Many aspects on architecting with microservices are still unexplored and existing research is still far from being crispy clear. Objective We aim at identifying, classifying, and evaluating the state of the art on architecting with microservices from the following perspectives: publication trends, focus of research, and potential for industrial adoption. Method We apply the systematic mapping methodology. We rigorously selected 103 primary studies and we defined and applied a classification framework to them for extracting key information for subsequent analysis. We synthesized the obtained data and produced a clear overview of the state of the art. Results This work contributes with (i) a classification framework for research studies on architecting with microservices, (ii) a systematic map of current research of the field, (iii) an evaluation of the potential for industrial adoption of research results, and (iv) a discussion of emerging findings and implications for future research. Conclusion This study provides a solid, rigorous, and replicable picture of the state of the art on architecting with microservices. Its results can benefit both researchers and practitioners of the field.",
+    "authors": [
+      {
+        "authorId": "1826755",
+        "name": "Paolo Di Francesco"
+      },
+      {
+        "authorId": "144946385",
+        "name": "P. Lago"
+      },
+      {
+        "authorId": "2331013",
+        "name": "I. Malavolta"
+      }
+    ],
+    "citationCount": 207,
+    "externalIds": {
+      "CorpusId": 67770100,
+      "DBLP": "journals/jss/FrancescoLM19",
+      "DOI": "10.1016/j.jss.2019.01.001",
+      "MAG": "2911048197"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1016/j.jss.2019.01.001?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1016/j.jss.2019.01.001, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "other-oa",
+      "status": "GREEN",
+      "url": "https://research.vu.nl/files/75752185/Architecting_with_microservices_A_systematic_mapping_study.pdf"
+    },
+    "paperId": "20f9976346dde8ae05dcc5f104d86bc38debcaed",
+    "publicationTypes": [
+      "JournalArticle",
+      "Review"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "J Syst Softw"
+      ],
+      "alternate_urls": [
+        "http://www.elsevier.com/wps/find/journaldescription.cws_home/505732/description",
+        "http://www.sciencedirect.com/science/journal/01641212"
+      ],
+      "id": "10a4a695-8417-42c7-983d-742df48b3905",
+      "issn": "0164-1212",
+      "name": "Journal of Systems and Software",
+      "type": "journal",
+      "url": "http://www.elsevier.com/wps/find/journaldescription.cws_home/505732/description#description"
+    },
+    "title": "Architecting with microservices: A systematic mapping study",
+    "venue": "Journal of Systems and Software",
+    "year": 2019
+  },
+  {
+    "_paper_key": "doi:10.1007/s10723-017-9419-x",
+    "_rank": 8,
+    "abstract": "The use of containers in cloud architectures has become widespread, owing to advantages such as limited overheads, easier and faster deployment, and higher portability. Moreover, they present a suitable architectural solution for the deployment of applications created using a microservice development pattern. Despite the large number of solutions and implementations, there remain open issues that have not been completely addressed in container automation and management. Container resource allocation influences system performance and resource consumption, and so it is a key factor for cloud providers. We propose a genetic algorithm approach, using the Non-dominated Sorting Genetic Algorithm-II (NSGA-II), to optimize container allocation and elasticity management, motivated by the good results obtained with this algorithm in other resource management optimization problems in cloud architectures. Our optimization algorithm enhances system provisioning, system performance, system failure, and network overhead. A model for cloud clusters, containers, microservices, and four optimization objectives is presented. Experimental results demonstrate that our approach is a suitable solution for addressing the problem of container allocation and elasticity, and it obtains better objective values than the container management policies implemented in Kubernetes.",
+    "authors": [
+      {
+        "authorId": "145524924",
+        "name": "Carlos Guerrero"
+      },
+      {
+        "authorId": "1704222",
+        "name": "Isaac Lera"
+      },
+      {
+        "authorId": "1779773",
+        "name": "C. Juiz"
+      }
+    ],
+    "citationCount": 183,
+    "externalIds": {
+      "ArXiv": "2401.12698",
+      "CorpusId": 207148223,
+      "DBLP": "journals/corr/abs-2401-12698",
+      "DOI": "10.1007/s10723-017-9419-x",
+      "MAG": "2767988112"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2401.12698, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "GREEN",
+      "url": "https://arxiv.org/pdf/2401.12698"
+    },
+    "paperId": "0a7134ee08417b906772da3f3d8ad8800e5351db",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "J Grid Comput"
+      ],
+      "alternate_urls": [
+        "https://link.springer.com/journal/10723",
+        "http://www.springer.com/journal/10723"
+      ],
+      "id": "993eb4fa-4cb7-4aed-980e-20e5298efad0",
+      "issn": "1570-7873",
+      "name": "Journal of Grid Computing",
+      "type": "journal",
+      "url": "https://www.springer.com/journal/10723"
+    },
+    "title": "Genetic Algorithm for Multi-Objective Optimization of Container Allocation in Cloud Architecture",
+    "venue": "Journal of Grid Computing",
+    "year": 2017
+  },
+  {
+    "_paper_key": "doi:10.1109/iwqos52092.2021.9521340",
+    "_rank": 9,
+    "abstract": "Microservice architecture is applied by an increasing number of systems because of its benefits on delivery, scalability, and autonomy. It is essential but challenging to localize root-cause microservices promptly when a fault occurs. Traces are helpful for root-cause microservice localization, and thus many recent approaches utilize them. However, these approaches are less practical due to relying on supervision or other unrealistic assumptions. To overcome their limitations, we propose a more practical root-cause microservice localization approach named TraceRCA. The key insight of TraceRCA is that a microservice with more abnormal and less normal traces passing through it is more likely to be the root cause. Based on it, TraceRCA is composed of trace anomaly detection, suspicious microservice set mining and microservice ranking. We conducted experiments on hundreds of injected faults in a widely-used open-source microservice benchmark and a production system. The results show that TraceRCA is effective in various situations. The top-1 accuracy of TraceRCA outperforms the state-of-the-art unsupervised approaches by 44.8%. Besides, TraceRCA is applied in a large commercial bank, and it helps operators localize root causes for real-world faults accurately and efficiently. We also share some lessons learned from our real-world deployment.",
+    "authors": [
+      {
+        "authorId": "2109963271",
+        "name": "Zeyan Li"
+      },
+      {
+        "authorId": "123878903",
+        "name": "Junjie Chen"
+      },
+      {
+        "authorId": "2067022941",
+        "name": "Rui Jiao"
+      },
+      {
+        "authorId": "38403381",
+        "name": "Nengwen Zhao"
+      },
+      {
+        "authorId": "2108157702",
+        "name": "Zhijun Wang"
+      },
+      {
+        "authorId": "2340367679",
+        "name": "Shuwei Zhang"
+      },
+      {
+        "authorId": "2431552212",
+        "name": "Yanjun Wu"
+      },
+      {
+        "authorId": "2148258405",
+        "name": "Long Jiang"
+      },
+      {
+        "authorId": "2148405785",
+        "name": "Leiqin Yan"
+      },
+      {
+        "authorId": "2108502726",
+        "name": "Zikai Wang"
+      },
+      {
+        "authorId": "2022232183",
+        "name": "Zhekang Chen"
+      },
+      {
+        "authorId": "1978123095",
+        "name": "Wenchi Zhang"
+      },
+      {
+        "authorId": "2816039",
+        "name": "Xiaohui Nie"
+      },
+      {
+        "authorId": "2155086",
+        "name": "Kaixin Sui"
+      },
+      {
+        "authorId": "1784745",
+        "name": "Dan Pei"
+      }
+    ],
+    "citationCount": 161,
+    "externalIds": {
+      "CorpusId": 237319563,
+      "DBLP": "conf/iwqos/Li0JZWZWJYWCZNS21",
+      "DOI": "10.1109/IWQOS52092.2021.9521340"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/IWQOS52092.2021.9521340?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/IWQOS52092.2021.9521340, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "23021ca0d8986a15f58d5646e71b69e53f7bf4ac",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "IWQoS",
+        "Int Workshop Qual Serv"
+      ],
+      "id": "a4ebd690-6408-482a-8e37-7be6749c060d",
+      "name": "International Workshop on Quality of Service",
+      "type": "conference",
+      "url": "http://www.wikicfp.com/cfp/program?id=1855"
+    },
+    "title": "Practical Root Cause Localization for Microservice Systems via Trace Analysis",
+    "venue": "International Workshop on Quality of Service",
+    "year": 2021
+  },
+  {
+    "_paper_key": "doi:10.1109/mascots.2018.00030",
+    "_rank": 10,
+    "abstract": "Modern distributed applications offer complex performance behavior and many degrees of freedom regarding deployment and configuration. Researchers employ various methods of analysis, modeling, and management that leverage these degrees of freedom to predict or improve non-functional properties of the software under consideration. In order to demonstrate and evaluate their applicability in the real world, methods resulting from such research areas require test and reference applications that offer a range of different behaviors, as well as the necessary degrees of freedom. Existing production software is often inaccessible for researchers or closed off to instrumentation. Existing testing and benchmarking frameworks, on the other hand, are either designed for specific testing scenarios, or they do not offer the necessary degrees of freedom. Further, most test applications are difficult to deploy and run, or are outdated. In this paper, we introduce the TeaStore, a state-of-the-art micro-service-based test and reference application. TeaStore offers services with different performance characteristics and many degrees of freedom regarding deployment and configuration to be used as a benchmarking framework for researchers. The TeaStore allows evaluating performance modeling and resource management techniques; it also offers instrumented variants to enable extensive run-time analysis. We demonstrate TeaStore's use in three contexts: performance modeling, cloud resource management, and energy efficiency analysis. Our experiments show that TeaStore can be used for evaluating novel approaches in these contexts and also motivates further research in the areas of performance modeling and resource management.",
+    "authors": [
+      {
+        "authorId": "3341273",
+        "name": "J. V. Kistowski"
+      },
+      {
+        "authorId": "40879589",
+        "name": "Simon Eismann"
+      },
+      {
+        "authorId": "151499077",
+        "name": "Norbert Schmitt"
+      },
+      {
+        "authorId": "151489116",
+        "name": "Andr\u00e9 Bauer"
+      },
+      {
+        "authorId": "34825425",
+        "name": "Johannes Grohmann"
+      },
+      {
+        "authorId": "145378619",
+        "name": "Samuel Kounev"
+      }
+    ],
+    "citationCount": 146,
+    "externalIds": {
+      "CorpusId": 53285057,
+      "DBLP": "conf/mascots/KistowskiESBGK18",
+      "DOI": "10.1109/MASCOTS.2018.00030",
+      "MAG": "2941159772"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/MASCOTS.2018.00030?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/MASCOTS.2018.00030, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "0107f0d039a879db4ffcafa9e666a2598e15bceb",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "IEEE/ACM Int Symp Model Anal Simul Comput Telecommun Syst",
+        "Model Anal Simul Comput Telecommun Syst",
+        "Modeling, Analysis, and Simulation On Computer and Telecommunication Systems",
+        "MASCOTS"
+      ],
+      "id": "99e98681-158c-48ca-8f86-386d75770b50",
+      "name": "IEEE/ACM International Symposium on Modeling, Analysis, and Simulation On Computer and Telecommunication Systems",
+      "type": "conference",
+      "url": "http://www.mascots-conference.org/"
+    },
+    "title": "TeaStore: A Micro-Service Reference Application for Benchmarking, Modeling and Resource Management Research",
+    "venue": "IEEE/ACM International Symposium on Modeling, Analysis, and Simulation On Computer and Telecommunication Systems",
+    "year": 2018
+  },
+  {
+    "_paper_key": "doi:10.52202/068431-2259",
+    "_rank": 11,
+    "abstract": "Most cloud applications use a large number of smaller sub-components (called mi-croservices) that interact with each other in the form of a complex graph to provide the overall functionality to the user. While the modularity of the microservice architecture is beneficial for rapid software development, maintaining and debugging such a system quickly in cases of failure is challenging. We propose a scalable algorithm for rapidly detecting the root cause of failures in complex microservice architectures. The key ideas behind our novel hierarchical and localized learning approach are: (1) to treat the failure as an intervention on the root cause to quickly detect it, (2) only learn the portion of the causal graph related to the root cause, thus avoiding a large number of costly conditional independence tests, and (3) hierarchically explore the graph. The proposed technique is highly scalable and produces useful insights about the root cause, while the use of traditional techniques becomes infeasible due to high computation time. Our solution is application agnostic and relies only on the data collected for diagnosis. For the evaluation, we compare the proposed solution with a modified version of the PC algorithm and the state-of-the-art for root cause analysis. The results show a considerable improvement in top-k recall while significantly reducing the execution time.",
+    "authors": [
+      {
+        "authorId": "2216336362",
+        "name": "Azam Ikram"
+      },
+      {
+        "authorId": "101621971",
+        "name": "Sarthak Chakraborty"
+      },
+      {
+        "authorId": "2112997744",
+        "name": "Subrata Mitra"
+      },
+      {
+        "authorId": "35926405",
+        "name": "Shiv Kumar Saini"
+      },
+      {
+        "authorId": "1679009",
+        "name": "S. Bagchi"
+      },
+      {
+        "authorId": "3124214",
+        "name": "Murat Kocaoglu"
+      }
+    ],
+    "citationCount": 140,
+    "externalIds": {
+      "CorpusId": 258509245,
+      "DBLP": "conf/nips/IkramCMSBK22",
+      "DOI": "10.52202/068431-2259"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.52202/068431-2259?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.52202/068431-2259, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "00664d5f738cb5bd8aba6f5e8ae51e90b08419b7",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Neural Inf Process Syst",
+        "NeurIPS",
+        "NIPS"
+      ],
+      "id": "d9720b90-d60b-48bc-9df8-87a30b9a60dd",
+      "name": "Neural Information Processing Systems",
+      "type": "conference",
+      "url": "http://neurips.cc/"
+    },
+    "title": "Root Cause Analysis of Failures in Microservices through Causal Discovery",
+    "venue": "Neural Information Processing Systems",
+    "year": 2022
+  },
+  {
+    "_paper_key": "doi:10.1109/icdcs.2016.11",
+    "_rank": 12,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "1686055",
+        "name": "Victor Heorhiadi"
+      },
+      {
+        "authorId": "2640561",
+        "name": "Shriram Rajagopalan"
+      },
+      {
+        "authorId": "2704919",
+        "name": "H. Jamjoom"
+      },
+      {
+        "authorId": "1746214",
+        "name": "M. Reiter"
+      },
+      {
+        "authorId": "145145415",
+        "name": "Vyas Sekar"
+      }
+    ],
+    "citationCount": 136,
+    "externalIds": {
+      "CorpusId": 17729506,
+      "DBLP": "conf/icdcs/HeorhiadiRJRS16",
+      "DOI": "10.1109/ICDCS.2016.11",
+      "MAG": "2516734073"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/ICDCS.2016.11?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/ICDCS.2016.11, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "1da9cddb893734fa0a2179f922d07f9ff65615a9",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "International Conference on Distributed Computing Systems",
+        "IEEE Int Conf Distrib Comput Syst",
+        "Int Conf Device Circuit Syst",
+        "ICDCS",
+        "Int Conf Distrib Comput Syst",
+        "International Conference on Devices, Circuits and Systems"
+      ],
+      "id": "ffe5bb5c-04ed-488e-985d-d3a7b39542cf",
+      "name": "IEEE International Conference on Distributed Computing Systems",
+      "type": "conference",
+      "url": "https://ieeexplore.ieee.org/xpl/conhome/1000213/all-proceedings"
+    },
+    "title": "Gremlin: Systematic Resilience Testing of Microservices",
+    "venue": "IEEE International Conference on Distributed Computing Systems",
+    "year": 2016
+  },
+  {
+    "_paper_key": "doi:10.1109/tpds.2021.3128037",
+    "_rank": 13,
+    "abstract": "User-facing services are now evolving towards the microservice architecture where a service is built by connecting multiple microservice stages. Since the entire service is heavy, the microservice architecture shows the opportunity to only offload some microservice stages to the edge devices that are close to the end users. However, emerging techniques often result in the violation of Quality-of-Service (QoS) of microservice-based services in cloud-edge continuum, as they do not consider the communication overhead or the resource contention between microservices and external co-located tasks. We propose Nautilus, a runtime system that effectively deploys microservice-based user-facing services in cloud-edge continuum. Nautilus ensures the QoS of microservice-based user-facing services while minimizing the required computational resources, which is comprised of a communication-aware microservice mapper, a contention-aware resource manager and an IO-sensitive and load-aware microservice migration scheduler. The mapper divides the microservice graph into multiple partitions based on the communication overhead and maps the partitions to appropriate nodes. On each node, the resource manager determines the optimal resource allocation for its microservices based on reinforcement learning that may capture the complex contention behaviors. Once the microservices are suffered from external IO pressure, the IO-sensitive microservice scheduler migrates the critical one to idle nodes. Furthermore, when the load of microservices changes dynamically, the load-aware microservice scheduler migrates microservices from busy nodes to idle ones to ensure the QoS goal of the entire service. Our experimental results show that Nautilus can guarantee the required QoS target under external shared resources contention while the state-of-the-art suffers from QoS violations. Meanwhile, Nautilus reduces the computational resource usage by 23.9% and the network bandwidth usage by 53.4%, while achieving the required 99%-ile latency.",
+    "authors": [
+      {
+        "authorId": "101731246",
+        "name": "Kaihua Fu"
+      },
+      {
+        "authorId": "39340691",
+        "name": "Wei Zhang"
+      },
+      {
+        "authorId": "1596812259",
+        "name": "Quan Chen"
+      },
+      {
+        "authorId": "2288376751",
+        "name": "Deze Zeng"
+      },
+      {
+        "authorId": "1697293",
+        "name": "M. Guo"
+      }
+    ],
+    "citationCount": 127,
+    "externalIds": {
+      "CorpusId": 244151701,
+      "DBLP": "journals/tpds/FuZCZG22",
+      "DOI": "10.1109/TPDS.2021.3128037"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/TPDS.2021.3128037?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/TPDS.2021.3128037, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "1b432a3036b06df5cd2fd14ad7af6568191e89e5",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "IEEE Trans Parallel Distrib Syst"
+      ],
+      "alternate_urls": [
+        "http://ieeexplore.ieee.org/servlet/opac?punumber=71"
+      ],
+      "id": "7c9d091e-015e-4e5d-a11f-9bc369fcf414",
+      "issn": "1045-9219",
+      "name": "IEEE Transactions on Parallel and Distributed Systems",
+      "type": "journal",
+      "url": "http://www.computer.org/tpds"
+    },
+    "title": "Adaptive Resource Efficient Microservice Deployment in Cloud-Edge Continuum",
+    "venue": "IEEE Transactions on Parallel and Distributed Systems",
+    "year": 2022
+  },
+  {
+    "_paper_key": "doi:10.1109/ms.2017.24",
+    "_rank": 14,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "1687377",
+        "name": "Cesare Pautasso"
+      },
+      {
+        "authorId": "144294295",
+        "name": "O. Zimmermann"
+      },
+      {
+        "authorId": "35004239",
+        "name": "Mike Amundsen"
+      },
+      {
+        "authorId": "2109241500",
+        "name": "James Lewis"
+      },
+      {
+        "authorId": "2796967",
+        "name": "Nicolai M. Josuttis"
+      }
+    ],
+    "citationCount": 123,
+    "externalIds": {
+      "CorpusId": 5635705,
+      "DBLP": "journals/software/PautassoZALJ17",
+      "DOI": "10.1109/MS.2017.24",
+      "MAG": "2576385362"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/MS.2017.24?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/MS.2017.24, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "133fe4a7a29d9778e86ef436892c0a70dfd7bf5a",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "IEEE Softw"
+      ],
+      "alternate_urls": [
+        "http://ieeexplore.ieee.org/servlet/opac?punumber=52"
+      ],
+      "id": "119227a6-1b94-433e-a52d-8445a387dbbe",
+      "issn": "0740-7459",
+      "name": "IEEE Software",
+      "type": "journal",
+      "url": "http://www.computer.org/software"
+    },
+    "title": "Microservices in Practice, Part 1: Reality Check and Service Design",
+    "venue": "IEEE Software",
+    "year": 2017
+  },
+  {
+    "_paper_key": "doi:10.1002/cpe.4436",
+    "_rank": 15,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "35762412",
+        "name": "Dongjin Yu"
+      },
+      {
+        "authorId": "2110837306",
+        "name": "Yike Jin"
+      },
+      {
+        "authorId": "2108444948",
+        "name": "Yuqun Zhang"
+      },
+      {
+        "authorId": "47410526",
+        "name": "Xi Zheng"
+      }
+    ],
+    "citationCount": 120,
+    "externalIds": {
+      "CorpusId": 65562403,
+      "DBLP": "journals/concurrency/YuJZZ19",
+      "DOI": "10.1002/cpe.4436",
+      "MAG": "2791003924"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1002/cpe.4436?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1002/cpe.4436, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "20faceefdfa8a7f93e60f8c385f1c208e67d2f90",
+    "publicationTypes": [
+      "JournalArticle",
+      "Review"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Concurr Comput Pract Exp",
+        "Concurrency and Computation: Practice and Experience",
+        "Concurr Comput"
+      ],
+      "alternate_urls": [
+        "http://www3.interscience.wiley.com/cgi-bin/jtoc?ID=77004395",
+        "http://onlinelibrary.wiley.com/journal/10.1002/(ISSN)1532-0634"
+      ],
+      "id": "312ca99c-9149-490d-813e-c60d5e949f65",
+      "issn": "1532-0626",
+      "name": "Concurrency and Computation",
+      "type": "journal",
+      "url": "http://www3.interscience.wiley.com/cgi-bin/jhome/77004395?CRETRY=1&SRETRY=0"
+    },
+    "title": "A survey on security issues in services communication of Microservices\u2010enabled fog applications",
+    "venue": "Concurrency and Computation",
+    "year": 2019
+  },
+  {
+    "_paper_key": "doi:10.1016/j.iot.2023.100784",
+    "_rank": 16,
+    "abstract": "Massive data collection in modern systems has paved the way for data-driven machine learning, a promising technique for creating reliable and robust statistical models. By combining the data into centralized storage to develop a reliable learning model, there are concerns with privacy, ownership, and strict rules. It is self-evident that the samples in the typical machine learning centralized server paradigm have vastly different probability distributions of data supplied by each user. As a result, the typical model needs to be personalized for critical medical applications, and the deployment needs an efficient mechanism that can adapt to varying user inputs. Due to the heterogeneous and dynamic nature of critical medical IoT applications in such Edge/Fog scenarios, the privacy of patients become a crucial problem. Federated Learning, the model trained on diversity helps in addressing these concerns when used. This paper proposes the integration of Federated Learning for distributed Edge-Fog-Cloud architecture in the IoT smart healthcare sector. This paper presents FedSDM, the Federated Learning-based Smart Decision Making framework for the ECG data in microservice-based IoT medical applications. This proposal makes use of the advantages of Edge/Fog computing for real-time critical applications. It deploys the Federated Learning model at the Edge, Fog, and Cloud layers for performance comparison. The parameters considered for performance evaluation are energy consumption, network usage, cost, execution time, and latency. The proposed method shows that Edge-based deployment outperforms Fog and Cloud in terms of energy consumption, network usage, cost, execution time, and latency (i.e.) 0.3%, 2%, 15%, 11%, and 3% when compared with",
+    "authors": [
+      {
+        "authorId": "2166900178",
+        "name": "Shinu M. Rajagopal"
+      },
+      {
+        "authorId": "1491237013",
+        "name": "S. M."
+      },
+      {
+        "authorId": "1709598",
+        "name": "R. Buyya"
+      }
+    ],
+    "citationCount": 117,
+    "externalIds": {
+      "CorpusId": 258154300,
+      "DBLP": "journals/iot/RajagopalSB23",
+      "DOI": "10.1016/j.iot.2023.100784"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1016/j.iot.2023.100784?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1016/j.iot.2023.100784, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBY",
+      "status": "HYBRID",
+      "url": "https://doi.org/10.1016/j.iot.2023.100784"
+    },
+    "paperId": "002019b0142b04acbc7afa17391949d518183f20",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_issns": [
+        "2199-1073"
+      ],
+      "alternate_names": [
+        "Internet Thing"
+      ],
+      "alternate_urls": [
+        "https://www.sciencedirect.com/journal/internet-of-things",
+        "http://www.springer.com/series/11636"
+      ],
+      "id": "2989732e-2668-4b47-9c29-326646a60273",
+      "issn": "2542-6605",
+      "name": "Internet of Things",
+      "url": "https://www.journals.elsevier.com/internet-of-things"
+    },
+    "title": "FedSDM: Federated learning based smart decision making module for ECG data in IoT integrated Edge-Fog-Cloud computing environments",
+    "venue": "Internet of Things",
+    "year": 2023
+  },
+  {
+    "_paper_key": "doi:10.1109/ms.2018.2141035",
+    "_rank": 17,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "145893241",
+        "name": "Holger Knoche"
+      },
+      {
+        "authorId": "1712950",
+        "name": "W. Hasselbring"
+      }
+    ],
+    "citationCount": 114,
+    "externalIds": {
+      "CorpusId": 19224899,
+      "DBLP": "journals/software/KnocheH18",
+      "DOI": "10.1109/MS.2018.2141035",
+      "MAG": "2802891862"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/MS.2018.2141035?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/MS.2018.2141035, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "11e34eb4aa898eeb684b30abf2952974f29cba14",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "IEEE Softw"
+      ],
+      "alternate_urls": [
+        "http://ieeexplore.ieee.org/servlet/opac?punumber=52"
+      ],
+      "id": "119227a6-1b94-433e-a52d-8445a387dbbe",
+      "issn": "0740-7459",
+      "name": "IEEE Software",
+      "type": "journal",
+      "url": "http://www.computer.org/software"
+    },
+    "title": "Using Microservices for Legacy Software Modernization",
+    "venue": "IEEE Software",
+    "year": 2018
+  },
+  {
+    "_paper_key": "doi:10.1016/j.infsof.2021.106600",
+    "_rank": 18,
+    "abstract": "Abstract Context: Re-architecting monolithic systems with Microservices-based architecture is a common trend. Various companies are migrating to Microservices for different reasons. However, making such an important decision like re-architecting an entire system must be based on real facts and not only on gut feelings. Objective: The goal of this work is to propose an evidence-based decision support framework for companies that need to migrate to Microservices, based on the analysis of a set of characteristics and metrics they should collect before re-architecting their monolithic system. Method: We conducted a survey done in the form of interviews with professionals to derive the assessment framework based on Grounded Theory. Results: We identified a set consisting of information and metrics that companies can use to decide whether to migrate to Microservices or not. The proposed assessment framework, based on the aforementioned metrics, could be useful for companies if they need to migrate to Microservices and do not want to run the risk of failing to consider some important information.",
+    "authors": [
+      {
+        "authorId": "1766982",
+        "name": "D. Taibi"
+      },
+      {
+        "authorId": "2003028219",
+        "name": "Florian Auer"
+      },
+      {
+        "authorId": "2392721563",
+        "name": "Valentina Lenarduzzi"
+      },
+      {
+        "authorId": "1955934",
+        "name": "M. Felderer"
+      }
+    ],
+    "citationCount": 111,
+    "externalIds": {
+      "ArXiv": "1909.08933",
+      "CorpusId": 202677657,
+      "DBLP": "journals/infsof/AuerLFT21",
+      "DOI": "10.1016/J.INFSOF.2021.106600",
+      "MAG": "2974106837"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1909.08933, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBY",
+      "status": "HYBRID",
+      "url": "https://doi.org/10.1016/j.infsof.2021.106600"
+    },
+    "paperId": "108f54df9ce657a1a7cbc441151036bf10dcd6c1",
+    "publicationTypes": [
+      "JournalArticle",
+      "Review"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Inf  Softw Technol",
+        "Information & Software Technology",
+        "Inf Softw Technol"
+      ],
+      "alternate_urls": [
+        "http://www.sciencedirect.com/science/journal/09505849"
+      ],
+      "id": "64ae7767-9467-4e70-9e31-e4185f9f16ff",
+      "issn": "0950-5849",
+      "name": "Information and Software Technology",
+      "type": "journal",
+      "url": "http://www.elsevier.com/wps/find/journaldescription.cws_home/525444/description#description"
+    },
+    "title": "From Monolithic Systems to Microservices: An Assessment Framework",
+    "venue": "Information and Software Technology",
+    "year": 2019
+  },
+  {
+    "_paper_key": "doi:10.1109/cloud.2018.00148",
+    "_rank": 19,
+    "abstract": "Microservices represent a new architectural style where small and loosely coupled modules can be developed and deployed independently to compose an application. This architectural style brings various benefits such as maintainability and flexibility in scaling and aims at decreasing downtime in case of failure or upgrade. One of the enablers is Kubernetes, an open source platform that provides mechanisms for deploying, maintaining, and scaling containerized applications across a cluster of hosts. Moreover, Kubernetes enables healing through failure recovery actions to improve the availability of applications. As our ultimate goal is to devise architectures to enable high availability (HA) with Kubernetes for microservice based applications, in this paper we examine the availability achievable through Kubernetes under its default configuration. We have conducted a set of experiments which show that the service outage can be significantly higher than expected.",
+    "authors": [
+      {
+        "authorId": "51292383",
+        "name": "Leila Abdollahi Vayghan"
+      },
+      {
+        "authorId": "39014194",
+        "name": "M. Saied"
+      },
+      {
+        "authorId": "1761847",
+        "name": "M. Toeroe"
+      },
+      {
+        "authorId": "1707039",
+        "name": "F. Khendek"
+      }
+    ],
+    "citationCount": 102,
+    "externalIds": {
+      "CorpusId": 52195774,
+      "DBLP": "conf/IEEEcloud/VayghanSTK18",
+      "DOI": "10.1109/CLOUD.2018.00148",
+      "MAG": "2892022253"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/CLOUD.2018.00148?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/CLOUD.2018.00148, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "18a720c86ed6e166c26f7d39490bfd11b93ea3ec",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Int Conf Cloud Comput [services Soc",
+        "CLOUD",
+        "International Conference on Cloud Computing [Services Society]",
+        "IEEE Int Conf Cloud Comput"
+      ],
+      "id": "406d9f60-417a-4dc5-a6b7-1fe4689a4ff7",
+      "name": "IEEE International Conference on Cloud Computing",
+      "type": "conference"
+    },
+    "title": "Deploying Microservice Based Applications with Kubernetes: Experiments and Lessons Learned",
+    "venue": "IEEE International Conference on Cloud Computing",
+    "year": 2018
+  },
+  {
+    "_paper_key": "doi:10.1109/ase51524.2021.9678708",
+    "_rank": 20,
+    "abstract": "For large-scale distributed systems, it is crucial to efficiently diagnose the root causes of incidents to maintain high system availability. The recent development of microservice architecture brings three major challenges (i.e., complexities of operation, system scale, and monitoring) to root cause analysis (RCA) in industrial settings. To tackle these challenges, in this paper, we present Groot, an event-graph-based approach for RCA. Groot constructs a real-time causality graph based on events that summarize various types of metrics, logs, and activities in the system under analysis. Moreover, to incorporate domain knowledge from site reliability engineering (SRE) engineers, Groot can be customized with user-defined events and domain-specific rules. Currently, Groot supports RCA among 5,000 real production services and is actively used by the SRE teams in eBay, a global e-commerce system serving more than 159 million active buyers per year. Over 15 months, we collect a data set containing labeled root causes of 952 real production incidents for evaluation. The evaluation results show that Groot is able to achieve 95% top-3 accuracy and 78% top-1 accuracy. To share our experience in deploying and adopting RCA in industrial settings, we conduct a survey to show that users of Groot find it helpful and easy to use. We also share the lessons learned from deploying and adopting Groot to solve RCA problems in production environments.",
+    "authors": [
+      {
+        "authorId": "49528055",
+        "name": "Hanzhang Wang"
+      },
+      {
+        "authorId": "2669849",
+        "name": "Zhengkai Wu"
+      },
+      {
+        "authorId": "2007797226",
+        "name": "Huai Jiang"
+      },
+      {
+        "authorId": "2135576307",
+        "name": "Yichao Huang"
+      },
+      {
+        "authorId": "2367461113",
+        "name": "Jiamu Wang"
+      },
+      {
+        "authorId": "2219688",
+        "name": "Sel\u00e7uk K\u00f6pr\u00fc"
+      },
+      {
+        "authorId": "2144072272",
+        "name": "Tao Xie"
+      }
+    ],
+    "citationCount": 100,
+    "externalIds": {
+      "ArXiv": "2108.00344",
+      "CorpusId": 236772805,
+      "DBLP": "conf/kbse/WangWJHWKX21",
+      "DOI": "10.1109/ASE51524.2021.9678708"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2108.00344, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "GREEN",
+      "url": "https://arxiv.org/pdf/2108.00344"
+    },
+    "paperId": "0b6f7318de058c5133bbb89b718eb94ef0c86101",
+    "publicationTypes": [
+      "JournalArticle",
+      "Book",
+      "Conference",
+      "Review"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Autom Softw Eng",
+        "ASE",
+        "Automated Software Engineering",
+        "Int Conf Autom Softw Eng"
+      ],
+      "id": "1c2ab05c-7d69-465e-929d-0920857aedce",
+      "name": "International Conference on Automated Software Engineering",
+      "type": "conference",
+      "url": "http://ase.informatik.uni-essen.de/"
+    },
+    "title": "Groot: An Event-graph-based Approach for Root Cause Analysis in Industrial Settings",
+    "venue": "International Conference on Automated Software Engineering",
+    "year": 2021
+  },
+  {
+    "_paper_key": "ss:00025f8caf92b2e737027790b36c82208d9c1ac7",
+    "_rank": 21,
+    "abstract": "We review some of the most widely used patterns for the programming of microservices: circuit breaker, service discovery, and API gateway. By systematically analysing different deployment strategies for these patterns, we reach new insight especially for the application of circuit breakers. We also evaluate the applicability of Jolie, a language for the programming of microservices, for these patterns and report on other standard frameworks offering similar solutions. Finally, considerations for future developments are presented.",
+    "authors": [
+      {
+        "authorId": "2348772",
+        "name": "F. Montesi"
+      },
+      {
+        "authorId": "2113578748",
+        "name": "Janine Weber"
+      }
+    ],
+    "citationCount": 99,
+    "externalIds": {
+      "ArXiv": "1609.05830",
+      "CorpusId": 2246394,
+      "DBLP": "journals/corr/MontesiW16",
+      "MAG": "2521868656"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1609.05830, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "00025f8caf92b2e737027790b36c82208d9c1ac7",
+    "publicationTypes": [
+      "JournalArticle",
+      "Review"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "ArXiv"
+      ],
+      "id": "1901e811-ee72-4b20-8f7e-de08cd395a10",
+      "issn": "2331-8422",
+      "name": "arXiv.org",
+      "url": "https://arxiv.org"
+    },
+    "title": "Circuit Breakers, Discovery, and API Gateways in Microservices",
+    "venue": "arXiv.org",
+    "year": 2016
+  },
+  {
+    "_paper_key": "doi:10.1007/s11227-018-2345-2",
+    "_rank": 22,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "145524924",
+        "name": "Carlos Guerrero"
+      },
+      {
+        "authorId": "1704222",
+        "name": "Isaac Lera"
+      },
+      {
+        "authorId": "1779773",
+        "name": "C. Juiz"
+      }
+    ],
+    "citationCount": 97,
+    "externalIds": {
+      "CorpusId": 4543806,
+      "DBLP": "journals/tjs/GuerreroLJ18",
+      "DOI": "10.1007/s11227-018-2345-2",
+      "MAG": "2795411118"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1007/s11227-018-2345-2?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1007/s11227-018-2345-2, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "170f89010171ba2db59a6dbbae84423a4ac3a12c",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "The Journal of Supercomputing",
+        "J Supercomput"
+      ],
+      "alternate_urls": [
+        "https://link.springer.com/journal/11227",
+        "https://www.springer.com/computer/swe/journal/11227?changeHeader"
+      ],
+      "id": "26ed29a9-64ce-4d6c-9024-8b022fd2fe22",
+      "issn": "0920-8542",
+      "name": "Journal of Supercomputing",
+      "type": "journal",
+      "url": "http://www.springer.com/computer/programming/journal/11227"
+    },
+    "title": "Resource optimization of container orchestration: a case study in multi-cloud microservices-based applications",
+    "venue": "Journal of Supercomputing",
+    "year": 2018
+  },
+  {
+    "_paper_key": "doi:10.1109/icsa-c.2019.00041",
+    "_rank": 23,
+    "abstract": "Microservices are a topic driven mainly by practitioners and academia is only starting to investigate them. Hence, there is no clear picture of the usage of Microservices in practice. In this paper, we contribute a qualitative study with insights into industry adoption and implementation of Microservices. Contrary to existing quantitative studies, we conducted interviews to gain a more in-depth understanding of the current state of practice. During 17 interviews with software professionals from 10 companies, we analyzed 14 service-based systems. The interviews focused on applied technologies, Microservices characteristics, and the perceived influence on software quality. We found that companies generally rely on well-established technologies for service implementation, communication, and deployment. Most systems, however, did not exhibit a high degree of technological diversity as commonly expected with Microservices. Decentralization and product character were different for systems built for external customers. Applied DevOps practices and automation were still on a mediocre level and only very few companies strictly followed the you build it, you run it principle. The impact of Microservices on software quality was mainly rated as positive. While maintainability received the most positive mentions, some major issues were associated with security. We present a description of each case and summarize the most important findings of companies across different domains and sizes. Researchers may build upon our findings and take them into account when designing industry-focused methods.",
+    "authors": [
+      {
+        "authorId": "48174976",
+        "name": "J. Bogner"
+      },
+      {
+        "authorId": "51109960",
+        "name": "J. Fritzsch"
+      },
+      {
+        "authorId": "49859108",
+        "name": "S. Wagner"
+      },
+      {
+        "authorId": "143872879",
+        "name": "A. Zimmermann"
+      }
+    ],
+    "citationCount": 94,
+    "externalIds": {
+      "CorpusId": 155107236,
+      "DBLP": "conf/icsa/BognerF0Z19",
+      "DOI": "10.1109/ICSA-C.2019.00041",
+      "MAG": "2946720642"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/ICSA-C.2019.00041?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/ICSA-C.2019.00041, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "0f53967327a759afb3241be0960034b1a711e627",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": null,
+    "title": "Microservices in Industry: Insights into Technologies, Characteristics, and Software Quality",
+    "venue": "2019 IEEE International Conference on Software Architecture Companion (ICSA-C)",
+    "year": 2019
+  },
+  {
+    "_paper_key": "doi:10.1109/icsaw.2017.48",
+    "_rank": 24,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "49906640",
+        "name": "Giona Granchelli"
+      },
+      {
+        "authorId": "37774345",
+        "name": "Mario Cardarelli"
+      },
+      {
+        "authorId": "1826755",
+        "name": "Paolo Di Francesco"
+      },
+      {
+        "authorId": "2331013",
+        "name": "I. Malavolta"
+      },
+      {
+        "authorId": "2012039",
+        "name": "Ludovico Iovino"
+      },
+      {
+        "authorId": "2361159",
+        "name": "A. D. Salle"
+      }
+    ],
+    "citationCount": 93,
+    "externalIds": {
+      "CorpusId": 7106090,
+      "DBLP": "conf/icsa/GranchelliCFMIS17",
+      "DOI": "10.1109/ICSAW.2017.48",
+      "MAG": "2709414589"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/ICSAW.2017.48?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/ICSAW.2017.48, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "other-oa",
+      "status": "GREEN",
+      "url": "https://research.vu.nl/files/267656860/Towards_recovering_the_software_architecture_of_microservice_based_systems.pdf"
+    },
+    "paperId": "11e5046b3b2beef758aadf633da4cc125da3eb87",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "ICSAW",
+        "IEEE Int Conf Softw Archit Work"
+      ],
+      "id": "aefcf093-f5b1-41e9-b2c3-6ab33c37397b",
+      "name": "IEEE International Conference on Software Architecture Workshops",
+      "type": "conference"
+    },
+    "title": "Towards Recovering the Software Architecture of Microservice-Based Systems",
+    "venue": "IEEE International Conference on Software Architecture Workshops",
+    "year": 2017
+  },
+  {
+    "_paper_key": "doi:10.1109/ms.2015.11",
+    "_rank": 25,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "1402978154",
+        "name": "Johannes Thones"
+      }
+    ],
+    "citationCount": 92,
+    "externalIds": {
+      "CorpusId": 219554010,
+      "DBLP": "journals/software/Thones15",
+      "DOI": "10.1109/MS.2015.11"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/MS.2015.11?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/MS.2015.11, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "BRONZE",
+      "url": "https://ieeexplore.ieee.org/ielx7/52/7030140/07030212.pdf"
+    },
+    "paperId": "1ff64d5b277f3eadb2913a451cdb5d52d5ca7efc",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "IEEE Softw"
+      ],
+      "alternate_urls": [
+        "http://ieeexplore.ieee.org/servlet/opac?punumber=52"
+      ],
+      "id": "119227a6-1b94-433e-a52d-8445a387dbbe",
+      "issn": "0740-7459",
+      "name": "IEEE Software",
+      "type": "journal",
+      "url": "http://www.computer.org/software"
+    },
+    "title": "Microservices",
+    "venue": "IEEE Software",
+    "year": 2015
+  },
+  {
+    "_paper_key": "doi:10.1002/spe.2704",
+    "_rank": 26,
+    "abstract": "Internet of Things (IoT), fog computing, cloud computing, and data\u2010driven techniques together offer a great opportunity for verticals such as dairy industry to increase productivity by getting actionable insights to improve farming practices, thereby increasing efficiency and yield. In this paper, we present SmartHerd, a fog computing\u2013assisted end\u2010to\u2010end IoT platform for animal behavior analysis and health monitoring in a dairy farming scenario. The platform follows a microservices\u2010oriented design to assist the distributed computing paradigm and addresses the major issue of constrained Internet connectivity in remote farm locations. We present the implementation of the designed software system in a 6\u2010month mature real\u2010world deployment, wherein the data from wearables on cows is sent to a fog\u2010based platform for data classification and analysis, which includes decision\u2010making capabilities and provides actionable insights to farmer towards the welfare of animals. With fog\u2010based computational assistance in the SmartHerd setup, we see an 84% reduction in amount of data transferred to the cloud as compared with the conventional cloud\u2010based approach.",
+    "authors": [
+      {
+        "authorId": "3070627",
+        "name": "Mohit Taneja"
+      },
+      {
+        "authorId": "96679322",
+        "name": "Nikita Jalodia"
+      },
+      {
+        "authorId": "41050140",
+        "name": "John Byabazaire"
+      },
+      {
+        "authorId": "38502387",
+        "name": "A. Davy"
+      },
+      {
+        "authorId": "3109748",
+        "name": "C. Olariu"
+      }
+    ],
+    "citationCount": 92,
+    "externalIds": {
+      "CorpusId": 182674854,
+      "DBLP": "journals/spe/TanejaJBDO19",
+      "DOI": "10.1002/spe.2704",
+      "MAG": "2946332267",
+      "PubMed": "31423028",
+      "PubMedCentral": "6686710"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://pmc.ncbi.nlm.nih.gov/articles/PMC6686710, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBY",
+      "status": "HYBRID",
+      "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/spe.2704"
+    },
+    "paperId": "22c086a38b06e632dbbfcece4857e99e2d9f620b",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Softw  Pract Exp",
+        "Softw Pract  Exp",
+        "Software - Practice and Experience"
+      ],
+      "alternate_urls": [
+        "http://www.interscience.wiley.com/jpages/0038-0644/",
+        "https://onlinelibrary.wiley.com/journal/1097024X"
+      ],
+      "id": "3da56ce6-4a70-402c-a8b0-7dd39a3273d3",
+      "issn": "0038-0644",
+      "name": "Software, Practice & Experience",
+      "type": "journal",
+      "url": "http://www3.interscience.wiley.com/cgi-bin/jhome/1752"
+    },
+    "title": "SmartHerd management: A microservices\u2010based fog computing\u2013assisted IoT platform towards data\u2010driven smart dairy farming",
+    "venue": "Software, Practice & Experience",
+    "year": 2019
+  },
+  {
+    "_paper_key": "doi:10.1109/jiot.2018.2792940",
+    "_rank": 27,
+    "abstract": "Motivated by the high-interest in increasing the utilization of nongeneral purpose devices in reaching computational objectives with a reduced cost, we propose a new model for scheduling microservices over heterogeneous cloud-edge environments. Our model uses a particular mathematical formulation for describing an architecture that includes heterogeneous machines that can handle different microservices. Since any new model asks for an early risk-analysis of the solution, we improved the CloudSim simulation framework to be suitable for an experiment that includes that kind of systems. In this paper, we discuss two examples of real-life utilizations of our proposed scheduling architecture. For an objective appreciation of the first example, we also include some experimental results based on the developed simulation tool. As a result of our interpretation of the experimental results we find out that some very simple scheduling algorithms may outperform some others in given situations that are frequently present in cloud-edge environments when we are using a microservice-oriented approach.",
+    "authors": [
+      {
+        "authorId": "51181992",
+        "name": "Ion-Dorinel Filip"
+      },
+      {
+        "authorId": "144512429",
+        "name": "Florin Pop"
+      },
+      {
+        "authorId": "2081383017",
+        "name": "Cristina Serbanescu"
+      },
+      {
+        "authorId": "2114018980",
+        "name": "Chang Choi"
+      }
+    ],
+    "citationCount": 88,
+    "externalIds": {
+      "CorpusId": 51982273,
+      "DBLP": "journals/iotj/FilipPSC18",
+      "DOI": "10.1109/JIOT.2018.2792940",
+      "MAG": "2784062446"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/JIOT.2018.2792940?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/JIOT.2018.2792940, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "226cde960aaeb67227874f7440daf888895f99a9",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "IEEE Internet Thing J"
+      ],
+      "alternate_urls": [
+        "https://ieeexplore.ieee.org/servlet/opac?punumber=6488907",
+        "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6488907",
+        "http://ieee-iotj.org/#"
+      ],
+      "id": "228761ec-c40a-479b-8309-9dcbe9851bcd",
+      "issn": "2327-4662",
+      "name": "IEEE Internet of Things Journal",
+      "type": "journal",
+      "url": "https://www.ieee.org/membership-catalog/productdetail/showProductDetailPage.html?product=PER288-ELE"
+    },
+    "title": "Microservices Scheduling Model Over Heterogeneous Cloud-Edge Environments As Support for IoT Applications",
+    "venue": "IEEE Internet of Things Journal",
+    "year": 2018
+  },
+  {
+    "_paper_key": "doi:10.1109/isc2.2018.8656968",
+    "_rank": 28,
+    "abstract": "While the smart surveillance system enhanced by the Internet of Things (IoT) technology becomes an essential part of Smart Cities, it also brings new concerns in security of the data. Compared to the traditional surveillance systems that is built following a monolithic architecture to carry out lower level operations, such as monitoring and recording, the modern surveillance systems are expected to support more scalable and decentralized solutions for advanced video stream analysis at the large volumes of distributed edge devices. In addition, the centralized architecture of the conventional surveillance systems is vulnerable to single point of failure and privacy breach owning to the lack of protection to the surveillance feed. This position paper introduces a novel secure smart surveillance system based on microservices architecture and blockchain technology. Encapsulating the video analysis algorithms as various independent microservices not only isolates the video feed from different sectors, but also improve the system availability and robustness by decentralizing the operations. The blockchain technology securely synchronizes the video analysis databases among microservices across surveillance domains, and provides tamper proof of data in the trustless network environment. Smart contract enabled access authorization strategy prevents any unauthorized user from accessing the microservices and offers a scalable, decentralized and fine-grained access control solution for smart surveillance systems.",
+    "authors": [
+      {
+        "authorId": "22693377",
+        "name": "Deeraj Nagothu"
+      },
+      {
+        "authorId": "144583532",
+        "name": "Ronghua Xu"
+      },
+      {
+        "authorId": "46231496",
+        "name": "S. Nikouei"
+      },
+      {
+        "authorId": "2144836470",
+        "name": "Yu Chen"
+      }
+    ],
+    "citationCount": 86,
+    "externalIds": {
+      "ArXiv": "1807.07487",
+      "CorpusId": 49877911,
+      "DBLP": "journals/corr/abs-1807-07487",
+      "DOI": "10.1109/ISC2.2018.8656968",
+      "MAG": "2886467254"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1807.07487, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "GREEN",
+      "url": "http://arxiv.org/pdf/1807.07487"
+    },
+    "paperId": "1e96dbe3e74a303143847f25a5880bab86fe6e38",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": null,
+    "title": "A Microservice-enabled Architecture for Smart Surveillance using Blockchain Technology",
+    "venue": "2018 IEEE International Smart Cities Conference (ISC2)",
+    "year": 2018
+  },
+  {
+    "_paper_key": "doi:10.1109/infocom.2018.8486300",
+    "_rank": 29,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "2304352",
+        "name": "Yipei Niu"
+      },
+      {
+        "authorId": "48697459",
+        "name": "Fangming Liu"
+      },
+      {
+        "authorId": "2118206988",
+        "name": "Zongpeng Li"
+      }
+    ],
+    "citationCount": 85,
+    "externalIds": {
+      "CorpusId": 52962041,
+      "DBLP": "conf/infocom/NiuLL18",
+      "DOI": "10.1109/INFOCOM.2018.8486300",
+      "MAG": "2790686993"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/INFOCOM.2018.8486300?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/INFOCOM.2018.8486300, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "03a1b047584eb5bb5677934871b512b458d09b13",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "INFOCOM",
+        "IEEE Conf Comput Commun"
+      ],
+      "id": "7f92b1d2-f2b3-454d-adbe-ff02c83fe404",
+      "name": "IEEE Conference on Computer Communications",
+      "type": "conference",
+      "url": "http://www.ieee-infocom.org/"
+    },
+    "title": "Load Balancing Across Microservices",
+    "venue": "IEEE Conference on Computer Communications",
+    "year": 2018
+  },
+  {
+    "_paper_key": "doi:10.1145/3485983.3494866",
+    "_rank": 30,
+    "abstract": "Microservice is an architectural style that has been widely adopted in various latency-sensitive applications. Similar to the monolith, autoscaling has attracted the attention of operators for managing resource utilization of microservices. However, it is still challenging to optimize resources in terms of latency service-level-objective (SLO) without human intervention. In this paper, we present GRAF, a graph neural network-based proactive resource allocation framework for minimizing total CPU resources while satisfying latency SLO. GRAF leverages front-end workload, distributed tracing data, and machine learning approaches to (a) observe/estimate impact of traffic change (b) find optimal resource combinations (c) make proactive resource allocation. Experiments using various open-source benchmarks demonstrate that GRAF successfully targets latency SLO while saving up to 19% of total CPU resources compared to the fine-tuned autoscaler. Moreover, GRAF handles traffic surge with 36% fewer resources while achieving up to 2.6x faster tail latency convergence compared to the Kubernetes autoscaler.",
+    "authors": [
+      {
+        "authorId": "2109121755",
+        "name": "Jinwoo Park"
+      },
+      {
+        "authorId": "7168033",
+        "name": "Byungkwon Choi"
+      },
+      {
+        "authorId": "2726254",
+        "name": "Chunghan Lee"
+      },
+      {
+        "authorId": "1729324",
+        "name": "Dongsu Han"
+      }
+    ],
+    "citationCount": 83,
+    "externalIds": {
+      "CorpusId": 244841439,
+      "DBLP": "conf/conext/ParkCLH21",
+      "DOI": "10.1145/3485983.3494866"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1145/3485983.3494866?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1145/3485983.3494866, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "1650ec257ac4664b8aa9d2b0d73a11aadf459132",
+    "publicationTypes": [
+      "JournalArticle",
+      "Book",
+      "Conference"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Conf Emerg Netw Exp Technol",
+        "CoNEXT"
+      ],
+      "id": "5552b3d9-73b0-435f-8515-a135f23fcbba",
+      "name": "Conference on Emerging Network Experiment and Technology",
+      "type": "conference",
+      "url": "http://www.wikicfp.com/cfp/program?id=555"
+    },
+    "title": "GRAF: a graph neural network based proactive resource allocation framework for SLO-oriented microservices",
+    "venue": "Conference on Emerging Network Experiment and Technology",
+    "year": 2021
+  }
+]

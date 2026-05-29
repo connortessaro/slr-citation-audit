@@ -1,0 +1,2470 @@
+[
+  {
+    "_paper_key": "doi:10.1145/337180.337184",
+    "_rank": 1,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "1711036",
+        "name": "A. V. Lamsweerde"
+      }
+    ],
+    "citationCount": 859,
+    "externalIds": {
+      "CorpusId": 2040857,
+      "DBLP": "conf/icse/Lamsweerde00",
+      "DOI": "10.1145/337180.337184",
+      "MAG": "2096266868"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1145/337180.337184?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1145/337180.337184, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "06bcc8d5aebda21fd07b4e4f4f8f5855b7fb7f0d",
+    "publicationTypes": [
+      "Book",
+      "JournalArticle",
+      "Conference",
+      "Review"
+    ],
+    "publicationVenue": null,
+    "title": "Requirements engineering in the year 00: a research perspective",
+    "venue": "Proceedings of the 2000 International Conference on Software Engineering. ICSE 2000 the New Millennium",
+    "year": 2000
+  },
+  {
+    "_paper_key": "doi:10.1109/fose.2007.17",
+    "_rank": 2,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "40322316",
+        "name": "B. Cheng"
+      },
+      {
+        "authorId": "1790391",
+        "name": "J. Atlee"
+      }
+    ],
+    "citationCount": 742,
+    "externalIds": {
+      "CorpusId": 14304156,
+      "DBLP": "conf/icse/ChengA07",
+      "DOI": "10.1109/FOSE.2007.17",
+      "MAG": "2109105084"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/FOSE.2007.17?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/FOSE.2007.17, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "GREEN",
+      "url": "http://www.cse.msu.edu/~mckinley/Pubs/files/cheng-requirements-roadmap-2009.pdf"
+    },
+    "paperId": "1056b5232117a60da926a9f6faa7087357ffcc2b",
+    "publicationTypes": [
+      "JournalArticle",
+      "Review"
+    ],
+    "publicationVenue": null,
+    "title": "Research Directions in Requirements Engineering",
+    "venue": "Future of Software Engineering (FOSE '07)",
+    "year": 2007
+  },
+  {
+    "_paper_key": "doi:10.1111/j.1365-2575.2007.00259.x",
+    "_rank": 3,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "145293633",
+        "name": "B. Ramesh"
+      },
+      {
+        "authorId": "2087213281",
+        "name": "Lan Cao"
+      },
+      {
+        "authorId": "1754074",
+        "name": "R. Baskerville"
+      }
+    ],
+    "citationCount": 418,
+    "externalIds": {
+      "CorpusId": 31537928,
+      "DBLP": "journals/isj/RameshCB10",
+      "DOI": "10.1111/j.1365-2575.2007.00259.x",
+      "MAG": "1592034869"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1111/j.1365-2575.2007.00259.x?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1111/j.1365-2575.2007.00259.x, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "0a62a5a3500e2b07e57d22720c0a681f32fa9d96",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_issns": [
+        "0959-2954",
+        "1365-2575"
+      ],
+      "alternate_names": [
+        "Inf Syst J"
+      ],
+      "alternate_urls": [
+        "http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1365-2575",
+        "https://onlinelibrary.wiley.com/journal/13652575"
+      ],
+      "id": "b7a6fa65-f658-4ac0-ad99-3ba082b8bad8",
+      "issn": "1350-1917",
+      "name": "Information Systems Journal",
+      "type": "journal",
+      "url": "http://www.blackwell-synergy.com/servlet/useragent?code=isj&func=showIssues"
+    },
+    "title": "Agile requirements engineering practices and challenges: an empirical study",
+    "venue": "Information Systems Journal",
+    "year": 2007
+  },
+  {
+    "_paper_key": "doi:10.1007/s00766-012-0163-2",
+    "_rank": 4,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "2152604",
+        "name": "I. Hadar"
+      },
+      {
+        "authorId": "1739855",
+        "name": "P. Soffer"
+      },
+      {
+        "authorId": "2873284",
+        "name": "Keren Kenzi"
+      }
+    ],
+    "citationCount": 127,
+    "externalIds": {
+      "CorpusId": 14814237,
+      "DBLP": "journals/re/HadarSK14",
+      "DOI": "10.1007/s00766-012-0163-2",
+      "MAG": "2072667185"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1007/s00766-012-0163-2?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1007/s00766-012-0163-2, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "0f8e37c98b0324c1b01723bd939fe59fefd01b65",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Requir Eng"
+      ],
+      "alternate_urls": [
+        "https://link.springer.com/journal/766"
+      ],
+      "id": "fe9174dc-ba90-4d03-929c-4edaf60d2a64",
+      "issn": "0947-3602",
+      "name": "Requirements Engineering",
+      "type": "journal",
+      "url": "http://www.springer.com/computer/programming/journal/766"
+    },
+    "title": "The role of domain knowledge in requirements elicitation via interviews: an exploratory study",
+    "venue": "Requirements Engineering",
+    "year": 2014
+  },
+  {
+    "_paper_key": "doi:10.1111/j.1365-2575.2006.00240.x",
+    "_rank": 5,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "3349312",
+        "name": "Mitzi G. Pitts"
+      },
+      {
+        "authorId": "144655875",
+        "name": "Glenn J. Browne"
+      }
+    ],
+    "citationCount": 112,
+    "externalIds": {
+      "CorpusId": 7811536,
+      "DBLP": "journals/isj/PittsB07",
+      "DOI": "10.1111/j.1365-2575.2006.00240.x",
+      "MAG": "2078271437"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1111/j.1365-2575.2006.00240.x?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1111/j.1365-2575.2006.00240.x, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "041ada54018e0e620a3b1579e2ad9f71aa12a3e8",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_issns": [
+        "0959-2954",
+        "1365-2575"
+      ],
+      "alternate_names": [
+        "Inf Syst J"
+      ],
+      "alternate_urls": [
+        "http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1365-2575",
+        "https://onlinelibrary.wiley.com/journal/13652575"
+      ],
+      "id": "b7a6fa65-f658-4ac0-ad99-3ba082b8bad8",
+      "issn": "1350-1917",
+      "name": "Information Systems Journal",
+      "type": "journal",
+      "url": "http://www.blackwell-synergy.com/servlet/useragent?code=isj&func=showIssues"
+    },
+    "title": "Improving requirements elicitation: an empirical investigation of procedural prompts",
+    "venue": "Information Systems Journal",
+    "year": 2007
+  },
+  {
+    "_paper_key": "doi:10.1109/re.2017.36",
+    "_rank": 6,
+    "abstract": "Classifying requirements into functional requirements (FR) and non-functional ones (NFR) is an important task in requirements engineering. However, automated classification of requirements written in natural language is not straightforward, due to the variability of natural language and the absence of a controlled vocabulary. This paper investigates how automated classification of requirements into FR and NFR can be improved and how well several machine learning approaches work in this context. We contribute an approach for preprocessing requirements that standardizes and normalizes requirements before applying classification algorithms. Further, we report on how well several existing machine learning methods perform for automated classification of NFRs into sub-categories such as usability, availability, or performance. Our study is performed on 625 requirements provided by the OpenScience tera-PROMISE repository. We found that our preprocessing improved the performance of an existing classification method. We further found significant differences in the performance of approaches such as Latent Dirichlet Allocation, Biterm Topic Modeling, or Na\u00efve Bayes for the sub-classification of NFRs.",
+    "authors": [
+      {
+        "authorId": "2234421",
+        "name": "Zahra Shakeri Hossein Abad"
+      },
+      {
+        "authorId": "1969899",
+        "name": "Oliver Karras"
+      },
+      {
+        "authorId": "33759098",
+        "name": "Parisa Ghazi"
+      },
+      {
+        "authorId": "1716032",
+        "name": "M. Glinz"
+      },
+      {
+        "authorId": "1730441",
+        "name": "G. Ruhe"
+      },
+      {
+        "authorId": "144014947",
+        "name": "K. Schneider"
+      }
+    ],
+    "citationCount": 110,
+    "externalIds": {
+      "ArXiv": "1707.02358",
+      "CorpusId": 88407,
+      "DBLP": "journals/corr/AbadKGGRS17",
+      "DOI": "10.1109/RE.2017.36",
+      "MAG": "2949525997"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1707.02358, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "02d7b87730e8f73d45bda7d73ec27618b0219911",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "IEEE International Conference on Requirements Engineering",
+        "RE",
+        "IEEE Int Requir Eng Conf",
+        "IEEE Int Conf Requir Eng"
+      ],
+      "id": "647e2b25-1bff-4e4f-b507-e21dcb081788",
+      "name": "IEEE International Requirements Engineering Conference",
+      "type": "conference",
+      "url": "http://requirements-engineering.org/"
+    },
+    "title": "What Works Better? A Study of Classifying Requirements",
+    "venue": "IEEE International Requirements Engineering Conference",
+    "year": 2017
+  },
+  {
+    "_paper_key": "doi:10.1016/j.jksuci.2018.12.005",
+    "_rank": 7,
+    "abstract": "Abstract As we are continuously depending on information technology applications by adopting electronic channels and software applications for our business, online transaction and communication, software security is increasingly becoming a necessity and more advanced concern. Both the functional and non-functional requirements are important and provide the necessary needs at the early phases of the software development process, specifically in the requirement phase. The aim of this research is to identify security threats early in the software development process to help the requirement engineer elicit appropriate security requirements in a more systematic manner throughout the requirement engineering process to ensure a secure and quality software development. This article proposes the STORE methodology for security requirement elicitation based on security threats analysis, which includes the identification of four points: PoA, PoB, PoC and PoD for effective security attack analysis. Further, the proposed STORE methodology is also validated by a case study of an ERP System. We also compare our STORE methodology with two existing techniques, namely, SQUARE and MOSRE. We have shown that more effective and efficient security requirements can be elicited by the STORE methodology and that it helps the security requirement engineer to elicit security requirements in a more organized manner.",
+    "authors": [
+      {
+        "authorId": "66986128",
+        "name": "M. Ansari"
+      },
+      {
+        "authorId": "3487332",
+        "name": "Dhirendra Pandey"
+      },
+      {
+        "authorId": "3095052",
+        "name": "Mamdouh Alenezi"
+      }
+    ],
+    "citationCount": 106,
+    "externalIds": {
+      "ArXiv": "1901.01500",
+      "CorpusId": 57573718,
+      "DBLP": "journals/corr/abs-1901-01500",
+      "DOI": "10.1016/J.JKSUCI.2018.12.005",
+      "MAG": "2950949018"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1901.01500, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBYNCND",
+      "status": "GOLD",
+      "url": "https://doi.org/10.1016/j.jksuci.2018.12.005"
+    },
+    "paperId": "0e7b296cbc967b884759697d5a076bbfb945259a",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Journal of King Saud University - Computer and Information Sciences",
+        "J King Saud Univ Comput Inf Sci",
+        "J King Saud Univ  Comput Inf Sci"
+      ],
+      "alternate_urls": [
+        "http://www.sciencedirect.com/science/journal/13191578"
+      ],
+      "id": "5d2ac1a1-1fcd-4505-8b9d-5484ad5ffa66",
+      "issn": "1319-1578",
+      "name": "Journal of King Saud University: Computer and Information Sciences",
+      "type": "journal",
+      "url": "https://www.journals.elsevier.com/journal-of-king-saud-university-computer-and-information-sciences/"
+    },
+    "title": "STORE: Security Threat Oriented Requirements Engineering Methodology",
+    "venue": "Journal of King Saud University: Computer and Information Sciences",
+    "year": 2018
+  },
+  {
+    "_paper_key": "doi:10.3390/s22031109",
+    "_rank": 8,
+    "abstract": "Cloud computing is a rapidly expanding field. It allows users to access computer system resources as needed, particularly data storage and computational power, without managing them directly. This paper aims to create a data security model based on cryptography and steganography for data in cloud computing that seeks to reduce existing security and privacy concerns, such as data loss, data manipulation, and data theft. To identify the problem and determine its core cause, we studied various literature on existing cloud computing security models. This study utilizes design science research methodology. The design science research approach includes problem identification, requirements elicitation, artifact design and development, demonstration, and assessment. Design thinking and the Python programming language are used to build the artifact, and discussion about its working is represented using histograms, tables, and algorithms. This paper\u2019s output is a four-step data security model based on Rivest\u2013Shamir\u2013Adleman, Advanced Encryption Standard, and identity-based encryption algorithms alongside Least Significant Bit steganography. The four steps are data protection and security through encryption algorithms, steganography, data backup and recovery, and data sharing. This proposed approach ensures more cloud data redundancy, flexibility, efficiency, and security by protecting data confidentiality, privacy, and integrity from attackers.",
+    "authors": [
+      {
+        "authorId": "2152408720",
+        "name": "Rose Adee"
+      },
+      {
+        "authorId": "1803324",
+        "name": "H. Mouratidis"
+      }
+    ],
+    "citationCount": 80,
+    "externalIds": {
+      "CorpusId": 246507849,
+      "DBLP": "journals/sensors/AdeeM22",
+      "DOI": "10.3390/s22031109",
+      "PubMed": "35161853",
+      "PubMedCentral": "8839104"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://pmc.ncbi.nlm.nih.gov/articles/PMC8839104, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBY",
+      "status": "GOLD",
+      "url": "https://www.mdpi.com/1424-8220/22/3/1109/pdf?version=1644457632"
+    },
+    "paperId": "0f4413a329c3583c64955cffbe66479a428f0eb3",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "SENSORS",
+        "IEEE Sens",
+        "Ital National Conf Sens",
+        "IEEE Sensors",
+        "Sensors"
+      ],
+      "alternate_urls": [
+        "http://nbn-resolving.de/urn/resolver.pl?urn=urn:nbn:ch:bel-142001",
+        "http://www.mdpi.com/journal/sensors",
+        "https://www.mdpi.com/journal/sensors"
+      ],
+      "id": "3dbf084c-ef47-4b74-9919-047b40704538",
+      "issn": "1424-8220",
+      "name": "Italian National Conference on Sensors",
+      "type": "conference",
+      "url": "http://www.e-helvetica.nb.admin.ch/directAccess?callnumber=bel-142001"
+    },
+    "title": "A Dynamic Four-Step Data Security Model for Data in Cloud Computing Based on Cryptography and Steganography",
+    "venue": "Italian National Conference on Sensors",
+    "year": 2022
+  },
+  {
+    "_paper_key": "doi:10.1109/compsac.2013.64",
+    "_rank": 9,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "40813696",
+        "name": "Abderahman Rashwan"
+      },
+      {
+        "authorId": "1732437",
+        "name": "O. Ormandjieva"
+      },
+      {
+        "authorId": "145364793",
+        "name": "R. Witte"
+      }
+    ],
+    "citationCount": 78,
+    "externalIds": {
+      "CorpusId": 14440722,
+      "DBLP": "conf/compsac/RashwanOW13",
+      "DOI": "10.1109/COMPSAC.2013.64",
+      "MAG": "1984696192"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/COMPSAC.2013.64?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/COMPSAC.2013.64, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "0957a6c538b74fcdabd80355e26abe14d845a081",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": null,
+    "title": "Ontology-Based Classification of Non-functional Requirements in Software Specifications: A New Corpus and SVM-Based Classifier",
+    "venue": "2013 IEEE 37th Annual Computer Software and Applications Conference",
+    "year": 2013
+  },
+  {
+    "_paper_key": "doi:10.11575/prism/31288",
+    "_rank": 10,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "2259521",
+        "name": "D. Damian"
+      }
+    ],
+    "citationCount": 73,
+    "externalIds": {
+      "CorpusId": 15602362,
+      "DOI": "10.11575/PRISM/31288",
+      "MAG": "2795299645"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.11575/PRISM/31288?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.11575/PRISM/31288, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "01627d5e5687df64e9b67b8c1526cea778abe4c3",
+    "publicationTypes": null,
+    "publicationVenue": null,
+    "title": "Challenges in Requirements Engineering",
+    "venue": "",
+    "year": 2000
+  },
+  {
+    "_paper_key": "doi:10.1007/978-1-4614-5377-2",
+    "_rank": 11,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "35426239",
+        "name": "Murali Krishna Chemuturi"
+      }
+    ],
+    "citationCount": 70,
+    "externalIds": {
+      "CorpusId": 19818654,
+      "DOI": "10.1007/978-1-4614-5377-2",
+      "MAG": "577306638"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1007/978-1-4614-5377-2?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1007/978-1-4614-5377-2, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "02531514346085051df20b714b6f9031a7144f2a",
+    "publicationTypes": null,
+    "publicationVenue": null,
+    "title": "Requirements Engineering and Management for Software Development Projects",
+    "venue": "Springer: New York",
+    "year": 2012
+  },
+  {
+    "_paper_key": "doi:10.1109/icra.2018.8460558",
+    "_rank": 12,
+    "abstract": "SLAM is becoming a key component of robotics and augmented reality (AR) systems. While a large number of SLAM algorithms have been presented, there has been little effort to unify the interface of such algorithms, or to perform a holistic comparison of their capabilities. This is a problem since different SLAM applications can have different functional and non-functional requirements. For example, a mobile phone-based AR application has a tight energy budget, while a UAV navigation system usually requires high accuracy. SLAMBench2 is a benchmarking framework to evaluate existing and future SLAM systems, both open and close source, over an extensible list of datasets, while using a comparable and clearly specified list of performance metrics. A wide variety of existing SLAM algorithms and datasets is supported, e.g. ElasticFusion, InfiniTAM, ORB-SLAM2, OKVIS, and integrating new ones is straightforward and clearly specified by the framework. SLAMBench2 is a publicly-available software framework which represents a starting point for quantitative, comparable and val-idatable experimental research to investigate trade-offs across SLAM systems.",
+    "authors": [
+      {
+        "authorId": "1879368",
+        "name": "Bruno Bodin"
+      },
+      {
+        "authorId": "2312500",
+        "name": "Harry Wagstaff"
+      },
+      {
+        "authorId": "8838574",
+        "name": "Sajad Saeedi"
+      },
+      {
+        "authorId": "35121696",
+        "name": "Luigi Nardi"
+      },
+      {
+        "authorId": "2264532708",
+        "name": "Emanuele Vespa"
+      },
+      {
+        "authorId": "145466025",
+        "name": "John Mawer"
+      },
+      {
+        "authorId": "145173149",
+        "name": "A. Nisbet"
+      },
+      {
+        "authorId": "145141724",
+        "name": "M. Luj\u00e1n"
+      },
+      {
+        "authorId": "144409615",
+        "name": "S. Furber"
+      },
+      {
+        "authorId": "2052135690",
+        "name": "A. Davison"
+      },
+      {
+        "authorId": "144676513",
+        "name": "P. Kelly"
+      },
+      {
+        "authorId": "1401533251",
+        "name": "M. O\u2019Boyle"
+      }
+    ],
+    "citationCount": 70,
+    "externalIds": {
+      "ArXiv": "1808.06820",
+      "CorpusId": 3990432,
+      "DBLP": "conf/icra/BodinWSNVMNLFDK18",
+      "DOI": "10.1109/ICRA.2018.8460558",
+      "MAG": "2950832388"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1808.06820, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "other-oa",
+      "status": "GREEN",
+      "url": "https://www.pure.ed.ac.uk/ws/files/54741939/main.pdf"
+    },
+    "paperId": "0c90d5d099e96df6ddc47de81bbf4f84894ba3c0",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": {
+      "alternate_issns": [
+        "2379-9544"
+      ],
+      "alternate_names": [
+        "International Conference on Robotics and Automation",
+        "Int Conf Robot Autom",
+        "ICRA",
+        "IEEE Int Conf Robot Autom"
+      ],
+      "alternate_urls": [
+        "http://www.ncsu.edu/IEEE-RAS/"
+      ],
+      "id": "3f2626a8-9d78-42ca-9e0d-4b853b59cdcc",
+      "issn": "2152-4092",
+      "name": "IEEE International Conference on Robotics and Automation",
+      "type": "conference",
+      "url": "http://ieeexplore.ieee.org/xpl/conhome.jsp?punumber=1000639"
+    },
+    "title": "SLAMBench2: Multi-Objective Head-to-Head Benchmarking for Visual SLAM",
+    "venue": "IEEE International Conference on Robotics and Automation",
+    "year": 2018
+  },
+  {
+    "_paper_key": "doi:10.5539/mas.v12n2p62",
+    "_rank": 13,
+    "abstract": "Requirements prioritization is considered as one of the most important approaches in the requirement engineering process. Requirements prioritization is used to define the ordering or schedule for executing requirement based on their priority or importance with respect to stakeholders\u2019 viewpoints. Many prioritization techniques for requirement have been proposed by researchers, and there is no single technique can be used for all projects types. In this paper we give an overview of the requirement process and requirement prioritization concept. We also present the most popular techniques used to prioritize the software project requirements and a compression between these techniques. On the other hand, we spot the light on the importance of involving the non-functional requirements prioritization because of the great effects of non-functional on project success and quality; some approaches that used in prioritize non-functional requirements are discussed in this paper, in addition a general model is proposed based on reviewing the prioritization techniques in order to suggests a best suited technique for specific projects according to decision makers parameters.",
+    "authors": [
+      {
+        "authorId": "144587735",
+        "name": "A. Hudaib"
+      },
+      {
+        "authorId": "41035219",
+        "name": "Raja' Masadeh"
+      },
+      {
+        "authorId": "39423773",
+        "name": "Mais Haj Qasem"
+      },
+      {
+        "authorId": "41035978",
+        "name": "Abdullah Alzaqebah"
+      }
+    ],
+    "citationCount": 69,
+    "externalIds": {
+      "CorpusId": 59408778,
+      "DOI": "10.5539/MAS.V12N2P62",
+      "MAG": "2782745290"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.5539/MAS.V12N2P62?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.5539/MAS.V12N2P62, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "GOLD",
+      "url": "https://www.ccsenet.org/journal/index.php/mas/article/download/72718/40066"
+    },
+    "paperId": "06aafa2aa0f61e06750645eddf0773d014bf400c",
+    "publicationTypes": [
+      "Review"
+    ],
+    "publicationVenue": null,
+    "title": "Requirements Prioritization Techniques Comparison",
+    "venue": "",
+    "year": 2018
+  },
+  {
+    "_paper_key": "doi:10.1057/ejis.2009.19",
+    "_rank": 14,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "144275678",
+        "name": "D. Port"
+      },
+      {
+        "authorId": "2772498",
+        "name": "T. Bui"
+      }
+    ],
+    "citationCount": 69,
+    "externalIds": {
+      "CorpusId": 12661089,
+      "DBLP": "journals/ejis/PortB09",
+      "DOI": "10.1057/ejis.2009.19",
+      "MAG": "2092183296"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1057/ejis.2009.19?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1057/ejis.2009.19, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "07293fbd522dea17a8f7bf03fdc14de7a49eecde",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Eur J Inf Syst"
+      ],
+      "id": "144f954e-be01-47cf-8a42-022534bab40e",
+      "issn": "0960-085X",
+      "name": "European Journal of Information Systems",
+      "type": "journal",
+      "url": "http://www.palgrave-journals.com/ejis/index.html"
+    },
+    "title": "Simulating mixed agile and plan-based requirements prioritization strategies: proof-of-concept and practical implications",
+    "venue": "European Journal of Information Systems",
+    "year": 2009
+  },
+  {
+    "_paper_key": "doi:10.1016/j.jss.2016.09.043",
+    "_rank": 15,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "2065220610",
+        "name": "Fei Shao"
+      },
+      {
+        "authorId": "145122504",
+        "name": "Rong Peng"
+      },
+      {
+        "authorId": "3190233",
+        "name": "Han Lai"
+      },
+      {
+        "authorId": "34954094",
+        "name": "Bangchao Wang"
+      }
+    ],
+    "citationCount": 64,
+    "externalIds": {
+      "CorpusId": 22103699,
+      "DBLP": "journals/jss/ShaoPLW17",
+      "DOI": "10.1016/j.jss.2016.09.043",
+      "MAG": "2525545809"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1016/j.jss.2016.09.043?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1016/j.jss.2016.09.043, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "publisher-specific-oa",
+      "status": "BRONZE",
+      "url": "https://www.sciencedirect.com/science/article/am/pii/S0164121216301911"
+    },
+    "paperId": "02ae58049de648fd21d450f7b121bddfa04f1da8",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "J Syst Softw"
+      ],
+      "alternate_urls": [
+        "http://www.elsevier.com/wps/find/journaldescription.cws_home/505732/description",
+        "http://www.sciencedirect.com/science/journal/01641212"
+      ],
+      "id": "10a4a695-8417-42c7-983d-742df48b3905",
+      "issn": "0164-1212",
+      "name": "Journal of Systems and Software",
+      "type": "journal",
+      "url": "http://www.elsevier.com/wps/find/journaldescription.cws_home/505732/description#description"
+    },
+    "title": "DRank: A semi-automated requirements prioritization method based on preferences and dependencies",
+    "venue": "Journal of Systems and Software",
+    "year": 2017
+  },
+  {
+    "_paper_key": "doi:10.1109/re48521.2020.00026",
+    "_rank": 16,
+    "abstract": "In this paper, we present our work on extracting and classifying requirements from large software engineering contracts. Typically, the process of requirements elicitation begins after a contractual agreement is signed by all participants. Our interactions with the legal compliance team in a large vendor organization reveal that business contracts can help in the identification of high-level requirements relevant to the success of software engineering projects. We posit that requirements engineering as a discipline has an even wider scope than software engineering of which it is traditionally considered to be a sub-discipline. This is because software engineering-specific requirements are but a part of the success story of any large project. The requirements that emerge from contracts are obligatory in nature, whether or not they pertain to core software development. Therefore, it is important that these are extracted and classified for the benefit of software engineers and other stakeholders responsible for a project. We discuss the results of an exploratory study and a range of experiments from the use of regular expressions to Bidirectional Encoder Representations from Transformers for automating the extraction and classification of requirements from software engineering contracts. With Bidirectional Encoder Representations from Transformers, we obtained a high f-score of greater than eighty four percent for classification of requirements.",
+    "authors": [
+      {
+        "authorId": "3309180",
+        "name": "A. Sainani"
+      },
+      {
+        "authorId": "2680590",
+        "name": "P. Anish"
+      },
+      {
+        "authorId": "145706660",
+        "name": "V. Joshi"
+      },
+      {
+        "authorId": "2107155",
+        "name": "S. Ghaisas"
+      }
+    ],
+    "citationCount": 63,
+    "externalIds": {
+      "CorpusId": 222296916,
+      "DBLP": "conf/re/SainaniAJG20",
+      "DOI": "10.1109/RE48521.2020.00026",
+      "MAG": "3092221863"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/RE48521.2020.00026?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/RE48521.2020.00026, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "03cbba9ffc7fb32ecddcf72fb1adf1c1c8afdfaf",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "IEEE International Conference on Requirements Engineering",
+        "RE",
+        "IEEE Int Requir Eng Conf",
+        "IEEE Int Conf Requir Eng"
+      ],
+      "id": "647e2b25-1bff-4e4f-b507-e21dcb081788",
+      "name": "IEEE International Requirements Engineering Conference",
+      "type": "conference",
+      "url": "http://requirements-engineering.org/"
+    },
+    "title": "Extracting and Classifying Requirements from Software Engineering Contracts",
+    "venue": "IEEE International Requirements Engineering Conference",
+    "year": 2020
+  },
+  {
+    "_paper_key": "ss:05816c816b15acf04300f15e3808bf4d3830513a",
+    "_rank": 17,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "144269555",
+        "name": "L. Westfall"
+      }
+    ],
+    "citationCount": 56,
+    "externalIds": {
+      "CorpusId": 110453076,
+      "MAG": "2181373455"
+    },
+    "openAccessPdf": {
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "05816c816b15acf04300f15e3808bf4d3830513a",
+    "publicationTypes": null,
+    "publicationVenue": null,
+    "title": "Software Requirements Engineering: What, Why, Who, When, and How",
+    "venue": "",
+    "year": 2006
+  },
+  {
+    "_paper_key": "doi:10.1016/j.jss.2018.09.001",
+    "_rank": 18,
+    "abstract": "Abstract Requirements traceability (RT) is a core activity in Requirements Engineering. Various types of RT technologies have been extensively studied for decades. In this paper, we present a systematic literature review from 114 papers between 2006 and 2016 on RT techniques. We summarized 10 major challenges in current RT activities, and categorized existing RT techniques into 6 groups and 25 sub-groups. Moreover, we built mapping relations between these challenges and techniques, and identified 7 potential future research directions. Based on 83 empirical studies, the evaluations for technology transfer are conducted. The main conclusions are: (1) The \u201ctrustworthy\u201d and \u201cautomated\u201d challenges are the most widely investigated ones, while \u201cscalable\u201d, \u201ccoordinated\u201d, \u201cdynamic\u201d and \u201clightweight\u201d challenges receive much less attention; (2) \u201cTrace link generation\u201d, especially information retrieval-based (IR-based) methods, are the most studied techniques; (3) IR-based methods have the most potential to be adopted by industry, as they have been validated from multiple viewpoints; (4) Seven promising future research directions are identified, which include developing scalable, dynamic and lightweight tracing techniques, introducing new approaches in other disciplines to meet the RT challenges, improving the express ability of trace links, promoting the industry adoption of RT technologies and developing new techniques to support developers\u2019 coordination.",
+    "authors": [
+      {
+        "authorId": "34954094",
+        "name": "Bangchao Wang"
+      },
+      {
+        "authorId": "145122504",
+        "name": "Rong Peng"
+      },
+      {
+        "authorId": "32588424",
+        "name": "Yuanbang Li"
+      },
+      {
+        "authorId": "3190233",
+        "name": "Han Lai"
+      },
+      {
+        "authorId": "2108369322",
+        "name": "Zhu Wang"
+      }
+    ],
+    "citationCount": 52,
+    "externalIds": {
+      "CorpusId": 53286199,
+      "DBLP": "journals/jss/WangPLLW18",
+      "DOI": "10.1016/j.jss.2018.09.001",
+      "MAG": "2891045772"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1016/j.jss.2018.09.001?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1016/j.jss.2018.09.001, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "publisher-specific-oa",
+      "status": "BRONZE",
+      "url": "https://www.sciencedirect.com/science/article/am/pii/S0164121218301754"
+    },
+    "paperId": "01e629f95ba72188ff39cf42de39ead8f2d3ac91",
+    "publicationTypes": [
+      "JournalArticle",
+      "Review"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "J Syst Softw"
+      ],
+      "alternate_urls": [
+        "http://www.elsevier.com/wps/find/journaldescription.cws_home/505732/description",
+        "http://www.sciencedirect.com/science/journal/01641212"
+      ],
+      "id": "10a4a695-8417-42c7-983d-742df48b3905",
+      "issn": "0164-1212",
+      "name": "Journal of Systems and Software",
+      "type": "journal",
+      "url": "http://www.elsevier.com/wps/find/journaldescription.cws_home/505732/description#description"
+    },
+    "title": "Requirements traceability technologies and technology transfer decision support: A systematic review",
+    "venue": "Journal of Systems and Software",
+    "year": 2018
+  },
+  {
+    "_paper_key": "doi:10.1145/3365871.3365886",
+    "_rank": 19,
+    "abstract": "As more and more applications and services depend on data collected and provided by Internet of Things (IoT) devices, it is of importance that such data can be trusted. Data provenance solutions together with blockchain technology are one way to make data more trustworthy. However, current solutions do not address the heterogeneous nature of IoT applications and their data. In this work, we identify functional and non-functional requirements for a generic IoT data provenance framework, and conceptualise the framework as a layered architecture. Using a proof-of-concept implementation based on Ethereum smart contracts, data provenance can be realised for a wide range of IoT use cases. Benefits of a generic framework include simplified adoption and a more rapid implementation of data provenance for the IoT.",
+    "authors": [
+      {
+        "authorId": "119454161",
+        "name": "M. Sigwart"
+      },
+      {
+        "authorId": "39839689",
+        "name": "M. Borkowski"
+      },
+      {
+        "authorId": "69840741",
+        "name": "Marco Peise"
+      },
+      {
+        "authorId": "144042741",
+        "name": "Stefan Schulte"
+      },
+      {
+        "authorId": "48987542",
+        "name": "S. Tai"
+      }
+    ],
+    "citationCount": 50,
+    "externalIds": {
+      "ArXiv": "1905.06852",
+      "CorpusId": 155099958,
+      "DBLP": "conf/iot/SigwartBP0T19",
+      "DOI": "10.1145/3365871.3365886",
+      "MAG": "2945107004"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/1905.06852, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "GREEN",
+      "url": "https://arxiv.org/pdf/1905.06852"
+    },
+    "paperId": "09f9702e9960539fb77e174e7f574caa7e2471d8",
+    "publicationTypes": [
+      "JournalArticle",
+      "Book"
+    ],
+    "publicationVenue": {
+      "id": "18cb41bf-d23d-4c47-a30d-3f1ef6abfb1b",
+      "issn": "2624-831X",
+      "name": "IoT",
+      "url": "https://www.mdpi.com/journal/IoT"
+    },
+    "title": "Blockchain-based Data Provenance for the Internet of Things",
+    "venue": "IoT",
+    "year": 2019
+  },
+  {
+    "_paper_key": "doi:10.1109/indiacom.2014.6828119",
+    "_rank": 20,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "2109851485",
+        "name": "Shreta Sharma"
+      },
+      {
+        "authorId": "2314590345",
+        "name": "S. Pandey"
+      }
+    ],
+    "citationCount": 48,
+    "externalIds": {
+      "CorpusId": 14393181,
+      "DOI": "10.1109/INDIACOM.2014.6828119",
+      "MAG": "2099682437"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/INDIACOM.2014.6828119?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/INDIACOM.2014.6828119, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "01750fb43bd13a03817156ecf9735fb06dd12678",
+    "publicationTypes": [
+      "Conference"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "INDIACom",
+        "Int Conf Comput Sustain Glob Dev"
+      ],
+      "id": "6336131c-2f71-4f61-bc3b-1bf31ec9fa3d",
+      "name": "International Conference on Computing for Sustainable Global Development",
+      "type": "conference"
+    },
+    "title": "Requirements elicitation: Issues and challenges",
+    "venue": "International Conference on Computing for Sustainable Global Development",
+    "year": 2014
+  },
+  {
+    "_paper_key": "doi:10.3390/s17092010",
+    "_rank": 21,
+    "abstract": "Wireless sensor networks are being increasingly used in several application areas, particularly to collect data and monitor physical processes. Non-functional requirements, like reliability, security or availability, are often important and must be accounted for in the application development. For that purpose, there is a large body of knowledge on dependability techniques for distributed systems, which provide a good basis to understand how to satisfy these non-functional requirements of WSN-based monitoring applications. Given the data-centric nature of monitoring applications, it is of particular importance to ensure that data are reliable or, more generically, that they have the necessary quality. In this survey, we look into the problem of ensuring the desired quality of data for dependable monitoring using WSNs. We take a dependability-oriented perspective, reviewing the possible impairments to dependability and the prominent existing solutions to solve or mitigate these impairments. Despite the variety of components that may form a WSN-based monitoring system, we give particular attention to understanding which faults can affect sensors, how they can affect the quality of the information and how this quality can be improved and quantified.",
+    "authors": [
+      {
+        "authorId": "3037466",
+        "name": "G. Jesus"
+      },
+      {
+        "authorId": "144247664",
+        "name": "A. Casimiro"
+      },
+      {
+        "authorId": "145455416",
+        "name": "Anabela Oliveira"
+      }
+    ],
+    "citationCount": 48,
+    "externalIds": {
+      "CorpusId": 3546180,
+      "DBLP": "journals/sensors/JesusCO17",
+      "DOI": "10.3390/s17092010",
+      "MAG": "2752448656",
+      "PubMed": "28869505",
+      "PubMedCentral": "5620495"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://pmc.ncbi.nlm.nih.gov/articles/PMC5620495, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBY",
+      "status": "GOLD",
+      "url": "https://www.mdpi.com/1424-8220/17/9/2010/pdf?version=1504340534"
+    },
+    "paperId": "0c53a03c16cc32a984d88c2162ba6008190939ae",
+    "publicationTypes": [
+      "JournalArticle",
+      "Review"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "SENSORS",
+        "IEEE Sens",
+        "Ital National Conf Sens",
+        "IEEE Sensors",
+        "Sensors"
+      ],
+      "alternate_urls": [
+        "http://nbn-resolving.de/urn/resolver.pl?urn=urn:nbn:ch:bel-142001",
+        "http://www.mdpi.com/journal/sensors",
+        "https://www.mdpi.com/journal/sensors"
+      ],
+      "id": "3dbf084c-ef47-4b74-9919-047b40704538",
+      "issn": "1424-8220",
+      "name": "Italian National Conference on Sensors",
+      "type": "conference",
+      "url": "http://www.e-helvetica.nb.admin.ch/directAccess?callnumber=bel-142001"
+    },
+    "title": "A Survey on Data Quality for Dependable Monitoring in Wireless Sensor Networks",
+    "venue": "Italian National Conference on Sensors",
+    "year": 2017
+  },
+  {
+    "_paper_key": "doi:10.1109/icsm.2012.6405271",
+    "_rank": 22,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "144403222",
+        "name": "Nasir Ali"
+      },
+      {
+        "authorId": "2369671",
+        "name": "Zohreh Sharafi"
+      },
+      {
+        "authorId": "1718050",
+        "name": "Yann-Ga\u00ebl Gu\u00e9h\u00e9neuc"
+      },
+      {
+        "authorId": "1692292",
+        "name": "G. Antoniol"
+      }
+    ],
+    "citationCount": 46,
+    "externalIds": {
+      "CorpusId": 8513296,
+      "DBLP": "conf/icsm/AliSGA12",
+      "DOI": "10.1109/ICSM.2012.6405271",
+      "MAG": "1964883795"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/ICSM.2012.6405271?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/ICSM.2012.6405271, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "02dda8158e47d95197675e58eeb3b2239ebd9796",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Int Conf Smart Multimedia",
+        "Int Conf Softw Maint",
+        "ICSM",
+        "International Conference and Seminar on Micro/Nanotechnologies and Electron Devices",
+        "Int Conf Semin Micro/nanotechnologies Electron Device",
+        "International Conference on Software Maintenance"
+      ],
+      "id": "7c0dee4b-efbb-4e03-b989-2e5f66dc00f4",
+      "name": "International Conference on Smart Multimedia",
+      "type": "conference"
+    },
+    "title": "An empirical study on requirements traceability using eye-tracking",
+    "venue": "International Conference on Smart Multimedia",
+    "year": 2012
+  },
+  {
+    "_paper_key": "doi:10.1109/compsac.2006.57",
+    "_rank": 23,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "1389656608",
+        "name": "J. Cleland-Huang"
+      }
+    ],
+    "citationCount": 45,
+    "externalIds": {
+      "CorpusId": 12374271,
+      "DBLP": "conf/compsac/Cleland-Huang06",
+      "DOI": "10.1109/COMPSAC.2006.57",
+      "MAG": "2121120360"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/COMPSAC.2006.57?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/COMPSAC.2006.57, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "029c3e613f002034f54347e06f5aee58fc3b96af",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Comput Softw Appl Conf",
+        "Annu Int Comput Softw Appl Conf",
+        "COMPSAC Work",
+        "Computer Software and Applications Conference",
+        "COMPSAC Workshops",
+        "COMPSAC"
+      ],
+      "id": "e574da12-4e4c-4b78-a203-ae3719c0c4f7",
+      "name": "Annual International Computer Software and Applications Conference",
+      "type": "conference",
+      "url": "http://www.wikicfp.com/cfp/program?id=548"
+    },
+    "title": "Just Enough Requirements Traceability",
+    "venue": "Annual International Computer Software and Applications Conference",
+    "year": 2006
+  },
+  {
+    "_paper_key": "doi:10.1109/tse.2009.33",
+    "_rank": 24,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "2086817",
+        "name": "Nannette P. Napier"
+      },
+      {
+        "authorId": "1689650",
+        "name": "L. Mathiassen"
+      },
+      {
+        "authorId": "2111257096",
+        "name": "Roy D. Johnson"
+      }
+    ],
+    "citationCount": 44,
+    "externalIds": {
+      "CorpusId": 17645220,
+      "DBLP": "journals/tse/NapierMJ09",
+      "DOI": "10.1109/TSE.2009.33",
+      "MAG": "2149518434"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/TSE.2009.33?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/TSE.2009.33, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "GREEN",
+      "url": "https://repository.up.ac.za/bitstream/2263/13568/1/Napier_Combining%282009%29.pdf"
+    },
+    "paperId": "008167230af1ee9489fc9dcd86a6a8e64b37e633",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "IEEE Trans Softw Eng"
+      ],
+      "alternate_urls": [
+        "http://www.computer.org/portal/web/tse/about"
+      ],
+      "id": "c99cfe66-b71c-4ca4-bedd-26267b9cb068",
+      "issn": "0098-5589",
+      "name": "IEEE Transactions on Software Engineering",
+      "type": "journal",
+      "url": "http://ieeexplore.ieee.org/servlet/opac?punumber=32"
+    },
+    "title": "Combining Perceptions and Prescriptions in Requirements Engineering Process Assessment: An Industrial Case Study",
+    "venue": "IEEE Transactions on Software Engineering",
+    "year": 2009
+  },
+  {
+    "_paper_key": "doi:10.1007/3-540-28244-0_8",
+    "_rank": 25,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "2087098",
+        "name": "C. Denger"
+      },
+      {
+        "authorId": "143875035",
+        "name": "Thomas Olsson"
+      }
+    ],
+    "citationCount": 43,
+    "externalIds": {
+      "CorpusId": 110877728,
+      "DOI": "10.1007/3-540-28244-0_8",
+      "MAG": "2207427070"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1007/3-540-28244-0_8?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1007/3-540-28244-0_8, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "086e5574335e8fbd1bc570d4c97b79e6c200512b",
+    "publicationTypes": [
+      "Review"
+    ],
+    "publicationVenue": null,
+    "title": "Quality Assurance in Requirements Engineering",
+    "venue": "",
+    "year": 2005
+  },
+  {
+    "_paper_key": "doi:10.1016/j.asoc.2023.110455",
+    "_rank": 26,
+    "abstract": "[Context] Artificial intelligence (AI) components used in building software solutions have substantially increased in recent years. However, many of these solutions focus on technical aspects and ignore critical human-centered aspects. [Objective] Including human-centered aspects during requirements engineering (RE) when building AI-based software can help achieve more responsible, unbiased, and inclusive AI-based software solutions. [Method] In this paper, we present a new framework developed based on human-centered AI guidelines and a user survey to aid in collecting requirements for human-centered AI-based software. We provide a catalog to elicit these requirements and a conceptual model to present them visually. [Results] The framework is applied to a case study to elicit and model requirements for enhancing the quality of 360 degree~videos intended for virtual reality (VR) users. [Conclusion] We found that our proposed approach helped the project team fully understand the human-centered needs of the project to deliver. Furthermore, the framework helped to understand what requirements need to be captured at the initial stages against later stages in the engineering process of AI-based software.",
+    "authors": [
+      {
+        "authorId": "2142803950",
+        "name": "Khlood Ahmad"
+      },
+      {
+        "authorId": "47505933",
+        "name": "Mohamed Abdelrazek"
+      },
+      {
+        "authorId": "38772597",
+        "name": "Chetan Arora"
+      },
+      {
+        "authorId": "1387967693",
+        "name": "Arbind Agrahari Baniya"
+      },
+      {
+        "authorId": "2514873",
+        "name": "Muneera Bano"
+      },
+      {
+        "authorId": "2054375167",
+        "name": "John C. Grundy"
+      }
+    ],
+    "citationCount": 42,
+    "externalIds": {
+      "ArXiv": "2303.02920",
+      "CorpusId": 258823499,
+      "DBLP": "journals/asc/AhmadAABBG23",
+      "DOI": "10.1016/j.asoc.2023.110455"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2303.02920, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBYNCND",
+      "status": "HYBRID",
+      "url": "https://doi.org/10.1016/j.asoc.2023.110455"
+    },
+    "paperId": "0f85d5313e867861a396941d5963aff16980cd3e",
+    "publicationTypes": [
+      "JournalArticle",
+      "Review"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Appl Soft Comput"
+      ],
+      "alternate_urls": [
+        "https://www.journals.elsevier.com/applied-soft-computing",
+        "http://www.sciencedirect.com/science/journal/15684946"
+      ],
+      "id": "b1994124-f1e8-4f96-a165-b6f19a04fe7e",
+      "issn": "1568-4946",
+      "name": "Applied Soft Computing",
+      "type": "journal",
+      "url": "http://www.elsevier.com/wps/find/journaldescription.cws_home/621920/description#description"
+    },
+    "title": "Requirements engineering framework for human-centered artificial intelligence software systems",
+    "venue": "Applied Soft Computing",
+    "year": 2023
+  },
+  {
+    "_paper_key": "ss:1043759452a62a24132bcb4d512467ca2f41bf90",
+    "_rank": 27,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "2106127153",
+        "name": "M. Younas"
+      },
+      {
+        "authorId": "143711386",
+        "name": "D. Jawawi"
+      },
+      {
+        "authorId": "1910416",
+        "name": "I. Ghani"
+      },
+      {
+        "authorId": "2380804",
+        "name": "Rafaqut Kazmi"
+      }
+    ],
+    "citationCount": 42,
+    "externalIds": {
+      "CorpusId": 59473758,
+      "MAG": "2767548841"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at http://journal.utem.edu.my/index.php/jtec/article/download/2933/2059, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "1043759452a62a24132bcb4d512467ca2f41bf90",
+    "publicationTypes": null,
+    "publicationVenue": null,
+    "title": "Non-Functional Requirements Elicitation Guideline for Agile Methods",
+    "venue": "",
+    "year": 2017
+  },
+  {
+    "_paper_key": "doi:10.1007/s00766-009-0078-8",
+    "_rank": 28,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "1768861",
+        "name": "L. Lehtola"
+      },
+      {
+        "authorId": "1692478",
+        "name": "Marjo Kauppinen"
+      },
+      {
+        "authorId": "1985171",
+        "name": "Jarno V\u00e4h\u00e4niitty"
+      },
+      {
+        "authorId": "1767719",
+        "name": "Marko Komssi"
+      }
+    ],
+    "citationCount": 39,
+    "externalIds": {
+      "CorpusId": 18182987,
+      "DBLP": "journals/re/LehtolaKVK09",
+      "DOI": "10.1007/s00766-009-0078-8",
+      "MAG": "2120691048"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1007/s00766-009-0078-8?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1007/s00766-009-0078-8, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "00268baabfbc59023bc1f31a9a03cd18c0543eec",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Requir Eng"
+      ],
+      "alternate_urls": [
+        "https://link.springer.com/journal/766"
+      ],
+      "id": "fe9174dc-ba90-4d03-929c-4edaf60d2a64",
+      "issn": "0947-3602",
+      "name": "Requirements Engineering",
+      "type": "journal",
+      "url": "http://www.springer.com/computer/programming/journal/766"
+    },
+    "title": "Linking business and requirements engineering: is solution planning a missing activity in software product companies?",
+    "venue": "Requirements Engineering",
+    "year": 2009
+  },
+  {
+    "_paper_key": "doi:10.1109/imsccs.2006.188",
+    "_rank": 29,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "2836159",
+        "name": "Yuquin Lee"
+      },
+      {
+        "authorId": "2636713",
+        "name": "Wenyun Zhao"
+      }
+    ],
+    "citationCount": 36,
+    "externalIds": {
+      "CorpusId": 18664532,
+      "DBLP": "conf/imsccs/LeeZ06",
+      "DOI": "10.1109/IMSCCS.2006.188",
+      "MAG": "2165289189"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/IMSCCS.2006.188?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/IMSCCS.2006.188, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "0bef112c889c57675879dcc2e5bb09dc0ccb82f0",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Int Multi-symposiums Comput Comput Sci",
+        "Int Multi-symposium Comput Comput Sci",
+        "International Multi-Symposiums on Computer and Computational Sciences",
+        "IMSCCS"
+      ],
+      "id": "17d8b370-6997-4f9d-8827-d2e0b12e6190",
+      "name": "International Multi-Symposium of Computer and Computational Sciences",
+      "type": "conference",
+      "url": "http://www.imsccs-conference.org/"
+    },
+    "title": "An Ontology-Based Approach for Domain Requirements Elicitation and Analysis",
+    "venue": "International Multi-Symposium of Computer and Computational Sciences",
+    "year": 2006
+  },
+  {
+    "_paper_key": "doi:10.1109/re.2006.27",
+    "_rank": 30,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "1750566",
+        "name": "J. Mylopoulos"
+      }
+    ],
+    "citationCount": 35,
+    "externalIds": {
+      "CorpusId": 1955858,
+      "DBLP": "conf/re/Mylopoulos06",
+      "DOI": "10.1109/RE.2006.27",
+      "MAG": "2150322553"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/RE.2006.27?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/RE.2006.27, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "009ee183b894a96f9f9a7a94ba31c36e0e2e090f",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference",
+      "Review"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "IEEE International Conference on Requirements Engineering",
+        "RE",
+        "IEEE Int Requir Eng Conf",
+        "IEEE Int Conf Requir Eng"
+      ],
+      "id": "647e2b25-1bff-4e4f-b507-e21dcb081788",
+      "name": "IEEE International Requirements Engineering Conference",
+      "type": "conference",
+      "url": "http://requirements-engineering.org/"
+    },
+    "title": "Goal-Oriented Requirements Engineering, Part II",
+    "venue": "IEEE International Requirements Engineering Conference",
+    "year": 2006
+  },
+  {
+    "_paper_key": "doi:10.1109/access.2021.3064424",
+    "_rank": 31,
+    "abstract": "Context: Widespread use of agile software development (ASD) methods can be observed nowadays. Non-functional requirements (NFRs) are often reported to be a problematic issue for agile projects, since ASD methods tend to neglect NFRs while focusing on incremental delivery of functional features. Despite that, only very few studies have explored the requirements engineering practices used in ASD and dedicated particularly to NFRs. Objective: We aimed to identify and investigate the practices used in industrial ASD projects to identify, elicit and document NFRs. Method: We conducted a systematic literature review (SLR) and used its findings to prepare an interview guide. We then conducted a series of semi-structured interviews with 10 experienced practitioners. Results: The SLR revealed a number of strategies related to the timing of NFR identification as well as 13 elicitation practices and 20 documentation techniques. At least some of these findings show discrepancies between ASD theory and practice. The interviews provided a more in-depth understanding of the practices used, and their context. The main findings from the interviews include: practitioners\u2019 attempts to start identifying NFRs early in the project, a lack of elicitation techniques aimed at NFRs only, and different choices about documentation techniques, including the additional techniques introduced to cope specifically with NFRs. Conclusions: It was not confirmed that requirements engineering activities related to NFRs are perceived by ASD practitioners as a problem, as they developed effective practices to deal with this issue. Moreover, our findings show that different approaches to NFRs can be used and give satisfactory results.",
+    "authors": [
+      {
+        "authorId": "2304142",
+        "name": "Aleksander Jarz\u0119bowicz"
+      },
+      {
+        "authorId": "3246790",
+        "name": "Pawe\u0142 Weichbroth"
+      }
+    ],
+    "citationCount": 34,
+    "externalIds": {
+      "CorpusId": 232316882,
+      "DBLP": "journals/access/JarzebowiczW21",
+      "DOI": "10.1109/ACCESS.2021.3064424"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/ACCESS.2021.3064424?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/ACCESS.2021.3064424, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "000346187caace58b9f4098078e95d93b7722312",
+    "publicationTypes": [
+      "JournalArticle",
+      "Review"
+    ],
+    "publicationVenue": {
+      "alternate_urls": [
+        "http://ieeexplore.ieee.org/servlet/opac?punumber=6287639"
+      ],
+      "id": "2633f5b2-c15c-49fe-80f5-07523e770c26",
+      "issn": "2169-3536",
+      "name": "IEEE Access",
+      "type": "journal",
+      "url": "http://www.ieee.org/publications_standards/publications/ieee_access.html"
+    },
+    "title": "A Qualitative Study on Non-Functional Requirements in Agile Software Development",
+    "venue": "IEEE Access",
+    "year": 2021
+  },
+  {
+    "_paper_key": "doi:10.1007/s10207-019-00438-x",
+    "_rank": 32,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "2064558331",
+        "name": "Davide Ferraris"
+      },
+      {
+        "authorId": "1405601602",
+        "name": "Carmen Fern\u00e1ndez-Gago"
+      }
+    ],
+    "citationCount": 34,
+    "externalIds": {
+      "CorpusId": 160010729,
+      "DBLP": "journals/ijisec/FerrarisG20",
+      "DOI": "10.1007/s10207-019-00438-x",
+      "MAG": "2945597416"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1007/s10207-019-00438-x?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1007/s10207-019-00438-x, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "065c89c67a9faa8678c6e232c990f1b8b05c6655",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_issns": [
+        "2356-5845",
+        "2382-2619"
+      ],
+      "alternate_names": [
+        "Int J Inf Secur"
+      ],
+      "id": "719d1a03-15e1-4dde-9b3f-1093b27e37c6",
+      "issn": "1615-5262",
+      "name": "International Journal of Information Security",
+      "type": "journal",
+      "url": "https://link.springer.com/journal/volumesAndIssues/10207"
+    },
+    "title": "TrUStAPIS: a trust requirements elicitation method for IoT",
+    "venue": "International Journal of Information Security",
+    "year": 2019
+  },
+  {
+    "_paper_key": "doi:10.25728/assa.2018.18.2.576",
+    "_rank": 33,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "41035219",
+        "name": "Raja' Masadeh"
+      },
+      {
+        "authorId": "144587735",
+        "name": "A. Hudaib"
+      },
+      {
+        "authorId": "41035978",
+        "name": "Abdullah Alzaqebah"
+      }
+    ],
+    "citationCount": 34,
+    "externalIds": {
+      "CorpusId": 196182145,
+      "DOI": "10.25728/ASSA.2018.18.2.576",
+      "MAG": "2950516185"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.25728/ASSA.2018.18.2.576?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.25728/ASSA.2018.18.2.576, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "0a1d5ae222674e49a8c736339a0974088ea57f12",
+    "publicationTypes": null,
+    "publicationVenue": null,
+    "title": "WGW: A Hybrid Approach Based on Whale and Grey Wolf Optimization Algorithms for Requirements Prioritization",
+    "venue": "",
+    "year": 2018
+  },
+  {
+    "_paper_key": "ss:012170b67507b1b0cfb5dba4290d53eb74998f3e",
+    "_rank": 34,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "1703432",
+        "name": "Steffen Lohmann"
+      },
+      {
+        "authorId": "30672226",
+        "name": "Philipp Heim"
+      },
+      {
+        "authorId": "145044578",
+        "name": "S. Auer"
+      },
+      {
+        "authorId": "2574714",
+        "name": "Sebastian Tramp"
+      },
+      {
+        "authorId": "29356676",
+        "name": "Thomas Riechert"
+      }
+    ],
+    "citationCount": 33,
+    "externalIds": {
+      "CorpusId": 16254578,
+      "MAG": "9324761"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at http://www.informatik.uni-leipzig.de/~auer/publication/24_semantifying-requirements-engineering.pdf, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "012170b67507b1b0cfb5dba4290d53eb74998f3e",
+    "publicationTypes": null,
+    "publicationVenue": null,
+    "title": "Semantifying Requirements Engineering - The SoftWiki Approach",
+    "venue": "",
+    "year": 2008
+  },
+  {
+    "_paper_key": "doi:10.1109/icre.2003.1232737",
+    "_rank": 35,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "1402990188",
+        "name": "J. J\u00f8rgensen"
+      },
+      {
+        "authorId": "2988347",
+        "name": "Claus Bossen"
+      }
+    ],
+    "citationCount": 31,
+    "externalIds": {
+      "CorpusId": 17217619,
+      "DBLP": "conf/re/JorgensenB03",
+      "DOI": "10.1109/ICRE.2003.1232737",
+      "MAG": "2098080052"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/ICRE.2003.1232737?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/ICRE.2003.1232737, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "008e6c655e067dc955f36193e982892ca65dbd3d",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": null,
+    "title": "Requirements engineering for a pervasive health care system",
+    "venue": "Proceedings. 11th IEEE International Requirements Engineering Conference, 2003.",
+    "year": 2003
+  },
+  {
+    "_paper_key": "doi:10.1017/s0890060422000166",
+    "_rank": 36,
+    "abstract": "Abstract A growing trend in requirements elicitation is the use of machine learning (ML) techniques to automate the cumbersome requirement handling process. This literature review summarizes and analyzes studies that incorporate ML and natural language processing (NLP) into demand elicitation. We answer the following research questions: (1) What requirement elicitation activities are supported by ML? (2) What data sources are used to build ML-based requirement solutions? (3) What technologies, algorithms, and tools are used to build ML-based requirement elicitation? (4) How to construct an ML-based requirements elicitation method? (5) What are the available tools to support ML-based requirements elicitation methodology? Keywords derived from these research questions led to 975 records initially retrieved from 7 scientific search engines. Finally, 86 articles were selected for inclusion in the review. As the primary research finding, we identified 15 ML-based requirement elicitation tasks and classified them into four categories. Twelve different data sources for building a data-driven model are identified and classified in this literature review. In addition, we categorized the techniques for constructing ML-based requirement elicitation methods into five parts, which are Data Cleansing and Preprocessing, Textual Feature Extraction, Learning, Evaluation, and Tools. More specifically, 3 categories of preprocessing methods, 3 different feature extraction strategies, 12 different families of learning methods, 2 different evaluation strategies, and various off-the-shelf publicly available tools were identified. Furthermore, we discussed the limitations of the current studies and proposed eight potential directions for future research.",
+    "authors": [
+      {
+        "authorId": "2188104754",
+        "name": "Cheligeer Cheligeer"
+      },
+      {
+        "authorId": "2145741112",
+        "name": "Jingwei Huang"
+      },
+      {
+        "authorId": "48041724",
+        "name": "Guosong Wu"
+      },
+      {
+        "authorId": "3339353",
+        "name": "N. Bhuiyan"
+      },
+      {
+        "authorId": "2188829177",
+        "name": "Yuan Xu"
+      },
+      {
+        "authorId": "2149355686",
+        "name": "Yong Zeng"
+      }
+    ],
+    "citationCount": 31,
+    "externalIds": {
+      "CorpusId": 253110174,
+      "DBLP": "journals/aiedam/CheligeerHWBXZ22",
+      "DOI": "10.1017/S0890060422000166"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1017/S0890060422000166?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1017/S0890060422000166, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBY",
+      "status": "HYBRID",
+      "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/9B3886539161631E08661FDBCA4192BB/S0890060422000166a.pdf/div-class-title-machine-learning-in-requirements-elicitation-a-literature-review-div.pdf"
+    },
+    "paperId": "02f6e1b373c66a647e3b1875fe53161097f1523a",
+    "publicationTypes": [
+      "JournalArticle",
+      "Review"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Artif intell eng des anal manuf"
+      ],
+      "alternate_urls": [
+        "http://journals.cambridge.org/AIE",
+        "http://www.journals.cambridge.org/jid_AIE"
+      ],
+      "id": "c843e22f-b93e-4e2d-9591-d16959375317",
+      "issn": "0890-0604",
+      "name": "Artificial intelligence for engineering design, analysis and manufacturing",
+      "url": "https://www.cambridge.org/core/journals/ai-edam"
+    },
+    "title": "Machine learning in requirements elicitation: a literature review",
+    "venue": "Artificial intelligence for engineering design, analysis and manufacturing",
+    "year": 2022
+  },
+  {
+    "_paper_key": "doi:10.1109/re.2016.10",
+    "_rank": 37,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "1969899",
+        "name": "Oliver Karras"
+      },
+      {
+        "authorId": "2789527",
+        "name": "Stephan Kiesling"
+      },
+      {
+        "authorId": "144014947",
+        "name": "K. Schneider"
+      }
+    ],
+    "citationCount": 31,
+    "externalIds": {
+      "CorpusId": 12657197,
+      "DBLP": "conf/re/KarrasKS16",
+      "DOI": "10.1109/RE.2016.10",
+      "MAG": "2559826938"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/RE.2016.10?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/RE.2016.10, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "0a9f7bec97e2d99648a5925ce794fd8074c0e9ff",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "IEEE International Conference on Requirements Engineering",
+        "RE",
+        "IEEE Int Requir Eng Conf",
+        "IEEE Int Conf Requir Eng"
+      ],
+      "id": "647e2b25-1bff-4e4f-b507-e21dcb081788",
+      "name": "IEEE International Requirements Engineering Conference",
+      "type": "conference",
+      "url": "http://requirements-engineering.org/"
+    },
+    "title": "Supporting Requirements Elicitation by Tool-Supported Video Analysis",
+    "venue": "IEEE International Requirements Engineering Conference",
+    "year": 2016
+  },
+  {
+    "_paper_key": "doi:10.1007/978-3-642-37422-7_10",
+    "_rank": 38,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "2669096",
+        "name": "P. Rempel"
+      },
+      {
+        "authorId": "35215848",
+        "name": "Patrick M\u00e4der"
+      },
+      {
+        "authorId": "2546722",
+        "name": "Tobias Kuschke"
+      },
+      {
+        "authorId": "2151661",
+        "name": "I. Philippow"
+      }
+    ],
+    "citationCount": 29,
+    "externalIds": {
+      "CorpusId": 5907625,
+      "DBLP": "conf/refsq/RempelMKP13",
+      "DOI": "10.1007/978-3-642-37422-7_10",
+      "MAG": "69084629"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1007/978-3-642-37422-7_10?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1007/978-3-642-37422-7_10, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "014e355334f7da8677ec921c1ba304085bdf4f6d",
+    "publicationTypes": [
+      "JournalArticle",
+      "Review"
+    ],
+    "publicationVenue": null,
+    "title": "Requirements Traceability across Organizational Boundaries - A Survey and Taxonomy",
+    "venue": "Requirements Engineering: Foundation for Software Quality",
+    "year": 2013
+  },
+  {
+    "_paper_key": "doi:10.1142/s0218194012500271",
+    "_rank": 39,
+    "abstract": "The automotive industry is facing a tremendous growth in the engineering of software-intensive systems, giving rise to various challenges. To prevent problems related to the fit of new software technologies in vehicles and the manufacturing processes, a well functioning interaction between the functions for product development and manufacturing is crucial. This is complicated by the fact that the changeable nature of software development causes unprecedented needs for collaboration and coordination between these two functions. This paper reports on a process assessment that focuses on the interface between the functions for product development and manufacturing in the development and design of software-intensive automotive systems. The main purpose of the study was to identify the key issues for improvement in the area assessed. The assessment was performed at two Swedish automotive companies where data were collected from documents and in interviews with practitioners. Nine key improvement issues were established ranging from challenges in requirements engineering to the need for knowledge transfer between manufacturing and product development. In addition, to increase the understandability of the results and map possible avenues for solution and future research, the paper provides an extensive analysis of each improvement issue in relation to the state-of-the-art.",
+    "authors": [
+      {
+        "authorId": "3062819",
+        "name": "J. Pernst\u00e5l"
+      },
+      {
+        "authorId": "2745548",
+        "name": "Ana Magazinius"
+      },
+      {
+        "authorId": "1680289",
+        "name": "T. Gorschek"
+      }
+    ],
+    "citationCount": 28,
+    "externalIds": {
+      "CorpusId": 16342958,
+      "DBLP": "journals/ijseke/PernstalMG12",
+      "DOI": "10.1142/S0218194012500271",
+      "MAG": "2107206252"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1142/S0218194012500271?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1142/S0218194012500271, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBY",
+      "status": "GREEN",
+      "url": "https://bth.diva-portal.org/smash/get/diva2:834506/FULLTEXT01"
+    },
+    "paperId": "00dd369fcaea4eb73bf9fd6f196bf2364b7bbe9d",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "International Journal of Software Engineering and Knowledge Engineering",
+        "Int j softw eng knowl eng",
+        "Int J Softw Eng Knowl Eng"
+      ],
+      "id": "9051e7ea-542a-4709-9bf5-f5e325b73844",
+      "issn": "0218-1940",
+      "name": "International journal of software engineering and knowledge engineering",
+      "type": "journal",
+      "url": "http://www.worldscinet.com/ijseke/ijseke.shtml"
+    },
+    "title": "A Study Investigating Challenges in the Interface between Product Development and manufacturing in the Development of Software-Intensive Automotive Systems",
+    "venue": "International journal of software engineering and knowledge engineering",
+    "year": 2012
+  },
+  {
+    "_paper_key": "ss:0152d1c8cbcc59b1f51fd8610efe942083723378",
+    "_rank": 40,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "34667222",
+        "name": "Michalis Pavlidis"
+      },
+      {
+        "authorId": "37860121",
+        "name": "S. Islam"
+      }
+    ],
+    "citationCount": 28,
+    "externalIds": {
+      "CorpusId": 502267,
+      "DBLP": "conf/caise/PavlidisI11",
+      "MAG": "2404760537"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at http://ceur-ws.org/Vol-734/PaperDemo12.pdf, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "0152d1c8cbcc59b1f51fd8610efe942083723378",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": null,
+    "title": "SecTro: A CASE Tool for Modelling Security in Requirements Engineering using Secure Tropos",
+    "venue": "CAiSE Forum",
+    "year": 2011
+  },
+  {
+    "_paper_key": "doi:10.1109/re.2015.7320413",
+    "_rank": 41,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "3285870",
+        "name": "Antoine Cailliau"
+      },
+      {
+        "authorId": "1711036",
+        "name": "A. V. Lamsweerde"
+      }
+    ],
+    "citationCount": 28,
+    "externalIds": {
+      "CorpusId": 445866,
+      "DBLP": "conf/re/CailliauL15",
+      "DOI": "10.1109/RE.2015.7320413",
+      "MAG": "1925256650"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/RE.2015.7320413?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/RE.2015.7320413, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "GREEN",
+      "url": "https://dial.uclouvain.be/downloader/downloader.php?pid=boreal:172476&datastream=PDF_01&disclaimer=b50642adf6bb2ff74cfb882cf6ee9dea7fd4662c7ce1b9a37ea0d30c897c9f21"
+    },
+    "paperId": "01cae26f2392ca7387fa17578411730e075080cf",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "IEEE International Conference on Requirements Engineering",
+        "RE",
+        "IEEE Int Requir Eng Conf",
+        "IEEE Int Conf Requir Eng"
+      ],
+      "id": "647e2b25-1bff-4e4f-b507-e21dcb081788",
+      "name": "IEEE International Requirements Engineering Conference",
+      "type": "conference",
+      "url": "http://requirements-engineering.org/"
+    },
+    "title": "Handling knowledge uncertainty in risk-based requirements engineering",
+    "venue": "IEEE International Requirements Engineering Conference",
+    "year": 2015
+  },
+  {
+    "_paper_key": "doi:10.1093/ietisy/e89-d.11.2701",
+    "_rank": 42,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "35631378",
+        "name": "Shuichiro Yamamoto"
+      },
+      {
+        "authorId": "3166441",
+        "name": "H. Kaiya"
+      },
+      {
+        "authorId": "1867824",
+        "name": "Karl Cox"
+      },
+      {
+        "authorId": "2873702",
+        "name": "S. Bleistein"
+      }
+    ],
+    "citationCount": 28,
+    "externalIds": {
+      "CorpusId": 32984570,
+      "DBLP": "journals/ieicet/YamamotoKCB06",
+      "DOI": "10.1093/ietisy/e89-d.11.2701",
+      "MAG": "2014925717"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1093/ietisy/e89-d.11.2701?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1093/ietisy/e89-d.11.2701, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "0702a2bb261eebe70edfa4fab30ced6c7c76f37a",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": null,
+    "title": "Goal Oriented Requirements Engineering: Trends and Issues",
+    "venue": "IEICE Trans. Inf. Syst.",
+    "year": 2006
+  },
+  {
+    "_paper_key": "doi:10.1109/coginf.2005.1532648",
+    "_rank": 43,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "2782930",
+        "name": "Gabriela N. Aranda"
+      },
+      {
+        "authorId": "144540280",
+        "name": "Aurora Vizca\u00edno"
+      },
+      {
+        "authorId": "1807649",
+        "name": "A. Cechich"
+      },
+      {
+        "authorId": "1702096",
+        "name": "M. Piattini"
+      }
+    ],
+    "citationCount": 28,
+    "externalIds": {
+      "CorpusId": 5377695,
+      "DBLP": "conf/IEEEicci/ArandaVCP05",
+      "DOI": "10.1109/COGINF.2005.1532648",
+      "MAG": "2097224974"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/COGINF.2005.1532648?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/COGINF.2005.1532648, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "0f5374812e7658f77d48dc8ddfdb7ab82aec63cd",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "International Conference on Computational Intelligence",
+        "International Conference on Cognitive Informatics",
+        "ICCI",
+        "Int Conf Comput Intell",
+        "Int Conf Cogn Informatics",
+        "Int Conf Comput  Informatics",
+        "Int Conf Comput Inf",
+        "IEEE International Conference on Cognitive Informatics",
+        "IEEE Int Conf Cogn Informatics",
+        "International Conference on Computing & Informatics"
+      ],
+      "id": "f212abee-58c5-46ad-ae8f-b6d733e0715b",
+      "name": "International Conference on Computing and Information",
+      "type": "conference"
+    },
+    "title": "A cognitive-based approach to improve distributed requirements elicitation processes",
+    "venue": "International Conference on Computing and Information",
+    "year": 2005
+  },
+  {
+    "_paper_key": "doi:10.1109/reet.2018.00010",
+    "_rank": 44,
+    "abstract": "Software engineering courses continually strive to maintain an excellent teaching curriculum that provides students with the agile skills as per industry needs. A particular challenge of teaching requirements engineering is capturing and communicating software requirements without killing team agility with excessive documentation. In many projects, requirements can be ambiguous and inconsistent. It is important to find a middle ground between completely by-passing requirements documentation and writing a complete Software Requirements Specification. In this paper, we report our experiences, presenting a guideline for students and educators who wish to adopt motivational modelling, a lightweight approach to requirements elicitation and modelling, for agile requirements engineering. Motivational modelling is an efficient technique that also represents a good boundary object to support discussions between developers and non-technical clients. Finally, we outline discussion points regarding where motivational models could fit into other agile practices.",
+    "authors": [
+      {
+        "authorId": "1401292565",
+        "name": "A. Lopez-Lorca"
+      },
+      {
+        "authorId": "40475882",
+        "name": "Rachel Burrows"
+      },
+      {
+        "authorId": "145977411",
+        "name": "L. Sterling"
+      }
+    ],
+    "citationCount": 27,
+    "externalIds": {
+      "CorpusId": 53033048,
+      "DBLP": "conf/re/Lopez-LorcaBS18",
+      "DOI": "10.1109/REET.2018.00010",
+      "MAG": "2896106528"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/REET.2018.00010?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/REET.2018.00010, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBY",
+      "status": "GREEN",
+      "url": "https://figshare.com/articles/conference_contribution/Teaching_motivational_models_in_agile_requirements_engineering/26250257/1/files/47582555.pdf"
+    },
+    "paperId": "075bc57564e44a30cbff22fb592419ce047b187b",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": null,
+    "title": "Teaching Motivational Models in Agile Requirements Engineering",
+    "venue": "2018 IEEE 8th International Workshop on Requirements Engineering Education and Training (REET)",
+    "year": 2018
+  },
+  {
+    "_paper_key": "doi:10.1007/978-3-642-40511-2_19",
+    "_rank": 45,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "2938766",
+        "name": "N. Mohammadi"
+      },
+      {
+        "authorId": "2656121",
+        "name": "Azadeh Alebrahim"
+      },
+      {
+        "authorId": "1757818",
+        "name": "T. Weyer"
+      },
+      {
+        "authorId": "145861325",
+        "name": "M. Heisel"
+      },
+      {
+        "authorId": "1808200",
+        "name": "K. Pohl"
+      }
+    ],
+    "citationCount": 25,
+    "externalIds": {
+      "CorpusId": 15755717,
+      "DBLP": "conf/IEEEares/MohammadiAWHP13",
+      "DOI": "10.1007/978-3-642-40511-2_19",
+      "MAG": "19524997"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1007/978-3-642-40511-2_19?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1007/978-3-642-40511-2_19, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "BRONZE",
+      "url": "https://link.springer.com/content/pdf/10.1007/978-3-642-40511-2_19.pdf"
+    },
+    "paperId": "0e8d6d3f3a215d5a9159fb90545ca06bd8b6a876",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": null,
+    "title": "A Framework for Combining Problem Frames and Goal Models to Support Context Analysis during Requirements Engineering",
+    "venue": "CD-ARES",
+    "year": 2013
+  },
+  {
+    "_paper_key": "doi:10.1109/icsea.2009.18",
+    "_rank": 46,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "2218697",
+        "name": "A. Tsadimas"
+      },
+      {
+        "authorId": "1757339",
+        "name": "M. Nikolaidou"
+      },
+      {
+        "authorId": "2506597",
+        "name": "D. Anagnostopoulos"
+      }
+    ],
+    "citationCount": 25,
+    "externalIds": {
+      "CorpusId": 7202206,
+      "DBLP": "conf/icsea/TsadimasNA09",
+      "DOI": "10.1109/ICSEA.2009.18",
+      "MAG": "2099814266"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/ICSEA.2009.18?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/ICSEA.2009.18, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "06acd9ec00c280305efc9888219db1af06b7f8b3",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": null,
+    "title": "Handling Non-functional Requirements in Information System Architecture Design",
+    "venue": "2009 Fourth International Conference on Software Engineering Advances",
+    "year": 2009
+  },
+  {
+    "_paper_key": "doi:10.1109/re48521.2020.00035",
+    "_rank": 47,
+    "abstract": "The scale and complexity of cyber threats in digital enterprises hamper operators\u2019 ability to gather, prioritize and rationalize which security controls requirements should be handled first to achieve rapid risk reduction. This paper presents a cyber digital twin, based on attack graph analytics, that automatically gathers and prioritizes security controls requirements at scale over active networks. The first-of-a-kind twin collects information about the computer network, associates it with attack tactics, measures the efficiency of implemented security controls requirements and automatically detects missing security controls. The twin also evaluates a cyber risk value using the attack graph and proposes prioritization of the detected requirements to rapidly reduce risk within existing system constraints. The cyber digital twin simulator offers several new risk reduction methods for automatically selecting security controls requirements. The necessary data for constructing a contextual cyber digital twin is defined, including the relationship between security controls and attack tactics. The paper illustrates the calculations used for ranking security controls\u2019 risk impact, the algorithm for security controls\u2019 requirements prioritization, and finally demonstrates successful results using a field experiment conducted via an active network.",
+    "authors": [
+      {
+        "authorId": "144605781",
+        "name": "E. Hadar"
+      },
+      {
+        "authorId": "144299380",
+        "name": "Dmitry Kravchenko"
+      },
+      {
+        "authorId": "1994569084",
+        "name": "Alexander Basovskiy"
+      }
+    ],
+    "citationCount": 25,
+    "externalIds": {
+      "CorpusId": 222297665,
+      "DBLP": "conf/re/HadarKB20",
+      "DOI": "10.1109/RE48521.2020.00035",
+      "MAG": "3091821587"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/RE48521.2020.00035?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/RE48521.2020.00035, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "0b1dfa3cc12e2c5f79d619cf07553a3dd8a3c77b",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "IEEE International Conference on Requirements Engineering",
+        "RE",
+        "IEEE Int Requir Eng Conf",
+        "IEEE Int Conf Requir Eng"
+      ],
+      "id": "647e2b25-1bff-4e4f-b507-e21dcb081788",
+      "name": "IEEE International Requirements Engineering Conference",
+      "type": "conference",
+      "url": "http://requirements-engineering.org/"
+    },
+    "title": "Cyber Digital Twin Simulator for Automatic Gathering and Prioritization of Security Controls\u2019 Requirements",
+    "venue": "IEEE International Requirements Engineering Conference",
+    "year": 2020
+  },
+  {
+    "_paper_key": "doi:10.1007/s11334-015-0260-8",
+    "_rank": 48,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "40324596",
+        "name": "M. Kassab"
+      },
+      {
+        "authorId": "1399307453",
+        "name": "N. Kilicay-Ergin"
+      }
+    ],
+    "citationCount": 25,
+    "externalIds": {
+      "CorpusId": 9065771,
+      "DBLP": "journals/isse/KassabK15",
+      "DOI": "10.1007/s11334-015-0260-8",
+      "MAG": "1951096900"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1007/s11334-015-0260-8?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1007/s11334-015-0260-8, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "0cddb381a9b42ed380f233e74b6cbcb524d777d8",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Innov Syst Softw Eng"
+      ],
+      "alternate_urls": [
+        "https://link.springer.com/journal/11334",
+        "http://www.springer.com/computer/swe/journal/11334"
+      ],
+      "id": "a8bb8488-3e7d-4741-baad-24cc574b5336",
+      "issn": "1614-5046",
+      "name": "Innovations in Systems and Software Engineering",
+      "type": "journal",
+      "url": "https://www.springer.com/computer/swe/journal/11334"
+    },
+    "title": "Applying analytical hierarchy process to system quality requirements prioritization",
+    "venue": "Innovations in Systems and Software Engineering",
+    "year": 2015
+  },
+  {
+    "_paper_key": "doi:10.1007/s10270-016-0539-8",
+    "_rank": 49,
+    "abstract": "In many domains such as automotive and avionics, the size and complexity of software systems is quickly increasing. At the same time, many stakeholders tend to be involved in the development of such systems, which typically must also be configured for multiple customers with varying needs. Product Line Engineering (PLE) is therefore an inevitable practice for such systems. Furthermore, because in many areas requirements must be explicit and traceability to them is required by standards, use cases and domain models are common practice for requirements elicitation and analysis. In this paper, based on the above observations, we aim at supporting PLE in the context of use case-centric development. Therefore, we propose, apply, and assess a use case-driven configuration approach which interactively receives configuration decisions from the analysts to generate product-specific (PS) use case and domain models. Our approach provides the following: (1) a use case-centric product line modeling method (PUM), (2) automated, interactive configuration support based on PUM, and (3) an automatic generation of PS use case and domain models from Product Line (PL) models and configuration decisions. The approach is supported by a tool relying on Natural Language Processing (NLP) and integrated with an industrial requirements management tool, i.e., IBM DOORS. We successfully applied and evaluated our approach to an industrial case study in the automotive domain, thus showing evidence that the approach is practical and beneficial to capture variability at the appropriate level of granularity and to configure PS use case and domain models in industrial settings.",
+    "authors": [
+      {
+        "authorId": "1987929",
+        "name": "Ines Hajri"
+      },
+      {
+        "authorId": "1753664",
+        "name": "Arda Goknil"
+      },
+      {
+        "authorId": "1722904",
+        "name": "L. Briand"
+      },
+      {
+        "authorId": "47536070",
+        "name": "Thierry Stephany"
+      }
+    ],
+    "citationCount": 24,
+    "externalIds": {
+      "CorpusId": 17119390,
+      "DBLP": "journals/sosym/HajriGBS18",
+      "DOI": "10.1007/s10270-016-0539-8",
+      "MAG": "2470895925"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1007/s10270-016-0539-8?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1007/s10270-016-0539-8, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBYNCSA",
+      "status": "GREEN",
+      "url": "https://orbilu.uni.lu/bitstream/10993/27795/1/SOSYM16.pdf"
+    },
+    "paperId": "058d36529df191c55e008f75b49e7c75f54cad9d",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "J Softw Syst Model",
+        "Softw Syst Model",
+        "Software and Systems Modeling"
+      ],
+      "alternate_urls": [
+        "http://www.sosym.org/"
+      ],
+      "id": "0cf6c0df-2bbb-4620-96c5-0bf91ed94d7a",
+      "issn": "1619-1366",
+      "name": "Journal of Software and Systems Modeling",
+      "type": "journal",
+      "url": "https://link.springer.com/journal/10270"
+    },
+    "title": "Configuring use case models in product families",
+    "venue": "Journal of Software and Systems Modeling",
+    "year": 2018
+  },
+  {
+    "_paper_key": "doi:10.3390/s19030485",
+    "_rank": 50,
+    "abstract": "This paper presents the results of three interrelated studies concerning the specification and implementation of ambient assisted living (AAL)/Internet of Things (IoT)/sensor-based infrastructures, to support resident wellness and person-centered care delivery, in a residential care context. Overall, the paper reports on the emerging wellness management concept and IoT solution. The three studies adopt a stakeholder evaluation approach to requirements elicitation and solution design. Human factors research combines several qualitative human\u2013machine interaction (HMI) design frameworks/methods, including realist ethnography, process mapping, persona-based design, and participatory design. Software development activities are underpinned by SCRUM/AGILE frameworks. Three structuring principles underpin the resident\u2019s lived experience and the proposed \u2018sensing\u2019 framework. This includes (1) resident wellness, (2) the resident\u2019s environment (i.e., room and broader social spaces which constitute \u2018home\u2019 for the resident), and (3) care delivery. The promotion of resident wellness, autonomy, quality of life and social participation depends on adequate monitoring and evaluation of information pertaining to (1), (2) and (3). Furthermore, the application of ambient assisted living technology in a residential setting depends on a clear definition of related care delivery processes and allied social and interpersonal communications. It is argued that independence (and quality of life for older adults) is linked to technology that enables interdependence, and specifically technology that supports social communication between key roles including residents, caregivers, and family members.",
+    "authors": [
+      {
+        "authorId": "9781209",
+        "name": "J. Cahill"
+      },
+      {
+        "authorId": "103256935",
+        "name": "Raul Portales"
+      },
+      {
+        "authorId": "84000602",
+        "name": "S. McLoughlin"
+      },
+      {
+        "authorId": "113852935",
+        "name": "Nithia Nagan"
+      },
+      {
+        "authorId": "117835621",
+        "name": "Braden Henrichs"
+      },
+      {
+        "authorId": "9746617",
+        "name": "Sean Wetherall"
+      }
+    ],
+    "citationCount": 24,
+    "externalIds": {
+      "CorpusId": 59274321,
+      "DBLP": "journals/sensors/CahillPMNHW19",
+      "DOI": "10.3390/s19030485",
+      "MAG": "2912412183",
+      "PubMed": "30682864",
+      "PubMedCentral": "6387202"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://pmc.ncbi.nlm.nih.gov/articles/PMC6387202, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBY",
+      "status": "GOLD",
+      "url": "https://www.mdpi.com/1424-8220/19/3/485/pdf?version=1548499516"
+    },
+    "paperId": "0a639f7017d763a0134fe5dce094a6e2e6438ffb",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "SENSORS",
+        "IEEE Sens",
+        "Ital National Conf Sens",
+        "IEEE Sensors",
+        "Sensors"
+      ],
+      "alternate_urls": [
+        "http://nbn-resolving.de/urn/resolver.pl?urn=urn:nbn:ch:bel-142001",
+        "http://www.mdpi.com/journal/sensors",
+        "https://www.mdpi.com/journal/sensors"
+      ],
+      "id": "3dbf084c-ef47-4b74-9919-047b40704538",
+      "issn": "1424-8220",
+      "name": "Italian National Conference on Sensors",
+      "type": "conference",
+      "url": "http://www.e-helvetica.nb.admin.ch/directAccess?callnumber=bel-142001"
+    },
+    "title": "IoT/Sensor-Based Infrastructures Promoting a Sense of Home, Independent Living, Comfort and Wellness",
+    "venue": "Italian National Conference on Sensors",
+    "year": 2019
+  }
+]

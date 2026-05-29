@@ -141,13 +141,25 @@ class SSClient:
         return result
 
     def get_references(self, paper_id: str, fields: Iterable[str] | None = None) -> list[dict]:
-        """Return full reference list (paginated under the hood by the lib)."""
+        """Return full reference list (paginated under the hood by the lib).
+
+        Note: when SS has zero references indexed for a paper, the `data` field
+        of the SS response comes back as null. The `semanticscholar` lib's
+        eager-load in `PaginatedResults.create()` then runs
+        `for item in results['data']` and raises `TypeError: 'NoneType' object
+        is not iterable`. Treat that as an empty result rather than a hard
+        failure — the paper simply has no refs in SS's index.
+        """
         cache = _cache_key(f"refs_{paper_id.replace(':', '_')}", {"fields": sorted(fields or [])})
         cached = _read_cache(cache)
         if cached is not None:
             return cached
-        refs = self._call(self._client.get_paper_references, paper_id, fields=list(fields) if fields else None)
-        out = [_as_dict(r) for r in refs]
+        try:
+            refs = self._call(self._client.get_paper_references, paper_id, fields=list(fields) if fields else None)
+        except TypeError as exc:
+            logger.info("SS has no references indexed for %s (%s); treating as empty", paper_id, exc)
+            refs = None
+        out = [_as_dict(r) for r in refs] if refs is not None else []
         _write_cache(cache, out)
         return out
 

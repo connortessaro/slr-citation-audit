@@ -35,20 +35,13 @@ CANDIDATE_PATHS = {
 DECISIONS_PATH = REPO_ROOT / "data" / "manual" / "slr_decisions.csv"
 CORPUS_PATH = REPO_ROOT / "data" / "processed" / "slr_corpus.json"
 
-# Protocol-language signals distinct from the SLR self-label (which is checked
-# separately). Picked from Kitchenham/PRISMA-style methodology vocabulary.
-METHOD_KEYWORDS = (
-    "prisma",
-    "kitchenham",
-    "search string",
-    "inclusion criteria",
-    "exclusion criteria",
-    "databases were searched",
-    "search protocol",
-    "primary studies",
-    "research questions",
-    "snowballing",
-)
+# NOTE (2026-05-29, microservices branch): Following the
+# `docs/changes/2026-05-28-drop-methodology-signal-gate.md` direction taken on
+# `features/tonyBranch`, the methodology-signal gate is removed. Many
+# legitimate SLR/SMS abstracts omit PRISMA/Kitchenham vocabulary; requiring it
+# excluded canonical SLRs (e.g. Pahl & Jamshidi 2016, Vural 2017 for
+# microservices). Manual review on the resulting larger corpus is the
+# precision filter.
 
 
 def _load_source(path: Path, source: str) -> list[dict]:
@@ -79,12 +72,8 @@ def _classify(paper: dict, keywords: list[str], slr_patterns: list[str], year_mi
     if year is None or not (year_min <= year <= year_max):
         return "EXCLUDE", f"year {year} outside [{year_min},{year_max}]", None
 
-    has_methodology_signal = any(k in text for k in METHOD_KEYWORDS)
-    if not has_methodology_signal:
-        return "EXCLUDE", "no methodology/protocol signal in abstract", None
-
     paper_type = "sms" if "mapping" in title else "slr"
-    return "INCLUDE", "SLR/SMS self-label + methodology signal + subfield fit", paper_type
+    return "INCLUDE", "SLR/SMS self-label + subfield fit", paper_type
 
 
 def _load_existing_overrides(path: Path) -> dict[str, str]:

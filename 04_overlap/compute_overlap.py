@@ -35,9 +35,12 @@ from lib.paperid import paper_key  # noqa: E402
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
+from lib.config import load as _load
+_SUBFIELD = _load().subfield
+
 CORPUS_PATH = REPO_ROOT / "data" / "processed" / "slr_corpus.json"
 REFS_PATH = REPO_ROOT / "data" / "processed" / "slr_references.json"
-TOP_CITED_PATH = REPO_ROOT / "data" / "processed" / "top_cited_techdebt.json"
+TOP_CITED_PATH = REPO_ROOT / "data" / "processed" / f"top_cited_{_SUBFIELD}.json"
 OVERLAP_MATRIX_PATH = REPO_ROOT / "data" / "processed" / "overlap_matrix.csv"
 MISSED_PAIRS_PATH = REPO_ROOT / "data" / "processed" / "missed_pairs.csv"
 

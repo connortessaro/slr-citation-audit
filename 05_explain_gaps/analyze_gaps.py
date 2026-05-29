@@ -36,35 +36,63 @@ from lib.paperid import normalize_doi  # noqa: E402
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
+from lib.config import load as _load
+_SUBFIELD = _load().subfield
+
 MISSED_PAIRS_PATH = REPO_ROOT / "data" / "processed" / "missed_pairs.csv"
-TOP_CITED_PATH = REPO_ROOT / "data" / "processed" / "top_cited_techdebt.json"
+TOP_CITED_PATH = REPO_ROOT / "data" / "processed" / f"top_cited_{_SUBFIELD}.json"
 OUTPUT_PATH = REPO_ROOT / "data" / "processed" / "gap_analysis.csv"
 SUMMARY_VENUE_PATH = REPO_ROOT / "data" / "processed" / "gap_summary_by_venue.csv"
 SUMMARY_AGE_PATH = REPO_ROOT / "data" / "processed" / "gap_summary_by_age.csv"
 
 
 def classify_venue(paper: dict) -> str:
-    """Return venue_type from publicationTypes + venue string heuristics."""
-    pub_types = paper.get("publicationTypes") or []
+    """Return venue_type from venue-string heuristics first, publicationTypes as fallback.
+
+    SS often returns multi-label publicationTypes like
+    ['JournalArticle', 'Conference'] for conference papers, so trusting the
+    list ordering biases results toward 'journal'. The venue *string* is more
+    reliable; only fall back to publicationTypes when the string is
+    uninformative.
+    """
     venue = (paper.get("venue") or "").lower()
     title = (paper.get("title") or "").lower()
+    pub_types = paper.get("publicationTypes") or []
 
+    # Workshop and preprint always take precedence.
     if "workshop" in venue or "workshop" in title:
         return "workshop"
-    if "arxiv" in venue or "corr" in venue:
+    if "arxiv" in venue or "corr" in venue or "preprint" in venue:
         return "preprint"
+
+    # Venue string: conference checked before journal so that strings like
+    # "IEEE International Conference on ..." don't fall through to the
+    # 'journal' branch when the venue also contains the word "transactions"
+    # somewhere.
+    if any(s in venue for s in (
+        "conference", "symposium", "proceedings", "esec/", "/fse",
+        "neural information processing systems",
+    )):
+        return "conference"
+    if any(s in venue for s in (
+        "journal", "transactions", "ieee software", "ieee access",
+        "communications of the acm", "computing surveys",
+        "concurrency and computation",
+    )):
+        return "journal"
+    if "book" in title or "handbook" in title:
+        return "book"
+
+    # publicationTypes fallback. Check conference before journal because SS
+    # multi-labels most conference papers as both.
     if pub_types:
         joined = " ".join(t.lower() for t in pub_types)
-        if "journal" in joined:
-            return "journal"
         if "conference" in joined:
             return "conference"
         if "book" in joined:
             return "book"
-    if "journal" in venue or "transactions" in venue:
-        return "journal"
-    if "conference" in venue or "symposium" in venue or "proceedings" in venue:
-        return "conference"
+        if "journal" in joined:
+            return "journal"
     return "unknown"
 
 

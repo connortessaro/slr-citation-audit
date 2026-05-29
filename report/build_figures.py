@@ -63,7 +63,9 @@ def render_coverage_histogram(overlap_df: pd.DataFrame, out_path: Path) -> Path:
     ax.hist(values, bins=range(0, 101, 10), edgecolor="black", color="#4c78a8")
     ax.set_xlabel("Coverage of date-controlled top-cited corpus (%)")
     ax.set_ylabel("Number of SLRs")
-    ax.set_title("SLR coverage of highly-cited technical-debt papers")
+    from lib.config import load as _load
+    subfield_label = _load().subfield.replace("_", " ")
+    ax.set_title(f"SLR coverage of highly-cited {subfield_label} papers")
     if not values.empty:
         ax.axvline(values.mean(), color="red", linestyle="--", linewidth=1, label=f"mean={values.mean():.1f}%")
         ax.axvline(values.median(), color="orange", linestyle=":", linewidth=1, label=f"median={values.median():.1f}%")

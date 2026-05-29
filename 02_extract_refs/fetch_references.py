@@ -89,29 +89,38 @@ def _normalise_reference(ref_record: dict) -> dict | None:
     }
 
 
-def _fetch_one(client: SSClient, slr: dict) -> list[dict] | None:
+def _fetch_one(client: SSClient, slr: dict, outcomes: dict[str, str]) -> list[dict] | None:
+    """Fetch refs for one SLR; record an outcome label in `outcomes` keyed by paper_key.
+
+    Outcome labels: cache_hit | no_id | api_error:<ExceptionClass> | empty | ok
+    """
     key = slr.get("_paper_key") or paper_key(slr)
     cache_path = REFS_CACHE_DIR / f"{_safe_filename(key)}.json"
     if cache_path.exists():
         try:
-            return json.loads(cache_path.read_text(encoding="utf-8"))
+            cached = json.loads(cache_path.read_text(encoding="utf-8"))
+            outcomes[key] = "cache_hit:empty" if not cached else "cache_hit:ok"
+            return cached
         except json.JSONDecodeError:
             logger.warning("Corrupt cache at %s; refetching", cache_path)
 
     paper_id = _resolve_paper_id(slr)
     if not paper_id:
+        outcomes[key] = "no_id"
         logger.warning("SLR %s has no paperId/DOI; skipping", key)
         return None
 
     try:
         raw_refs = client.get_references(paper_id, fields=REF_FIELDS)
     except Exception as exc:
-        logger.error("Failed to fetch refs for %s (%s): %s", key, paper_id, exc)
+        outcomes[key] = f"api_error:{type(exc).__name__}"
+        logger.error("Failed to fetch refs for %s (%s): %s: %s", key, paper_id, type(exc).__name__, exc)
         return None
 
     normalised = [r for r in (_normalise_reference(r) for r in raw_refs) if r is not None]
     REFS_CACHE_DIR.mkdir(parents=True, exist_ok=True)
     cache_path.write_text(json.dumps(normalised, indent=2, sort_keys=True), encoding="utf-8")
+    outcomes[key] = "empty" if not normalised else "ok"
     return normalised
 
 
@@ -122,9 +131,10 @@ def run(corpus_path: Path = CORPUS_PATH, output_path: Path = OUTPUT_PATH) -> dic
     client = SSClient.from_config()
 
     out: dict[str, list[dict]] = {}
+    outcomes: dict[str, str] = {}
     for slr in tqdm(corpus, desc="fetch refs"):
         key = slr.get("_paper_key") or paper_key(slr)
-        refs = _fetch_one(client, slr)
+        refs = _fetch_one(client, slr, outcomes)
         if refs is None:
             continue
         out[key] = refs
@@ -132,8 +142,15 @@ def run(corpus_path: Path = CORPUS_PATH, output_path: Path = OUTPUT_PATH) -> dic
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(out, indent=2, sort_keys=True), encoding="utf-8")
 
+    # Persist the per-SLR outcome trace for downstream diagnostics + report
+    outcomes_path = output_path.parent / "slr_refs_outcomes.json"
+    outcomes_path.write_text(json.dumps(outcomes, indent=2, sort_keys=True), encoding="utf-8")
+
+    from collections import Counter
+    tally = Counter(outcomes.values())
     n_refs = sum(len(v) for v in out.values())
     logger.info("Fetched refs for %d/%d SLRs, %d total references", len(out), len(corpus), n_refs)
+    logger.info("Outcome breakdown: %s", dict(tally))
     return out
 
 

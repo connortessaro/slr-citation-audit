@@ -5,8 +5,8 @@ keyword search, so we pull a wide net per keyword, deduplicate, filter to the
 subfield, then rank locally by citationCount.
 
 Outputs:
-    data/processed/top_cited_techdebt.json         -- top N (default 50)
-    data/processed/top_cited_techdebt_top100.json  -- top 100 for robustness
+    data/processed/top_cited_<subfield>.json         -- top N (default 50)
+    data/processed/top_cited_<subfield>_top100.json  -- top 100 for robustness
 """
 from __future__ import annotations
 
@@ -24,8 +24,9 @@ from lib.ss_client import SSClient  # noqa: E402
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
-OUTPUT_PATH = REPO_ROOT / "data" / "processed" / "top_cited_techdebt.json"
-ROBUSTNESS_PATH = REPO_ROOT / "data" / "processed" / "top_cited_techdebt_top100.json"
+_SUBFIELD = load_config().subfield
+OUTPUT_PATH = REPO_ROOT / "data" / "processed" / f"top_cited_{_SUBFIELD}.json"
+ROBUSTNESS_PATH = REPO_ROOT / "data" / "processed" / f"top_cited_{_SUBFIELD}_top100.json"
 
 FIELDS = (
     "paperId",

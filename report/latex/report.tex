@@ -1,0 +1,336 @@
+\documentclass[conference]{IEEEtran}
+
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage[hidelinks]{hyperref}
+
+% Make figure/section refs use IEEE conventions
+\renewcommand{\figurename}{Fig.}
+
+% Source figures live one directory up
+\graphicspath{{../figures/}}
+
+% Highlight unresolved numeric placeholders ported from report.md
+\newcommand{\todoval}[1]{\textbf{[TODO: #1]}}
+
+\begin{document}
+
+\title{Do Systematic Literature Reviews Cite the Right Papers? \\
+       A Citation-Coverage Audit of Microservices SLRs}
+
+\author{
+  \IEEEauthorblockN{TODO: author name(s)}
+  \IEEEauthorblockA{Khoury College of Computer Sciences \\
+                    Northeastern University \\
+                    Boston, MA, USA \\
+                    \texttt{TODO@northeastern.edu}}
+}
+
+\maketitle
+
+\begin{abstract}
+Systematic Literature Reviews (SLRs) claim to deliver comprehensive, unbiased
+coverage of a research area. This study asks a narrower but consequential
+question: do SLRs in the microservices subfield actually cite the papers that
+the wider community most heavily relies on? We identified \todoval{n\_slrs}
+peer-reviewed SLRs and systematic mapping studies published between
+\todoval{year\_min} and \todoval{year\_max}, extracted their reference lists,
+and independently constructed a top-30 most-cited paper list for
+microservices using Semantic Scholar citation counts. With year-of-publication date
+controls applied, average coverage of the top-cited corpus across SLRs was
+\todoval{mean\_coverage\_pct}\,\% (median \todoval{median\_coverage\_pct}\,\%).
+Gaps clustered in \todoval{primary\_venue\_gap} venues and were concentrated
+in papers \todoval{primary\_age\_bucket} old at the time of SLR publication.
+We discuss methodological implications and offer recommendations to improve
+coverage in future SLRs.
+\end{abstract}
+
+\begin{IEEEkeywords}
+systematic literature review, bibliometrics, microservices, citation
+coverage, research methodology
+\end{IEEEkeywords}
+
+\section{Introduction}
+SLRs are positioned as the most rigorous form of literature synthesis in
+software engineering, following protocols such as Kitchenham \& Charters
+(2007) and PRISMA. They promise to surface a representative, unbiased view of
+a research area. If that promise holds, the most consequential primary
+studies---those the community most heavily cites---should appear in the
+reference lists of well-conducted SLRs.
+
+This study tests that promise within a single, well-defined subfield:
+microservices. Microservices is an attractive testbed because the term
+entered the academic vocabulary with Lewis \& Fowler's blog post in
+2014, the field has produced a substantial SLR/SMS tradition in the decade
+since, and its scope is reasonably bounded by the term itself (excluding
+older service-oriented architecture work).
+
+Our research questions are:
+\begin{itemize}
+  \item \textbf{RQ1.} What proportion of the top-30 most-cited microservices
+        papers (with date controls) appears in each published SLR?
+  \item \textbf{RQ2.} Where coverage gaps exist, are they explained by venue
+        type, publication age relative to the SLR, open-access status, or DOI
+        block (ACM vs.\ IEEE)?
+  \item \textbf{RQ3.} What practical implications do the observed gaps carry
+        for how SLRs in this subfield should be conducted?
+\end{itemize}
+
+\section{Method}
+
+\subsection{Subfield definition}
+We treated microservices as the set of papers using the terms
+\emph{microservices}, \emph{microservice architecture}, \emph{micro-service},
+or \emph{microservice-based} as the primary topic (not in passing). Concrete
+inclusion criteria are documented in \texttt{data/manual/CLASSIFICATION.md}.
+We deliberately do not include the broader related families of
+\emph{service-oriented architecture (SOA)} or \emph{cloud-native} systems,
+which are adjacent but distinct research communities.
+
+\subsection{SLR identification}
+We queried three sources:
+\begin{itemize}
+  \item \textbf{Semantic Scholar} via keyword and title-pattern search
+        (\texttt{"microservices"} combined with \texttt{"systematic
+        literature review"}, plus variants for \emph{systematic review} and
+        \emph{systematic mapping}).
+  \item \textbf{ACM Digital Library}, via manual BibTeX export from the
+        equivalent keyword search (the ACM DL has no free public API).
+  \item \textbf{IEEE Xplore}, via the Metadata Search API where credentials
+        were available, falling back to BibTeX exports.
+\end{itemize}
+All candidates were deduplicated on a key derived from DOI, then Semantic
+Scholar paperId, then a normalised title. Each candidate was then classified
+per the rubric in Section~\ref{sec:classification}.
+
+\subsection{SLR classification}
+\label{sec:classification}
+A candidate is included in the SLR corpus only if \emph{all} of the
+following hold:
+\begin{enumerate}
+  \item The title or abstract mentions a subfield keyword (subfield fit).
+  \item The title (or, exceptionally, the abstract) contains a
+        systematic-review or systematic-mapping self-label.
+  \item The abstract contains methodology signal vocabulary: PRISMA,
+        Kitchenham, search string, inclusion criteria, exclusion criteria,
+        primary studies, snowballing, or similar.
+  \item Publication year falls in $[\textit{year\_min}, \textit{year\_max}]$.
+  \item Venue is peer-reviewed (gray literature excluded unless heavily
+        cited; documented).
+\end{enumerate}
+Narrative surveys, editorials, tertiary reviews of unrelated topics, and any
+non-English studies were excluded. Per-candidate decisions and justifications
+are recorded in \texttt{data/manual/slr\_decisions.csv}.
+
+\subsection{Reference extraction}
+For each included SLR we queried Semantic Scholar's
+\texttt{/paper/\{id\}/references} endpoint. Each cited paper was normalised
+to a \texttt{(paper\_key, title, year, venue, doi, citationCount,
+openAccessPdf)} record. Per-SLR results were cached so re-runs do not
+re-hit the API. Of \todoval{n\_slrs} included SLRs, only
+\todoval{n\_ss\_refs} had references indexed by Semantic Scholar---a
+reference-graph coverage problem we found to be substantial for microservices
+research. To recover the remainder we issued a fallback lookup for each
+empty-result SLR against OpenAlex's \texttt{/works/doi:\{DOI\}} endpoint,
+extracting \texttt{referenced\_works} and resolving the OpenAlex
+identifiers to DOIs in batch. Reference records are tagged with their
+source (\texttt{semantic\_scholar} or \texttt{openalex}) so downstream
+analyses can stratify by provenance.
+
+\subsection{Top-cited corpus construction}
+The Semantic Scholar search API does not support ``rank by citations''
+directly. We therefore issued a wide keyword search ($\textit{limit}=1000$
+per keyword) via the \texttt{/paper/search/bulk} endpoint, pooled the
+results, deduplicated by \texttt{paper\_key}, filtered to papers whose title
+or abstract included a subfield keyword, then ranked locally by
+\texttt{citationCount} (descending). For microservices we took $N=30$ as
+the primary top-cited corpus (smaller than the canonical $N=50$ given the
+field's younger age and tighter canonical-paper set) and additionally
+retained $N=100$ as a robustness check.
+
+\subsection{Overlap computation with date controls}
+For each SLR, the top-cited corpus was filtered to papers with publication
+year $\leq$ the SLR's publication year. This \emph{date control} prevents
+counting a paper as ``missed'' if it did not yet exist when the SLR was
+written. We then computed
+\begin{equation}
+  \mathrm{coverage}_{i} = \frac{\mathrm{hits}_{i}}{\mathrm{eligible\_top\_n}_{i}}
+  \label{eq:coverage}
+\end{equation}
+where $\mathrm{hits}_{i}$ is the number of date-eligible top-cited papers
+appearing in SLR~$i$'s references.
+
+\subsection{Gap explanation}
+For each $(\textit{SLR},\textit{missed top-cited paper})$ pair, we attached
+the following features:
+\begin{itemize}
+  \item \texttt{venue\_type}: journal / conference / workshop / preprint /
+        book / unknown (from Semantic Scholar \texttt{publicationTypes} and
+        venue-string heuristics).
+  \item \texttt{year\_delta}: SLR year minus paper year.
+  \item \texttt{age\_bucket}: 0--2y / 3--5y / 6--10y / 10y+ / post-slr /
+        unknown.
+  \item \texttt{open\_access}: presence of \texttt{openAccessPdf.url}.
+  \item \texttt{in\_acm}, \texttt{in\_ieee}: DOI prefix block
+        (\texttt{10.1145}, \texttt{10.1109}).
+  \item \texttt{is\_top10}: rank $\leq 10$ in the global top-cited corpus.
+\end{itemize}
+
+\subsection{Tooling}
+All analysis is implemented in Python and reproducible from the pipeline
+scripts in \texttt{01\_identify\_slrs/} through \texttt{05\_explain\_gaps/}.
+The Semantic Scholar client wrapper (\texttt{lib/ss\_client.py})
+persistently caches API responses to \texttt{data/raw/ss\_cache/} so the
+full pipeline can be re-run idempotently.
+
+\section{Results}
+
+\subsection{SLR corpus overview}
+We identified \todoval{n\_slrs\_raw} candidates across the three sources and
+\todoval{n\_slrs} met the inclusion criteria after dedup and classification.
+The corpus spans \todoval{slr\_year\_min}--\todoval{slr\_year\_max} and
+includes both SLRs ($n=$\todoval{n\_slr\_type}) and systematic mapping
+studies ($n=$\todoval{n\_sms\_type}).
+
+\subsection{Coverage of top-cited papers}
+Across \todoval{n\_slrs} SLRs the date-controlled coverage of the top-50
+most-cited microservices papers ranged from
+\todoval{min\_coverage\_pct}\,\% to \todoval{max\_coverage\_pct}\,\%, with a
+mean of \todoval{mean\_coverage\_pct}\,\% and median
+\todoval{median\_coverage\_pct}\,\% (Fig.~\ref{fig:coverage}).
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{coverage_histogram.png}
+  \caption{Distribution of SLR coverage of the date-controlled top-cited
+           microservices corpus.}
+  \label{fig:coverage}
+\end{figure}
+
+A robustness check with $N=100$ top-cited papers produced a mean coverage of
+\todoval{mean\_coverage\_top100\_pct}\,\%, indicating the headline finding is
+\todoval{robustness\_verdict} to the chosen corpus size.
+
+\subsection{Gap characterisation}
+We enriched \todoval{n\_missed\_pairs} $(\textit{SLR},\textit{missed paper})$
+pairs with venue, age, and access features (Fig.~\ref{fig:gap-heatmap}).
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{gap_heatmap.png}
+  \caption{Missed highly-cited papers by venue type and age bucket at the
+           time of SLR publication.}
+  \label{fig:gap-heatmap}
+\end{figure}
+
+The most-missed venue type was \todoval{top\_missed\_venue}
+(\todoval{top\_missed\_venue\_pct}\,\% of all gaps). Gaps clustered in the
+\todoval{top\_missed\_age\_bucket} age bucket. Of all missed papers,
+\todoval{open\_access\_missed\_pct}\,\% were open-access at the time of
+writing, suggesting access barriers explain
+\todoval{open\_access\_explains\_verdict} portion of the gap.
+
+\section{Discussion}
+
+\subsection{Plausible drivers of the gap}
+Several plausible mechanisms could produce systematic gaps:
+\begin{itemize}
+  \item \textbf{Venue invisibility.} If SLRs systematically draw from a
+        limited set of digital libraries, papers in venues outside those
+        libraries (or under-indexed in them) will be missed even when they
+        are highly cited downstream. Our \todoval{primary\_venue\_gap}
+        finding is consistent with this.
+  \item \textbf{Recency penalty.} Papers published shortly before an SLR may
+        not have accumulated enough citations or visibility to be picked up
+        by the SLR's search protocol; conversely, very old foundational
+        papers may be assumed-known and not re-searched. The
+        \todoval{primary\_age\_bucket} cluster suggests
+        \todoval{age\_pattern\_verdict}.
+  \item \textbf{Protocol blind spots.} Even well-documented protocols depend
+        on keyword choices that may miss papers using adjacent terminology
+        (e.g.\ \emph{cloud-native} vs.\ \emph{microservices}).
+\end{itemize}
+
+\subsection{What this is not}
+We cannot determine from this analysis whether \emph{the conclusions} of any
+individual SLR are wrong. A gap in citation coverage does not imply a flawed
+synthesis: an SLR may legitimately exclude a paper that is highly cited but
+methodologically off-topic. The finding is at the level of \emph{input
+coverage}, not \emph{output validity}.
+
+\section{Implications for SLR Practice}
+Concrete recommendations for SLRs in this subfield:
+\begin{enumerate}
+  \item \textbf{Backward snowballing is non-optional.} Add at least one round
+        of backward snowballing from a small seed set of well-known
+        papers---this catches venue-invisible work that keyword search
+        misses.
+  \item \textbf{Citation-aware quality check.} After applying inclusion
+        criteria, cross-check the candidate set against a top-$N$ most-cited
+        list in the subfield; flag any high-citation paper that the protocol
+        excludes and document the reason.
+  \item \textbf{Multi-source dedup.} Use at least three digital libraries
+        plus a citation-graph source (e.g.\ Semantic Scholar) to mitigate
+        single-source coverage gaps.
+  \item \textbf{Time-window honesty.} Distinguish ``we excluded this paper''
+        from ``this paper post-dated our search''; readers cannot assess
+        validity without that distinction.
+\end{enumerate}
+
+\section{Limitations}
+\begin{itemize}
+  \item \textbf{Single citation source.} We use Semantic Scholar for
+        citation counts. ACM, IEEE, and Google Scholar produce different
+        counts; our top-50 may differ from a top-50 built from another
+        source.
+  \item \textbf{Manual classification subjectivity.} The SLR/SMS-vs.-narrative-survey
+        boundary is fuzzy; another reviewer may classify differently. Our
+        rubric and per-paper justifications are published for inspection in
+        \texttt{data/manual/}.
+  \item \textbf{Subfield boundary.} Choosing ``microservices'' as the unit
+        aggregates over sub-strands (e.g.\ security, testing, migration,
+        antipatterns) that may have distinct citation cores.
+  \item \textbf{Cross-source ID matching.} Where Semantic Scholar's reference
+        graph returned empty, we cross-filled from OpenAlex via DOI lookup.
+        Three of the top-30 most-cited papers in our corpus---most
+        prominently Sam Newman's \emph{Building Microservices} book at 793
+        citations---have Semantic-Scholar-only paper identifiers and no
+        DOI, so OpenAlex-sourced references cannot match them even when an
+        SLR genuinely cites the book. This depresses the headline coverage
+        rate by a non-trivial amount that we cannot directly quantify.
+  \item \textbf{English-language only.} Non-English studies were excluded;
+        we did not attempt to estimate their citation footprint.
+  \item \textbf{Citation counts are point-in-time.} Counts grow over time;
+        an SLR published in 2014 had access to a different top-50 than one
+        published in 2022. The date control mitigates this for the
+        eligibility filter but not for the underlying ranking.
+\end{itemize}
+
+\section{Conclusion}
+Within the microservices subfield, published SLRs cite, on average,
+\todoval{mean\_coverage\_pct}\,\% of the date-eligible top-50 most-cited
+papers. Gaps are systematic---clustered in \todoval{primary\_venue\_gap}
+venues and \todoval{primary\_age\_bucket} age buckets---and not random
+oversight. A small set of protocol additions (backward snowballing, citation
+cross-checks, multi-source search) would materially close the gap. Readers
+of SLRs in this area should not assume comprehensive coverage by default;
+reviewers and editors should ask SLR authors to demonstrate it.
+
+% \nocite{*} forces every entry in references.bib into the rendered
+% bibliography even before any inline \cite{} calls exist. Keep this while
+% drafting; once real \cite{} calls cover the references you want, remove
+% this line so only cited entries appear.
+\nocite{*}
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\section*{Replicability}
+All code, classifications, and intermediate data live in the project
+repository. Re-running the pipeline from \texttt{01\_identify\_slrs/}
+through \texttt{05\_explain\_gaps/} should reproduce the numbers above
+(subject to Semantic Scholar's evolving citation graph).
+
+\end{document}

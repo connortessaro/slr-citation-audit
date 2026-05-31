@@ -30,6 +30,11 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Run SS-only pipeline end-to-end.")
     parser.add_argument("--skip-search", action="store_true", help="Skip SS candidate search step.")
     parser.add_argument("--skip-refs", action="store_true", help="Skip reference fetching step.")
+    parser.add_argument(
+        "--skip-crossref",
+        action="store_true",
+        help="Skip Crossref backfill for SLRs with empty SS reference lists.",
+    )
     parser.add_argument("--skip-top", action="store_true", help="Skip top-cited refresh step.")
     parser.add_argument("--skip-figures", action="store_true", help="Skip figure rendering step.")
     args = parser.parse_args()
@@ -37,6 +42,10 @@ def main() -> None:
     ss_search = _load_module("ss_search", "01_identify_slrs/search_semantic_scholar.py")
     classify = _load_module("classify_slrs", "01_identify_slrs/classify_slrs.py")
     fetch_refs = _load_module("fetch_references", "02_extract_refs/fetch_references.py")
+    fetch_refs_crossref = _load_module(
+        "fetch_references_crossref",
+        "02_extract_refs/fetch_references_crossref.py",
+    )
     top_cited = _load_module("fetch_top_cited", "03_top_cited/fetch_top_cited.py")
     overlap = _load_module("compute_overlap", "04_overlap/compute_overlap.py")
     gaps = _load_module("analyze_gaps", "05_explain_gaps/analyze_gaps.py")
@@ -51,6 +60,20 @@ def main() -> None:
 
     if not args.skip_refs:
         fetch_refs.run(corpus_path=sp.corpus, output_path=sp.refs_out, cache_dir=sp.refs_cache)
+        if not args.skip_crossref:
+            counts = fetch_refs_crossref.backfill_missing_references(
+                source="ss",
+                corpus_path=sp.corpus,
+                refs_path=sp.refs_out,
+                cache_dir=sp.refs_cache,
+                merge=True,
+            )
+            print(
+                "Crossref backfill:",
+                f"{counts.get('ok', 0)} ok,",
+                f"{counts.get('empty', 0)} still empty,",
+                f"{counts.get('failed', 0)} failed",
+            )
 
     # Use the CLI-capable entrypoints for source routing (keeps defaults correct)
     if not args.skip_top:

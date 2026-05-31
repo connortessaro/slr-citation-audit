@@ -104,8 +104,14 @@ def _fetch_one(client: SSClient, slr: dict, *, cache_dir: Path) -> list[dict] | 
     try:
         raw_refs = client.get_references(paper_id, fields=REF_FIELDS)
     except Exception as exc:
-        logger.error("Failed to fetch refs for %s (%s): %s", key, paper_id, exc)
-        return None
+        # If SS cannot provide a reference graph for this paper, keep the SLR in the
+        # output with an empty reference list so downstream stages remain stable.
+        if isinstance(exc, TypeError) and "NoneType" in str(exc) and "iterable" in str(exc):
+            logger.warning("References unavailable via SS for %s (%s): %s", key, paper_id, exc)
+            raw_refs = []
+        else:
+            logger.error("Failed to fetch refs for %s (%s): %s", key, paper_id, exc)
+            return None
 
     # Semantic Scholar can legitimately return no references for some papers.
     # Treat that as an empty list (still cache it) rather than skipping the SLR.

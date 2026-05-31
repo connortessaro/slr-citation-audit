@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SLR Citation Overlap Explorer</title>
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/tools/explorer/css/explorer.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="load-state" class="load-state">Loading…</div>
+
+    <div id="app-root" hidden>
+      <header class="app-header">
+        <div class="brand">
+          <h1>SLR Citation Overlap Explorer</h1>
+          <p class="subtitle">Semantic Scholar corpus · date-controlled top-50 overlap</p>
+        </div>
+        <nav class="main-nav">
+          <button type="button" data-view="overview" class="active">Overview</button>
+          <button type="button" data-view="slrs">SLRs</button>
+          <button type="button" data-view="top">Top cited</button>
+        </nav>
+      </header>
+
+      <main>
+        <!-- Overview -->
+        <section id="view-overview" class="view-panel active">
+          <div class="kpi-row">
+            <div class="kpi"><span class="kpi-val" id="kpi-slrs">—</span><span class="kpi-lbl">SLRs</span></div>
+            <div class="kpi"><span class="kpi-val" id="kpi-top">—</span><span class="kpi-lbl">Top-cited corpus</span></div>
+            <div class="kpi"><span class="kpi-val" id="kpi-refs">—</span><span class="kpi-lbl">SLRs with refs</span></div>
+            <div class="kpi"><span class="kpi-val" id="kpi-mean">—</span><span class="kpi-lbl">Mean coverage</span></div>
+            <div class="kpi"><span class="kpi-val" id="kpi-median">—</span><span class="kpi-lbl">Median coverage</span></div>
+            <div class="kpi"><span class="kpi-val" id="kpi-zero">—</span><span class="kpi-lbl">Zero coverage</span></div>
+          </div>
+          <div class="chart-row">
+            <div class="chart-card"><canvas id="chart-coverage"></canvas></div>
+            <div class="chart-card"><canvas id="chart-top-cited"></canvas></div>
+          </div>
+          <div class="table-card">
+            <h2>All SLRs (click row to inspect)</h2>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Year</th>
+                  <th>Title</th>
+                  <th>Refs</th>
+                  <th>Eligible</th>
+                  <th>Hits</th>
+                  <th>Coverage</th>
+                </tr>
+              </thead>
+              <tbody id="overview-slrs-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SLRs -->
+        <section id="view-slrs" class="view-panel explorer-layout">
+          <aside class="sidebar">
+            <input type="search" id="slr-search" placeholder="Search SLRs…" class="search-input" />
+            <div id="slr-list" class="list-scroll"></div>
+          </aside>
+          <div id="slr-detail" class="detail-panel"></div>
+        </section>
+
+        <!-- Top cited -->
+        <section id="view-top" class="view-panel explorer-layout">
+          <aside class="sidebar">
+            <input type="search" id="top-search" placeholder="Search top-cited…" class="search-input" />
+            <div id="top-list" class="list-scroll"></div>
+          </aside>
+          <div id="top-detail" class="detail-panel"></div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <span>Data: <code>data/processed/ss/</code> + <code>top_cited_techdebt.json</code></span>
+        <span>Match: <code>paper_key</code> (DOI → SS id → title)</span>
+      </footer>
+    </div>
+
+    <script type="module" src="/tools/explorer/js/app.js"></script>
+  </body>
+</html>

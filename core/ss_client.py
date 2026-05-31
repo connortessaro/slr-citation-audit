@@ -13,6 +13,7 @@ import time
 from pathlib import Path
 from typing import Any, Iterable
 
+import requests
 from ratelimit import limits, sleep_and_retry
 from semanticscholar import SemanticScholar
 from semanticscholar.SemanticScholarException import GatewayTimeoutException, ServerErrorException
@@ -24,9 +25,12 @@ logger = logging.getLogger(__name__)
 CACHE_DIR = REPO_ROOT / "data" / "raw" / "ss_cache"
 CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
-# Public limits: 100 req / 5 min. Authenticated: 1 req / sec sustained.
-_RATE_CALLS = 80
-_RATE_PERIOD = 60
+# Authenticated: 1 req / sec sustained. We enforce 1 RPS to reduce 429s and
+# keep runs deterministic.
+_RATE_CALLS = 1
+_RATE_PERIOD = 1
+
+_GRAPH_BASE = "https://api.semanticscholar.org/graph/v1"
 
 
 def _cache_key(namespace: str, payload: dict[str, Any]) -> Path:
@@ -59,6 +63,7 @@ class SSClient:
 
     def __init__(self, api_key: str | None = None, retries: int = 3, backoff: float = 2.0):
         self._client = SemanticScholar(api_key=api_key) if api_key else SemanticScholar()
+        self._api_key = api_key
         self._retries = retries
         self._backoff = backoff
 
@@ -89,19 +94,35 @@ class SSClient:
         limit: int = 100,
         fields: Iterable[str] | None = None,
     ) -> list[dict]:
-        """Bulk keyword search, returns list of paper dicts."""
-        cache = _cache_key("search", {"q": query, "year": year, "limit": limit, "fields": sorted(fields or [])})
+        """Bulk keyword search, returns list of paper dicts.
+
+        The SS API allows at most 100 results per request; relevance search
+        caps offset+limit at 1000 total. Limits above 100 are satisfied by
+        paginating through ``PaginatedResults``.
+        """
+        if limit < 1:
+            raise ValueError("limit must be >= 1")
+        max_results = min(limit, 1000)
+        cache = _cache_key(
+            "search",
+            {"q": query, "year": year, "limit": max_results, "fields": sorted(fields or [])},
+        )
         cached = _read_cache(cache)
         if cached is not None:
             return cached
+        page_limit = min(max_results, 100)
         results = self._call(
             self._client.search_paper,
             query,
             year=year,
-            limit=limit,
+            limit=page_limit,
             fields=list(fields) if fields else None,
         )
-        papers = [_as_dict(p) for p in results]
+        papers: list[dict] = []
+        for paper in results:
+            papers.append(_as_dict(paper))
+            if len(papers) >= max_results:
+                break
         _write_cache(cache, papers)
         return papers
 
@@ -121,7 +142,15 @@ class SSClient:
         cached = _read_cache(cache)
         if cached is not None:
             return cached
-        refs = self._call(self._client.get_paper_references, paper_id, fields=list(fields) if fields else None)
+        try:
+            refs = self._call(self._client.get_paper_references, paper_id, fields=list(fields) if fields else None)
+        except TypeError as exc:
+            # Fallback: call Graph API directly and parse JSON safely.
+            # This avoids upstream SDK crashes when the API returns null list fields.
+            logger.warning("SS SDK references failed for %s (%s); falling back to Graph API", paper_id, exc)
+            out = self._get_references_via_graph_api(paper_id, fields=list(fields) if fields else None)
+            _write_cache(cache, out)
+            return out
         # The upstream client can return None when no references exist (or are hidden).
         # Treat as empty list so downstream stages can still proceed deterministically.
         if refs is None:
@@ -129,6 +158,53 @@ class SSClient:
         else:
             out = [_as_dict(r) for r in refs]
         _write_cache(cache, out)
+        return out
+
+    def _get_references_via_graph_api(self, paper_id: str, fields: list[str] | None) -> list[dict]:
+        """Direct Graph API fallback for /paper/{id}/references.
+
+        Returns a list of reference records in the same shape used elsewhere
+        ({citedPaper: {...}, ...}) so downstream normalisation logic remains unchanged.
+        """
+        headers: dict[str, str] = {}
+        if self._api_key:
+            headers["x-api-key"] = self._api_key
+
+        # Graph API returns a paginated object containing `data`.
+        # Some papers return `data: null` when references are unavailable; treat as empty.
+        out: list[dict] = []
+        offset = 0
+        limit = 100
+        while True:
+            _rate_limited_marker()
+            params = {
+                "fields": ",".join(fields) if fields else None,
+                "offset": offset,
+                "limit": limit,
+            }
+            # Remove None params so requests doesn't send "fields=None"
+            params = {k: v for k, v in params.items() if v is not None}
+
+            url = f"{_GRAPH_BASE}/paper/{paper_id}/references"
+            resp = requests.get(url, headers=headers, params=params, timeout=30)
+            if resp.status_code == 429:
+                retry_after = resp.headers.get("Retry-After")
+                sleep_s = float(retry_after) if retry_after else 5.0
+                logger.warning("SS 429 for %s; sleeping %.1fs then retry", paper_id, sleep_s)
+                time.sleep(sleep_s)
+                continue
+            resp.raise_for_status()
+            payload = resp.json()
+            data = payload.get("data")
+            if not data:
+                break
+            if not isinstance(data, list):
+                logger.warning("Unexpected references payload for %s: data is %s", paper_id, type(data).__name__)
+                break
+            out.extend(data)
+            if len(data) < limit:
+                break
+            offset += len(data)
         return out
 
 

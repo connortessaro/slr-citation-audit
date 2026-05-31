@@ -1,0 +1,184 @@
+/**
+ * Load pipeline outputs and build indexes for the overlap explorer.
+ */
+
+const DATA_PATHS = {
+  corpus: "/data/processed/ss/slr_corpus.json",
+  refs: "/data/processed/ss/slr_references.json",
+  topCited: "/data/processed/top_cited_techdebt.json",
+  overlap: "/data/processed/ss/overlap_matrix.csv",
+};
+
+export function filterByYear(topCited, cutoffYear) {
+  if (cutoffYear == null || cutoffYear === "") return topCited.filter((p) => p.year != null);
+  const y = Number(cutoffYear);
+  return topCited.filter((p) => {
+    if (p.year == null) return false;
+    return Number(p.year) <= y;
+  });
+}
+
+function parseCsv(text) {
+  const lines = text
+    .trim()
+    .split(/\r?\n/)
+    .map((line) => line.replace(/\r$/, ""));
+  if (!lines.length) return [];
+  const headers = parseCsvLine(lines[0]).map((h) => h.trim());
+  return lines.slice(1).map((line) => {
+    const vals = parseCsvLine(line);
+    const row = {};
+    headers.forEach((h, i) => {
+      row[h] = (vals[i] ?? "").trim();
+    });
+    return row;
+  });
+}
+
+function parseCsvLine(line) {
+  const out = [];
+  let cur = "";
+  let inQuotes = false;
+  for (let i = 0; i < line.length; i++) {
+    const c = line[i];
+    if (c === '"') {
+      if (inQuotes && line[i + 1] === '"') {
+        cur += '"';
+        i++;
+      } else inQuotes = !inQuotes;
+    } else if (c === "," && !inQuotes) {
+      out.push(cur);
+      cur = "";
+    } else cur += c;
+  }
+  out.push(cur);
+  return out;
+}
+
+async function fetchJson(path, label, onProgress) {
+  onProgress?.(`Loading ${label}…`);
+  const res = await fetch(path);
+  if (!res.ok) throw new Error(`Failed to load ${label}: ${res.status} ${res.statusText}`);
+  return res.json();
+}
+
+export async function loadExplorerData(onProgress) {
+  onProgress?.("Fetching pipeline data…");
+  const [corpus, refsBySlr, topCited, overlapText] = await Promise.all([
+    fetchJson(DATA_PATHS.corpus, "SLR corpus", onProgress),
+    fetchJson(DATA_PATHS.refs, "reference lists", onProgress),
+    fetchJson(DATA_PATHS.topCited, "top-cited corpus", onProgress),
+    (async () => {
+      onProgress?.("Loading overlap matrix…");
+      const res = await fetch(DATA_PATHS.overlap);
+      if (!res.ok) throw new Error(`Failed to load overlap: ${res.status} ${res.statusText}`);
+      return res.text();
+    })(),
+  ]);
+
+  onProgress?.("Building indexes…");
+  const overlapRows = parseCsv(overlapText);
+  return buildModel(corpus, refsBySlr, topCited, overlapRows);
+}
+
+function slrKey(slr) {
+  return slr._paper_key || slr.paper_key;
+}
+
+export function buildModel(corpus, refsBySlr, topCited, overlapRows) {
+  const topByKey = new Map();
+  for (const p of topCited) {
+    const k = p._paper_key;
+    if (k) topByKey.set(k, p);
+  }
+
+  const overlapBySlr = new Map();
+  for (const row of overlapRows) {
+    overlapBySlr.set(row.slr_id, {
+      ...row,
+      coverage_pct: row.coverage_pct === "" ? null : Number(row.coverage_pct),
+      n_refs: Number(row.n_refs),
+      eligible_top_n: Number(row.eligible_top_n),
+      hits: Number(row.hits),
+      misses: Number(row.misses),
+    });
+  }
+
+  const slrs = corpus.map((slr) => {
+    const key = slrKey(slr);
+    const refs = refsBySlr[key] || [];
+    const refKeys = new Set(refs.map((r) => r.paper_key).filter(Boolean));
+    const eligible = filterByYear(topCited, slr.year);
+    const eligibleHits = [];
+    const eligibleMisses = [];
+    for (const p of eligible) {
+      const pk = p._paper_key;
+      if (refKeys.has(pk)) eligibleHits.push(p);
+      else eligibleMisses.push(p);
+    }
+    const ov = overlapBySlr.get(key) || {};
+    const computedCoverage = eligible.length ? (eligibleHits.length / eligible.length) * 100 : null;
+    const fromOverlap = ov.coverage_pct;
+    const coveragePct = Number.isFinite(fromOverlap) ? fromOverlap : computedCoverage;
+    return {
+      key,
+      slr,
+      refs,
+      refKeys,
+      refCount: refKeys.size,
+      eligible,
+      eligibleHits,
+      eligibleMisses,
+      overlap: ov,
+      coveragePct,
+    };
+  });
+
+  slrs.sort((a, b) => (b.coveragePct ?? -1) - (a.coveragePct ?? -1));
+
+  for (const s of slrs) {
+    s.eligibleKeySet = new Set(s.eligible.map((e) => e._paper_key));
+  }
+
+  const topPapers = topCited.map((p) => {
+    const key = p._paper_key;
+    const citing = [];
+    const missing = [];
+    for (const s of slrs) {
+      if (!s.eligibleKeySet.has(key)) continue;
+      if (s.refKeys.has(key)) citing.push(s);
+      else missing.push(s);
+    }
+    return {
+      key,
+      paper: p,
+      citing,
+      missing,
+      citingCount: citing.length,
+      eligibleSlrCount: citing.length + missing.length,
+      missCount: missing.length,
+    };
+  });
+
+  topPapers.sort((a, b) => (a.paper._rank ?? 999) - (b.paper._rank ?? 999));
+
+  const summary = {
+    slrCount: slrs.length,
+    topCount: topCited.length,
+    withRefs: slrs.filter((s) => s.refCount > 0).length,
+    meanCoverage:
+      slrs.filter((s) => Number.isFinite(s.coveragePct)).reduce((a, s) => a + s.coveragePct, 0) /
+        (slrs.filter((s) => Number.isFinite(s.coveragePct)).length || 1),
+    medianCoverage: median(slrs.map((s) => s.coveragePct).filter((v) => Number.isFinite(v))),
+    zeroCoverage: slrs.filter((s) => s.coveragePct === 0).length,
+  };
+
+  return { slrs, topPapers, topCited, topByKey, summary };
+}
+
+function median(vals) {
+  if (!vals.length) return 0;
+  const s = [...vals].sort((a, b) => a - b);
+  const m = Math.floor(s.length / 2);
+  return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
+}

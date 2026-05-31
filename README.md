@@ -70,6 +70,8 @@ PYTHONPATH=. python 01_identify_slrs/classify_slrs.py --source ss
 PYTHONPATH=. python 01_identify_slrs/classify_slrs.py --source acm
 PYTHONPATH=. python 01_identify_slrs/classify_slrs.py --source ieee
 PYTHONPATH=. python 02_extract_refs/fetch_references.py --source ss
+# Crossref backfill for empty SS refs runs automatically in pipelines/ss/run.py (or standalone):
+PYTHONPATH=. python 02_extract_refs/fetch_references_crossref.py --source ss --merge
 PYTHONPATH=. python 02_extract_refs/fetch_references.py --source acm
 PYTHONPATH=. python 02_extract_refs/fetch_references.py --source ieee
 PYTHONPATH=. python 03_top_cited/fetch_top_cited.py
@@ -85,6 +87,16 @@ PYTHONPATH=. python report/build_figures.py --source ieee
 ```
 
 Outputs land in `data/processed/<source>/`. Figures in `report/figures/<source>/`. Final writeup in `report/report.md`.
+
+### Overlap explorer (browser)
+
+After overlap is computed for SS:
+
+```bash
+python tools/explorer/serve.py
+```
+
+Opens an interactive dashboard at `http://127.0.0.1:8765/tools/explorer/`. See `tools/explorer/README.md`.
 
 ## Tests
 

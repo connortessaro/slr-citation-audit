@@ -34,5 +34,7 @@ Re-run `04_overlap/compute_overlap.py` after changing references or top-cited.
 | **Overview** | KPIs, coverage histogram, top-cited citation chart, sortable SLR table |
 | **SLRs** | Pick an SLR → references, top-cited hits/misses, coverage gauge |
 | **Top cited** | Pick a top-50 paper → which SLRs cite it vs miss it (among eligible) |
+| **SLR consensus** | Papers most cited across SLR bibliographies; filter to top-50 overlap |
+| **Compare SLRs** | Pairwise reference overlap (shared / unique refs, Jaccard similarity) |
 
 Matching uses the same `paper_key` rules as the pipeline (DOI → Semantic Scholar id → normalized title).

@@ -4,6 +4,7 @@
 
 let coverageChart = null;
 let topCitedChart = null;
+let consensusChart = null;
 
 function ChartLib() {
   const C = typeof globalThis !== "undefined" ? globalThis.Chart : undefined;
@@ -23,6 +24,10 @@ export function destroyCharts() {
   if (topCitedChart) {
     topCitedChart.destroy();
     topCitedChart = null;
+  }
+  if (consensusChart) {
+    consensusChart.destroy();
+    consensusChart = null;
   }
 }
 
@@ -103,6 +108,67 @@ export function renderTopCitedBar(canvas, topCited, limit = 15) {
       },
       scales: {
         x: { title: { display: true, text: "Citations (Semantic Scholar)" }, beginAtZero: true },
+      },
+    },
+  });
+}
+
+export function renderConsensusBar(canvas, consensusPapers, limit = 20, slrCount = null) {
+  const slice = consensusPapers.slice(0, limit);
+  const labels = slice.map((p) => `#${p.citingCount}`);
+  const data = slice.map((p) => p.citingCount);
+  if (consensusChart) consensusChart.destroy();
+  const Chart = ChartLib();
+  const totalSlrs = slrCount ?? slice[0]?.citingSlrs?.length ?? "—";
+  consensusChart = new Chart(canvas, {
+    type: "bar",
+    data: {
+      labels,
+      datasets: [
+        {
+          label: "SLRs citing",
+          data,
+          backgroundColor: slice.map((p) =>
+            p.inTop50 ? "rgba(37, 99, 235, 0.75)" : "rgba(100, 116, 139, 0.65)"
+          ),
+          borderColor: slice.map((p) => (p.inTop50 ? "rgb(37, 99, 235)" : "rgb(100, 116, 139)")),
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      indexAxis: "y",
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        title: {
+          display: true,
+          text: `Top ${limit} papers by SLR consensus (# SLRs citing each)`,
+        },
+        tooltip: {
+          callbacks: {
+            title(items) {
+              const i = items[0]?.dataIndex ?? 0;
+              const p = slice[i];
+              return p?.ref.title || "";
+            },
+            afterLabel(item) {
+              const p = slice[item.dataIndex];
+              if (!p) return "";
+              const bits = [`${p.citingCount}/${totalSlrs} SLRs`];
+              if (p.inTop50) bits.push(`top-50 rank #${p.topRank}`);
+              return bits.join(" · ");
+            },
+          },
+        },
+      },
+      scales: {
+        x: {
+          title: { display: true, text: "Number of SLRs citing this paper" },
+          beginAtZero: true,
+          ticks: { stepSize: 1 },
+        },
       },
     },
   });

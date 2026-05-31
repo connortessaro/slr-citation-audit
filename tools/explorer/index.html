@@ -27,6 +27,8 @@
           <button type="button" data-view="overview" class="active">Overview</button>
           <button type="button" data-view="slrs">SLRs</button>
           <button type="button" data-view="top">Top cited</button>
+          <button type="button" data-view="consensus">SLR consensus</button>
+          <button type="button" data-view="compare">Compare SLRs</button>
         </nav>
       </header>
 
@@ -79,6 +81,44 @@
             <div id="top-list" class="list-scroll"></div>
           </aside>
           <div id="top-detail" class="detail-panel"></div>
+        </section>
+
+        <!-- SLR consensus: most-cited across SLR bibliographies -->
+        <section id="view-consensus" class="view-panel explorer-layout">
+          <aside class="sidebar">
+            <input type="search" id="consensus-search" placeholder="Search cited papers…" class="search-input" />
+            <label class="sidebar-filter">
+              <input type="checkbox" id="consensus-top-only" />
+              In top-50 corpus only
+            </label>
+            <div id="consensus-list" class="list-scroll"></div>
+          </aside>
+          <div id="consensus-detail" class="detail-panel"></div>
+        </section>
+
+        <!-- Pairwise SLR overlap -->
+        <section id="view-compare" class="view-panel">
+          <div class="compare-toolbar">
+            <div class="compare-pickers">
+              <label>
+                SLR A
+                <select id="compare-slr-a" class="compare-select"></select>
+              </label>
+              <label>
+                SLR B
+                <select id="compare-slr-b" class="compare-select"></select>
+              </label>
+              <button type="button" id="compare-swap" class="btn-secondary">Swap</button>
+            </div>
+            <input type="search" id="pair-search" placeholder="Search similar SLR pairs…" class="search-input compare-pair-search" />
+          </div>
+          <div class="compare-layout">
+            <aside class="sidebar compare-pairs-sidebar">
+              <h3 class="sidebar-heading">Most similar pairs</h3>
+              <div id="pair-list" class="list-scroll"></div>
+            </aside>
+            <div id="compare-detail" class="detail-panel"></div>
+          </div>
         </section>
       </main>
 

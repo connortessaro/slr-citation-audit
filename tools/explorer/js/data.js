@@ -162,6 +162,9 @@ export function buildModel(corpus, refsBySlr, topCited, overlapRows) {
 
   topPapers.sort((a, b) => (a.paper._rank ?? 999) - (b.paper._rank ?? 999));
 
+  const consensusPapers = buildSlrCitedConsensus(slrs, topByKey);
+  const pairwiseOverlaps = buildPairwiseOverlaps(slrs);
+
   const summary = {
     slrCount: slrs.length,
     topCount: topCited.length,
@@ -171,9 +174,107 @@ export function buildModel(corpus, refsBySlr, topCited, overlapRows) {
         (slrs.filter((s) => Number.isFinite(s.coveragePct)).length || 1),
     medianCoverage: median(slrs.map((s) => s.coveragePct).filter((v) => Number.isFinite(v))),
     zeroCoverage: slrs.filter((s) => s.coveragePct === 0).length,
+    uniqueCitedPapers: consensusPapers.length,
+    maxConsensusCites: consensusPapers[0]?.citingCount ?? 0,
   };
 
-  return { slrs, topPapers, topCited, topByKey, summary };
+  return { slrs, topPapers, topCited, topByKey, consensusPapers, pairwiseOverlaps, summary };
+}
+
+/** Papers cited by SLRs, ranked by how many SLRs cite each (consensus bibliography). */
+export function buildSlrCitedConsensus(slrs, topByKey) {
+  const byKey = new Map();
+  for (const s of slrs) {
+    const seenInSlr = new Set();
+    for (const ref of s.refs) {
+      const pk = ref.paper_key;
+      if (!pk || seenInSlr.has(pk)) continue;
+      seenInSlr.add(pk);
+      let entry = byKey.get(pk);
+      if (!entry) {
+        const topPaper = topByKey.get(pk);
+        entry = {
+          key: pk,
+          ref,
+          citingSlrs: [],
+          inTop50: Boolean(topPaper),
+          topRank: topPaper?._rank ?? null,
+        };
+        byKey.set(pk, entry);
+      }
+      entry.citingSlrs.push(s);
+    }
+  }
+  const papers = [...byKey.values()];
+  for (const p of papers) {
+    p.citingCount = p.citingSlrs.length;
+    p.citingSlrs.sort((a, b) => (b.slr.year ?? 0) - (a.slr.year ?? 0));
+  }
+  papers.sort(
+    (a, b) =>
+      b.citingCount - a.citingCount ||
+      (b.ref.citationCount ?? 0) - (a.ref.citationCount ?? 0) ||
+      (a.ref.title || "").localeCompare(b.ref.title || "")
+  );
+  return papers;
+}
+
+/** Pairwise reference overlap between every SLR pair (sorted by Jaccard, descending). */
+export function buildPairwiseOverlaps(slrs) {
+  const withRefs = slrs.filter((s) => s.refCount > 0);
+  const pairs = [];
+  for (let i = 0; i < withRefs.length; i++) {
+    for (let j = i + 1; j < withRefs.length; j++) {
+      const a = withRefs[i];
+      const b = withRefs[j];
+      const sharedKeys = [];
+      for (const k of a.refKeys) {
+        if (b.refKeys.has(k)) sharedKeys.push(k);
+      }
+      const shared = sharedKeys.length;
+      const union = a.refKeys.size + b.refKeys.size - shared;
+      const minSize = Math.min(a.refKeys.size, b.refKeys.size);
+      pairs.push({
+        a,
+        b,
+        shared,
+        sharedKeys,
+        union,
+        jaccard: union ? shared / union : 0,
+        overlapCoef: minSize ? shared / minSize : 0,
+      });
+    }
+  }
+  pairs.sort(
+    (x, y) =>
+      y.jaccard - x.jaccard ||
+      y.shared - x.shared ||
+      (x.a.slr.title || "").localeCompare(y.a.slr.title || "")
+  );
+  return pairs;
+}
+
+export function pairwiseDetail(a, b) {
+  const sharedKeys = new Set();
+  for (const k of a.refKeys) {
+    if (b.refKeys.has(k)) sharedKeys.add(k);
+  }
+  const onlyA = [...a.refKeys].filter((k) => !b.refKeys.has(k));
+  const onlyB = [...b.refKeys].filter((k) => !a.refKeys.has(k));
+  const refByKey = (s, k) => s.refs.find((r) => r.paper_key === k);
+  return {
+    shared: [...sharedKeys].map((k) => refByKey(a, k) || refByKey(b, k)).filter(Boolean),
+    onlyA: onlyA.map((k) => refByKey(a, k)).filter(Boolean),
+    onlyB: onlyB.map((k) => refByKey(b, k)).filter(Boolean),
+    sharedCount: sharedKeys.size,
+    union: a.refKeys.size + b.refKeys.size - sharedKeys.size,
+    jaccard: a.refKeys.size + b.refKeys.size - sharedKeys.size
+      ? sharedKeys.size / (a.refKeys.size + b.refKeys.size - sharedKeys.size)
+      : 0,
+    overlapCoef: Math.min(a.refKeys.size, b.refKeys.size)
+      ? sharedKeys.size / Math.min(a.refKeys.size, b.refKeys.size)
+      : 0,
+  };
 }
 
 function median(vals) {

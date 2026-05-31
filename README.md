@@ -96,7 +96,7 @@ After overlap is computed for SS:
 python tools/explorer/serve.py
 ```
 
-Opens an interactive dashboard at `http://127.0.0.1:8765/tools/explorer/`. See `tools/explorer/README.md`.
+Opens an interactive dashboard at `http://127.0.0.1:8765/tools/explorer/`. See `tools/explorer/README.md`. Tabs include **SLR consensus** (most-cited papers across SLR bibliographies) and **Compare SLRs** (pairwise reference overlap).
 
 ## Tests
 

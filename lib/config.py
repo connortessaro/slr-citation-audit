@@ -21,6 +21,13 @@ _DEFAULTS = {
     "SLR_TITLE_PATTERNS": "systematic literature review,systematic review,systematic mapping",
     "TOP_N": "50",
     "SS_BASE_URL": "https://api.semanticscholar.org/graph/v1",
+    # Ranking stage (06_rank) defaults
+    "LLM_JUDGE_MODEL": "deepseek/deepseek-chat:free",
+    "LLM_JUDGE_FALLBACKS": "meta-llama/llama-3.3-70b-instruct:free,openai/gpt-oss-120b:free",
+    "EMBED_MODEL": "Qwen/Qwen3-Embedding-0.6B",
+    "RANK_WEIGHTS": "0.2,0.2,0.2,0.2,0.2",
+    "FULLTEXT_ENABLED": "true",
+    "FULLTEXT_MAX_TOKENS": "32000",
 }
 
 
@@ -34,6 +41,14 @@ class Config:
     top_n: int
     ss_base_url: str
     ss_api_key: str | None
+    # Ranking stage
+    openrouter_api_key: str | None = None
+    llm_judge_model: str = "deepseek/deepseek-chat:free"
+    llm_judge_fallbacks: tuple[str, ...] = ()
+    embed_model: str = "Qwen/Qwen3-Embedding-0.6B"
+    rank_weights: tuple[float, ...] = (0.2, 0.2, 0.2, 0.2, 0.2)
+    fulltext_enabled: bool = True
+    fulltext_max_tokens: int = 32000
 
     @classmethod
     def from_env(cls, env_path: Path | None = None, example_path: Path | None = None) -> "Config":
@@ -56,6 +71,10 @@ class Config:
                 or _DEFAULTS.get(name, "")
             )
 
+        weights = tuple(float(x) for x in _csv(get("RANK_WEIGHTS")))
+        if len(weights) != 5:
+            weights = (0.2, 0.2, 0.2, 0.2, 0.2)
+
         return cls(
             subfield=get("SUBFIELD"),
             keywords=_csv(get("KEYWORDS")),
@@ -65,6 +84,13 @@ class Config:
             top_n=int(get("TOP_N")),
             ss_base_url=get("SS_BASE_URL"),
             ss_api_key=get("SEMANTIC_SCHOLAR_API_KEY") or None,
+            openrouter_api_key=get("OPENROUTER_API_KEY") or None,
+            llm_judge_model=get("LLM_JUDGE_MODEL"),
+            llm_judge_fallbacks=tuple(_csv(get("LLM_JUDGE_FALLBACKS"))),
+            embed_model=get("EMBED_MODEL"),
+            rank_weights=weights,
+            fulltext_enabled=get("FULLTEXT_ENABLED").lower() in ("1", "true", "yes"),
+            fulltext_max_tokens=int(get("FULLTEXT_MAX_TOKENS")),
         )
 
 

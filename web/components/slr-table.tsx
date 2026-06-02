@@ -121,7 +121,7 @@ export function SLRTable({ rows }: Props) {
                 className="border-b border-[var(--color-border)] transition-colors hover:bg-[var(--color-surface-hover)]/60"
               >
                 <td className="px-4 py-3 font-mono text-xs tabular-nums text-[var(--color-text-muted)]">
-                  {r.slr_year || "—"}
+                  {r.slr_year || "-"}
                 </td>
                 <td className="max-w-[42rem] px-4 py-3">
                   <Link
@@ -135,7 +135,7 @@ export function SLRTable({ rows }: Props) {
                   </div>
                 </td>
                 <td className="px-4 py-3 text-right font-mono tabular-nums text-[var(--color-text-muted)]">
-                  {r.n_refs || "—"}
+                  {r.n_refs || "-"}
                 </td>
                 <td className="px-4 py-3 text-right font-mono tabular-nums text-[var(--color-text-muted)]">
                   {r.hits}

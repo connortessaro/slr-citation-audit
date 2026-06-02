@@ -13,19 +13,21 @@ export default function ConsensusPage() {
         Consensus
       </div>
       <h1 className="mt-2 text-balance text-3xl font-semibold tracking-tight text-[var(--color-text)] sm:text-4xl">
-        Papers most cited across SLR bibliographies
+        Which papers do most reviews agree on?
       </h1>
       <p className="mt-3 max-w-3xl text-sm text-[var(--color-text-muted)]">
-        For every paper that appears in any SLR&apos;s reference list, how many
-        of the {Math.max(1, rows.length > 0 ? 60 : 1)} SLRs cite it. The cross
-        on the canonical top-50 corpus highlights consensus alignment.
+        For every paper cited by any review, this counts how many reviews
+        cite it. Papers cited by many reviews are the &ldquo;everyone
+        agrees this matters&rdquo; layer of the field. Papers tagged
+        TOP-50 also appear in the canonical most-cited list on Semantic
+        Scholar.
       </p>
 
       <div className="mt-8 grid gap-3 sm:grid-cols-3">
         <Stat label="Unique papers referenced" value={total} />
-        <Stat label="Overlap w/ top-50" value={inTop} highlight />
+        <Stat label="Also in canonical top 50" value={inTop} highlight />
         <Stat
-          label="Max SLR-citations on a paper"
+          label="Most reviews citing one paper"
           value={rows[0]?.citedBySlrs ?? 0}
         />
       </div>

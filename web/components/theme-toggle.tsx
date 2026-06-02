@@ -34,17 +34,17 @@ export function ThemeToggle() {
       className="relative grid h-7 w-12 items-center rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] transition-colors hover:border-[var(--color-border-strong)]"
     >
       <motion.span
-        layout={!reduced}
+        initial={false}
+        animate={{
+          x: theme === "dark" ? 0 : 20,
+          background: theme === "dark" ? "var(--color-text-muted)" : "var(--color-accent)",
+        }}
         transition={
           reduced
             ? { duration: 0 }
             : { type: "spring", stiffness: 500, damping: 32 }
         }
-        className={`absolute top-1/2 size-5 -translate-y-1/2 rounded-full ${
-          theme === "dark"
-            ? "left-1 bg-[var(--color-text-muted)]"
-            : "left-[26px] bg-[var(--color-accent)]"
-        }`}
+        className="absolute left-1 top-1/2 size-5 -translate-y-1/2 rounded-full"
       />
     </button>
   );

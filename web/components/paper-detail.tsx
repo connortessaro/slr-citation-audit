@@ -67,9 +67,19 @@ export function PaperDetail({
   const [tab, setTab] = useState<Tab>("missed");
 
   const tabs: { key: Tab; label: string; count: number; tone: "accent" | "miss" | "subtle" }[] = [
-    { key: "cited", label: "Cited by", count: citingSlrs.length, tone: "accent" },
-    { key: "missed", label: "Missed by (eligible)", count: missingEligible.length, tone: "miss" },
-    { key: "ineligible", label: "Ineligible", count: ineligible.length, tone: "subtle" },
+    { key: "cited", label: "SLRs that cited it", count: citingSlrs.length, tone: "accent" },
+    {
+      key: "missed",
+      label: "SLRs that skipped it",
+      count: missingEligible.length,
+      tone: "miss",
+    },
+    {
+      key: "ineligible",
+      label: "SLRs older than the paper",
+      count: ineligible.length,
+      tone: "subtle",
+    },
   ];
   const list =
     tab === "cited" ? citingSlrs : tab === "missed" ? missingEligible : ineligible;
@@ -84,14 +94,14 @@ export function PaperDetail({
         href="/papers"
         className="mb-4 inline-flex items-center gap-1 font-mono text-[11px] uppercase tracking-[0.12em] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] lg:hidden"
       >
-        ← All top cited
+        ← Required-reading list
       </Link>
       <div className="flex items-center gap-3">
         <span className="rounded bg-[var(--color-accent-soft)] px-2 py-0.5 font-mono text-xs font-semibold text-[var(--color-accent)]">
           #{paper.rank}
         </span>
         <div className="font-mono text-[10px] uppercase tracking-[0.12em] text-[var(--color-text-subtle)]">
-          Top cited · {paper.paper_key}
+          On the required-reading list · {paper.paper_key}
         </div>
       </div>
       <h1 className="mt-3 text-balance text-2xl font-semibold tracking-tight text-[var(--color-text)]">
@@ -123,7 +133,7 @@ export function PaperDetail({
         </div>
         <div className="rounded-md border border-[var(--color-border)] bg-[var(--color-surface)]/40 p-4">
           <div className="font-mono text-[10px] uppercase tracking-[0.08em] text-[var(--color-text-subtle)]">
-            Recall
+            % that cited it
           </div>
           <motion.div
             initial={{ opacity: 0 }}
@@ -134,7 +144,7 @@ export function PaperDetail({
             {recall.toFixed(1)}%
           </motion.div>
           <div className="mt-1 font-mono text-[11px] text-[var(--color-text-faint)]">
-            among eligible SLRs
+            of SLRs that came out after this paper
           </div>
         </div>
         <div className="rounded-md border border-[var(--color-border)] bg-[var(--color-surface)]/40 p-4">

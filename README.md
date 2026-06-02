@@ -1,116 +1,177 @@
-# slr-citation-audit
+# slr.audit
 
-A citation-coverage audit of Systematic Literature Reviews in the **technical-debt** subfield.
+[![CI](https://github.com/connortessaro/slr-citation-audit/actions/workflows/tests.yml/badge.svg)](https://github.com/connortessaro/slr-citation-audit/actions/workflows/tests.yml)
+[![Live](https://img.shields.io/badge/live-web--liard--zeta--83.vercel.app-00ff88?logo=vercel&logoColor=white)](https://web-liard-zeta-83.vercel.app)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-74 published reviews, 50 canonical papers, year-matched. Half the field cites less than 2% of it. 36 cite zero.
+![Python](https://img.shields.io/badge/python-3.12-3776ab?logo=python&logoColor=white)
+![Next.js](https://img.shields.io/badge/next.js-16-black?logo=nextdotjs)
+![TypeScript](https://img.shields.io/badge/typescript-5-3178c6?logo=typescript&logoColor=white)
+![Tailwind](https://img.shields.io/badge/tailwind-v4-38bdf8?logo=tailwindcss&logoColor=white)
+![React Three Fiber](https://img.shields.io/badge/r3f-three.js-000000?logo=three.js&logoColor=white)
 
-Live site: **<https://web-e4qhnnknz-connor-tessaros-projects.vercel.app>**
+> Grading 60 published systematic literature reviews on whether they
+> actually cite the field they claim to review.
+>
+> **Average grade: 10.5%. Half cite under 5%. 24 cite zero.**
 
-The repo is two things in one tree:
-1. A 6-stage Python pipeline that pulls every paper cited by every published SLR, joins it against the Semantic Scholar top-50 for the same area, controls for publication year, and produces a 5-dimension composite ranking.
-2. A Next.js 16 site under `web/` that renders the pipeline outputs as a dark-first, editorial dashboard.
+[![slr.audit hero](https://img.shields.io/badge/click_to_explore-→_web--liard--zeta--83.vercel.app-181818?style=for-the-badge)](https://web-liard-zeta-83.vercel.app)
 
-## Quick links
+---
 
-- **Method explainer (live):** /method on the site, or `web/app/method/page.tsx`
-- **Audit report:** [`AUDIT_REPORT.md`](./AUDIT_REPORT.md) (writing / CRO / design pass)
-- **Build plan for the site:** [`web/BUILD_PLAN.md`](./web/BUILD_PLAN.md)
-- **Motion roadmap:** [`web/MOTION_PLAN.md`](./web/MOTION_PLAN.md)
+## 🔗 Quick links
 
-## Pipeline
+| | |
+|---|---|
+| 🌐 **Live site** | https://web-liard-zeta-83.vercel.app |
+| 🎯 **About** | [/about](https://web-liard-zeta-83.vercel.app/about) — why this exists |
+| 🛠️ **Method** | [/method](https://web-liard-zeta-83.vercel.app/method) — 6-stage pipeline |
+| 🪐 **3D graph** | [/graph](https://web-liard-zeta-83.vercel.app/graph) — citation network |
+
+---
+
+## 🎯 Why this exists
+
+When researchers want to learn about a field they don't already work in,
+they reach for a **systematic literature review** — an SLR. The pitch is
+simple: somebody else read all the important papers, weighed the evidence,
+and wrote it up. The SLR becomes the shortcut.
+
+This site asks: **when an SLR claims to summarize a field, does it actually
+cite the field it claims to summarize?**
+
+For one field (technical debt in software engineering) the answer is
+**mostly no**. The audit grades every published SLR on what percentage of
+the 50 most-cited papers in the same field it actually cited.
+
+---
+
+## ⚡ Quick start
 
 ```bash
+git clone https://github.com/connortessaro/slr-citation-audit
+cd slr-citation-audit
+
+# pipeline
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env   # add SEMANTIC_SCHOLAR_API_KEY + OPENROUTER_API_KEY
-```
+cp .env.example .env  # add SEMANTIC_SCHOLAR_API_KEY + OPENROUTER_API_KEY
 
-Run each stage in order. Each writes to `data/processed/`. Re-running is safe; everything is cache-backed.
-
-| Stage | Reads | Writes | Purpose |
-|---|---|---|---|
-| `01_identify_slrs/` | SS API, ACM/IEEE BibTeX | `slr_corpus.json` | Find + classify SLR candidates |
-| `02_extract_refs/` | corpus | `slr_references.json` | Pull each SLR's reference list |
-| `03_top_cited/` | SS API (subfield query) | `top_cited_techdebt.json` | Top-N most-cited papers |
-| `04_overlap/` | refs + top-cited | `overlap_matrix.csv` | Date-controlled coverage |
-| `05_explain_gaps/` | overlap + metadata | `gap_analysis.csv` | Venue / year / access reasons |
-| `06_rank/` | corpus + refs + overlap + metadata | `ranked_slrs.json` | 5-dim composite rank |
-
-### Stage 06 — Ranker
-
-Five dimensions, min-max normalized then weighted sum (default 0.2 each, configurable via `RANK_WEIGHTS`):
-
-1. **Coverage** — canonical-paper recall, reused from stage 04.
-2. **Semantic** — mean cosine similarity between SLR vector and reference vectors (Qwen3-Embedding-0.6B via sentence-transformers).
-3. **Authority** — mean `log(1 + citationCount)` of references.
-4. **Diversity** — `0.5 * H(venues) + 0.5 * H(first authors)` (Shannon entropy).
-5. **LLM judge** — DeepSeek-style rubric via OpenRouter, temperature 0, cached per-SLR. 71/74 SLRs scored in the current build (owl-alpha + qwen fallbacks; the remaining 3 hit schema-validation errors and are scored on the other four dimensions only).
-
-Pure scoring functions in `06_rank/rank.py` are independently testable and have no I/O — that's where new tests should hook in.
-
-## Web (`/web`)
-
-Next.js 16 App Router. React 19. Tailwind v4. Motion v12. React Three Fiber. Pure static build — reads `data/processed/*.json` at build time, no runtime API calls.
-
-```bash
+# website
 cd web
 pnpm install
 pnpm dev          # http://localhost:3000
-pnpm build        # production build
-pnpm test         # Playwright smoke tests
 ```
 
-Routes:
+---
+
+## 🏗️ How it works (6 stages)
+
+| # | Stage | Reads | Writes | Purpose |
+|---|---|---|---|---|
+| 1️⃣ | `01_identify_slrs/` | SS API, ACM/IEEE BibTeX | `slr_corpus.json` | Find + classify SLR candidates |
+| 2️⃣ | `02_extract_refs/` | corpus | `slr_references.json` | Pull each SLR's reference list |
+| 3️⃣ | `03_top_cited/` | SS subfield query | `top_cited_techdebt.json` | Build the 50-paper required-reading list |
+| 4️⃣ | `04_overlap/` | refs + top-cited | `overlap_matrix.csv` | Date-controlled coverage % per SLR |
+| 5️⃣ | `05_explain_gaps/` | overlap + metadata | `gap_analysis.csv` | Venue / year / access reasons for misses |
+| 6️⃣ | `06_rank/` | corpus + refs + overlap + metadata | `ranked_slrs.json` | 5-dim composite rank |
+
+### 🏅 The 5-dimension ranker
+
+Min-max normalized per dimension, weighted sum (default equal 0.2 each):
+
+1. 📚 **Coverage** — % of the 50 required-reading papers this SLR cited
+2. 🧠 **Semantic** — mean cosine similarity between SLR vector and reference vectors (Qwen3-Embedding-0.6B)
+3. 🏛️ **Authority** — mean `log(1 + citationCount)` of references
+4. 🌐 **Diversity** — Shannon entropy of venues + first authors
+5. 🤖 **LLM judge** — rubric scoring via OpenRouter (DeepSeek / owl-alpha), temperature 0, cached
+
+---
+
+## 🧪 Stack
+
+| Layer | Tech |
+|---|---|
+| **Pipeline** | Python 3.12 · Semantic Scholar SDK · `dotenv` · `tqdm` |
+| **Embeddings** | `sentence-transformers` + `Qwen3-Embedding-0.6B` (MPS on Mac) |
+| **Ranker** | `pandas` · `networkx` · `pydantic` |
+| **LLM judge** | OpenRouter (owl-alpha + qwen fallbacks) · file cache · temp 0 |
+| **Frontend** | Next.js 16 (App Router) · React 19 · TypeScript · Tailwind v4 · Motion v12 |
+| **3D** | React Three Fiber · drei · 3d-force-graph (vanilla Three.js) |
+| **Type** | Geist Sans · Geist Mono · Iowan Old Style serif body |
+| **Deploy** | Vercel (auto-builds on push to `main`, root dir `web/`) |
+| **Tests** | `pytest` (pipeline) · Playwright (web smoke) |
+
+---
+
+## 📁 Project structure
+
+```
+slr-citation-audit/
+├── 01_identify_slrs/      ← Stage 1: find SLR candidates
+├── 02_extract_refs/       ← Stage 2: pull bibliographies
+├── 03_top_cited/          ← Stage 3: build required-reading list
+├── 04_overlap/            ← Stage 4: coverage matrix
+├── 05_explain_gaps/       ← Stage 5: gap analysis
+├── 06_rank/               ← Stage 6: composite ranker
+│   ├── embed.py           ← sentence-transformers pass
+│   ├── judge.py           ← LLM rubric scoring
+│   └── rank.py            ← pure scoring functions (testable)
+├── lib/                   ← shared (SS client, paper_key dedup, config)
+├── data/
+│   ├── raw/               ← API dumps (gitignored)
+│   ├── processed/         ← pipeline outputs (tracked)
+│   └── manual/            ← manual classification CSVs
+├── tests/                 ← pytest suite
+├── web/                   ← Next.js frontend
+│   ├── app/               ← routes
+│   ├── components/        ← React components
+│   └── lib/data.ts        ← static loader (reads ../data/processed/*)
+└── .github/workflows/     ← CI
+```
+
+---
+
+## 🌐 Routes
 
 | Route | What it shows |
 |---|---|
-| `/` | Hero stat, route index, most-cited callout, distribution histogram, full SLR table sorted by composite rank |
-| `/slrs` / `/slrs/[id]` | Per-review coverage gauge, hits, missed canonical papers, all references, plus the rank breakdown with the LLM judge's per-SLR justification |
-| `/papers` / `/papers/[id]` | Per-paper SLR recall, which SLRs cite it vs miss it (date-eligible) |
-| `/consensus` | Most-cited papers across the union of all SLR bibliographies |
-| `/compare` | Pairwise Jaccard similarity between any two SLRs' reference sets |
+| `/` | Hero, big stat, route index, most-cited callout, distribution histogram, full SLR table sorted by composite rank |
+| `/about` | Why this audit exists + caveats + a guided tour |
+| `/slrs/[id]` | Per-SLR coverage gauge, hit list, miss list, full bibliography, 5-dim rank breakdown with AI judge's justification |
+| `/papers/[id]` | Per-paper SLR recall — which SLRs cite it vs miss it (date-eligible) |
+| `/consensus` | Most-cited papers across all SLR bibliographies (whether on the required list or not) |
+| `/compare` | Pairwise reference overlap between any two SLRs |
 | `/graph` | 3D citation network (R3F + 3d-force-graph) |
-| `/method` | This pipeline, explained |
+| `/method` | Full pipeline writeup |
 
-Deployed on Vercel with auto-builds on push to `main`. Project root directory is `web/`; data files at `../data/processed/` are read at build time.
+---
 
-## Tests
+## ✅ Tests
 
 ```bash
 pip install -r requirements-dev.txt
-pytest -q                  # all pipeline tests
-cd web && pnpm test        # Playwright smoke for the site
+pytest -q                  # pipeline
+cd web && pnpm test        # Playwright smoke
 ```
 
-## CI
+CI runs on every push / PR. Pure scoring functions in `06_rank/rank.py`
+have no I/O and are the natural place to add new tests.
 
-`.github/workflows/`:
+---
 
-- `tests` — pytest on every push / PR.
-- `pipeline` — manual (`workflow_dispatch`). Runs all stages live, uploads `data/processed/` + `report/figures/` as artifacts; with `commit_results=true` pushes to `pipeline/results/<run_id>`.
+## 🔐 Secrets
 
-Required secrets: `SEMANTIC_SCHOLAR_API_KEY`, optionally `IEEE_XPLORE_API_KEY` (IEEE falls back to manual BibTeX in `data/raw/ieee_exports/`). `OPENROUTER_API_KEY` is read locally for stage 06 but is never required by the pipeline workflow.
+Stored in `.env` (gitignored). See [`.env.example`](.env.example) for the full list.
 
-## Layout
+| Var | Required for | Notes |
+|---|---|---|
+| `SEMANTIC_SCHOLAR_API_KEY` | Stages 01-04 | Get one free at semanticscholar.org/product/api |
+| `OPENROUTER_API_KEY` | Stage 06 (LLM judge) | Free-tier models keep cost at $0 |
+| `IEEE_XPLORE_API_KEY` | Stage 01 (optional) | Falls back to manual BibTeX exports |
 
-| Path | Purpose |
-|---|---|
-| `01_identify_slrs/` … `06_rank/` | Pipeline stages |
-| `lib/` | Shared helpers (SS client, `paper_key` dedup, config) |
-| `tests/` | Pytest suite |
-| `data/raw/` | Cached API JSON (gitignored) |
-| `data/processed/` | Tracked pipeline outputs |
-| `data/manual/` | Human-coded SLR-vs-survey decisions + rubric |
-| `web/` | Next.js site (its own README + plans inside) |
-| `report/` | Long-form writeup + figures + ranking_report.md |
+---
 
-## Method notes
+## 📖 License
 
-- **Citation source:** Semantic Scholar. Known limitation; some SLRs return zero refs because SS doesn't have the bibliography.
-- **SLR classification:** manual review (SLR vs general survey vs tertiary study).
-- **Date control:** comparing an SLR to top-cited papers, top-cited is filtered to `pub_year ≤ SLR.pub_year`. Counting a paper an SLR couldn't have read isn't a miss; it's a calendar.
-- **`paper_key`:** stable identifier across stages, resolved as normalized DOI → Semantic Scholar `paperId` → normalized title. Change it once and every join downstream stays consistent.
-
-## License
-
-Private coursework. Not for redistribution.
+[MIT](LICENSE) © 2026 Connor Tessaro. Coursework project — private use, no PII.

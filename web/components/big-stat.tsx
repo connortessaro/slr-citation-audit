@@ -49,10 +49,10 @@ export function BigStat({
   }, [inView, value, mv, duration, delay, reduced]);
 
   return (
-    <div ref={ref} className="flex items-baseline gap-3">
+    <div ref={ref} className="flex max-w-full items-baseline gap-3 overflow-hidden">
       <motion.div
         className="font-mono font-medium leading-none tracking-[-0.03em] text-[var(--color-text)]"
-        style={{ fontSize: "clamp(96px, 18vw, 220px)" }}
+        style={{ fontSize: "clamp(72px, 18vw, 220px)" }}
       >
         {display}
       </motion.div>

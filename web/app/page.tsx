@@ -53,7 +53,11 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative isolate overflow-hidden border-b border-[var(--color-border)]">
         <CssAurora />
-        <div className="mx-auto grid max-w-7xl grid-cols-12 gap-6 px-6 pb-20 pt-20 sm:pt-28">
+        <h1 className="sr-only">
+          Citation coverage audit of {stats.slrCount} systematic literature
+          reviews across {stats.topCount} canonical technical-debt papers
+        </h1>
+        <div className="mx-auto grid max-w-7xl grid-cols-12 gap-6 px-4 pb-20 pt-20 sm:px-6 sm:pt-28">
           <div className="col-span-12 flex items-center gap-3">
             <span className="inline-block size-1.5 rounded-full bg-[var(--color-accent)] shadow-[0_0_12px_var(--color-accent)]" />
             <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-accent)]">
@@ -81,7 +85,7 @@ export default function HomePage() {
             </FadeIn>
           </div>
 
-          <div className="col-span-12 mt-2 grid grid-cols-3 gap-4 self-end lg:col-span-4 lg:grid-cols-1 lg:gap-6">
+          <div className="col-span-12 mt-2 grid grid-cols-3 gap-3 self-end sm:gap-4 lg:col-span-4 lg:grid-cols-1 lg:gap-6">
             <Meta label="At 0% coverage" value={worstZero} tone="miss" />
             <Meta
               label="Median coverage"
@@ -97,7 +101,7 @@ export default function HomePage() {
 
       {/* ROUTE INDEX (lifted above the most-cited callout) */}
       <section className="border-b border-[var(--color-border)]">
-        <div className="mx-auto max-w-7xl px-6 py-16">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
           <RouteIndex />
         </div>
       </section>
@@ -108,7 +112,7 @@ export default function HomePage() {
           className="border-y border-[var(--color-border)]"
           style={{ background: "var(--color-accent-soft)" }}
         >
-          <div className="mx-auto max-w-5xl px-6 py-24 sm:py-32">
+          <div className="mx-auto max-w-5xl px-4 py-24 sm:px-6 sm:py-32">
             <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-accent)]">
               The single strongest signal
             </div>
@@ -155,7 +159,7 @@ export default function HomePage() {
 
       {/* DISTRIBUTION */}
       <section className="border-b border-[var(--color-border)]">
-        <div className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <div className="grid grid-cols-12 gap-10">
             <div className="col-span-12 lg:col-span-5">
               <h2 className="text-3xl font-semibold leading-tight tracking-tight text-[var(--color-text)] sm:text-4xl">
@@ -195,7 +199,7 @@ export default function HomePage() {
 
       {/* FULL TABLE */}
       <section className="border-b border-[var(--color-border)]">
-        <div className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <h2 className="mb-8 text-3xl font-semibold leading-tight tracking-tight text-[var(--color-text)] sm:text-4xl">
             All {stats.slrCount} SLRs
           </h2>
@@ -205,7 +209,7 @@ export default function HomePage() {
 
       {/* OUTRO */}
       <section>
-        <div className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
           <div className="grid grid-cols-12 gap-10">
             <div className="col-span-12 lg:col-span-7">
               <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-text-subtle)]">
@@ -266,7 +270,7 @@ function Meta({
         {label}
       </div>
       <div
-        className={`mt-2 font-mono text-3xl font-medium tabular-nums ${
+        className={`mt-2 font-mono text-2xl font-medium tabular-nums sm:text-3xl ${
           tone === "miss"
             ? "text-[var(--color-miss)]"
             : "text-[var(--color-text)]"

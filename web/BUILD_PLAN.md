@@ -102,3 +102,4 @@ Smoke tests in `web/tests/`:
 - Auth, DB, real-time
 - Pipeline changes (Python untouched)
 - Old `tools/explorer/` deletion — keep until new is shipped, then remove in final phase
+

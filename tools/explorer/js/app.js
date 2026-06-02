@@ -415,20 +415,6 @@ function renderOverview() {
     zeroSub.textContent = `${Math.round((summary.zeroCoverage / summary.slrCount) * 100)}% of cohort`;
   }
 
-  const cohortBody = $("#cohort-stats-body");
-  if (cohortBody && summary.cohortStats) {
-    cohortBody.innerHTML = summary.cohortStats
-      .map(
-        (c) => `<tr>
-          <td>${esc(c.label)}</td>
-          <td>${c.n}</td>
-          <td>${fmtPct(c.meanCoverage)}</td>
-          <td>${fmtPct(c.medianCoverage)}</td>
-        </tr>`
-      )
-      .join("");
-  }
-
   try {
     requestAnimationFrame(() => {
       const covCanvas = $("#chart-coverage");

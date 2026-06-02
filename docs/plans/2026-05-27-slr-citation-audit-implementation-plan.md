@@ -37,7 +37,7 @@
 - Tests in `tests/test_02_extract.py` (mock SS via `responses`)
 
 ### Phase 4 — Top-cited corpus
-- `03_top_cited/fetch_top_cited.py` — SS bulk search, sort by `citationCount`, take top 50 (also save top 100 for robustness), write `data/processed/top_cited_techdebt.json`
+- `03_top_cited/fetch_top_cited.py` — SS bulk search, two-pass `citationCount` ranking (established + recent), write `top_cited_techdebt.json` + `top_cited_techdebt_meta.json` (see `docs/top_cited_methodology.md`)
 - Tests in `tests/test_03_top_cited.py`
 
 ### Phase 5 — Overlap

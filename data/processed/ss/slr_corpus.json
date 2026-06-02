@@ -1,59 +1,6 @@
 [
   {
     "_classification_type": "slr",
-    "_paper_key": "doi:10.61467/2007.1558.2025.v16i4.1150",
-    "abstract": "Software projects often accumulate technical debt, which undermines code quality, maintainability, and long-term viability. This article analyses twelve categories of technical debt and examines the capabilities of existing mitigation tools. To achieve this, we conducted a systematic literature review. Based on the results, we categorise and describe each debt type as it occurs in practice, and we assess prominent tools (such as AnaConDebt, CAST, DebtFlag, Visminer TD, and TD-Tracker) with respect to the debt types they target, the programming languages they support, and their adherence to established software quality models or methodologies. Our analysis shows that most current solutions focus on code and architectural debt, whereas documentation and process debt remain largely unaddressed. Moreover, most tools do not conform to software quality models or standards, which none of them explicitly incorporate.",
-    "authors": [
-      {
-        "authorId": "2299187330",
-        "name": "Victor Terr\u00f3n-Macias"
-      },
-      {
-        "authorId": "144576715",
-        "name": "J. Mej\u00eda"
-      },
-      {
-        "authorId": "2303216133",
-        "name": "Miguel Terron-Hernandez"
-      }
-    ],
-    "citationCount": 0,
-    "externalIds": {
-      "CorpusId": 282095523,
-      "DBLP": "journals/ijcopi/TerronMaciasMT25",
-      "DOI": "10.61467/2007.1558.2025.v16i4.1150"
-    },
-    "openAccessPdf": {
-      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.61467/2007.1558.2025.v16i4.1150?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.61467/2007.1558.2025.v16i4.1150, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
-      "license": null,
-      "status": null,
-      "url": ""
-    },
-    "paperId": "0e1d662dcf9fb3ee84ba8b347f40d7857e188b6a",
-    "publicationTypes": [
-      "JournalArticle",
-      "Review"
-    ],
-    "publicationVenue": {
-      "alternate_names": [
-        "Int J Comb Optim Probl Informatics"
-      ],
-      "alternate_urls": [
-        "http://ijcopi.org/"
-      ],
-      "id": "a33d5b5b-b6ca-44d4-8315-c8f7ef2479f1",
-      "issn": "2007-1558",
-      "name": "International Journal of Combinatorial Optimization Problems and Informatics",
-      "type": "journal",
-      "url": "http://www.scielo.org.mx/scielo.php?lng=en&pid=2007-1558&script=sci_serial"
-    },
-    "source": "ss",
-    "title": "A Systematic Literature Review on Technical Debt in Software Development: Types, Tools, and Concerns",
-    "venue": "International Journal of Combinatorial Optimization Problems and Informatics",
-    "year": 2025
-  },
-  {
-    "_classification_type": "slr",
     "_paper_key": "doi:10.33022/ijcs.v12i6.3612",
     "abstract": "Agile methodologies are employed by software development teams for collaboration and adapting to changing requirements. However, this flexibility may lead to technical debt (TD), causing potential bugs in the long term. Lean principles, focusing on waste elimination and continuous process improvement, can be applied to manage TD in agile software development. This research conducts a systematic literature review on using lean and agile methodologies for TD management. The review identifies 34 papers, categorizing TD types, pinpointing lean and agile principles, and aligning technical debt categories with suitable lean and agile principles. Additionally, three existing technical debt management frameworks are identified: the TAP framework, the LTD framework, and the CoDVA framework. The study concludes that integrating lean principles into agile software development assists organizations in effectively managing technical debt. Furthermore, the research offers insights into selecting the most suitable TD management framework based on an organization's needs and available resources.",
     "authors": [
@@ -233,88 +180,6 @@
     "title": "Systematic literature review on forecasting and prediction of technical debt evolution",
     "venue": "arXiv.org",
     "year": 2024
-  },
-  {
-    "_classification_type": "slr",
-    "_paper_key": "doi:10.24251/hicss.2025.758",
-    "abstract": null,
-    "authors": [
-      {
-        "authorId": "2276548350",
-        "name": "C. Reis"
-      }
-    ],
-    "citationCount": 0,
-    "externalIds": {
-      "CorpusId": 276222033,
-      "DOI": "10.24251/hicss.2025.758"
-    },
-    "openAccessPdf": {
-      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.24251/hicss.2025.758?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.24251/hicss.2025.758, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
-      "license": null,
-      "status": null,
-      "url": ""
-    },
-    "paperId": "6cabcd8dc8e68ace9e2ee194e2fbcf277c73c4e5",
-    "publicationTypes": [
-      "Conference",
-      "Review"
-    ],
-    "publicationVenue": {
-      "alternate_issns": [
-        "2572-6862"
-      ],
-      "alternate_names": [
-        "Proc Annu Hawaii Int Conf Syst Sci"
-      ],
-      "alternate_urls": [
-        "http://ieeexplore.ieee.org/xpl/conhome.jsp?punumber=1000730"
-      ],
-      "id": "ebde1d49-9a84-41f4-a144-a7d8530ec9f8",
-      "issn": "1530-1605",
-      "name": "Proceedings of the Annual Hawaii International Conference on System Sciences",
-      "url": "https://scholarspace.manoa.hawaii.edu/handle/10125/39610"
-    },
-    "source": "ss",
-    "title": "Creating an Encouraging Context: A Systematic Literature Review of Contextual Factors to Manage Technical Debt",
-    "venue": "Proceedings of the Annual Hawaii International Conference on System Sciences",
-    "year": 2025
-  },
-  {
-    "_classification_type": "slr",
-    "_paper_key": "doi:10.21608/jcsr.2025.417802.1019",
-    "abstract": null,
-    "authors": [
-      {
-        "authorId": "2403755623",
-        "name": "\u0639\u0644\u0627 \u0639\u0628\u062f \u0627\u0644\u0631\u0627\u0632\u0642 \u0627\u0644\u062c\u064a\u0648\u0634\u064a \u0639\u0628\u062f\u0631\u0628\u0647"
-      },
-      {
-        "authorId": "2403760390",
-        "name": "Ola I.S. El Dardery"
-      }
-    ],
-    "citationCount": 0,
-    "externalIds": {
-      "CorpusId": 284608305,
-      "DOI": "10.21608/jcsr.2025.417802.1019"
-    },
-    "openAccessPdf": {
-      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.21608/jcsr.2025.417802.1019?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.21608/jcsr.2025.417802.1019, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
-      "license": null,
-      "status": null,
-      "url": ""
-    },
-    "paperId": "1b3ea0919f1c60ea1ed43a0376a2a7c64ed7fa56",
-    "publicationTypes": [
-      "JournalArticle",
-      "Review"
-    ],
-    "publicationVenue": null,
-    "source": "ss",
-    "title": "Systematic Literature Review of Technical Debt Competencies and Costs in Software Engineering: A Business Perspective",
-    "venue": "\u0645\u062c\u0644\u0629 \u0627\u0644\u062f\u0631\u0627\u0633\u0627\u062a \u0648\u0627\u0644\u0628\u062d\u0648\u062b \u0627\u0644\u062a\u062c\u0627\u0631\u064a\u0629",
-    "year": 2025
   },
   {
     "_classification_type": "slr",
@@ -808,68 +673,6 @@
   },
   {
     "_classification_type": "slr",
-    "_paper_key": "doi:10.1109/iccsa50381.2020.00018",
-    "abstract": "Technical debt in software development is a common problem that is overlooked by many development teams. This debt can be generated from a variety of reasons, including time pressure and complexity in software. Technical debt in simple terms is when a simple and less optimized solution is carried out in order to gain short term benefits, which leads to refactoring and reworking code later on, costing both time and money. The issue is present in both big, established companies and small startups, and is the reason why many of these small startups never get enough economic grip before debt catch up and they go bankrupt. This paper aims to address this problem by exploring how continuous practices including DevOps could help resolve this issue by adopting the right approaches into the software development cycle and workflow. So as to collect information about these topics, a systematic literature review has been conducted, covering both positive and negative impacts these practices can have on technical debt. The findings will present the current practices used to manage and reduce the accumulation of technical debt, if and how these approaches can be used to reduce already existing technical debt and which of these practices that have the biggest impact on technical debt. The paper concludes that there's potential for continuous practices including DevOps to possibly reduce technical debt if applied appropriately",
-    "authors": [
-      {
-        "authorId": "94683917",
-        "name": "Bjornar Lunde"
-      },
-      {
-        "authorId": "2369595412",
-        "name": "Ricardo Colomo-Palacios"
-      }
-    ],
-    "citationCount": 5,
-    "externalIds": {
-      "CorpusId": 227064247,
-      "DOI": "10.1109/ICCSA50381.2020.00018",
-      "MAG": "3101489142"
-    },
-    "openAccessPdf": {
-      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/ICCSA50381.2020.00018?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/ICCSA50381.2020.00018, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
-      "license": null,
-      "status": null,
-      "url": ""
-    },
-    "paperId": "5e544663f228ab395e363ee34254dff9126a9503",
-    "publicationTypes": [
-      "Conference",
-      "Review"
-    ],
-    "publicationVenue": {
-      "alternate_names": [
-        "International Conference on Computer Sciences and Applications",
-        "Commun Syst Appl",
-        "International Conference on Complex Systems and Applications",
-        "CSA",
-        "Int Conf Comput Sci Appl",
-        "Conf Comput Syst Appl",
-        "ICCSA",
-        "Comput Sci it Appl",
-        "Int Conf Comput Sci It Appl",
-        "Conference on Computing Systems and Applications",
-        "International Conference on Computer Science and its Applications",
-        "Int Conf Comput Sci it Appl",
-        "Computer Science and its Applications",
-        "International Conference on Computational Science and Its Applications",
-        "Int Conf Complex Syst Appl"
-      ],
-      "alternate_urls": [
-        "http://www.iccsa.org/"
-      ],
-      "id": "a210e09f-0ea1-4863-bc9c-75ddc51197ac",
-      "name": "Communication Systems and Applications",
-      "type": "conference",
-      "url": "http://www.wikicfp.com/cfp/program?id=587"
-    },
-    "source": "ss",
-    "title": "Continuous practices and technical debt: a systematic literature review",
-    "venue": "Communication Systems and Applications",
-    "year": 2020
-  },
-  {
-    "_classification_type": "slr",
     "_paper_key": "doi:10.5220/0007675900950106",
     "abstract": "Background: Technical Debt (TD) is a quite complex concept that includes several aspect of software development. Often, people talk about TD as the amount of postponed work but this is just a basic approximation of the concept that includes many aspects that are technical and managerial. If TD is managed properly, it can provide a huge advantage but it can also make projects unmaintainable, if not. Therefore, being able of measuring TD is a very important aspect for a proper management of the development process. However, due to the complexity of the concept and the different aspects that are involved, such measurement it not easy and there are several different approaches in literature. Goals: This work aims at investigating the existing approaches to the measurement and the analysis of TD focusing on quantitative methods that could also be automated. Method: The Systematic Literature Review (SLR) approach was applied to 331 studies obtained from the three largest digital libraries and databases. Results: After applying all filtering stages, 21 papers out of 331 were selected and deeply analyzed. The majority of them suggested new approaches to measure TD using different criteria not built on top of existing ones. Conclusions: Existing studies related to the measurement of TD were observed and analyzed. The findings have shown that the field is not mature and there are several models that have almost no independent validation. Moreover few tools for helping to automate the evaluation process exist.",
     "authors": [
@@ -1030,44 +833,6 @@
     "title": "The financial aspect of managing technical debt: A systematic literature review",
     "venue": "Information and Software Technology",
     "year": 2015
-  },
-  {
-    "_classification_type": "slr",
-    "_paper_key": "ss:0e3ac7de691a092785b476a408d3f7bf76eb16ae",
-    "abstract": null,
-    "authors": [
-      {
-        "authorId": "145782037",
-        "name": "Christoph Becker"
-      },
-      {
-        "authorId": "1951201",
-        "name": "R. Chitchyan"
-      },
-      {
-        "authorId": "1948432",
-        "name": "Stefanie Betz"
-      }
-    ],
-    "citationCount": 1,
-    "externalIds": {
-      "CorpusId": 160020355
-    },
-    "openAccessPdf": {
-      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at http://sustainabilitydesign.org/wp-content/uploads/2018/01/References_TD_SLR.pdf, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
-      "license": null,
-      "status": null,
-      "url": ""
-    },
-    "paperId": "0e3ac7de691a092785b476a408d3f7bf76eb16ae",
-    "publicationTypes": [
-      "Review"
-    ],
-    "publicationVenue": null,
-    "source": "ss",
-    "title": "Trade-off Decisions Across Time in Technical Debt Management : Dataset of Papers used in a Systematic Literature Review",
-    "venue": "",
-    "year": 2018
   },
   {
     "_classification_type": "slr",
@@ -1343,53 +1108,6 @@
   },
   {
     "_classification_type": "slr",
-    "_paper_key": "doi:10.1145/3364641.3364679",
-    "abstract": "Technical debt (TD) is a still incipient subject adopted by software practitioners, despite being an increasing interest topic among researchers. This work aimed to produce a summary of the central concepts related to TD, including the software technologies currently available to manage it. A survey with practitioners from Brazilian software organizations (BSOs) was conducted to assess the knowledge level on TD, including the technologies adopted by the software practitioners in the industry. Following this study, a quasi-systematic literature review was undertaken to gather specific technologies to manage the TD. We observed indications that the general knowledge of the BSOs\u2032 software practitioners regarding TD is low, and only a minority of the participants mentioned strategies to manage TD. Evidence briefings (EBs) synthesized the results from the studies. EBs are one-page documents intended to improve the knowledge transfer between the researchers and the practitioners from the industry. Besides, the characterization of TD and its management technologies in Brazilian Software Organizations, this dissertation also contributes to the distribution of a research package to aid in the studies replication process, containing the survey plan and its instruments. Moreover, the EBs can be used by the software practitioners, as an instrument to aid the inclusion of TD management practices in BSOs. This dissertation produced a paper discussing the survey research at CIbSE 2018, which received the best paper award at the ESELAW track, and an invitation to extend it on a JSERD paper, which is being under development. Another paper, with a general overview of the research conducted at the dissertation, was presented at the SBQS 2018.",
-    "authors": [
-      {
-        "authorId": "152187011",
-        "name": "V. Silva"
-      },
-      {
-        "authorId": "1688347",
-        "name": "G. Travassos"
-      }
-    ],
-    "citationCount": 1,
-    "externalIds": {
-      "CorpusId": 208946453,
-      "DBLP": "conf/sbqs/SilvaT19",
-      "DOI": "10.1145/3364641.3364679",
-      "MAG": "2993608199"
-    },
-    "openAccessPdf": {
-      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1145/3364641.3364679?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1145/3364641.3364679, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
-      "license": null,
-      "status": null,
-      "url": ""
-    },
-    "paperId": "a7c9332a04fccdedaa499af43edb7f2f602e917b",
-    "publicationTypes": [
-      "JournalArticle",
-      "Book",
-      "Review"
-    ],
-    "publicationVenue": {
-      "alternate_names": [
-        "SBQS",
-        "Braz Symp Softw Qual"
-      ],
-      "id": "5969addc-93c3-480f-bdf0-9a4ae0011cdc",
-      "name": "Brazilian Symposium on Software Quality",
-      "type": "conference"
-    },
-    "source": "ss",
-    "title": "Technologies to Support the Technical Debt Management in Software Projects: A Qualitative Research",
-    "venue": "Brazilian Symposium on Software Quality",
-    "year": 2019
-  },
-  {
-    "_classification_type": "slr",
     "_paper_key": "doi:10.1145/3275245.3275267",
     "abstract": "Maintenance is often the most expensive and time-consuming of all software system lifecycle phases. Technical Debt (TD) refers to technical decisions on shortcuts and workarounds taken during the software development. It affects the internal quality of software. Therefore, software maintenance can be difficult when the TD is not perceived or managed in the projects. Despite the increasing attention of practitioners and researchers, TD studies indicate its management (TDM) is still incipient. Particularly in Brazilian Software Organizations (BSOs), there is still a lack of information on how practitioners perceive and manage the TD in software projects. This paper reports the results of two studies aiming to investigate the current knowledge level of practitioners from BSOs regarding TD and TDM, and to produce a summary of the available technologies to manage TD. To achieve these objectives, we surveyed practitioners from BSOs and undertook a quasi-Systematic Literature Review (qSLR) to gather specific TDM technologies. The survey results indicated that the general BSOs practitioners' knowledge regarding TD and TDM is still low. Few participants from the survey reported managing TD. The qSLR results provide evidence-based information about a set of TDM technologies, synthesized in evidence briefings to facilitate their use by software practitioners in the industry. Moreover, this paper offers links to a research package to aid in the replication process and support future investigations.",
     "authors": [
@@ -1438,53 +1156,6 @@
     "title": "Technical Debt Management in Brazilian Software Organizations: A Need, an Expectation, or a Fact?",
     "venue": "Brazilian Symposium on Software Quality",
     "year": 2018
-  },
-  {
-    "_classification_type": "slr",
-    "_paper_key": "doi:10.1109/amitic68284.2025.11214613",
-    "abstract": "In agile software development, suboptimal sociotechnical decisions can lead to adverse conditions that negatively impact the social and emotional well-being of teams. This phenomenon, known as social debt, manifests through deteriorated dynamics that undermine communication, collaboration, coordination, and team cohesion. This systematic literature review aims to analyze the current state of knowledge on social debt in agile contexts, identifying its causes, manifestations, consequences, and mitigation strategies. A total of 171 articles were reviewed, of which 21 were deemed relevant; five of these are primary studies. The findings reveal the presence of thirty community smells resulting from sociotechnical dysfunctions, along with nine critical factors influencing team effectiveness. Various types of non-technical debt were also classified, including process debt, people-related debt, organizational debt, and cultural debt. Additionally, three root cause elements and eight mitigation strategies were identified. The results underscore the need to develop specific metrics, adopt interdisciplinary approaches, and validate practical strategies for managing social debt. This review provides a solid conceptual and empirical foundation for understanding and addressing social debt in agile software development environments.",
-    "authors": [
-      {
-        "authorId": "2391059486",
-        "name": "L. Romero"
-      },
-      {
-        "authorId": "2077626786",
-        "name": "Santiago C\u00f3rdoba"
-      },
-      {
-        "authorId": "2298372031",
-        "name": "C\u00e9sar Pardo"
-      },
-      {
-        "authorId": "2361763459",
-        "name": "Eydy del Carmen Su\u00e1rez Brieva"
-      },
-      {
-        "authorId": "2330417408",
-        "name": "Vladimir Villarreal"
-      }
-    ],
-    "citationCount": 0,
-    "externalIds": {
-      "CorpusId": 282823366,
-      "DOI": "10.1109/AmITIC68284.2025.11214613"
-    },
-    "openAccessPdf": {
-      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/AmITIC68284.2025.11214613?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/AmITIC68284.2025.11214613, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
-      "license": null,
-      "status": null,
-      "url": ""
-    },
-    "paperId": "3b652b58e72513bbc615b5086763c125a7e9e3ad",
-    "publicationTypes": [
-      "Review"
-    ],
-    "publicationVenue": null,
-    "source": "ss",
-    "title": "Social Debt in Agile Software Development",
-    "venue": "2025 IEEE VIII Congreso Internacional en Inteligencia Ambiental, Ingenieria de Software y Salud Electronica y Movil (AmITIC)",
-    "year": 2025
   },
   {
     "_classification_type": "sms",
@@ -1587,47 +1258,7 @@
     "year": 2023
   },
   {
-    "_classification_type": "slr",
-    "_paper_key": "doi:10.30574/wjaets.2025.15.2.0459",
-    "abstract": "This article examines the critical role of data pipelines in modern financial systems, particularly their function in enabling AI-driven analytics and decision-making processes. Through a systematic literature review and case study implementation at Jasper AI, we explore the architectural patterns, orchestration tools, and validation frameworks that underpin successful financial data pipelines. The article highlights the evolution from batch-oriented to real-time stream processing architectures and evaluates the performance characteristics of different pipeline configurations. We identify key challenges in implementing financial data pipelines, including regulatory compliance requirements, scalability bottlenecks, technical debt accumulation, organizational barriers, and complex cost-benefit considerations. Our findings reveal that microservice-based and event-driven architectures, combined with comprehensive data validation practices, yield significant improvements in data quality, processing efficiency, and business outcomes. The article concludes with an examination of emerging technologies and research opportunities that will shape next-generation financial data pipelines, including adaptive streaming frameworks, AI/ML integration pathways, regulatory technology enhancements, and self-healing architectures.",
-    "authors": [
-      {
-        "authorId": "2361825934",
-        "name": "Gururaj Thite"
-      }
-    ],
-    "citationCount": 0,
-    "externalIds": {
-      "CorpusId": 278681567,
-      "DOI": "10.30574/wjaets.2025.15.2.0459"
-    },
-    "openAccessPdf": {
-      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.30574/wjaets.2025.15.2.0459?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.30574/wjaets.2025.15.2.0459, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
-      "license": null,
-      "status": null,
-      "url": ""
-    },
-    "paperId": "3325b02dc04d0103c2a9ae6df8b956c9d864bc00",
-    "publicationTypes": [
-      "JournalArticle",
-      "Review"
-    ],
-    "publicationVenue": {
-      "alternate_names": [
-        "World J Adv Eng Technol Sci"
-      ],
-      "id": "b59d40e5-217d-4e6c-8dc4-307b03ff587c",
-      "issn": "2582-8266",
-      "name": "World Journal of Advanced Engineering Technology and Sciences",
-      "type": "journal"
-    },
-    "source": "ss",
-    "title": "Demystifying data pipelines for AI-driven financial systems",
-    "venue": "World Journal of Advanced Engineering Technology and Sciences",
-    "year": 2025
-  },
-  {
-    "_classification_type": "slr",
+    "_classification_type": "survey",
     "_paper_key": "doi:10.48550/arxiv.2601.20879",
     "abstract": "Context. Large Language Models (LLMs) are increasingly embedded in software engineering workflows for tasks including code generation, summarization, repair, and testing. Empirical studies report productivity gains, improved comprehension, and reduced cognitive load. However, evidence remains fragmented, and concerns persist about hallucinations, unstable outputs, methodological limitations, and emerging forms of technical debt. How these mixed effects shape long-term software maintainability and evolvability remains unclear. Objectives. This study systematically examines how LLMs influence the maintainability and evolvability of software systems. We identify which quality attributes are addressed in existing research, the positive impacts LLMs provide, the risks and weaknesses they introduce, and the mitigation strategies proposed in the literature. Method. We conducted a systematic literature review. Searches across ACM DL, IEEE Xplore, and Scopus (2020 to 2024) yielded 87 primary studies. Qualitative evidence was extracted through a calibrated multi-researcher process. Attributes were analyzed descriptively, while impacts, risks, weaknesses, and mitigation strategies were synthesized using a hybrid thematic approach supported by an LLM-assisted analysis tool with human-in-the-loop validation. Results. LLMs provide benefits such as improved analyzability, testability, code comprehension, debugging support, and automated repair. However, they also introduce risks, including hallucinated or incorrect outputs, brittleness to context, limited domain reasoning, unstable performance, and flaws in current evaluations, which threaten long-term evolvability. Conclusion. LLMs can strengthen maintainability and evolvability, but they also pose nontrivial risks to long-term sustainability. Responsible adoption requires safeguards, rigorous evaluation, and structured human oversight.",
     "authors": [
@@ -2345,35 +1976,6 @@
     "year": 2016
   },
   {
-    "_classification_type": "sms",
-    "_paper_key": "ss:a4252d6a5d9522a85984379f8ee3bf118df782c1",
-    "abstract": null,
-    "authors": [
-      {
-        "authorId": "2082153177",
-        "name": "D. Poliakov"
-      }
-    ],
-    "citationCount": 8,
-    "externalIds": {
-      "CorpusId": 15260409,
-      "MAG": "2236094280"
-    },
-    "openAccessPdf": {
-      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at http://www.doria.fi/bitstream/handle/10024/104728/master%20thesis.pdf?sequence=2, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
-      "license": null,
-      "status": null,
-      "url": ""
-    },
-    "paperId": "a4252d6a5d9522a85984379f8ee3bf118df782c1",
-    "publicationTypes": null,
-    "publicationVenue": null,
-    "source": "ss",
-    "title": "A systematic mapping study on technical debt definition",
-    "venue": "",
-    "year": 2015
-  },
-  {
     "_classification_type": "slr",
     "_paper_key": "doi:10.1109/seaa53835.2021.00034",
     "abstract": "Technical debt is the metaphor for shortcuts in software development that bring short-term benefits, but long-term consequences hinder the process of maintaining and developing software. It is important to manage these technical debt items, as not all of them need to be paid. Having a list of prioritized debts is an essential step in decision-making in the management process. This work aims at finding technical debt prioritization methods, providing a classification of them. That is, methods to identify whether and when a technical debt should be paid off. We performed a systematic mapping review to find and analyze the main papers of the area, covering the main bases. We selected 112 studies, resulting in 51 unique papers. We classified the methods in a two-level taxonomy containing 10 categories according to their different possible outcomes. In addition, we have identified three methods results: boolean, category and ordered list. Finally, we have also identified practical technical characteristics and requirements for a method to prioritize technical debt items in real projects. Although several methods have been found in literature, none of them are adaptive to the context and are language-independent, nor cover several technical debt types. Moreover, there is a clear lack of tools to use them. So, in conclusion, the research on technical debt prioritization is still wide open. From this study, a combination of the techniques used in these methods can be tested and automated to assist in the decision-making process on which debts should be paid.",
@@ -2485,7 +2087,7 @@
     "year": 2024
   },
   {
-    "_classification_type": "slr",
+    "_classification_type": "survey",
     "_paper_key": "ss:b1493d15df91d58ae6c5f052deda332479b27edf",
     "abstract": "Generative Artificial Intelligence (GenAI) rapidly transforms software engineering, yet existing research remains fragmented across individual tasks in the Software Development Lifecycle. This study integrates a systematic literature review with a survey of 65 software developers. The results show that GenAI exerts its highest impact in design, implementation, testing, and documentation, where over 70 % of developers report at least halving the time for boilerplate and documentation tasks. 79 % of survey respondents use GenAI daily, preferring browser-based Large Language Models over alternatives integrated directly in their development environment. Governance is maturing, with two-thirds of organizations maintaining formal or informal guidelines. In contrast, early SDLC phases such as planning and requirements analysis show markedly lower reported benefits. In a nutshell, GenAI shifts value creation from routine coding toward specification quality, architectural reasoning, and oversight, while risks such as uncritical adoption, skill erosion, and technical debt require robust governance and human-in-the-loop mechanisms.",
     "authors": [
@@ -2737,63 +2339,6 @@
     "title": "Towards a Theory on Architecting for Continuous Deployment",
     "venue": "arXiv.org",
     "year": 2021
-  },
-  {
-    "_classification_type": "slr",
-    "_paper_key": "doi:10.61467/2007.1558.2025.v16i1.947",
-    "abstract": "The accumulation of technical debt in legacy software is primarily manifested through the recurring need to modify code in order to correct defects, adapt it to new requirements, or alter existing functionalities. This situation reduces the useful lifespan of software systems by increasing their fragility, as a consequence of the continuous interventions required for maintenance and correction. Code smells constitute one of the principal contributors to this problem in software development. Consequently, it is essential to address this issue through appropriate design and coding practices in order to enhance code quality, maintainability, and readability. The objective of the present research is to identify the relative frequency of practices employed by developers during the design and coding phases that lead to the generation of malformed code, thereby contributing to entropy and increased technical debt in legacy systems. The study focuses on evaluating factors related to structural design and programming practices, while also conducting statistical analyses to identify recurring patterns associated with code smells. The results provide a detailed understanding of the most common practices and their impact on software quality. Furthermore, they highlight relevant gaps in current software engineering research and development, suggesting potential directions for future investigations aimed at addressing these shortcomings.\n\u00a0\nSmart citations: https://scite.ai/reports/10.61467/2007.1558.2025.v16i1.947\nDimensions.Open Alex.",
-    "authors": [
-      {
-        "authorId": "2406264773",
-        "name": "Claudia de las Mercedes Rodr\u00edguez Ponce"
-      },
-      {
-        "authorId": "2299185420",
-        "name": "Ren\u00e9 Santaolaya Salgado"
-      },
-      {
-        "authorId": "2299187448",
-        "name": "Blanca Dina Valenzuela Robles"
-      },
-      {
-        "authorId": "2406264497",
-        "name": "Humberto Hern\u00e1ndez Garc\u00eda"
-      }
-    ],
-    "citationCount": 0,
-    "externalIds": {
-      "CorpusId": 284730440,
-      "DBLP": "journals/ijcopi/PonceSRG26",
-      "DOI": "10.61467/2007.1558.2025.v16i1.947"
-    },
-    "openAccessPdf": {
-      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.61467/2007.1558.2025.v16i1.947?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.61467/2007.1558.2025.v16i1.947, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
-      "license": null,
-      "status": null,
-      "url": ""
-    },
-    "paperId": "939d5c165e5c87b645206b2e4c5d06332dd181a1",
-    "publicationTypes": [
-      "JournalArticle",
-      "Review"
-    ],
-    "publicationVenue": {
-      "alternate_names": [
-        "Int J Comb Optim Probl Informatics"
-      ],
-      "alternate_urls": [
-        "http://ijcopi.org/"
-      ],
-      "id": "a33d5b5b-b6ca-44d4-8315-c8f7ef2479f1",
-      "issn": "2007-1558",
-      "name": "International Journal of Combinatorial Optimization Problems and Informatics",
-      "type": "journal",
-      "url": "http://www.scielo.org.mx/scielo.php?lng=en&pid=2007-1558&script=sci_serial"
-    },
-    "source": "ss",
-    "title": "Systematic Review of Code Smell Patterns and Their Impact on Software Technical Debt",
-    "venue": "International Journal of Combinatorial Optimization Problems and Informatics",
-    "year": 2026
   },
   {
     "_classification_type": "slr",
@@ -3273,55 +2818,6 @@
   },
   {
     "_classification_type": "sms",
-    "_paper_key": "doi:10.5121/ijsea.2018.9501",
-    "abstract": "Context: Technical Debt (TD) is a metaphor that refers to short-term solutions in software development that may affect the cost to the software development life cycle. Objective: To explore and understand TDrelated to the software industry as well as an overview on the current state of TD research. Forty-three TD empirical studies were collected for classification and analyzation. Goals: Classify TD types, find the indicators used to detect TD, find the estimators used to quantify the TD, evaluate how researchers investigate TD. Method: By performing a systematic mapping study to identify and analyze the TD empirical studies which published between 2014 and 2017. Results: We present the most common indicators and evaluators to identify and evaluate the TD, and we gathered thirteen types of TD. We showed some ways to investigate the TD, and used tools in the selected studies. Conclusion: The outcome of our systematic mapping study can help researchers to identify interestand future in TD.",
-    "authors": [
-      {
-        "authorId": "102104860",
-        "name": "Mrwan BenIdris"
-      },
-      {
-        "authorId": "2255541940",
-        "name": "H. H. Ammar"
-      },
-      {
-        "authorId": "40996846",
-        "name": "Dale G. Dzielski"
-      }
-    ],
-    "citationCount": 19,
-    "externalIds": {
-      "CorpusId": 53070347,
-      "DOI": "10.5121/IJSEA.2018.9501",
-      "MAG": "2897277495"
-    },
-    "openAccessPdf": {
-      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.5121/IJSEA.2018.9501?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.5121/IJSEA.2018.9501, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
-      "license": null,
-      "status": "BRONZE",
-      "url": "https://doi.org/10.5121/ijsea.2018.9501"
-    },
-    "paperId": "0beb68eb143b2b8d900ed728f049f2a7dc972e84",
-    "publicationTypes": [
-      "Review"
-    ],
-    "publicationVenue": {
-      "alternate_names": [
-        "Int J Softw Eng  Appl"
-      ],
-      "id": "4b1ef35d-ee10-4628-9594-f4f246f3531b",
-      "issn": "0975-9018",
-      "name": "International Journal of Software Engineering & Applications",
-      "type": "journal",
-      "url": "http://airccse.org/journal/ijsea/ijsea.html"
-    },
-    "source": "ss",
-    "title": "Investigate, Identify and Estimate the Technical Debt: A Systematic Mapping Study",
-    "venue": "International Journal of Software Engineering & Applications",
-    "year": 2018
-  },
-  {
-    "_classification_type": "sms",
     "_paper_key": "doi:10.1016/j.infsof.2015.10.008",
     "abstract": null,
     "authors": [
@@ -3502,107 +2998,6 @@
     "year": 2023
   },
   {
-    "_classification_type": "slr",
-    "_paper_key": "doi:10.37547/tajiir/volume08issue01-17",
-    "abstract": "The issue of managing technical debt (TD) in large-scale organizations with long-operated legacy systems in 2024\u20132025 is becoming a key strategic factor, since TD is being transformed into the dominant source of operational risks and loss of market competitiveness. The refusal to pursue consistent modernization leads to the accumulation of TD caused by poor software code quality and inert, obsolete architecture, as a result of which up to 42% of developers\u2019 working time is spent on rework and defect remediation, which causes a critical slowdown in the Time to Market (TTM) metric and deterioration of the user experience (UX), evaluated by Core Web Vitals indicators, in particular Largest Contentful Paint (LCP) and Time to Interactive (TTI). Under these conditions, the aim of the study is formulated as the development of a holistic integrated approach to strategic TD management, within which incremental architectural migration methods are aligned with quantitatively measurable business outcomes. The empirical and theoretical basis of the study includes a systematic review of current academic publications in the IEEE, ACM, and Scopus databases, as well as an in-depth case study analysis of the migration of a large e-commerce platform to the ReactJS/TypeScript technology stack. The leading methodological foundation is the Strangler Fig Pattern (SFP), which is used for stepwise and controlled reduction of architectural risks during evolutionary system transformation. The results obtained show that the combination of incremental migration with preventive management of code debt through static typing (TypeScript) provides a statistically significant reduction in TTM and a substantial improvement in LCP and TTR metrics, which is in direct correlation with increased conversion and reduced total operating costs. The practical significance of the provisions presented lies in the formation of the concept of a managed digital core, the maintenance of which requires the annual allocation of about 15% of the IT budget to software-autonomous TD remediation, which creates a normative basis for long-term investment planning by CIOs and architectural teams.",
-    "authors": [
-      {
-        "authorId": "2409037000",
-        "name": "Nizamutdinov Ilnar Rakipovich"
-      }
-    ],
-    "citationCount": 0,
-    "externalIds": {
-      "CorpusId": 285337570,
-      "DOI": "10.37547/tajiir/volume08issue01-17"
-    },
-    "openAccessPdf": {
-      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.37547/tajiir/volume08issue01-17?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.37547/tajiir/volume08issue01-17, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
-      "license": null,
-      "status": null,
-      "url": ""
-    },
-    "paperId": "215d019166562491c6c2304c8aa92e6e2a296976",
-    "publicationTypes": [
-      "JournalArticle",
-      "Review"
-    ],
-    "publicationVenue": {
-      "alternate_names": [
-        "Am J Interdiscip Innov Res"
-      ],
-      "alternate_urls": [
-        "http://www.usajournalshub.com/index.php/tajiir"
-      ],
-      "id": "ed1051a2-a4a9-44c9-a1f3-81fb2ac0cb43",
-      "issn": "2642-7478",
-      "name": "The American Journal of Interdisciplinary Innovations and Research",
-      "type": "journal",
-      "url": "http://www.theamericanjournals.com/index.php/tajiir/issue/view/12"
-    },
-    "source": "ss",
-    "title": "Managing Technical Debt While Migrating Long-Standing Legacy Code to A Modern Tech Stack",
-    "venue": "The American Journal of Interdisciplinary Innovations and Research",
-    "year": 2026
-  },
-  {
-    "_classification_type": "slr",
-    "_paper_key": "doi:10.33333/rp.vol57n1.10",
-    "abstract": "Cloud computing is an emerging technology that enables\u00a0 on-demand software deployment and the use of suitable infrastructure for native applications. In this context, cloud-native architectures have emerged as a promising alternative to monolithic applications, facilitating the sustainable growth of organizations. This paper presents a systematic review aimed at providing a comprehensive\u00a0 overview of the state of the art, current trends, and future research opportunities regarding strategies for migrating\u00a0 monolithic applications to cloud-native architectures. The review covers 41 relevant studies, which have been\u00a0 analyzed according to the key phases of the migration\u00a0 process: planning, evaluation, refactoring, transition, and\u00a0 integration into cloud-native environments. Among the\u00a0 most significant findings, microservice-based architectures and cloud-oriented design patterns are the most studied\u00a0 topics, accounting for approximately 73 % of the analyzed papers. Additionally, the review identifies approaches such as decision-making frameworks, refactoring of monolithic code, application of Model-Driven Engineering (MDE), reduction of technical debt, and use of orchestration tools.",
-    "authors": [
-      {
-        "authorId": "2427280234",
-        "name": "John Vacacela Betancourt"
-      },
-      {
-        "authorId": "2427276898",
-        "name": "Mateo Once Campoverde"
-      },
-      {
-        "authorId": "2427276966",
-        "name": "Jonathan Ortega Molina"
-      },
-      {
-        "authorId": "2427280212",
-        "name": "Lenin Erazo Garz\u00f3n"
-      },
-      {
-        "authorId": "2427280309",
-        "name": "Priscila Cedillo Orellana"
-      }
-    ],
-    "citationCount": 0,
-    "externalIds": {
-      "CorpusId": 287049619,
-      "DOI": "10.33333/rp.vol57n1.10"
-    },
-    "openAccessPdf": {
-      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.33333/rp.vol57n1.10?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.33333/rp.vol57n1.10, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
-      "license": null,
-      "status": null,
-      "url": ""
-    },
-    "paperId": "61b5e5a6627f343e437e7d39d228f10c1503ad5e",
-    "publicationTypes": [
-      "JournalArticle",
-      "Review"
-    ],
-    "publicationVenue": {
-      "alternate_names": [
-        "Rev Polit\u00e9cnica"
-      ],
-      "id": "29f17448-f8df-47cc-8f0f-f1d0977497b8",
-      "issn": "1900-2351",
-      "name": "Revista Polit\u00e9cnica",
-      "type": "journal",
-      "url": "https://revistas.elpoli.edu.co/index.php/pol/"
-    },
-    "source": "ss",
-    "title": "Migration Strategies from Monolithic Applications to Cloud-Native Applications: A Systematic Review",
-    "venue": "Revista Polit\u00e9cnica",
-    "year": 2026
-  },
-  {
     "_classification_type": "sms",
     "_paper_key": "doi:10.1007/978-3-031-08965-7_14",
     "abstract": null,
@@ -3662,59 +3057,6 @@
     "title": "Exploring Technical Debt Tools: A Systematic Mapping Study",
     "venue": "International Conference on Enterprise Information Systems",
     "year": 2021
-  },
-  {
-    "_classification_type": "sms",
-    "_paper_key": "doi:10.2139/ssrn.3606172",
-    "abstract": null,
-    "authors": [
-      {
-        "authorId": "102104860",
-        "name": "Mrwan BenIdris"
-      }
-    ],
-    "citationCount": 0,
-    "externalIds": {
-      "CorpusId": 286063298,
-      "DOI": "10.2139/ssrn.3606172"
-    },
-    "openAccessPdf": {
-      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.2139/ssrn.3606172?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.2139/ssrn.3606172, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
-      "license": "CCBY",
-      "status": "GREEN",
-      "url": "https://zenodo.org/records/3835727/files/9518ijsea01.pdf"
-    },
-    "paperId": "f7119dfab2c9f5c0b6f6306de3a5c8a583ea9ba2",
-    "publicationTypes": null,
-    "publicationVenue": {
-      "alternate_names": [
-        "SSRN, Social Science Research Network (SSRN) home page",
-        "SSRN Electronic Journal",
-        "Soc Sci Res Netw",
-        "SSRN",
-        "SSRN Home Page",
-        "SSRN Electron J",
-        "Social Science Electronic Publishing presents Social Science Research Network"
-      ],
-      "alternate_urls": [
-        "www.ssrn.com/",
-        "https://fatcat.wiki/container/tol7woxlqjeg5bmzadeg6qrg3e",
-        "https://www.wikidata.org/wiki/Q53949192",
-        "www.ssrn.com/en",
-        "http://www.ssrn.com/en/",
-        "http://umlib.nl/ssrn",
-        "umlib.nl/ssrn"
-      ],
-      "id": "75d7a8c1-d871-42db-a8e4-7cf5146fdb62",
-      "issn": "1556-5068",
-      "name": "Social Science Research Network",
-      "type": "journal",
-      "url": "http://www.ssrn.com/"
-    },
-    "source": "ss",
-    "title": "Investigate, Identify and Estimate the Technical Debt: A Systematic Mapping Study",
-    "venue": "Social Science Research Network",
-    "year": 2020
   },
   {
     "_classification_type": "slr",

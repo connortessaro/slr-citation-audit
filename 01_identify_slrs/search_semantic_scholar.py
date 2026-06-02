@@ -25,6 +25,7 @@ from typing import Iterator
 from lib.config import REPO_ROOT, load as load_config
 from lib.paperid import dedup_by_key
 from lib.paths import candidates_output_path, candidates_preview_output_path
+from lib.slr_labels import matches_review_label
 from lib.ss_client import SSClient
 
 logger = logging.getLogger(__name__)
@@ -45,13 +46,6 @@ FIELDS = (
     "publicationVenue",
     "publicationTypes",
 )
-
-
-def _title_matches_slr(title: str | None, patterns: list[str]) -> bool:
-    if not title:
-        return False
-    lower = title.lower()
-    return any(p in lower for p in patterns)
 
 
 def planned_searches(keywords: list[str], slr_patterns: list[str]) -> list[tuple[str, str]]:
@@ -142,7 +136,11 @@ def run(
             hits = client.search_papers(query, year=year_range, limit=limit_per_search, fields=FIELDS)
             for h in hits:
                 h.setdefault("source", "ss")
-            candidates.extend(h for h in hits if _title_matches_slr(h.get("title"), slr_patterns_lower))
+            candidates.extend(
+                h
+                for h in hits
+                if matches_review_label(h.get("title"), None, slr_patterns_lower)
+            )
 
     fetched_unique = dedup_by_key(candidates)
     logger.info("SS fetch: %d raw -> %d unique this run", len(candidates), len(fetched_unique))
@@ -173,7 +171,7 @@ def _parse_args() -> argparse.Namespace:
         type=int,
         default=None,
         metavar="N",
-        help="Run at most N API searches (default: all 12 targeted + 4 broad with default config).",
+        help="Run at most N API searches (default: all keyword×pattern targeted + keyword broad searches).",
     )
     parser.add_argument(
         "--limit",

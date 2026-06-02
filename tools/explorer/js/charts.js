@@ -2,6 +2,11 @@
  * Chart.js helpers for overview charts.
  */
 
+const CHART_FONT = '"IBM Plex Sans", system-ui, sans-serif';
+const CHART_GRID_Y = "rgba(148, 163, 184, 0.08)";
+const CHART_SLATE = "rgba(100, 116, 139, 0.72)";
+const CHART_SLATE_BORDER = "rgb(100, 116, 139)";
+
 let coverageChart = null;
 let topCitedChart = null;
 let consensusChart = null;
@@ -14,6 +19,15 @@ function ChartLib() {
     );
   }
   return C;
+}
+
+function baseScaleOpts() {
+  return {
+    font: { family: CHART_FONT, size: 11 },
+    color: "#64748b",
+    grid: { color: CHART_GRID_Y, drawBorder: false },
+    ticks: { font: { family: CHART_FONT, size: 10 } },
+  };
 }
 
 export function destroyCharts() {
@@ -49,30 +63,61 @@ export function renderCoverageHistogram(canvas, slrs) {
         {
           label: "SLRs",
           data: bins,
-          backgroundColor: "rgba(37, 99, 235, 0.75)",
-          borderColor: "rgb(37, 99, 235)",
+          backgroundColor: CHART_SLATE,
+          borderColor: CHART_SLATE_BORDER,
           borderWidth: 1,
+          borderRadius: 3,
         },
       ],
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
+      layout: { padding: { top: 4, right: 8, bottom: 4, left: 4 } },
       plugins: {
         legend: { display: false },
-        title: { display: true, text: "Coverage distribution (% of eligible top-50 cited)" },
+        title: { display: false },
       },
       scales: {
-        x: { title: { display: true, text: "Coverage (%)" } },
-        y: { title: { display: true, text: "Number of SLRs" }, beginAtZero: true, ticks: { stepSize: 1 } },
+        x: {
+          ...baseScaleOpts(),
+          title: {
+            display: true,
+            text: "Coverage (%)",
+            font: { family: CHART_FONT, size: 11 },
+            color: "#64748b",
+          },
+          grid: { display: false },
+          ticks: { maxRotation: 0, font: { size: 9 } },
+        },
+        y: {
+          ...baseScaleOpts(),
+          title: {
+            display: true,
+            text: "Number of SLRs",
+            font: { family: CHART_FONT, size: 11 },
+            color: "#64748b",
+          },
+          beginAtZero: true,
+          grid: { color: CHART_GRID_Y, drawBorder: false },
+          ticks: { precision: 0, font: { family: CHART_FONT, size: 10 } },
+        },
       },
     },
   });
 }
 
-export function renderTopCitedBar(canvas, topCited, limit = 15) {
+function truncateLabel(title, max = 32) {
+  const t = title || "Untitled";
+  return t.length > max ? `${t.slice(0, max)}…` : t;
+}
+
+export function renderTopCitedBar(canvas, topCited, limit = 10) {
   const slice = topCited.slice(0, limit);
-  const labels = slice.map((p, i) => `#${p._rank ?? i + 1}`);
+  const labels = slice.map((p) => {
+    const yr = p.year != null ? ` · ${p.year}` : "";
+    return truncateLabel(p.title, 30) + yr;
+  });
   const data = slice.map((p) => p.citationCount ?? 0);
   if (topCitedChart) topCitedChart.destroy();
   const Chart = ChartLib();
@@ -84,9 +129,10 @@ export function renderTopCitedBar(canvas, topCited, limit = 15) {
         {
           label: "Citation count",
           data,
-          backgroundColor: "rgba(5, 150, 105, 0.7)",
-          borderColor: "rgb(5, 150, 105)",
+          backgroundColor: CHART_SLATE,
+          borderColor: CHART_SLATE_BORDER,
           borderWidth: 1,
+          borderRadius: 3,
         },
       ],
     },
@@ -94,28 +140,50 @@ export function renderTopCitedBar(canvas, topCited, limit = 15) {
       indexAxis: "y",
       responsive: true,
       maintainAspectRatio: false,
+      layout: { padding: { top: 4, right: 12, bottom: 8, left: 4 } },
       plugins: {
         legend: { display: false },
-        title: { display: true, text: `Top ${limit} papers by citation count (corpus)` },
+        title: { display: false },
         tooltip: {
           callbacks: {
             title(items) {
               const i = items[0]?.dataIndex ?? 0;
-              return slice[i]?.title || "";
+              const p = slice[i];
+              return p ? `#${p._rank ?? "?"} · ${p.title || ""}` : "";
             },
           },
         },
       },
       scales: {
-        x: { title: { display: true, text: "Citations (Semantic Scholar)" }, beginAtZero: true },
+        x: {
+          ...baseScaleOpts(),
+          title: {
+            display: true,
+            text: "Citations (Semantic Scholar)",
+            font: { family: CHART_FONT, size: 11 },
+            color: "#64748b",
+          },
+          beginAtZero: true,
+          grid: { display: true, color: CHART_GRID_Y },
+        },
+        y: {
+          ...baseScaleOpts(),
+          grid: { display: false },
+          ticks: { font: { size: 9 }, autoSkip: false },
+        },
       },
     },
   });
 }
 
+export function resizeOverviewCharts() {
+  coverageChart?.resize();
+  topCitedChart?.resize();
+}
+
 export function renderConsensusBar(canvas, consensusPapers, limit = 20, slrCount = null) {
   const slice = consensusPapers.slice(0, limit);
-  const labels = slice.map((p) => `#${p.citingCount}`);
+  const labels = slice.map((p) => truncateLabel(p.ref?.title, 36));
   const data = slice.map((p) => p.citingCount);
   if (consensusChart) consensusChart.destroy();
   const Chart = ChartLib();
@@ -129,10 +197,11 @@ export function renderConsensusBar(canvas, consensusPapers, limit = 20, slrCount
           label: "SLRs citing",
           data,
           backgroundColor: slice.map((p) =>
-            p.inTop50 ? "rgba(37, 99, 235, 0.75)" : "rgba(100, 116, 139, 0.65)"
+            p.inTopBenchmark ? "rgba(71, 85, 105, 0.85)" : "rgba(148, 163, 184, 0.55)"
           ),
-          borderColor: slice.map((p) => (p.inTop50 ? "rgb(37, 99, 235)" : "rgb(100, 116, 139)")),
+          borderColor: slice.map((p) => (p.inTopBenchmark ? "rgb(71, 85, 105)" : "rgb(148, 163, 184)")),
           borderWidth: 1,
+          borderRadius: 3,
         },
       ],
     },
@@ -142,22 +211,18 @@ export function renderConsensusBar(canvas, consensusPapers, limit = 20, slrCount
       maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
-        title: {
-          display: true,
-          text: `Top ${limit} papers by SLR consensus (# SLRs citing each)`,
-        },
+        title: { display: false },
         tooltip: {
           callbacks: {
             title(items) {
               const i = items[0]?.dataIndex ?? 0;
-              const p = slice[i];
-              return p?.ref.title || "";
+              return slice[i]?.ref?.title || "";
             },
             afterLabel(item) {
               const p = slice[item.dataIndex];
               if (!p) return "";
               const bits = [`${p.citingCount}/${totalSlrs} SLRs`];
-              if (p.inTop50) bits.push(`top-50 rank #${p.topRank}`);
+              if (p.inTopBenchmark) bits.push(`benchmark rank #${p.topRank}`);
               return bits.join(" · ");
             },
           },
@@ -165,54 +230,16 @@ export function renderConsensusBar(canvas, consensusPapers, limit = 20, slrCount
       },
       scales: {
         x: {
-          title: { display: true, text: "Number of SLRs citing this paper" },
+          ...baseScaleOpts(),
+          title: { display: false },
           beginAtZero: true,
           ticks: { stepSize: 1 },
         },
-      },
-    },
-  });
-}
-
-export function renderSlrCoverageGauge(canvas, coveragePct) {
-  const pct = coveragePct ?? 0;
-  const Chart = ChartLib();
-  return new Chart(canvas, {
-    type: "doughnut",
-    data: {
-      labels: ["Cited", "Not cited"],
-      datasets: [
-        {
-          data: [pct, Math.max(0, 100 - pct)],
-          backgroundColor: ["rgb(37, 99, 235)", "rgb(226, 232, 240)"],
-          borderWidth: 0,
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      circumference: 180,
-      rotation: 270,
-      cutout: "72%",
-      plugins: {
-        legend: { display: false },
-        tooltip: { enabled: false },
-      },
-    },
-    plugins: [
-      {
-        id: "centerText",
-        afterDraw(chart) {
-          const { ctx, chartArea } = chart;
-          ctx.save();
-          ctx.font = "bold 22px system-ui";
-          ctx.fillStyle = "#0f172a";
-          ctx.textAlign = "center";
-          ctx.fillText(`${pct.toFixed(1)}%`, (chartArea.left + chartArea.right) / 2, chartArea.bottom - 8);
-          ctx.restore();
+        y: {
+          ...baseScaleOpts(),
+          grid: { display: false },
         },
       },
-    ],
+    },
   });
 }

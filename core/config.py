@@ -22,6 +22,9 @@ class Config:
     year_max: int
     slr_title_patterns: list[str]
     top_n: int
+    top_cited_recent_years: int
+    top_cited_as_of_year: int
+    top_cited_robustness_n: int
     ss_base_url: str
     ss_api_key: str | None
 
@@ -35,13 +38,18 @@ class Config:
                 raise FileNotFoundError(f"No config at {CONFIG_PATH} or {EXAMPLE_CONFIG_PATH}")
         with path.open("r", encoding="utf-8") as f:
             raw: dict[str, Any] = yaml.safe_load(f)
+        year_max = int(raw["year_max"])
+        top_cited = raw.get("top_cited") or {}
         return cls(
             subfield=raw["subfield"],
             keywords=list(raw["keywords"]),
             year_min=int(raw["year_min"]),
-            year_max=int(raw["year_max"]),
+            year_max=year_max,
             slr_title_patterns=[p.lower() for p in raw["slr_title_patterns"]],
             top_n=int(raw.get("top_n", 50)),
+            top_cited_recent_years=int(top_cited.get("recent_years", 4)),
+            top_cited_as_of_year=int(top_cited.get("as_of_year", year_max)),
+            top_cited_robustness_n=int(top_cited.get("robustness_n", 100)),
             ss_base_url=raw.get("ss_base_url", "https://api.semanticscholar.org/graph/v1"),
             ss_api_key=os.environ.get("SEMANTIC_SCHOLAR_API_KEY"),
         )

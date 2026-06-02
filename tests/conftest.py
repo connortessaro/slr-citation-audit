@@ -34,7 +34,7 @@ def sample_papers(sample_paper: dict) -> list[dict]:
 @pytest.fixture(autouse=True)
 def isolated_cache(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Path:
     """Redirect SS cache writes to a temp dir per test."""
-    from lib import ss_client
+    from core import ss_client
 
     cache = tmp_path / "ss_cache"
     cache.mkdir()

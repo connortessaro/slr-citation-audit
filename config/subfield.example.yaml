@@ -11,14 +11,35 @@ keywords:
 year_min: 2000
 year_max: 2026
 
-# SLR identification heuristics (manual review required after).
+# Secondary-study self-labels (title or abstract) for SLR/SMS inclusion.
+# Wider than Kitchenham-only wording to recover papers that say "literature review", "SLR", or "survey".
 slr_title_patterns:
   - "systematic literature review"
   - "systematic review"
   - "systematic mapping"
+  - "systematic mapping study"
+  - "literature review"
+  - "scoping review"
+  - "scoping study"
+  - "mapping study"
+  - "tertiary review"
+  - "tertiary study"
+  - "slr"
+  - "slrs"
+  - "survey"
+  - "meta-analysis"
+  - "meta analysis"
 
-# Top-cited corpus size.
+# Top-cited corpus size (primary benchmark for overlap analysis).
 top_n: 50
+
+# Two-pass top-cited construction (Semantic Scholar citationCount).
+# Established: papers with year <= as_of_year - recent_years (default: <= 2022 when as_of=2026).
+# Recent: papers with year > that cutoff. Each pass contributes half of top_n (25 + 25).
+top_cited:
+  recent_years: 4
+  as_of_year: 2026
+  robustness_n: 100
 
 # Semantic Scholar API.
 ss_base_url: "https://api.semanticscholar.org/graph/v1"

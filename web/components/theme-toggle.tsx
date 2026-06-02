@@ -31,7 +31,8 @@ export function ThemeToggle() {
       type="button"
       onClick={toggle}
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
-      className="relative grid h-7 w-12 items-center rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] transition-colors hover:border-[var(--color-border-strong)]"
+      title={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+      className="relative grid h-11 w-12 items-center rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] transition-colors hover:border-[var(--color-border-strong)] sm:h-7"
     >
       <motion.span
         initial={false}

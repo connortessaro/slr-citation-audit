@@ -11,6 +11,7 @@ const NAV = [
   { href: "/consensus", label: "Consensus" },
   { href: "/compare", label: "Compare" },
   { href: "/graph", label: "Graph" },
+  { href: "/method", label: "Method" },
 ];
 
 export function SiteHeader() {

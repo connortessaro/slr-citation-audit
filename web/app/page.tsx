@@ -80,6 +80,7 @@ export default function HomePage() {
               <NavLink href="/consensus" label="Consensus" />
               <NavLink href="/compare" label="Compare" />
               <NavLink href="/graph" label="Graph" accent />
+              <NavLink href="/method" label="Method" />
             </span>
           </div>
         </div>

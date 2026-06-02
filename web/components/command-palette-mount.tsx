@@ -8,6 +8,7 @@ const NAV = [
   { id: "nav-consensus", title: "Consensus", href: "/consensus", group: "Navigation" as const },
   { id: "nav-compare", title: "Compare", href: "/compare", group: "Navigation" as const },
   { id: "nav-graph", title: "Graph", href: "/graph", group: "Navigation" as const },
+  { id: "nav-method", title: "Method", href: "/method", group: "Navigation" as const },
 ];
 
 export function CommandPaletteMount() {

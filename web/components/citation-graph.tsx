@@ -89,8 +89,40 @@ export function CitationGraph({ data }: Props) {
   const [selected, setSelected] = useState<GraphNode | null>(null);
 
   return (
-    <div className="relative h-[calc(100vh-3.5rem-1px)] w-full">
-      <ForceGraph3D data={data} onSelect={setSelected} />
+    <div className="relative w-full md:h-[calc(100vh-3.5rem-1px)]">
+      {/* Mobile fallback: WebGL pan + native pinch-zoom fight on touch. */}
+      <div className="block px-4 py-12 md:hidden">
+        <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent)]">
+          3D citation graph
+        </div>
+        <h2 className="mt-3 text-2xl font-semibold tracking-tight text-[var(--color-text)]">
+          The graph view doesn&apos;t play nice with touch.
+        </h2>
+        <p className="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
+          {data.nodes.length} nodes, {data.links.length} edges. Pinch-zoom
+          fights the WebGL pan on phones. Open this route on a desktop
+          browser, or jump to the consensus list — same canonical top-N
+          and which reviews actually cite each one.
+        </p>
+        <a
+          href="/consensus"
+          className="mt-6 inline-flex min-h-[44px] items-center gap-2 rounded-md border border-[var(--color-accent-soft)] bg-[var(--color-accent-soft)] px-4 font-mono text-sm text-[var(--color-accent)] hover:bg-[var(--color-accent)]/20"
+        >
+          Open consensus list →
+        </a>
+        <div className="mt-8 font-mono text-[11px] text-[var(--color-text-subtle)]">
+          Desktop URL: {" "}
+          <code className="text-[var(--color-text-muted)]">/graph</code>
+        </div>
+      </div>
+
+      {/* Desktop 3D canvas + overlays */}
+      <div
+        role="img"
+        aria-label={`3D citation network of ${data.nodes.length} nodes and ${data.links.length} edges. Each node is an SLR or top-cited paper; edges connect SLRs to the top papers they cite.`}
+        className="relative hidden h-[calc(100vh-3.5rem-1px)] w-full md:block"
+      >
+        <ForceGraph3D data={data} onSelect={setSelected} />
 
       {/* Legend */}
       <div className="pointer-events-none absolute left-6 top-6 max-w-xs rounded-md border border-[var(--color-border)] bg-[var(--color-bg-elevated)]/85 p-4 backdrop-blur-md">
@@ -176,6 +208,7 @@ export function CitationGraph({ data }: Props) {
       {/* Stats footer */}
       <div className="pointer-events-none absolute bottom-6 left-6 font-mono text-[11px] text-[var(--color-text-subtle)]">
         {data.nodes.length} nodes · {data.links.length} edges
+      </div>
       </div>
     </div>
   );

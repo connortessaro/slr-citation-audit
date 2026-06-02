@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { CommandPaletteMount } from "@/components/command-palette-mount";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,6 +39,7 @@ export default function RootLayout({
         <SiteHeader />
         <main className="flex-1 relative">{children}</main>
         <SiteFooter />
+        <CommandPaletteMount />
       </body>
     </html>
   );

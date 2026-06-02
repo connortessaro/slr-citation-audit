@@ -47,7 +47,7 @@ function fmt(n: number, dims: keyof RankRow["raw"]): string {
   return n.toFixed(3);
 }
 
-export function RankBreakdown({ row }: { row: RankRow }) {
+export function RankBreakdown({ row, total }: { row: RankRow; total: number }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const inView = useInView(containerRef, { once: true, margin: "-10%" });
   const [open, setOpen] = useState(false);
@@ -66,8 +66,11 @@ export function RankBreakdown({ row }: { row: RankRow }) {
             <div className="font-mono text-4xl font-medium tabular-nums text-[var(--color-text)]">
               #{row.rank}
             </div>
-            <div className="font-mono text-sm text-[var(--color-text-subtle)]">
-              of 74
+            <div
+              className="font-mono text-sm text-[var(--color-text-subtle)]"
+              title="Ranked across every SLR the pipeline considered, including unpublished candidates not listed on this site."
+            >
+              of {total} candidates
             </div>
           </div>
         </div>

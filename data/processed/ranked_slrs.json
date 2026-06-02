@@ -1,0 +1,1852 @@
+[
+  {
+    "composite": 0.6051856449236364,
+    "judge_justification": null,
+    "n_refs": 105,
+    "n_refs_embedded": 105,
+    "normalized": {
+      "authority": 0.7267775743445887,
+      "coverage": 1.0,
+      "diversity": 0.917363469373019,
+      "llm_judge": 0.0,
+      "semantic": 0.38178718090057373
+    },
+    "rank": 1,
+    "raw": {
+      "authority": 3.832882926296022,
+      "coverage": 0.4082,
+      "diversity": 0.45868173468650963,
+      "llm_judge": 0.0,
+      "semantic": 0.38178718090057373
+    },
+    "slr_key": "doi:10.1016/j.jss.2022.111483",
+    "slr_title": "Identification and measurement of Requirements Technical Debt in software development: A systematic literature review",
+    "slr_venue": "Journal of Systems and Software",
+    "slr_year": 2022
+  },
+  {
+    "composite": 0.5981442948667518,
+    "judge_justification": null,
+    "n_refs": 96,
+    "n_refs_embedded": 96,
+    "normalized": {
+      "authority": 0.7562308832951651,
+      "coverage": 0.9500244977951985,
+      "diversity": 0.9264418239009727,
+      "llm_judge": 0.0,
+      "semantic": 0.3580242693424225
+    },
+    "rank": 2,
+    "raw": {
+      "authority": 3.9882139229924896,
+      "coverage": 0.38780000000000003,
+      "diversity": 0.4632209119504865,
+      "llm_judge": 0.0,
+      "semantic": 0.3580242693424225
+    },
+    "slr_key": "ss:5fc62339115dd42c4b6a521204ce70f37a24bfec",
+    "slr_title": "Identification and Measurement of Technical Debt Requirements in Software Development: a Systematic Literature Review",
+    "slr_venue": "arXiv.org",
+    "slr_year": 2021
+  },
+  {
+    "composite": 0.5960134199514798,
+    "judge_justification": null,
+    "n_refs": 75,
+    "n_refs_embedded": 75,
+    "normalized": {
+      "authority": 0.7740108061448888,
+      "coverage": 0.871141597256247,
+      "diversity": 0.9291376294102335,
+      "llm_judge": 0.0,
+      "semantic": 0.40577706694602966
+    },
+    "rank": 3,
+    "raw": {
+      "authority": 4.08198176218734,
+      "coverage": 0.3556,
+      "diversity": 0.46456881470511685,
+      "llm_judge": 0.0,
+      "semantic": 0.40577706694602966
+    },
+    "slr_key": "ss:ecd5e2bb6b635c01b8dd0ee37487f2a78fa8b680",
+    "slr_title": "Technical Debt Prioritization: State of the Art. A Systematic Literature Review",
+    "slr_venue": "arXiv.org",
+    "slr_year": 2019
+  },
+  {
+    "composite": 0.5783270498307669,
+    "judge_justification": null,
+    "n_refs": 76,
+    "n_refs_embedded": 76,
+    "normalized": {
+      "authority": 0.7647607572923244,
+      "coverage": 0.7998530132288094,
+      "diversity": 0.9336839606559394,
+      "llm_judge": 0.0,
+      "semantic": 0.39333751797676086
+    },
+    "rank": 4,
+    "raw": {
+      "authority": 4.033198811851577,
+      "coverage": 0.3265,
+      "diversity": 0.4668419803279698,
+      "llm_judge": 0.0,
+      "semantic": 0.39333751797676086
+    },
+    "slr_key": "doi:10.1016/j.jss.2020.110827",
+    "slr_title": "A systematic literature review on Technical Debt prioritization: Strategies, processes, factors, and tools",
+    "slr_venue": "Journal of Systems and Software",
+    "slr_year": 2021
+  },
+  {
+    "composite": 0.5721193993175122,
+    "judge_justification": null,
+    "n_refs": 18,
+    "n_refs_embedded": 15,
+    "normalized": {
+      "authority": 0.9841393104758767,
+      "coverage": 0.5156785889269966,
+      "diversity": 0.9655108357520402,
+      "llm_judge": 0.0,
+      "semantic": 0.3952682614326477
+    },
+    "rank": 5,
+    "raw": {
+      "authority": 5.190158438255907,
+      "coverage": 0.21050000000000002,
+      "diversity": 0.4827554178760202,
+      "llm_judge": 0.0,
+      "semantic": 0.3952682614326477
+    },
+    "slr_key": "doi:10.5220/0005914605720579",
+    "slr_title": "Decision Criteria for the Payment of Technical Debt in Software Projects: A Systematic Mapping Study",
+    "slr_venue": "International Conference on Enterprise Information Systems",
+    "slr_year": 2016
+  },
+  {
+    "composite": 0.570222110895441,
+    "judge_justification": null,
+    "n_refs": 82,
+    "n_refs_embedded": 82,
+    "normalized": {
+      "authority": 0.762025944347079,
+      "coverage": 0.7817246447819696,
+      "diversity": 0.9441030340432245,
+      "llm_judge": 0.0,
+      "semantic": 0.36325693130493164
+    },
+    "rank": 6,
+    "raw": {
+      "authority": 4.018775942717375,
+      "coverage": 0.3191,
+      "diversity": 0.47205151702161235,
+      "llm_judge": 0.0,
+      "semantic": 0.36325693130493164
+    },
+    "slr_key": "doi:10.37190/e-inf200102",
+    "slr_title": "Technical Debt Aware Estimations in Software Engineering: A Systematic Mapping Study",
+    "slr_venue": "e-Informatica Software Engineering Journal",
+    "slr_year": 2020
+  },
+  {
+    "composite": 0.5531500963739787,
+    "judge_justification": null,
+    "n_refs": 27,
+    "n_refs_embedded": 27,
+    "normalized": {
+      "authority": 0.8578391383165939,
+      "coverage": 0.5499755022048016,
+      "diversity": 0.9329871192243981,
+      "llm_judge": 0.0,
+      "semantic": 0.42494872212409973
+    },
+    "rank": 7,
+    "raw": {
+      "authority": 4.524076007335937,
+      "coverage": 0.2245,
+      "diversity": 0.4664935596121992,
+      "llm_judge": 0.0,
+      "semantic": 0.42494872212409973
+    },
+    "slr_key": "doi:10.5220/0010459100880098",
+    "slr_title": "Technical Debt Tools: A Systematic Mapping Study",
+    "slr_venue": "International Conference on Enterprise Information Systems",
+    "slr_year": 2021
+  },
+  {
+    "composite": 0.5389513646359549,
+    "judge_justification": null,
+    "n_refs": 52,
+    "n_refs_embedded": 14,
+    "normalized": {
+      "authority": 0.7103293262051522,
+      "coverage": 0.5987261146496815,
+      "diversity": 0.9696741642215323,
+      "llm_judge": 0.0,
+      "semantic": 0.4160272181034088
+    },
+    "rank": 8,
+    "raw": {
+      "authority": 3.746138079335134,
+      "coverage": 0.2444,
+      "diversity": 0.48483708211076626,
+      "llm_judge": 0.0,
+      "semantic": 0.4160272181034088
+    },
+    "slr_key": "doi:10.5220/0007675900950106",
+    "slr_title": "Automated Measurement of Technical Debt: A Systematic Literature Review",
+    "slr_venue": "International Conference on Enterprise Information Systems",
+    "slr_year": 2019
+  },
+  {
+    "composite": 0.5180501251999224,
+    "judge_justification": null,
+    "n_refs": 55,
+    "n_refs_embedded": 55,
+    "normalized": {
+      "authority": 0.7669375399928898,
+      "coverage": 0.48995590396864286,
+      "diversity": 0.9228698580386745,
+      "llm_judge": 0.0,
+      "semantic": 0.4104873239994049
+    },
+    "rank": 9,
+    "raw": {
+      "authority": 4.044678738505585,
+      "coverage": 0.2,
+      "diversity": 0.46143492901933736,
+      "llm_judge": 0.0,
+      "semantic": 0.4104873239994049
+    },
+    "slr_key": "doi:10.48550/arxiv.2406.12026",
+    "slr_title": "Systematic literature review on forecasting and prediction of technical debt evolution",
+    "slr_venue": "arXiv.org",
+    "slr_year": 2024
+  },
+  {
+    "composite": 0.5131679111904432,
+    "judge_justification": null,
+    "n_refs": 55,
+    "n_refs_embedded": 55,
+    "normalized": {
+      "authority": 0.901828088406323,
+      "coverage": 0.3500734933855953,
+      "diversity": 0.9846790255957681,
+      "llm_judge": 0.0,
+      "semantic": 0.3292589485645294
+    },
+    "rank": 10,
+    "raw": {
+      "authority": 4.756065135366833,
+      "coverage": 0.1429,
+      "diversity": 0.4923395127978842,
+      "llm_judge": 0.0,
+      "semantic": 0.3292589485645294
+    },
+    "slr_key": "doi:10.1109/techdebt52882.2021.00016",
+    "slr_title": "Characterizing Technical Debt and Antipatterns in AI-Based Systems: A Systematic Mapping Study",
+    "slr_venue": "2021 IEEE/ACM International Conference on Technical Debt (TechDebt)",
+    "slr_year": 2021
+  },
+  {
+    "composite": 0.4984003470298761,
+    "judge_justification": null,
+    "n_refs": 48,
+    "n_refs_embedded": 48,
+    "normalized": {
+      "authority": 0.8271946282508413,
+      "coverage": 0.4000489955903968,
+      "diversity": 0.9340118480425327,
+      "llm_judge": 0.0,
+      "semantic": 0.33074626326560974
+    },
+    "rank": 11,
+    "raw": {
+      "authority": 4.362462848699813,
+      "coverage": 0.16329999999999997,
+      "diversity": 0.46700592402126645,
+      "llm_judge": 0.0,
+      "semantic": 0.33074626326560974
+    },
+    "slr_key": "doi:10.1002/smr.2516",
+    "slr_title": "The Pandora's box of social, process, and people debts in software engineering",
+    "slr_venue": "J. Softw. Evol. Process.",
+    "slr_year": 2022
+  },
+  {
+    "composite": 0.4950725935843716,
+    "judge_justification": null,
+    "n_refs": 58,
+    "n_refs_embedded": 58,
+    "normalized": {
+      "authority": 0.8150838043451392,
+      "coverage": 0.39882410583047523,
+      "diversity": 0.9681689130128146,
+      "llm_judge": 0.0,
+      "semantic": 0.29328614473342896
+    },
+    "rank": 12,
+    "raw": {
+      "authority": 4.29859272968382,
+      "coverage": 0.1628,
+      "diversity": 0.4840844565064074,
+      "llm_judge": 0.0,
+      "semantic": 0.29328614473342896
+    },
+    "slr_key": "doi:10.1016/j.infsof.2016.10.004",
+    "slr_title": "Analyzing the concept of technical debt in the context of agile software development: A systematic literature review",
+    "slr_venue": "Information and Software Technology",
+    "slr_year": 2017
+  },
+  {
+    "composite": 0.4714617161676283,
+    "judge_justification": null,
+    "n_refs": 46,
+    "n_refs_embedded": 46,
+    "normalized": {
+      "authority": 0.7724908118350974,
+      "coverage": 0.29397354238118567,
+      "diversity": 0.9316967375509658,
+      "llm_judge": 0.0,
+      "semantic": 0.35914748907089233
+    },
+    "rank": 13,
+    "raw": {
+      "authority": 4.073965609180251,
+      "coverage": 0.12,
+      "diversity": 0.465848368775483,
+      "llm_judge": 0.0,
+      "semantic": 0.35914748907089233
+    },
+    "slr_key": "doi:10.1016/j.infsof.2023.107375",
+    "slr_title": "Technical Debt Management Automation: State of the Art and Future Perspectives",
+    "slr_venue": "Information and Software Technology",
+    "slr_year": 2023
+  },
+  {
+    "composite": 0.46895330158525717,
+    "judge_justification": null,
+    "n_refs": 66,
+    "n_refs_embedded": 33,
+    "normalized": {
+      "authority": 0.7527931022438367,
+      "coverage": 0.6369426751592356,
+      "diversity": 0.9550307305232135,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 14,
+    "raw": {
+      "authority": 3.9700837374156115,
+      "coverage": 0.26,
+      "diversity": 0.47751536526160687,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.48550/arxiv.2303.06535",
+    "slr_title": "Quantifying Technical Debt: A Systematic Mapping Study and a Conceptual Model",
+    "slr_venue": "arXiv.org",
+    "slr_year": 2023
+  },
+  {
+    "composite": 0.45716808628410777,
+    "judge_justification": null,
+    "n_refs": 129,
+    "n_refs_embedded": 30,
+    "normalized": {
+      "authority": 0.7102036701828729,
+      "coverage": 0.6369426751592356,
+      "diversity": 0.9386940860784301,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 15,
+    "raw": {
+      "authority": 3.7454753940248247,
+      "coverage": 0.26,
+      "diversity": 0.46934704303921515,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1002/smr.70104",
+    "slr_title": "Self\u2010Admitted Technical Debt Detection Approaches: A Decade Systematic Review",
+    "slr_venue": "Journal of Software: Evolution and Process",
+    "slr_year": 2023
+  },
+  {
+    "composite": 0.4436178699643509,
+    "judge_justification": null,
+    "n_refs": 24,
+    "n_refs_embedded": 24,
+    "normalized": {
+      "authority": 0.9481426534811934,
+      "coverage": 0.04899559039686428,
+      "diversity": 0.9326227265510728,
+      "llm_judge": 0.0,
+      "semantic": 0.2883283793926239
+    },
+    "rank": 16,
+    "raw": {
+      "authority": 5.000319102441125,
+      "coverage": 0.02,
+      "diversity": 0.4663113632755365,
+      "llm_judge": 0.0,
+      "semantic": 0.2883283793926239
+    },
+    "slr_key": "doi:10.48550/arxiv.2407.14991",
+    "slr_title": "Investigating the use of Snowballing on Gray Literature Reviews",
+    "slr_venue": "arXiv.org",
+    "slr_year": 2024
+  },
+  {
+    "composite": 0.43574386628733003,
+    "judge_justification": null,
+    "n_refs": 70,
+    "n_refs_embedded": 70,
+    "normalized": {
+      "authority": 0.8646427244142171,
+      "coverage": 0.05218030377266046,
+      "diversity": 0.953468641592439,
+      "llm_judge": 0.0,
+      "semantic": 0.3084276616573334
+    },
+    "rank": 17,
+    "raw": {
+      "authority": 4.559956791102114,
+      "coverage": 0.0213,
+      "diversity": 0.47673432079621963,
+      "llm_judge": 0.0,
+      "semantic": 0.3084276616573334
+    },
+    "slr_key": "doi:10.1016/j.infsof.2019.106225",
+    "slr_title": "Management of quality requirements in agile and rapid software development: A systematic mapping study",
+    "slr_venue": "Information and Software Technology",
+    "slr_year": 2020
+  },
+  {
+    "composite": 0.4051685968211947,
+    "judge_justification": null,
+    "n_refs": 81,
+    "n_refs_embedded": 15,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.6837334639882411,
+      "diversity": 0.870258469264003,
+      "llm_judge": 0.0,
+      "semantic": 0.47185105085372925
+    },
+    "rank": 18,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.2791,
+      "diversity": 0.4351292346320016,
+      "llm_judge": 0.0,
+      "semantic": 0.47185105085372925
+    },
+    "slr_key": "doi:10.1016/j.jss.2016.10.018",
+    "slr_title": "Identification and analysis of the elements required to manage technical debt by means of a systematic mapping study",
+    "slr_venue": "Journal of Systems and Software",
+    "slr_year": 2017
+  },
+  {
+    "composite": 0.40239600752360694,
+    "judge_justification": null,
+    "n_refs": 34,
+    "n_refs_embedded": 9,
+    "normalized": {
+      "authority": 0.840968697321087,
+      "coverage": 0.2084762371386575,
+      "diversity": 0.96253510315829,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 19,
+    "raw": {
+      "authority": 4.435104597741915,
+      "coverage": 0.0851,
+      "diversity": 0.48126755157914514,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1007/978-3-030-57599-1_10",
+    "slr_title": "Technical Debt Management: A Systematic Literature Review and Research Agenda for Digital Government",
+    "slr_venue": "International Conference on Electronic Government",
+    "slr_year": 2020
+  },
+  {
+    "composite": 0.39999999999999997,
+    "judge_justification": null,
+    "n_refs": 19,
+    "n_refs_embedded": 1,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.9999999999999998,
+      "llm_judge": 0.0,
+      "semantic": 1.0
+    },
+    "rank": 20,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.5,
+      "llm_judge": 0.0,
+      "semantic": 1.0
+    },
+    "slr_key": "doi:10.1145/3194164.3194171",
+    "slr_title": "Trade-Off Decisions across Time in Technical Debt Management: A Systematic Literature Review",
+    "slr_venue": "2018 IEEE/ACM International Conference on Technical Debt (TechDebt)",
+    "slr_year": 2018
+  },
+  {
+    "composite": 0.38457090503337704,
+    "judge_justification": null,
+    "n_refs": 179,
+    "n_refs_embedded": 13,
+    "normalized": {
+      "authority": 0.7124118026881436,
+      "coverage": 0.24987751102400782,
+      "diversity": 0.9605652114547337,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 21,
+    "raw": {
+      "authority": 3.7571206534235944,
+      "coverage": 0.102,
+      "diversity": 0.480282605727367,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "ss:fdd97b88db207bd2429c1b73454dd19f9a351136",
+    "slr_title": "Systematically reviewing the layered architectural pattern principles and their use to reconstruct software architectures",
+    "slr_venue": "arXiv.org",
+    "slr_year": 2021
+  },
+  {
+    "composite": 0.38448453018219064,
+    "judge_justification": null,
+    "n_refs": 55,
+    "n_refs_embedded": 12,
+    "normalized": {
+      "authority": 1.0,
+      "coverage": 0.0,
+      "diversity": 0.9224226509109532,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 22,
+    "raw": {
+      "authority": 5.273804615879257,
+      "coverage": 0.0,
+      "diversity": 0.4612113254554767,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "ss:5c1fc36810af573bb166635a79f9fa4125de65a6",
+    "slr_title": "Towards a Theory on Architecting for Continuous Deployment",
+    "slr_venue": "arXiv.org",
+    "slr_year": 2021
+  },
+  {
+    "composite": 0.3834198083440516,
+    "judge_justification": null,
+    "n_refs": 101,
+    "n_refs_embedded": 44,
+    "normalized": {
+      "authority": 0.5562156494818313,
+      "coverage": 0.4409603135717785,
+      "diversity": 0.919923078666648,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 23,
+    "raw": {
+      "authority": 2.933372659661561,
+      "coverage": 0.18,
+      "diversity": 0.4599615393333241,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.5753/jserd.2023.2671",
+    "slr_title": "Identification and Management of Technical Debt: A Systematic Mapping Study Update",
+    "slr_venue": "Journal of Software Engineering Research and Development",
+    "slr_year": 2023
+  },
+  {
+    "composite": 0.3751570712539584,
+    "judge_justification": null,
+    "n_refs": 32,
+    "n_refs_embedded": 23,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.5499755022048016,
+      "diversity": 0.8697261093006623,
+      "llm_judge": 0.0,
+      "semantic": 0.456083744764328
+    },
+    "rank": 24,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.2245,
+      "diversity": 0.43486305465033126,
+      "llm_judge": 0.0,
+      "semantic": 0.456083744764328
+    },
+    "slr_key": "doi:10.1007/978-3-031-08965-7_14",
+    "slr_title": "Exploring Technical Debt Tools: A Systematic Mapping Study",
+    "slr_venue": "International Conference on Enterprise Information Systems",
+    "slr_year": 2021
+  },
+  {
+    "composite": 0.3606600032497023,
+    "judge_justification": null,
+    "n_refs": 74,
+    "n_refs_embedded": 9,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.38118569328760415,
+      "diversity": 0.904689918339783,
+      "llm_judge": 0.0,
+      "semantic": 0.5174244046211243
+    },
+    "rank": 25,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.15560000000000002,
+      "diversity": 0.4523449591698916,
+      "llm_judge": 0.0,
+      "semantic": 0.5174244046211243
+    },
+    "slr_key": "doi:10.1016/j.jss.2017.09.025",
+    "slr_title": "Managing architectural technical debt: A unified model and systematic literature review",
+    "slr_venue": "Journal of Systems and Software",
+    "slr_year": 2018
+  },
+  {
+    "composite": 0.35718977372650373,
+    "judge_justification": null,
+    "n_refs": 36,
+    "n_refs_embedded": 7,
+    "normalized": {
+      "authority": 0.6659782383276109,
+      "coverage": 0.14698677119059284,
+      "diversity": 0.9729838591143146,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 26,
+    "raw": {
+      "authority": 3.5122391073672907,
+      "coverage": 0.06,
+      "diversity": 0.4864919295571574,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.48550/arxiv.2412.14217",
+    "slr_title": "Development and Adoption of SATD Detection Tools: A State-of-practice Report",
+    "slr_venue": "BElgian-NEtherlands software eVOLution symposium",
+    "slr_year": 2024
+  },
+  {
+    "composite": 0.34184603690034265,
+    "judge_justification": null,
+    "n_refs": 43,
+    "n_refs_embedded": 10,
+    "normalized": {
+      "authority": 0.582178398980535,
+      "coverage": 0.19598236158745713,
+      "diversity": 0.931069423933721,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 27,
+    "raw": {
+      "authority": 3.070295127808741,
+      "coverage": 0.08,
+      "diversity": 0.46553471196686064,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1002/sys.21681",
+    "slr_title": "Technical debt in systems engineering\u2014A systematic literature review",
+    "slr_venue": "Systems Engineering",
+    "slr_year": 2023
+  },
+  {
+    "composite": 0.3403244007398483,
+    "judge_justification": null,
+    "n_refs": 45,
+    "n_refs_embedded": 5,
+    "normalized": {
+      "authority": 0.7213592105203597,
+      "coverage": 0.0,
+      "diversity": 0.9802627931788819,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 28,
+    "raw": {
+      "authority": 3.80430753414929,
+      "coverage": 0.0,
+      "diversity": 0.49013139658944105,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.48550/arxiv.2601.20879",
+    "slr_title": "A Survey on Large Language Model Impact on Software Evolvability and Maintainability: the Good, the Bad, the Ugly, and the Remedy",
+    "slr_venue": "arXiv.org",
+    "slr_year": 2026
+  },
+  {
+    "composite": 0.3254016477430952,
+    "judge_justification": null,
+    "n_refs": 82,
+    "n_refs_embedded": 22,
+    "normalized": {
+      "authority": 0.39107583901570686,
+      "coverage": 0.29397354238118567,
+      "diversity": 0.9419588573185835,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 29,
+    "raw": {
+      "authority": 2.062457564959888,
+      "coverage": 0.12,
+      "diversity": 0.4709794286592919,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1007/s00766-024-00424-3",
+    "slr_title": "Modelling the quantification of requirements technical debt",
+    "slr_venue": "Requirements Engineering",
+    "slr_year": 2024
+  },
+  {
+    "composite": 0.32424135049842523,
+    "judge_justification": null,
+    "n_refs": 62,
+    "n_refs_embedded": 20,
+    "normalized": {
+      "authority": 0.6164356683493221,
+      "coverage": 0.09995100440960314,
+      "diversity": 0.9048200797332008,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 30,
+    "raw": {
+      "authority": 3.2509612731332695,
+      "coverage": 0.0408,
+      "diversity": 0.4524100398666005,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.2478/ausi-2021-0016",
+    "slr_title": "Reproducibility in the technical debt domain",
+    "slr_venue": "Acta Universitatis Sapientiae: Informatica",
+    "slr_year": 2021
+  },
+  {
+    "composite": 0.32068409321143493,
+    "judge_justification": null,
+    "n_refs": 44,
+    "n_refs_embedded": 10,
+    "normalized": {
+      "authority": 0.5607702645278618,
+      "coverage": 0.09799118079372857,
+      "diversity": 0.9446590207355843,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 31,
+    "raw": {
+      "authority": 2.95739280951487,
+      "coverage": 0.04,
+      "diversity": 0.47232951036779225,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.33022/ijcs.v12i6.3612",
+    "slr_title": "Lean and Agile Software Development for Managing Technical Debt on A Large-scale Software: A Systematic Literature Review",
+    "slr_venue": "Indonesian Journal of Computer Science",
+    "slr_year": 2024
+  },
+  {
+    "composite": 0.3206038692233781,
+    "judge_justification": null,
+    "n_refs": 64,
+    "n_refs_embedded": 1,
+    "normalized": {
+      "authority": 0.6034132083040246,
+      "coverage": 0.04899559039686428,
+      "diversity": 0.9506105474160016,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 32,
+    "raw": {
+      "authority": 3.182283363236276,
+      "coverage": 0.02,
+      "diversity": 0.4753052737080009,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "ss:b1493d15df91d58ae6c5f052deda332479b27edf",
+    "slr_title": "The State of Generative AI in Software Development: Insights from Literature and a Developer Survey",
+    "slr_venue": "",
+    "slr_year": 2026
+  },
+  {
+    "composite": 0.3161591539473271,
+    "judge_justification": null,
+    "n_refs": 33,
+    "n_refs_embedded": 7,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.3160215580597746,
+      "diversity": 0.8974602008183248,
+      "llm_judge": 0.0,
+      "semantic": 0.36731401085853577
+    },
+    "rank": 33,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.129,
+      "diversity": 0.4487301004091625,
+      "llm_judge": 0.0,
+      "semantic": 0.36731401085853577
+    },
+    "slr_key": "doi:10.1016/j.jss.2014.12.027",
+    "slr_title": "A systematic mapping study on technical debt and its management",
+    "slr_venue": "Journal of Systems and Software",
+    "slr_year": 2015
+  },
+  {
+    "composite": 0.3149673656218487,
+    "judge_justification": null,
+    "n_refs": 87,
+    "n_refs_embedded": 2,
+    "normalized": {
+      "authority": 0.603442713827852,
+      "coverage": 0.0,
+      "diversity": 0.9713941142813916,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 34,
+    "raw": {
+      "authority": 3.1824389696040316,
+      "coverage": 0.0,
+      "diversity": 0.4856970571406959,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.12720/jait.14.5.991-1002",
+    "slr_title": "Research Opportunities in Microservices Quality Assessment: A Systematic Literature Review",
+    "slr_venue": "Journal of Advances in Information Technology",
+    "slr_year": 2023
+  },
+  {
+    "composite": 0.31049749586449604,
+    "judge_justification": null,
+    "n_refs": 39,
+    "n_refs_embedded": 9,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.3160215580597746,
+      "diversity": 0.9206198357143047,
+      "llm_judge": 0.0,
+      "semantic": 0.3158460855484009
+    },
+    "rank": 35,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.129,
+      "diversity": 0.4603099178571525,
+      "llm_judge": 0.0,
+      "semantic": 0.3158460855484009
+    },
+    "slr_key": "doi:10.1016/j.infsof.2015.04.001",
+    "slr_title": "The financial aspect of managing technical debt: A systematic literature review",
+    "slr_venue": "Information and Software Technology",
+    "slr_year": 2015
+  },
+  {
+    "composite": 0.30145804888343397,
+    "judge_justification": null,
+    "n_refs": 104,
+    "n_refs_embedded": 7,
+    "normalized": {
+      "authority": 0.5586616770771573,
+      "coverage": 0.04997550220480157,
+      "diversity": 0.8986530651352109,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 36,
+    "raw": {
+      "authority": 2.946272531284359,
+      "coverage": 0.0204,
+      "diversity": 0.4493265325676056,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1007/s10664-022-10134-5",
+    "slr_title": "A comprehensive overview of software product management challenges",
+    "slr_venue": "Empirical Software Engineering",
+    "slr_year": 2022
+  },
+  {
+    "composite": 0.29963320522543907,
+    "judge_justification": null,
+    "n_refs": 20,
+    "n_refs_embedded": 4,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.12885840274375307,
+      "diversity": 0.9671320180863536,
+      "llm_judge": 0.0,
+      "semantic": 0.4021756052970886
+    },
+    "rank": 37,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0526,
+      "diversity": 0.4835660090431769,
+      "llm_judge": 0.0,
+      "semantic": 0.4021756052970886
+    },
+    "slr_key": "doi:10.1016/j.infsof.2015.10.008",
+    "slr_title": "Identification and management of technical debt: A systematic mapping study",
+    "slr_venue": "Information and Software Technology",
+    "slr_year": 2016
+  },
+  {
+    "composite": 0.21222616632092778,
+    "judge_justification": null,
+    "n_refs": 34,
+    "n_refs_embedded": 4,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.09799118079372857,
+      "diversity": 0.9631396508109104,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 38,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.04,
+      "diversity": 0.4815698254054553,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.3390/systems14050591",
+    "slr_title": "An AI-Enhanced Technical Debt Management Framework for Aerospace and Defense Systems Engineering: Framework Design and Illustrative Application",
+    "slr_venue": "Systems",
+    "slr_year": 2026
+  },
+  {
+    "composite": 0.2,
+    "judge_justification": null,
+    "n_refs": 7,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 1.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 39,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.5000000000000001,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1109/fie63693.2025.11328472",
+    "slr_title": "Assessing Refactoring in Education: A Systematic Literature Review on Evaluation, Goals, and Impact",
+    "slr_venue": "Frontiers in Education Conference",
+    "slr_year": 2025
+  },
+  {
+    "composite": 0.2,
+    "judge_justification": null,
+    "n_refs": 5,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 1.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 40,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.5000000000000001,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.23919/cisti52073.2021.9476368",
+    "slr_title": "Agile Development Practices Applied to Software Startups : A Systematic Mapping Review",
+    "slr_venue": "Iberian Conference on Information Systems and Technologies",
+    "slr_year": 2021
+  },
+  {
+    "composite": 0.19999999999999996,
+    "judge_justification": null,
+    "n_refs": 9,
+    "n_refs_embedded": 1,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.9999999999999998,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 41,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.5,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1145/3275245.3275267",
+    "slr_title": "Technical Debt Management in Brazilian Software Organizations: A Need, an Expectation, or a Fact?",
+    "slr_venue": "Brazilian Symposium on Software Quality",
+    "slr_year": 2018
+  },
+  {
+    "composite": 0.19999999999999996,
+    "judge_justification": null,
+    "n_refs": 10,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.9999999999999998,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 42,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.5,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1109/tse.2022.3214764",
+    "slr_title": "Managing Technical Debt Using Intelligent Techniques - A Systematic Mapping Study",
+    "slr_venue": "IEEE Transactions on Software Engineering",
+    "slr_year": 2023
+  },
+  {
+    "composite": 0.19999999999999996,
+    "judge_justification": null,
+    "n_refs": 4,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.9999999999999998,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 43,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.5,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1109/re57278.2023.00021",
+    "slr_title": "Quantifying Requirements Technical Debt: A Systematic Mapping Study and a Conceptual Model",
+    "slr_venue": "IEEE International Requirements Engineering Conference",
+    "slr_year": 2023
+  },
+  {
+    "composite": 0.19999999999999996,
+    "judge_justification": null,
+    "n_refs": 10,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.9999999999999998,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 44,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.5,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1145/3613372.3613399",
+    "slr_title": "Architectural Technical Debt - A Systematic Mapping Study",
+    "slr_venue": "Brazilian Symposium on Software Engineering",
+    "slr_year": 2023
+  },
+  {
+    "composite": 0.19999999999999996,
+    "judge_justification": null,
+    "n_refs": 11,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.9999999999999998,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 45,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.5,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1145/3524843.3528097",
+    "slr_title": "Comprehending the Use of Intelligent Techniques to Support Technical Debt Management",
+    "slr_venue": "2022 IEEE/ACM International Conference on Technical Debt (TechDebt)",
+    "slr_year": 2022
+  },
+  {
+    "composite": 0.19999999999999993,
+    "judge_justification": null,
+    "n_refs": 10,
+    "n_refs_embedded": 3,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.9999999999999996,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 46,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.4999999999999999,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1109/seaa56994.2022.00050",
+    "slr_title": "Quantifying TD Interest: Are we Getting Closer, or Not Even That?",
+    "slr_venue": "EUROMICRO Conference on Software Engineering and Advanced Applications",
+    "slr_year": 2022
+  },
+  {
+    "composite": 0.18412396714286094,
+    "judge_justification": null,
+    "n_refs": 22,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.9206198357143047,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 47,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.4603099178571525,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1109/access.2026.3661069",
+    "slr_title": "Automated Detection of Self-Admitted Technical Debt: A Systematic Literature Review",
+    "slr_venue": "IEEE Access",
+    "slr_year": 2026
+  },
+  {
+    "composite": 0.17192646712424328,
+    "judge_justification": null,
+    "n_refs": 9,
+    "n_refs_embedded": 5,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.04997550220480157,
+      "diversity": 0.8096568334164148,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 48,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0204,
+      "diversity": 0.4048284167082075,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1109/seaa53835.2021.00034",
+    "slr_title": "Technical Debt Prioritization: Taxonomy, Methods Results, and Practical Characteristics",
+    "slr_venue": "EUROMICRO Conference on Software Engineering and Advanced Applications",
+    "slr_year": 2021
+  },
+  {
+    "composite": 0.10666782205914353,
+    "judge_justification": null,
+    "n_refs": 29,
+    "n_refs_embedded": 2,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.10436060754532092,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.42897850275039673
+    },
+    "rank": 49,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0426,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.42897850275039673
+    },
+    "slr_key": "doi:10.1145/3387906.3388630",
+    "slr_title": "A Systematic Literature Review of Technical Debt Prioritization",
+    "slr_venue": "2020 IEEE/ACM International Conference on Technical Debt (TechDebt)",
+    "slr_year": 2020
+  },
+  {
+    "composite": 0.06616443395614624,
+    "judge_justification": null,
+    "n_refs": 5,
+    "n_refs_embedded": 1,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.3308221697807312
+    },
+    "rank": 50,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.3308221697807312
+    },
+    "slr_key": "doi:10.1109/uyms50627.2020.9247070",
+    "slr_title": "Methods for Identifying Architectural Debt: A Systematic Mapping Study",
+    "slr_venue": "Ulusal Yaz\u0131l\u0131m M\u00fchendisli\u011fi Sempozyumu",
+    "slr_year": 2020
+  },
+  {
+    "composite": 0.04899559039686429,
+    "judge_justification": null,
+    "n_refs": 20,
+    "n_refs_embedded": 10,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.24497795198432143,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 51,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.1,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1145/3701625.3701669",
+    "slr_title": "Technical Debt Management in Agile Software Development: A Systematic Mapping Study",
+    "slr_venue": "Brazilian Symposium on Software Quality",
+    "slr_year": 2024
+  },
+  {
+    "composite": 0.04479947090148926,
+    "judge_justification": null,
+    "n_refs": 5,
+    "n_refs_embedded": 1,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.2239973545074463
+    },
+    "rank": 52,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.2239973545074463
+    },
+    "slr_key": "doi:10.1109/conisoft55708.2022.00032",
+    "slr_title": "A Systematic Mapping Study on Technical Debt in Microservices",
+    "slr_venue": "2022 10th International Conference in Software Engineering Research and Innovation (CONISOFT)",
+    "slr_year": 2022
+  },
+  {
+    "composite": 0.03998040176384126,
+    "judge_justification": null,
+    "n_refs": 26,
+    "n_refs_embedded": 8,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.19990200881920628,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 53,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0816,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.5753/ise.2022.227051",
+    "slr_title": "Shedding Light on How Intelligent Techniques can Support Technical Debt Management and Influence Software Quality Attributes",
+    "slr_venue": "International Symposium on Information Science and Engineering",
+    "slr_year": 2022
+  },
+  {
+    "composite": 0.0,
+    "judge_justification": null,
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 54,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.61467/2007.1558.2025.v16i4.1150",
+    "slr_title": "A Systematic Literature Review on Technical Debt in Software Development: Types, Tools, and Concerns",
+    "slr_venue": "International Journal of Combinatorial Optimization Problems and Informatics",
+    "slr_year": 2025
+  },
+  {
+    "composite": 0.0,
+    "judge_justification": null,
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 55,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.24251/hicss.2025.758",
+    "slr_title": "Creating an Encouraging Context: A Systematic Literature Review of Contextual Factors to Manage Technical Debt",
+    "slr_venue": "Proceedings of the Annual Hawaii International Conference on System Sciences",
+    "slr_year": 2025
+  },
+  {
+    "composite": 0.0,
+    "judge_justification": null,
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 56,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.21608/jcsr.2025.417802.1019",
+    "slr_title": "Systematic Literature Review of Technical Debt Competencies and Costs in Software Engineering: A Business Perspective",
+    "slr_venue": "\u0645\u062c\u0644\u0629 \u0627\u0644\u062f\u0631\u0627\u0633\u0627\u062a \u0648\u0627\u0644\u0628\u062d\u0648\u062b \u0627\u0644\u062a\u062c\u0627\u0631\u064a\u0629",
+    "slr_year": 2025
+  },
+  {
+    "composite": 0.0,
+    "judge_justification": null,
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 57,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1109/iccsa50381.2020.00018",
+    "slr_title": "Continuous practices and technical debt: a systematic literature review",
+    "slr_venue": "Communication Systems and Applications",
+    "slr_year": 2020
+  },
+  {
+    "composite": 0.0,
+    "judge_justification": null,
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 58,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "ss:0e3ac7de691a092785b476a408d3f7bf76eb16ae",
+    "slr_title": "Trade-off Decisions Across Time in Technical Debt Management : Dataset of Papers used in a Systematic Literature Review",
+    "slr_venue": "",
+    "slr_year": 2018
+  },
+  {
+    "composite": 0.0,
+    "judge_justification": null,
+    "n_refs": 5,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 59,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1109/isitia63062.2024.10667758",
+    "slr_title": "The Influence of Portfolio Management on Evaluating IT Investments in Digital Transformation: A Systematic Literature Review",
+    "slr_venue": "International Seminar on Intelligent Technology and Its Applications",
+    "slr_year": 2024
+  },
+  {
+    "composite": 0.0,
+    "judge_justification": null,
+    "n_refs": 20,
+    "n_refs_embedded": 1,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 60,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1145/3592813.3592925",
+    "slr_title": "Identifying and Measuring Technical Debt in Software Requirements: a supporting guide",
+    "slr_venue": "Brazilian Symposium on Information Systems",
+    "slr_year": 2023
+  },
+  {
+    "composite": 0.0,
+    "judge_justification": null,
+    "n_refs": 10,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 61,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1145/3524843.3528092",
+    "slr_title": "An Architecture Smell Knowledge Base for Managing Architecture Technical Debt",
+    "slr_venue": "2022 IEEE/ACM International Conference on Technical Debt (TechDebt)",
+    "slr_year": 2022
+  },
+  {
+    "composite": 0.0,
+    "judge_justification": null,
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 62,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1145/3364641.3364679",
+    "slr_title": "Technologies to Support the Technical Debt Management in Software Projects: A Qualitative Research",
+    "slr_venue": "Brazilian Symposium on Software Quality",
+    "slr_year": 2019
+  },
+  {
+    "composite": 0.0,
+    "judge_justification": null,
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 63,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1109/amitic68284.2025.11214613",
+    "slr_title": "Social Debt in Agile Software Development",
+    "slr_venue": "2025 IEEE VIII Congreso Internacional en Inteligencia Ambiental, Ingenieria de Software y Salud Electronica y Movil (AmITIC)",
+    "slr_year": 2025
+  },
+  {
+    "composite": 0.0,
+    "judge_justification": null,
+    "n_refs": 13,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 64,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1145/3629479.3629513",
+    "slr_title": "Variability Debt: A Multi-method Study",
+    "slr_venue": "Brazilian Symposium on Software Quality",
+    "slr_year": 2023
+  },
+  {
+    "composite": 0.0,
+    "judge_justification": null,
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 65,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.30574/wjaets.2025.15.2.0459",
+    "slr_title": "Demystifying data pipelines for AI-driven financial systems",
+    "slr_venue": "World Journal of Advanced Engineering Technology and Sciences",
+    "slr_year": 2025
+  },
+  {
+    "composite": 0.0,
+    "judge_justification": null,
+    "n_refs": 10,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 66,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1109/techdebt66644.2025.00012",
+    "slr_title": "Requirements Technical Debt Through the Lens of Environment Assumptions",
+    "slr_venue": "2025 IEEE/ACM International Conference on Technical Debt (TechDebt)",
+    "slr_year": 2025
+  },
+  {
+    "composite": 0.0,
+    "judge_justification": null,
+    "n_refs": 28,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 67,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.70315/uloap.ulirs.2026.0301009",
+    "slr_title": "Accelerating Mobile Application Development and Testing with Artificial Intelligence: A Systematic Literature Review",
+    "slr_venue": "Universal Library of Innovative Research and Studies",
+    "slr_year": 2026
+  },
+  {
+    "composite": 0.0,
+    "judge_justification": null,
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 68,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "ss:a4252d6a5d9522a85984379f8ee3bf118df782c1",
+    "slr_title": "A systematic mapping study on technical debt definition",
+    "slr_venue": "",
+    "slr_year": 2015
+  },
+  {
+    "composite": 0.0,
+    "judge_justification": null,
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 69,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.61467/2007.1558.2025.v16i1.947",
+    "slr_title": "Systematic Review of Code Smell Patterns and Their Impact on Software Technical Debt",
+    "slr_venue": "International Journal of Combinatorial Optimization Problems and Informatics",
+    "slr_year": 2026
+  },
+  {
+    "composite": 0.0,
+    "judge_justification": null,
+    "n_refs": 6,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 70,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1145/3675393",
+    "slr_title": "A Systematic Mapping Study Exploring Quantification Approaches to Code, Design, and Architecture Technical Debt",
+    "slr_venue": "ACM Transactions on Software Engineering and Methodology",
+    "slr_year": 2024
+  },
+  {
+    "composite": 0.0,
+    "judge_justification": null,
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 71,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.5121/ijsea.2018.9501",
+    "slr_title": "Investigate, Identify and Estimate the Technical Debt: A Systematic Mapping Study",
+    "slr_venue": "International Journal of Software Engineering & Applications",
+    "slr_year": 2018
+  },
+  {
+    "composite": 0.0,
+    "judge_justification": null,
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 72,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.37547/tajiir/volume08issue01-17",
+    "slr_title": "Managing Technical Debt While Migrating Long-Standing Legacy Code to A Modern Tech Stack",
+    "slr_venue": "The American Journal of Interdisciplinary Innovations and Research",
+    "slr_year": 2026
+  },
+  {
+    "composite": 0.0,
+    "judge_justification": null,
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 73,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.33333/rp.vol57n1.10",
+    "slr_title": "Migration Strategies from Monolithic Applications to Cloud-Native Applications: A Systematic Review",
+    "slr_venue": "Revista Polit\u00e9cnica",
+    "slr_year": 2026
+  },
+  {
+    "composite": 0.0,
+    "judge_justification": null,
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "rank": 74,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.0,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.2139/ssrn.3606172",
+    "slr_title": "Investigate, Identify and Estimate the Technical Debt: A Systematic Mapping Study",
+    "slr_venue": "Social Science Research Network",
+    "slr_year": 2020
+  }
+]

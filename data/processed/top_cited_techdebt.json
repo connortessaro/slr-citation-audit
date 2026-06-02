@@ -1,0 +1,2977 @@
+[
+  {
+    "_paper_key": "ss:1eb131a34fbb508a9dd8b646950c65901d6f1a5b",
+    "_pass": "established",
+    "_pass_rank": 1,
+    "_rank": 1,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "1733143",
+        "name": "D. Sculley"
+      },
+      {
+        "authorId": "144510728",
+        "name": "Gary Holt"
+      },
+      {
+        "authorId": "145973657",
+        "name": "D. Golovin"
+      },
+      {
+        "authorId": "143698521",
+        "name": "Eugene Davydov"
+      },
+      {
+        "authorId": "2054375101",
+        "name": "Todd Phillips"
+      },
+      {
+        "authorId": "49236095",
+        "name": "D. Ebner"
+      },
+      {
+        "authorId": "2055477158",
+        "name": "Vinay Chaudhary"
+      },
+      {
+        "authorId": "2114084357",
+        "name": "Michael Young"
+      },
+      {
+        "authorId": "40169157",
+        "name": "Jean-Fran\u00e7ois Crespo"
+      },
+      {
+        "authorId": "47019745",
+        "name": "Dan Dennison"
+      }
+    ],
+    "citationCount": 1437,
+    "externalIds": {
+      "CorpusId": 17699480,
+      "DBLP": "conf/nips/SculleyHGDPECYC15",
+      "MAG": "2189162242"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at http://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "1eb131a34fbb508a9dd8b646950c65901d6f1a5b",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Neural Inf Process Syst",
+        "NeurIPS",
+        "NIPS"
+      ],
+      "id": "d9720b90-d60b-48bc-9df8-87a30b9a60dd",
+      "name": "Neural Information Processing Systems",
+      "type": "conference",
+      "url": "http://neurips.cc/"
+    },
+    "title": "Hidden Technical Debt in Machine Learning Systems",
+    "venue": "Neural Information Processing Systems",
+    "year": 2015
+  },
+  {
+    "_paper_key": "doi:10.1162/tacl_a_00461",
+    "_pass": "established",
+    "_pass_rank": 2,
+    "_rank": 2,
+    "abstract": "Most widely used pre-trained language models operate on sequences of tokens corresponding to word or subword units. By comparison, token-free models that operate directly on raw text (bytes or characters) have many benefits: They can process text in any language out of the box, they are more robust to noise, and they minimize technical debt by removing complex and error-prone text preprocessing pipelines. Because byte or character sequences are longer than token sequences, past work on token-free models has often introduced new model architectures designed to amortize the cost of operating directly on raw text. In this paper, we show that a standard Transformer architecture can be used with minimal modifications to process byte sequences. We characterize the trade-offs in terms of parameter count, training FLOPs, and inference speed, and show that byte-level models are competitive with their token-level counterparts. We also demonstrate that byte-level models are significantly more robust to noise and perform better on tasks that are sensitive to spelling and pronunciation. As part of our contribution, we release a new set of pre-trained byte-level Transformer models based on the T5 architecture, as well as all code and data used in our experiments.1",
+    "authors": [
+      {
+        "authorId": "2692973",
+        "name": "Linting Xue"
+      },
+      {
+        "authorId": "20407480",
+        "name": "Aditya Barua"
+      },
+      {
+        "authorId": "40832517",
+        "name": "Noah Constant"
+      },
+      {
+        "authorId": "1388360943",
+        "name": "Rami Al-Rfou"
+      },
+      {
+        "authorId": "46617804",
+        "name": "Sharan Narang"
+      },
+      {
+        "authorId": "26688118",
+        "name": "Mihir Kale"
+      },
+      {
+        "authorId": "145625142",
+        "name": "Adam Roberts"
+      },
+      {
+        "authorId": "2402716",
+        "name": "Colin Raffel"
+      }
+    ],
+    "citationCount": 691,
+    "externalIds": {
+      "ACL": "2022.tacl-1.17",
+      "ArXiv": "2105.13626",
+      "CorpusId": 235248316,
+      "DBLP": "journals/corr/abs-2105-13626",
+      "DOI": "10.1162/tacl_a_00461"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2105.13626, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBY",
+      "status": "GOLD",
+      "url": "https://direct.mit.edu/tacl/article-pdf/doi/10.1162/tacl_a_00461/2004058/tacl_a_00461.pdf"
+    },
+    "paperId": "44ef6cf919250001836ed73c0d58b20ea1e2d308",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Trans Assoc Comput Linguistics",
+        "TACL"
+      ],
+      "alternate_urls": [
+        "http://www.transacl.org/"
+      ],
+      "id": "e0dbf116-86aa-418d-859f-a49952d7e44a",
+      "issn": "2307-387X",
+      "name": "Transactions of the Association for Computational Linguistics",
+      "type": "journal",
+      "url": "https://www.mitpressjournals.org/loi/tacl"
+    },
+    "title": "ByT5: Towards a Token-Free Future with Pre-trained Byte-to-Byte Models",
+    "venue": "Transactions of the Association for Computational Linguistics",
+    "year": 2021
+  },
+  {
+    "_paper_key": "doi:10.1016/j.jss.2014.12.027",
+    "_pass": "established",
+    "_pass_rank": 3,
+    "_rank": 3,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "2045008",
+        "name": "Zengyang Li"
+      },
+      {
+        "authorId": "1727328",
+        "name": "P. Avgeriou"
+      },
+      {
+        "authorId": "1750130",
+        "name": "Peng Liang"
+      }
+    ],
+    "citationCount": 679,
+    "externalIds": {
+      "CorpusId": 32316057,
+      "DBLP": "journals/jss/LiAL15",
+      "DOI": "10.1016/J.JSS.2014.12.027",
+      "MAG": "2028836139"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1016/J.JSS.2014.12.027?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1016/J.JSS.2014.12.027, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "other-oa",
+      "status": "GREEN",
+      "url": "https://pure.rug.nl/ws/files/239167347/1_s2.0_S0164121214002854_main.pdf"
+    },
+    "paperId": "c5dbd495acd573d4959a84fe9cdc1f78d57599c8",
+    "publicationTypes": [
+      "JournalArticle",
+      "Review"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "J Syst Softw"
+      ],
+      "alternate_urls": [
+        "http://www.elsevier.com/wps/find/journaldescription.cws_home/505732/description",
+        "http://www.sciencedirect.com/science/journal/01641212"
+      ],
+      "id": "10a4a695-8417-42c7-983d-742df48b3905",
+      "issn": "0164-1212",
+      "name": "Journal of Systems and Software",
+      "type": "journal",
+      "url": "http://www.elsevier.com/wps/find/journaldescription.cws_home/505732/description#description"
+    },
+    "title": "A systematic mapping study on technical debt and its management",
+    "venue": "Journal of Systems and Software",
+    "year": 2015
+  },
+  {
+    "_paper_key": "doi:10.1109/ms.2012.167",
+    "_pass": "established",
+    "_pass_rank": 4,
+    "_rank": 4,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "144947570",
+        "name": "Philippe B Kruchten"
+      },
+      {
+        "authorId": "2715685",
+        "name": "R. Nord"
+      },
+      {
+        "authorId": "2177439",
+        "name": "Ipek Ozkaya"
+      }
+    ],
+    "citationCount": 674,
+    "externalIds": {
+      "CorpusId": 10673584,
+      "DBLP": "journals/software/KruchtenNO12",
+      "DOI": "10.1109/MS.2012.167",
+      "MAG": "1965658570"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/MS.2012.167?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/MS.2012.167, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "d53f01b23b2f2f96de1584c5191856619a250706",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "IEEE Softw"
+      ],
+      "alternate_urls": [
+        "http://ieeexplore.ieee.org/servlet/opac?punumber=52"
+      ],
+      "id": "119227a6-1b94-433e-a52d-8445a387dbbe",
+      "issn": "0740-7459",
+      "name": "IEEE Software",
+      "type": "journal",
+      "url": "http://www.computer.org/software"
+    },
+    "title": "Technical Debt: From Metaphor to Theory and Practice",
+    "venue": "IEEE Software",
+    "year": 2012
+  },
+  {
+    "_paper_key": "doi:10.1145/3097983.3098021",
+    "_pass": "established",
+    "_pass_rank": 5,
+    "_rank": 5,
+    "abstract": "Creating and maintaining a platform for reliably producing and deploying machine learning models requires careful orchestration of many components---a learner for generating models based on training data, modules for analyzing and validating both data as well as models, and finally infrastructure for serving models in production. This becomes particularly challenging when data changes over time and fresh models need to be produced continuously. Unfortunately, such orchestration is often done ad hoc using glue code and custom scripts developed by individual teams for specific use cases, leading to duplicated effort and fragile systems with high technical debt. We present TensorFlow Extended (TFX), a TensorFlow-based general-purpose machine learning platform implemented at Google. By integrating the aforementioned components into one platform, we were able to standardize the components, simplify the platform configuration, and reduce the time to production from the order of months to weeks, while providing platform stability that minimizes disruptions. We present the case study of one deployment of TFX in the Google Play app store, where the machine learning models are refreshed continuously as new data arrive. Deploying TFX led to reduced custom code, faster experiment cycles, and a 2% increase in app installs resulting from improved data and model analysis.",
+    "authors": [
+      {
+        "authorId": "2064178911",
+        "name": "Denis Baylor"
+      },
+      {
+        "authorId": "1798895",
+        "name": "Eric Breck"
+      },
+      {
+        "authorId": "2061550",
+        "name": "Heng-Tze Cheng"
+      },
+      {
+        "authorId": "22640071",
+        "name": "Noah Fiedel"
+      },
+      {
+        "authorId": "22420870",
+        "name": "Chuan Yu Foo"
+      },
+      {
+        "authorId": "50730596",
+        "name": "Zakaria Haque"
+      },
+      {
+        "authorId": "40269586",
+        "name": "S. Haykal"
+      },
+      {
+        "authorId": "37413761",
+        "name": "M. Ispir"
+      },
+      {
+        "authorId": "20048351",
+        "name": "Vihan Jain"
+      },
+      {
+        "authorId": "40338695",
+        "name": "L. Koc"
+      },
+      {
+        "authorId": "1766347",
+        "name": "C. Koo"
+      },
+      {
+        "authorId": "40015409",
+        "name": "Lukasz Lew"
+      },
+      {
+        "authorId": "22684493",
+        "name": "Clemens Mewald"
+      },
+      {
+        "authorId": "2063982692",
+        "name": "A. Modi"
+      },
+      {
+        "authorId": "1763100",
+        "name": "N. Polyzotis"
+      },
+      {
+        "authorId": "18654369",
+        "name": "Sukriti Ramesh"
+      },
+      {
+        "authorId": "1473253195",
+        "name": "Sudip Roy"
+      },
+      {
+        "authorId": "3288247",
+        "name": "Steven Euijong Whang"
+      },
+      {
+        "authorId": "35078078",
+        "name": "M. Wicke"
+      },
+      {
+        "authorId": "2224123",
+        "name": "Jarek Wilkiewicz"
+      },
+      {
+        "authorId": "2150904662",
+        "name": "Xin Zhang"
+      },
+      {
+        "authorId": "8195063",
+        "name": "Martin A. Zinkevich"
+      }
+    ],
+    "citationCount": 465,
+    "externalIds": {
+      "CorpusId": 21930731,
+      "DBLP": "conf/kdd/BaylorBCFFHHIJK17",
+      "DOI": "10.1145/3097983.3098021",
+      "MAG": "2743948853"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1145/3097983.3098021?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1145/3097983.3098021, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "BRONZE",
+      "url": "http://dl.acm.org/ft_gateway.cfm?id=3098021&type=pdf"
+    },
+    "paperId": "d76228d085d1232b74ff443f249898b6dcc3306c",
+    "publicationTypes": [
+      "JournalArticle",
+      "Book",
+      "Conference"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "KDD",
+        "Knowl Discov Data Min"
+      ],
+      "id": "a0edb93b-1e95-4128-a295-6b1659149cef",
+      "name": "Knowledge Discovery and Data Mining",
+      "type": "conference",
+      "url": "http://www.acm.org/sigkdd/"
+    },
+    "title": "TFX: A TensorFlow-Based Production-Scale Machine Learning Platform",
+    "venue": "Knowledge Discovery and Data Mining",
+    "year": 2017
+  },
+  {
+    "_paper_key": "doi:10.1016/j.jss.2012.12.052",
+    "_pass": "established",
+    "_pass_rank": 6,
+    "_rank": 6,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "28853518",
+        "name": "Edith Tom"
+      },
+      {
+        "authorId": "1733061",
+        "name": "A. Aurum"
+      },
+      {
+        "authorId": "2880650",
+        "name": "R. Vidgen"
+      }
+    ],
+    "citationCount": 439,
+    "externalIds": {
+      "CorpusId": 31215403,
+      "DBLP": "journals/jss/TomAV13",
+      "DOI": "10.1016/J.JSS.2012.12.052",
+      "MAG": "2108025693"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1016/J.JSS.2012.12.052?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1016/J.JSS.2012.12.052, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "b73c1b06d56be0c9587bfd14240ec08b570a2afd",
+    "publicationTypes": [
+      "JournalArticle",
+      "Review"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "J Syst Softw"
+      ],
+      "alternate_urls": [
+        "http://www.elsevier.com/wps/find/journaldescription.cws_home/505732/description",
+        "http://www.sciencedirect.com/science/journal/01641212"
+      ],
+      "id": "10a4a695-8417-42c7-983d-742df48b3905",
+      "issn": "0164-1212",
+      "name": "Journal of Systems and Software",
+      "type": "journal",
+      "url": "http://www.elsevier.com/wps/find/journaldescription.cws_home/505732/description#description"
+    },
+    "title": "An exploration of technical debt",
+    "venue": "Journal of Systems and Software",
+    "year": 2013
+  },
+  {
+    "_paper_key": "doi:10.1145/1882362.1882373",
+    "_pass": "established",
+    "_pass_rank": 7,
+    "_rank": 7,
+    "abstract": "Delivering increasingly complex software-reliant systems demands better ways to manage the long-term effects of short-term expedients. The technical debt metaphor is gaining significant traction in the agile development community as a way to understand and communicate such issues. The idea is that developers sometimes accept compromises in a system in one dimension (e.g., modularity) to meet an urgent demand in some other dimension (e.g., a deadline), and that such compromises incur a \"debt\": on which \"interest\" has to be paid and which the \"principal\" should be repaid at some point for the long-term health of the project. We argue that the software engineering research community has an opportunity to study and improve this concept. We can offer software engineers a foundation for managing such trade-offs based on models of their economic impacts. Therefore, we propose managing technical debt as a part of the future research agenda for the software engineering field.",
+    "authors": [
+      {
+        "authorId": "6285123",
+        "name": "Nanette Brown"
+      },
+      {
+        "authorId": "1806106",
+        "name": "Yuanfang Cai"
+      },
+      {
+        "authorId": "1754720",
+        "name": "Yuepu Guo"
+      },
+      {
+        "authorId": "1699020",
+        "name": "R. Kazman"
+      },
+      {
+        "authorId": "35710133",
+        "name": "Miryung Kim"
+      },
+      {
+        "authorId": "144947570",
+        "name": "Philippe B Kruchten"
+      },
+      {
+        "authorId": "1878226",
+        "name": "Erin Lim"
+      },
+      {
+        "authorId": "144686830",
+        "name": "Alan MacCormack"
+      },
+      {
+        "authorId": "2715685",
+        "name": "R. Nord"
+      },
+      {
+        "authorId": "2177439",
+        "name": "Ipek Ozkaya"
+      },
+      {
+        "authorId": "2095573",
+        "name": "R. Sangwan"
+      },
+      {
+        "authorId": "5035095",
+        "name": "C. Seaman"
+      },
+      {
+        "authorId": "145909274",
+        "name": "K. Sullivan"
+      },
+      {
+        "authorId": "2227577",
+        "name": "N. Zazworka"
+      }
+    ],
+    "citationCount": 425,
+    "externalIds": {
+      "CorpusId": 207183869,
+      "DBLP": "conf/sigsoft/BrownCGKKKLMNOSSSZ10",
+      "DOI": "10.1145/1882362.1882373",
+      "MAG": "2057433090"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1145/1882362.1882373?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1145/1882362.1882373, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "f754db80f0e465cfcad4077c5703ff1cdfd8e902",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": null,
+    "title": "Managing technical debt in software-reliant systems",
+    "venue": "FoSER '10",
+    "year": 2010
+  },
+  {
+    "_paper_key": "ss:51891710e30da33c4ced4ae7daee1593e0cb5cc4",
+    "_pass": "established",
+    "_pass_rank": 8,
+    "_rank": 8,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "47544298",
+        "name": "W. B. Roberts"
+      },
+      {
+        "authorId": "1733143",
+        "name": "D. Sculley"
+      },
+      {
+        "authorId": "144510728",
+        "name": "Gary Holt"
+      },
+      {
+        "authorId": "145973657",
+        "name": "D. Golovin"
+      },
+      {
+        "authorId": "143698521",
+        "name": "Eugene Davydov"
+      },
+      {
+        "authorId": "2054375101",
+        "name": "Todd Phillips"
+      },
+      {
+        "authorId": "49236095",
+        "name": "D. Ebner"
+      },
+      {
+        "authorId": "2055477158",
+        "name": "Vinay Chaudhary"
+      },
+      {
+        "authorId": "2114084357",
+        "name": "Michael Young"
+      }
+    ],
+    "citationCount": 326,
+    "externalIds": {
+      "CorpusId": 15225610,
+      "MAG": "2306526421"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at http://diyhpl.us/~bryan/papers2/ai/Machine%20learning:%20the%20high-interest%20credit%20card%20of%20technical%20debt.pdf, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "51891710e30da33c4ced4ae7daee1593e0cb5cc4",
+    "publicationTypes": null,
+    "publicationVenue": null,
+    "title": "Machine Learning: The High Interest Credit Card of Technical Debt",
+    "venue": "",
+    "year": 2014
+  },
+  {
+    "_paper_key": "doi:10.4230/dagrep.6.4.110",
+    "_pass": "established",
+    "_pass_rank": 9,
+    "_rank": 9,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "1727328",
+        "name": "P. Avgeriou"
+      },
+      {
+        "authorId": "144947570",
+        "name": "Philippe B Kruchten"
+      },
+      {
+        "authorId": "2177439",
+        "name": "Ipek Ozkaya"
+      },
+      {
+        "authorId": "5035095",
+        "name": "C. Seaman"
+      }
+    ],
+    "citationCount": 318,
+    "externalIds": {
+      "CorpusId": 3254861,
+      "DBLP": "journals/dagstuhl-reports/AvgeriouKOS16",
+      "DOI": "10.4230/DagRep.6.4.110",
+      "MAG": "2565244242"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.4230/DagRep.6.4.110?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.4230/DagRep.6.4.110, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "a0f2e1150c95f15274c54c8c52b024deea60805a",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Dagstuhl Rep"
+      ],
+      "id": "40e81dcb-c8bc-42c8-b1b4-fce115b774e3",
+      "issn": "2192-5283",
+      "name": "Dagstuhl Reports",
+      "url": "https://www.dagstuhl.de/en/publications/dagstuhl-reports/"
+    },
+    "title": "Managing Technical Debt in Software Engineering (Dagstuhl Seminar 16162)",
+    "venue": "Dagstuhl Reports",
+    "year": 2016
+  },
+  {
+    "_paper_key": "doi:10.1016/j.infsof.2015.10.008",
+    "_pass": "established",
+    "_pass_rank": 10,
+    "_rank": 10,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "2548146",
+        "name": "N. S. R. Alves"
+      },
+      {
+        "authorId": "33871522",
+        "name": "T. Mendes"
+      },
+      {
+        "authorId": "1723519",
+        "name": "Manoel G. Mendon\u00e7a"
+      },
+      {
+        "authorId": "2738811",
+        "name": "R. Sp\u00ednola"
+      },
+      {
+        "authorId": "1723491",
+        "name": "F. Shull"
+      },
+      {
+        "authorId": "5035095",
+        "name": "C. Seaman"
+      }
+    ],
+    "citationCount": 301,
+    "externalIds": {
+      "CorpusId": 20249016,
+      "DBLP": "journals/infsof/AlvesMNSSS16",
+      "DOI": "10.1016/J.INFSOF.2015.10.008",
+      "MAG": "1826514372"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1016/J.INFSOF.2015.10.008?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1016/J.INFSOF.2015.10.008, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "publisher-specific-oa",
+      "status": "BRONZE",
+      "url": "https://www.sciencedirect.com/science/article/am/pii/S0950584915001743"
+    },
+    "paperId": "cbdc26a00700e32838a7e507aad241905fe8b7e3",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Inf  Softw Technol",
+        "Information & Software Technology",
+        "Inf Softw Technol"
+      ],
+      "alternate_urls": [
+        "http://www.sciencedirect.com/science/journal/09505849"
+      ],
+      "id": "64ae7767-9467-4e70-9e31-e4185f9f16ff",
+      "issn": "0950-5849",
+      "name": "Information and Software Technology",
+      "type": "journal",
+      "url": "http://www.elsevier.com/wps/find/journaldescription.cws_home/525444/description#description"
+    },
+    "title": "Identification and management of technical debt: A systematic mapping study",
+    "venue": "Information and Software Technology",
+    "year": 2016
+  },
+  {
+    "_paper_key": "doi:10.1109/icsme.2014.31",
+    "_pass": "established",
+    "_pass_rank": 11,
+    "_rank": 11,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "2064753",
+        "name": "A. Potdar"
+      },
+      {
+        "authorId": "3318024",
+        "name": "Emad Shihab"
+      }
+    ],
+    "citationCount": 295,
+    "externalIds": {
+      "CorpusId": 14679583,
+      "DBLP": "conf/icsm/PotdarS14",
+      "DOI": "10.1109/ICSME.2014.31",
+      "MAG": "2045336717"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/ICSME.2014.31?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/ICSME.2014.31, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "ddf82ba67e252428fde55fcf9b73e848924a3372",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Int Conf Sci Manag Eng",
+        "IEEE Int Conf Softw Maint Evol",
+        "ICSME",
+        "International Conference Science, Management, and Engineering"
+      ],
+      "id": "b02cf974-33be-46bd-9cbc-022db6cb7151",
+      "name": "IEEE International Conference on Software Maintenance and Evolution",
+      "type": "conference",
+      "url": "http://conferences.computer.org/icsm/"
+    },
+    "title": "An Exploratory Study on Self-Admitted Technical Debt",
+    "venue": "IEEE International Conference on Software Maintenance and Evolution",
+    "year": 2014
+  },
+  {
+    "_paper_key": "doi:10.1109/bigdata.2017.8258038",
+    "_pass": "established",
+    "_pass_rank": 12,
+    "_rank": 12,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "1798895",
+        "name": "Eric Breck"
+      },
+      {
+        "authorId": "49406880",
+        "name": "Shanqing Cai"
+      },
+      {
+        "authorId": "2055012116",
+        "name": "Eric Nielsen"
+      },
+      {
+        "authorId": "145283397",
+        "name": "M. Salib"
+      },
+      {
+        "authorId": "1733143",
+        "name": "D. Sculley"
+      }
+    ],
+    "citationCount": 268,
+    "externalIds": {
+      "CorpusId": 6244440,
+      "DBLP": "conf/bigdataconf/BreckCNSS17",
+      "DOI": "10.1109/BigData.2017.8258038",
+      "MAG": "2782864149"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/BigData.2017.8258038?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/BigData.2017.8258038, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "d15d3dea2982a670863c879b4fb4f5183d10aca1",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": null,
+    "title": "The ML test score: A rubric for ML production readiness and technical debt reduction",
+    "venue": "2017 IEEE International Conference on Big Data (Big Data)",
+    "year": 2017
+  },
+  {
+    "_paper_key": "doi:10.1515/cclm-2018-0658",
+    "_pass": "established",
+    "_pass_rank": 13,
+    "_rank": 13,
+    "abstract": "Abstract Healthcare providers all over the world are faced with a single challenge: the need to improve patient outcomes while containing costs. Drivers include an increasing demand for chronic disease management for an aging population, technological advancements and empowered patients taking control of their health experience. The digital transformation in healthcare, through the creation of a rich health data foundation and integration of technologies like the Internet of Things (IoT), advanced analytics, Machine Learning (ML) and Artificial Intelligence (AI), is recognized as a key component to tackle these challenges. It can lead to improvements in diagnostics, prevention and patient therapy, ultimately empowering care givers to use an evidence-based approach to improve clinical decisions. Real-time interactions allow a physician to monitor a patient \u2018live\u2019, instead of interactions once every few weeks. Operational intelligence ensures efficient utilization of healthcare resources and services provided, thereby optimizing costs. However, procedure-based payments, legacy systems, disparate data sources with the limited adoption of data standards, technical debt, data security and privacy concerns impede the efficient usage of health information to maximize value creation for all healthcare stakeholders. This has led to a highly-regulated, constrained industry. Ultimately, the goal is to improve quality of life and saving people\u2019s lives through the creation of the intelligent healthcare provider, fully enabled to deliver value-based healthcare and a seamless patient experience. Information technologies that enable this goal must be extensible, safe, reliable and affordable, and tailored to the digitalization maturity-level of the individual organization.",
+    "authors": [
+      {
+        "authorId": "2071290238",
+        "name": "G. Gopal"
+      },
+      {
+        "authorId": "1404514985",
+        "name": "C. Suter-Crazzolara"
+      },
+      {
+        "authorId": "2003480",
+        "name": "L. Toldo"
+      },
+      {
+        "authorId": "152838200",
+        "name": "W. Eberhardt"
+      }
+    ],
+    "citationCount": 263,
+    "externalIds": {
+      "CorpusId": 54480942,
+      "DOI": "10.1515/cclm-2018-0658",
+      "MAG": "2904133818",
+      "PubMed": "30530878"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1515/cclm-2018-0658?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1515/cclm-2018-0658, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "BRONZE",
+      "url": "https://www.degruyter.com/downloadpdf/journals/cclm/57/3/article-p328.pdf"
+    },
+    "paperId": "88148842760a6c3cef4048b367ca158f3c001251",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Clin Chem Lab Med"
+      ],
+      "id": "d77bf08b-e6ea-43d9-b96a-48a853f0f75e",
+      "issn": "1434-6621",
+      "name": "Clinical Chemistry and Laboratory Medicine",
+      "type": "journal",
+      "url": "http://www.degruyter.com/view/j/cclm"
+    },
+    "title": "Digital transformation in healthcare \u2013 architectures of present and future information technologies",
+    "venue": "Clinical Chemistry and Laboratory Medicine",
+    "year": 2018
+  },
+  {
+    "_paper_key": "doi:10.1145/2786805.2786848",
+    "_pass": "established",
+    "_pass_rank": 14,
+    "_rank": 14,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "1755165",
+        "name": "Neil A. Ernst"
+      },
+      {
+        "authorId": "2736878",
+        "name": "S. Bellomo"
+      },
+      {
+        "authorId": "2177439",
+        "name": "Ipek Ozkaya"
+      },
+      {
+        "authorId": "2715685",
+        "name": "R. Nord"
+      },
+      {
+        "authorId": "1680770",
+        "name": "I. Gorton"
+      }
+    ],
+    "citationCount": 246,
+    "externalIds": {
+      "CorpusId": 1175911,
+      "DBLP": "conf/sigsoft/ErnstBONG15",
+      "DOI": "10.1145/2786805.2786848",
+      "MAG": "2015187825"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1145/2786805.2786848?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1145/2786805.2786848, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "3e1f89ca4d729b2fcaa0a437e874136477579aca",
+    "publicationTypes": [
+      "Book",
+      "JournalArticle",
+      "Review"
+    ],
+    "publicationVenue": null,
+    "title": "Measure it? Manage it? Ignore it? software practitioners and technical debt",
+    "venue": "ESEC/SIGSOFT FSE",
+    "year": 2015
+  },
+  {
+    "_paper_key": "doi:10.1109/tse.2017.2654244",
+    "_pass": "established",
+    "_pass_rank": 15,
+    "_rank": 15,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "2098974",
+        "name": "Everton da S. Maldonado"
+      },
+      {
+        "authorId": "3318024",
+        "name": "Emad Shihab"
+      },
+      {
+        "authorId": "2101511",
+        "name": "Nikolaos Tsantalis"
+      }
+    ],
+    "citationCount": 220,
+    "externalIds": {
+      "CorpusId": 10396446,
+      "DBLP": "journals/tse/MaldonadoST17",
+      "DOI": "10.1109/TSE.2017.2654244",
+      "MAG": "2579161546"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/TSE.2017.2654244?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/TSE.2017.2654244, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "94e3476be79cdcd77f365d72071f610679fca324",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "IEEE Trans Softw Eng"
+      ],
+      "alternate_urls": [
+        "http://www.computer.org/portal/web/tse/about"
+      ],
+      "id": "c99cfe66-b71c-4ca4-bedd-26267b9cb068",
+      "issn": "0098-5589",
+      "name": "IEEE Transactions on Software Engineering",
+      "type": "journal",
+      "url": "http://ieeexplore.ieee.org/servlet/opac?punumber=32"
+    },
+    "title": "Using Natural Language Processing to Automatically Detect Self-Admitted Technical Debt",
+    "venue": "IEEE Transactions on Software Engineering",
+    "year": 2017
+  },
+  {
+    "_paper_key": "doi:10.1145/2160718.2160733",
+    "_pass": "established",
+    "_pass_rank": 16,
+    "_rank": 16,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "143657505",
+        "name": "E. Allman"
+      }
+    ],
+    "citationCount": 216,
+    "externalIds": {
+      "CorpusId": 8649412,
+      "DBLP": "journals/cacm/Allman12",
+      "DOI": "10.1145/2160718.2160733",
+      "MAG": "2171970463"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1145/2160718.2160733?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1145/2160718.2160733, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "BRONZE",
+      "url": "https://doi.org/10.1145/2168796.2168798"
+    },
+    "paperId": "25f896fdd460b44b55fd4c53fa5717e79a0a207d",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "ACM Queue"
+      ],
+      "alternate_urls": [
+        "http://www.acmqueue.org/"
+      ],
+      "id": "4bd27ad1-f6fa-4340-9d9d-c62ac5be6fc0",
+      "issn": "1542-7730",
+      "name": "Queue",
+      "type": "journal",
+      "url": "http://portal.acm.org/queue"
+    },
+    "title": "Managing Technical Debt",
+    "venue": "Queue",
+    "year": 2012
+  },
+  {
+    "_paper_key": "doi:10.1016/b978-0-12-385512-1.00002-5",
+    "_pass": "established",
+    "_pass_rank": 17,
+    "_rank": 17,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "5035095",
+        "name": "C. Seaman"
+      },
+      {
+        "authorId": "1754720",
+        "name": "Yuepu Guo"
+      }
+    ],
+    "citationCount": 207,
+    "externalIds": {
+      "CorpusId": 30426891,
+      "DBLP": "journals/ac/SeamanG11",
+      "DOI": "10.1016/B978-0-12-385512-1.00002-5",
+      "MAG": "140915724"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1016/B978-0-12-385512-1.00002-5?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1016/B978-0-12-385512-1.00002-5, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "other-oa",
+      "status": "GREEN",
+      "url": "https://mdsoar.org/bitstreams/e7794301-a5ca-4f36-8bff-3ab1f3f04100/download"
+    },
+    "paperId": "81c08b976f959b092f3768c74c4c307cba55a853",
+    "publicationTypes": [
+      "JournalArticle",
+      "Review"
+    ],
+    "publicationVenue": {
+      "alternate_issns": [
+        "0065-2458"
+      ],
+      "alternate_names": [
+        "Advances in Computers",
+        "Adv Comput"
+      ],
+      "alternate_urls": [
+        "http://www.sciencedirect.com/science/bookseries/00652458",
+        "http://journal.sapub.org/ac"
+      ],
+      "id": "9d626429-1a76-48d5-8929-53e1ed7f83de",
+      "issn": "2163-2944",
+      "name": "Advances in Computing",
+      "type": "journal",
+      "url": "http://www.sapub.org/journal/issuelist.aspx?journalid=1007"
+    },
+    "title": "Measuring and Monitoring Technical Debt",
+    "venue": "Advances in Computing",
+    "year": 2011
+  },
+  {
+    "_paper_key": "ss:48546c87b9666199e16f93a66b1d0b9d6bac115e",
+    "_pass": "established",
+    "_pass_rank": 18,
+    "_rank": 18,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "145102495",
+        "name": "G. Suryanarayana"
+      },
+      {
+        "authorId": "2359762",
+        "name": "Ganesh Samarthyam"
+      },
+      {
+        "authorId": "47764729",
+        "name": "Tushar Sharma"
+      }
+    ],
+    "citationCount": 202,
+    "externalIds": {
+      "CorpusId": 111544243,
+      "MAG": "2310208102"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at http://planet.unity-linux.org/refactoring_for_software_design_smells_managing_technical_debt.pdf, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "48546c87b9666199e16f93a66b1d0b9d6bac115e",
+    "publicationTypes": null,
+    "publicationVenue": null,
+    "title": "Refactoring for Software Design Smells: Managing Technical Debt",
+    "venue": "",
+    "year": 2014
+  },
+  {
+    "_paper_key": "doi:10.1016/j.infsof.2018.05.010",
+    "_pass": "established",
+    "_pass_rank": 19,
+    "_rank": 19,
+    "abstract": "Abstract Context The concept of technical debt (TD) contextualizes problems faced during software evolution considering the tasks that are not carried out adequately during its development. Currently, it is common to associate any impediment related to the software product and its development process to the definition of TD. This can bring confusion and ambiguity in the use of the term. Besides, due to the increasing amount of work in the area, it is difficult to have a comprehensive view of the plethora of proposals on TD management. Objective This paper intends to investigate the current state of research on TD by identifying what research topics have been considered, organizing research directions and practical knowledge that has already been defined, identifying the known types of TD, and organizing what activities, strategies and tools have been proposed to support the management of TD. Method A tertiary study was performed based on a set of five research questions. In total, 13 secondary studies, dated from 2012 to March 2018, were evaluated. Results The results of this tertiary study are beneficial for both practitioners and researchers. We evolved a taxonomy of TD types, identified a list of situations in which debt items can be found in software projects, and organized a map representing the state of the art of activities, strategies and tools to support TD management. Besides, we also summarized some research directions and practical knowledge, and identified the research topics that have been more considered in secondary studies. Conclusion This tertiary study revisited the TD landscape. Its results can help to identify points that still require further investigation in TD research.",
+    "authors": [
+      {
+        "authorId": "2548146",
+        "name": "N. S. R. Alves"
+      },
+      {
+        "authorId": "1723519",
+        "name": "Manoel G. Mendon\u00e7a"
+      },
+      {
+        "authorId": "2738811",
+        "name": "R. Sp\u00ednola"
+      }
+    ],
+    "citationCount": 200,
+    "externalIds": {
+      "CorpusId": 51874871,
+      "DBLP": "journals/infsof/AlvesNS18",
+      "DOI": "10.1016/J.INFSOF.2018.05.010",
+      "MAG": "2806073060"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1016/J.INFSOF.2018.05.010?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1016/J.INFSOF.2018.05.010, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "1aa904e834bb0d0bfa5fdc867179026b1ed39572",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Inf  Softw Technol",
+        "Information & Software Technology",
+        "Inf Softw Technol"
+      ],
+      "alternate_urls": [
+        "http://www.sciencedirect.com/science/journal/09505849"
+      ],
+      "id": "64ae7767-9467-4e70-9e31-e4185f9f16ff",
+      "issn": "0950-5849",
+      "name": "Information and Software Technology",
+      "type": "journal",
+      "url": "http://www.elsevier.com/wps/find/journaldescription.cws_home/525444/description#description"
+    },
+    "title": "A tertiary study on technical debt: Types, management strategies, research trends, and base information for practitioners",
+    "venue": "Information and Software Technology",
+    "year": 2018
+  },
+  {
+    "_paper_key": "doi:10.1145/1985362.1985366",
+    "_pass": "established",
+    "_pass_rank": 20,
+    "_rank": 20,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "2227577",
+        "name": "N. Zazworka"
+      },
+      {
+        "authorId": "2793444",
+        "name": "Michele A. Shaw"
+      },
+      {
+        "authorId": "1723491",
+        "name": "F. Shull"
+      },
+      {
+        "authorId": "5035095",
+        "name": "C. Seaman"
+      }
+    ],
+    "citationCount": 198,
+    "externalIds": {
+      "CorpusId": 245367,
+      "DBLP": "conf/icse/ZazworkaSSS11",
+      "DOI": "10.1145/1985362.1985366",
+      "MAG": "1968074466"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1145/1985362.1985366?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1145/1985362.1985366, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "7b467c967c0e44cb0982945de73d3edccf0342ec",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": null,
+    "title": "Investigating the impact of design debt on software quality",
+    "venue": "MTD '11",
+    "year": 2011
+  },
+  {
+    "_paper_key": "doi:10.25300/misq/2013/37.2.10",
+    "_pass": "established",
+    "_pass_rank": 21,
+    "_rank": 21,
+    "abstract": "As information technology becomes integral to the products and services in a growing range of industries, there has been a corresponding surge of interest in understanding how firms can effectively formulate and execute digital business strategies. This fusion of IT within the business environment gives rise to a strategic tension between investing in digital artifacts for long-term value creation and exploiting them for short-term value appropriation. Further, relentless innovation and competitive pressures dictate that firms continually adapt these artifacts to changing market and technological conditions, but sustained profitability requires scalable architectures that can serve a large customer base and stable interfaces that support integration across a diverse ecosystem of complementary offerings. The study of digital business strategy needs new concepts and methods to examine how these forces are managed in pursuit of competitive advantage. We conceptualize the logic of digital business strategy in terms of two constructs: design capital (i.e., the cumulative stock of designs owned or controlled by a firm) and design moves (i.e., the discrete strategic actions that enlarge, reduce, or modify a firm's stock of designs). We also identify two salient dimensions of design capital, namely, option value and technical debt. Using embedded case studies of four firms, we develop a rich conceptual model and testable propositions to lay out a design-based logic of digital business strategy. This logic highlights the interplay between design moves and design capital in the context of digital business strategy and contributes to a growing body of insights that link the design of digital artifacts to competitive strategy and firm-level performance.",
+    "authors": [
+      {
+        "authorId": "143997239",
+        "name": "C. J. Woodard"
+      },
+      {
+        "authorId": "1695837",
+        "name": "Narayan Ramasubbu"
+      },
+      {
+        "authorId": "2261748403",
+        "name": "Ted Tschang"
+      },
+      {
+        "authorId": "145462765",
+        "name": "V. Sambamurthy"
+      },
+      {
+        "authorId": "2261749349",
+        "name": "Jason Woodard"
+      }
+    ],
+    "citationCount": 198,
+    "externalIds": {
+      "CorpusId": 8631591,
+      "DBLP": "journals/misq/WoodardRTS13",
+      "DOI": "10.25300/misq/2013/37.2.10",
+      "MAG": "1587494126"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.25300/misq/2013/37.2.10?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.25300/misq/2013/37.2.10, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBYNCND",
+      "status": "GREEN",
+      "url": "https://ink.library.smu.edu.sg/lkcsb_research/3427"
+    },
+    "paperId": "596b972bfe2a8812ae4ec6831928bccb1a856576",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": null,
+    "title": "Design Capital and Design Moves: The Logic of Digital Business Strategy",
+    "venue": "MIS Q.",
+    "year": 2013
+  },
+  {
+    "_paper_key": "doi:10.1016/j.infsof.2015.04.001",
+    "_pass": "established",
+    "_pass_rank": 22,
+    "_rank": 22,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "1937222",
+        "name": "Areti Ampatzoglou"
+      },
+      {
+        "authorId": "1772070",
+        "name": "Apostolos Ampatzoglou"
+      },
+      {
+        "authorId": "1709819",
+        "name": "A. Chatzigeorgiou"
+      },
+      {
+        "authorId": "1727328",
+        "name": "P. Avgeriou"
+      }
+    ],
+    "citationCount": 191,
+    "externalIds": {
+      "CorpusId": 9544253,
+      "DBLP": "journals/infsof/AmpatzoglouACA15",
+      "DOI": "10.1016/J.INFSOF.2015.04.001",
+      "MAG": "2202602917"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1016/J.INFSOF.2015.04.001?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1016/J.INFSOF.2015.04.001, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "other-oa",
+      "status": "GREEN",
+      "url": "https://pure.rug.nl/ws/files/85682301/The_Financial_Aspect_of_Managing_Technical_Debt_A_Systematic_Literature_Review.pdf"
+    },
+    "paperId": "de5db6c07899c1d90b4ff4428e68b2dd799b9d6e",
+    "publicationTypes": [
+      "JournalArticle",
+      "Review"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Inf  Softw Technol",
+        "Information & Software Technology",
+        "Inf Softw Technol"
+      ],
+      "alternate_urls": [
+        "http://www.sciencedirect.com/science/journal/09505849"
+      ],
+      "id": "64ae7767-9467-4e70-9e31-e4185f9f16ff",
+      "issn": "0950-5849",
+      "name": "Information and Software Technology",
+      "type": "journal",
+      "url": "http://www.elsevier.com/wps/find/journaldescription.cws_home/525444/description#description"
+    },
+    "title": "The financial aspect of managing technical debt: A systematic literature review",
+    "venue": "Information and Software Technology",
+    "year": 2015
+  },
+  {
+    "_paper_key": "doi:10.1109/ms.2012.130",
+    "_pass": "established",
+    "_pass_rank": 23,
+    "_rank": 23,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "1878226",
+        "name": "Erin Lim"
+      },
+      {
+        "authorId": "2751082",
+        "name": "Nitin Taksande"
+      },
+      {
+        "authorId": "5035095",
+        "name": "C. Seaman"
+      }
+    ],
+    "citationCount": 186,
+    "externalIds": {
+      "CorpusId": 35053699,
+      "DBLP": "journals/software/LimTS12",
+      "DOI": "10.1109/MS.2012.130",
+      "MAG": "2009256433"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1109/MS.2012.130?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/MS.2012.130, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "e7b9e9f7f19c1fd959b571f9069197936ac44d7f",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "IEEE Softw"
+      ],
+      "alternate_urls": [
+        "http://ieeexplore.ieee.org/servlet/opac?punumber=52"
+      ],
+      "id": "119227a6-1b94-433e-a52d-8445a387dbbe",
+      "issn": "0740-7459",
+      "name": "IEEE Software",
+      "type": "journal",
+      "url": "http://www.computer.org/software"
+    },
+    "title": "A Balancing Act: What Software Practitioners Have to Say about Technical Debt",
+    "venue": "IEEE Software",
+    "year": 2012
+  },
+  {
+    "_paper_key": "doi:10.1145/2901739.2901742",
+    "_pass": "established",
+    "_pass_rank": 24,
+    "_rank": 24,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "1801330",
+        "name": "G. Bavota"
+      },
+      {
+        "authorId": "143786074",
+        "name": "B. Russo"
+      }
+    ],
+    "citationCount": 176,
+    "externalIds": {
+      "CorpusId": 6668578,
+      "DBLP": "conf/msr/BavotaR16",
+      "DOI": "10.1145/2901739.2901742",
+      "MAG": "2395122565"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1145/2901739.2901742?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1145/2901739.2901742, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "98de673903862f5e2bf3ba4e5c8e151ac67955eb",
+    "publicationTypes": [
+      "Book",
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "IEEE Work Conf Min Softw Repos",
+        "Min Softw Repos",
+        "Mining Software Repositories",
+        "MSR"
+      ],
+      "id": "d7907408-25bc-4816-a81d-4e0f2f6482c8",
+      "name": "IEEE Working Conference on Mining Software Repositories",
+      "type": "conference",
+      "url": "https://dl.acm.org/conference/icse/proceedings"
+    },
+    "title": "A Large-Scale Empirical Study on Self-Admitted Technical Debt",
+    "venue": "IEEE Working Conference on Mining Software Repositories",
+    "year": 2016
+  },
+  {
+    "_paper_key": "doi:10.1145/1985362.1985364",
+    "_pass": "established",
+    "_pass_rank": 25,
+    "_rank": 25,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "1795227",
+        "name": "Ariadi Nugroho"
+      },
+      {
+        "authorId": "145039625",
+        "name": "Joost Visser"
+      },
+      {
+        "authorId": "49643916",
+        "name": "T. Kuipers"
+      }
+    ],
+    "citationCount": 175,
+    "externalIds": {
+      "CorpusId": 7210960,
+      "DBLP": "conf/icse/NugrohoVK11",
+      "DOI": "10.1145/1985362.1985364",
+      "MAG": "2013797311"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: The following paper fields have been elided by the publisher: {'abstract'}. Paper or abstract available at https://api.unpaywall.org/v2/10.1145/1985362.1985364?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1145/1985362.1985364, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "ccd3c383d21ea3b6af0c07eb236d9b324f62b78f",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": null,
+    "title": "An empirical model of technical debt and interest",
+    "venue": "MTD '11",
+    "year": 2011
+  },
+  {
+    "_paper_key": "doi:10.48550/arxiv.2304.10778",
+    "_pass": "recent",
+    "_pass_rank": 1,
+    "_rank": 26,
+    "abstract": "Context: AI-assisted code generation tools have become increasingly prevalent in software engineering, offering the ability to generate code from natural language prompts or partial code inputs. Notable examples of these tools include GitHub Copilot, Amazon CodeWhisperer, and OpenAI's ChatGPT. Objective: This study aims to compare the performance of these prominent code generation tools in terms of code quality metrics, such as Code Validity, Code Correctness, Code Security, Code Reliability, and Code Maintainability, to identify their strengths and shortcomings. Method: We assess the code generation capabilities of GitHub Copilot, Amazon CodeWhisperer, and ChatGPT using the benchmark HumanEval Dataset. The generated code is then evaluated based on the proposed code quality metrics. Results: Our analysis reveals that the latest versions of ChatGPT, GitHub Copilot, and Amazon CodeWhisperer generate correct code 65.2%, 46.3%, and 31.1% of the time, respectively. In comparison, the newer versions of GitHub CoPilot and Amazon CodeWhisperer showed improvement rates of 18% for GitHub Copilot and 7% for Amazon CodeWhisperer. The average technical debt, considering code smells, was found to be 8.9 minutes for ChatGPT, 9.1 minutes for GitHub Copilot, and 5.6 minutes for Amazon CodeWhisperer. Conclusions: This study highlights the strengths and weaknesses of some of the most popular code generation tools, providing valuable insights for practitioners. By comparing these generators, our results may assist practitioners in selecting the optimal tool for specific tasks, enhancing their decision-making process.",
+    "authors": [
+      {
+        "authorId": "2190291221",
+        "name": "Burak Yetistiren"
+      },
+      {
+        "authorId": "2216137437",
+        "name": "Isik \u00d6zsoy"
+      },
+      {
+        "authorId": "2215167231",
+        "name": "Miray Ayerdem"
+      },
+      {
+        "authorId": "13576179",
+        "name": "Eray T\u00fcz\u00fcn"
+      }
+    ],
+    "citationCount": 215,
+    "externalIds": {
+      "ArXiv": "2304.10778",
+      "CorpusId": 258291698,
+      "DBLP": "journals/corr/abs-2304-10778",
+      "DOI": "10.48550/arXiv.2304.10778"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2304.10778, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": "http://arxiv.org/pdf/2304.10778"
+    },
+    "paperId": "266d671d5d6bac3c88d7bfb18c5210b46f06e6db",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "ArXiv"
+      ],
+      "id": "1901e811-ee72-4b20-8f7e-de08cd395a10",
+      "issn": "2331-8422",
+      "name": "arXiv.org",
+      "url": "https://arxiv.org"
+    },
+    "title": "Evaluating the Code Quality of AI-Assisted Code Generation Tools: An Empirical Study on GitHub Copilot, Amazon CodeWhisperer, and ChatGPT",
+    "venue": "arXiv.org",
+    "year": 2023
+  },
+  {
+    "_paper_key": "doi:10.14778/3598581.3598587",
+    "_pass": "recent",
+    "_pass_rank": 2,
+    "_rank": 27,
+    "abstract": "\n The open-source FastLanes project aims to improve big data formats, such as Parquet, ORC and columnar database formats, in multiple ways. In this paper, we significantly accelerate decoding of all common Light-Weight Compression (LWC) schemes: DICT, FOR, DELTA and RLE through better data-parallelism. We do so by re-designing the compression layout using two main ideas: (i) generalizing the\n value interleaving\n technique in the basic operation of bit-(un)packing by targeting a virtual 1024-bits SIMD register, (ii) reordering the tuples in all columns of a table in the same Unified Transposed Layout that puts tuple chunks in a common \"04261537\" order (explained in the paper); allowing for maximum independent work for all possible basic SIMD lane widths: 8, 16, 32, and 64 bits.\n \n We address the software development, maintenance and future-proofness challenges of increasing hardware diversity, by defining a virtual 1024-bits instruction set that consists of simple operators supported by all SIMD dialects; and also, importantly, by scalar code. The interleaved and tuple-reordered layout actually makes scalar decoding faster, extracting more data-parallelism from today's wide-issue CPUs. Importantly, the scalar version can be fully auto-vectorized by modern compilers, eliminating technical debt in software caused by platform-specific SIMD intrinsics.\n Micro-benchmarks on Intel, AMD, Apple and AWS CPUs show that FastLanes accelerates decoding by factors (decoding >40 values per CPU cycle). FastLanes can make queries faster, as compressing the data reduces bandwidth needs, while decoding is almost free.",
+    "authors": [
+      {
+        "authorId": "2142247658",
+        "name": "Azim Afroozeh"
+      },
+      {
+        "authorId": "1687211",
+        "name": "P. Boncz"
+      }
+    ],
+    "citationCount": 42,
+    "externalIds": {
+      "CorpusId": 259246463,
+      "DBLP": "journals/pvldb/AfroozehB23",
+      "DOI": "10.14778/3598581.3598587"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.14778/3598581.3598587?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.14778/3598581.3598587, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "da339891b9358645bb139e502490cdd939eeb8ef",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Proceedings of The Vldb Endowment",
+        "Proc VLDB Endow",
+        "Proc Vldb Endow"
+      ],
+      "alternate_urls": [
+        "http://portal.acm.org/toc.cfm?CFID=21632689&CFTOKEN=99329904&WantType=Affiliated%20Organizations&coll=ACM&dl=ACM&id=J1174&idx=J1174&part=affil&title=VLDB%20Endowment&type=periodical"
+      ],
+      "id": "fcbcaf18-8ab1-43e1-a973-604bbc7e344e",
+      "issn": "2150-8097",
+      "name": "Proceedings of the VLDB Endowment",
+      "type": "journal",
+      "url": "http://dl.acm.org/toc.cfm?id=J1174"
+    },
+    "title": "The FastLanes Compression Layout: Decoding >100 Billion Integers per Second with Scalar Code",
+    "venue": "Proceedings of the VLDB Endowment",
+    "year": 2023
+  },
+  {
+    "_paper_key": "doi:10.25300/misq/2022/16711",
+    "_pass": "recent",
+    "_pass_rank": 3,
+    "_rank": 28,
+    "abstract": "Organizations replace their legacy systems for technical, economic, and operational reasons. Replacement is a risky proposition, as high levels of technical and social inertia make these systems hard to withdraw. Failure to fully replace systems results in complex system architectures involving manifold hidden dependencies that carry technical debt. To understand how a process for replacing a complex legacy system unfolds and accumulates technical debt, we conducted an explanatory case study at a local manufacturing site that had struggled to replace its mission-critical legacy systems as part of the larger global company\u2019s commercial-off-the-shelf (COTS) system implementation. We approach the replacement as a sociotechnical change and leverage the punctuated sociotechnical information system change model in combination with the design-moves framework to analyze how the site balanced creating digital options, countering social inertia, and managing (architectural) technical debt. The findings generalize to a two-level (local/global) system-dynamics model delineating how replacing a deeply entrenched mission-critical system generates positive and negative feedback loops within and between social and technical changes at local and global levels. The loops, unless addressed, accrue technical debt that hinders legacy system discontinuance and gradually locks the organization into a debt-constrained state. The model helps managers anticipate challenges that accompany replacing highly entrenched systems and formulate effective strategies to address them.",
+    "authors": [
+      {
+        "authorId": "1402107957",
+        "name": "Tapani Rinta-Kahila"
+      },
+      {
+        "authorId": "2851473",
+        "name": "Esko Penttinen"
+      },
+      {
+        "authorId": "1685613",
+        "name": "K. Lyytinen"
+      }
+    ],
+    "citationCount": 26,
+    "externalIds": {
+      "CorpusId": 258525875,
+      "DBLP": "journals/misq/RintaKahilaPL23",
+      "DOI": "10.25300/misq/2022/16711"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.25300/misq/2022/16711?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.25300/misq/2022/16711, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "9da29fa6f569b81c2cab6ae98062bcacde1b86ed",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": null,
+    "title": "Getting Trapped in Technical Debt: Sociotechnical Analysis of a Legacy System's Replacement",
+    "venue": "MIS Q.",
+    "year": 2023
+  },
+  {
+    "_paper_key": "doi:10.48550/arxiv.2308.03028",
+    "_pass": "recent",
+    "_pass_rank": 4,
+    "_rank": 29,
+    "abstract": "For industrial control, developing high-performance controllers with few samples and low technical debt is appealing. Foundation models, possessing rich prior knowledge obtained from pre-training with Internet-scale corpus, have the potential to be a good controller with proper prompts. In this paper, we take HVAC (Heating, Ventilation, and Air Conditioning) building control as an example to examine the ability of GPT-4 (one of the first-tier foundation models) as the controller. To control HVAC, we wrap the task as a language game by providing text including a short description for the task, several selected demonstrations, and the current observation to GPT-4 on each step and execute the actions responded by GPT-4. We conduct series of experiments to answer the following questions: 1)~How well can GPT-4 control HVAC? 2)~How well can GPT-4 generalize to different scenarios for HVAC control? 3) How different parts of the text context affect the performance? In general, we found GPT-4 achieves the performance comparable to RL methods with few samples and low technical debt, indicating the potential of directly applying foundation models to industrial control tasks.",
+    "authors": [
+      {
+        "authorId": "2118519316",
+        "name": "Lei Song"
+      },
+      {
+        "authorId": "144114271",
+        "name": "Chuheng Zhang"
+      },
+      {
+        "authorId": "2004786514",
+        "name": "Li Zhao"
+      },
+      {
+        "authorId": "2052840199",
+        "name": "Jiang Bian"
+      }
+    ],
+    "citationCount": 24,
+    "externalIds": {
+      "ArXiv": "2308.03028",
+      "CorpusId": 260681473,
+      "DBLP": "journals/corr/abs-2308-03028",
+      "DOI": "10.48550/arXiv.2308.03028"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2308.03028, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": "https://arxiv.org/pdf/2308.03028"
+    },
+    "paperId": "360a4ffdcf3a79a2cbede43b1313de6e5e0e47e0",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "ArXiv"
+      ],
+      "id": "1901e811-ee72-4b20-8f7e-de08cd395a10",
+      "issn": "2331-8422",
+      "name": "arXiv.org",
+      "url": "https://arxiv.org"
+    },
+    "title": "Pre-Trained Large Language Models for Industrial Control",
+    "venue": "arXiv.org",
+    "year": 2023
+  },
+  {
+    "_paper_key": "doi:10.1016/j.jss.2024.112151",
+    "_pass": "recent",
+    "_pass_rank": 5,
+    "_rank": 30,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "2179956422",
+        "name": "Gilberto Recupito"
+      },
+      {
+        "authorId": "133972345",
+        "name": "Fabiano Pecorelli"
+      },
+      {
+        "authorId": "13721350",
+        "name": "Gemma Catolino"
+      },
+      {
+        "authorId": "2989307",
+        "name": "Valentina Lenarduzzi"
+      },
+      {
+        "authorId": "2242643367",
+        "name": "Davide Taibi"
+      },
+      {
+        "authorId": "50515157",
+        "name": "Dario Di Nucci"
+      },
+      {
+        "authorId": "2288338893",
+        "name": "Fabio Palomba"
+      }
+    ],
+    "citationCount": 23,
+    "externalIds": {
+      "CorpusId": 270978101,
+      "DBLP": "journals/jss/RecupitoPCLTNP24",
+      "DOI": "10.1016/j.jss.2024.112151"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1016/j.jss.2024.112151?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1016/j.jss.2024.112151, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBY",
+      "status": "HYBRID",
+      "url": "https://doi.org/10.1016/j.jss.2024.112151"
+    },
+    "paperId": "c336dd78e7143013d517bb2317bcc248a9139964",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "J Syst Softw"
+      ],
+      "alternate_urls": [
+        "http://www.elsevier.com/wps/find/journaldescription.cws_home/505732/description",
+        "http://www.sciencedirect.com/science/journal/01641212"
+      ],
+      "id": "10a4a695-8417-42c7-983d-742df48b3905",
+      "issn": "0164-1212",
+      "name": "Journal of Systems and Software",
+      "type": "journal",
+      "url": "http://www.elsevier.com/wps/find/journaldescription.cws_home/505732/description#description"
+    },
+    "title": "Technical debt in AI-enabled systems: On the prevalence, severity, impact, and management strategies for code and architecture",
+    "venue": "Journal of Systems and Software",
+    "year": 2024
+  },
+  {
+    "_paper_key": "doi:10.1109/tse.2023.3286179",
+    "_pass": "recent",
+    "_pass_rank": 6,
+    "_rank": 31,
+    "abstract": "A key aspect of technical debt (TD) management is the ability to measure the amount of principal accumulated in a system. The current literature contains an array of approaches to estimate TD principal, however, only a few of them focus specifically on architectural TD, but none of them satisfies all three of the following criteria: being fully automated, freely available, and thoroughly validated. Moreover, a recent study has shown that many of the current approaches suffer from certain shortcomings, such as relying on hand-picked thresholds. In this article, we propose a novel approach to estimate architectural technical debt principal based on machine learning and architectural smells to address such shortcomings. Our approach can estimate the amount of technical debt principal generated by a single architectural smell instance. To do so, we adopt novel techniques from Information Retrieval to train a learning-to-rank machine learning model (more specifically, a gradient boosting machine) that estimates the severity of an architectural smell and ensure the transparency of the predictions. Then, for each instance, we statically analyse the source code to calculate the exact number of lines of code creating the smell. Finally, we combine these two values to calculate the technical debt principal. To validate the approach, we conducted a case study and interviewed 16 practitioners, from both open source and industry, and asked them about their opinions on the TD principal estimations for several smells detected in their projects. The results show that for 71% of instances, practitioners agreed that the estimations provided were representative of the effort necessary to refactor the smell.",
+    "authors": [
+      {
+        "authorId": "51931392",
+        "name": "Darius Sas"
+      },
+      {
+        "authorId": "1727328",
+        "name": "P. Avgeriou"
+      }
+    ],
+    "citationCount": 22,
+    "externalIds": {
+      "ArXiv": "2301.06341",
+      "CorpusId": 255941444,
+      "DBLP": "journals/corr/abs-2301-06341",
+      "DOI": "10.1109/TSE.2023.3286179"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2301.06341, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "BRONZE",
+      "url": "https://ieeexplore.ieee.org/ielx7/32/4359463/10152491.pdf"
+    },
+    "paperId": "82488e37568fb47f3c1a3ea418c7859a17a7c56b",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "IEEE Trans Softw Eng"
+      ],
+      "alternate_urls": [
+        "http://www.computer.org/portal/web/tse/about"
+      ],
+      "id": "c99cfe66-b71c-4ca4-bedd-26267b9cb068",
+      "issn": "0098-5589",
+      "name": "IEEE Transactions on Software Engineering",
+      "type": "journal",
+      "url": "http://ieeexplore.ieee.org/servlet/opac?punumber=32"
+    },
+    "title": "An Architectural Technical Debt Index Based on Machine Learning and Architectural Smells",
+    "venue": "IEEE Transactions on Software Engineering",
+    "year": 2023
+  },
+  {
+    "_paper_key": "doi:10.1007/s10664-024-10548-3",
+    "_pass": "recent",
+    "_pass_rank": 7,
+    "_rank": 32,
+    "abstract": "Self-Admitted Technical Debt (SATD), a concept highlighting sub-optimal choices in software development documented in code comments or other project resources, poses challenges in the maintainability and evolution of software systems. Large language models (LLMs) have demonstrated significant effectiveness across a broad range of software tasks, especially in software text generation tasks. Nonetheless, their effectiveness in tasks related to SATD is still under-researched. In this paper, we investigate the efficacy of LLMs in both identification and classification of SATD. For both tasks, we investigate the performance gain from using more recent LLMs, specifically the Flan-T5 family, across different common usage settings. Our results demonstrate that for SATD identification, all fine-tuned LLMs outperform the best existing non-LLM baseline, i.e., the CNN model, with a 4.4% to 7.2% improvement in F1 score. In the SATD classification task, while our largest fine-tuned model, Flan-T5-XL, still led in performance, the CNN model exhibited competitive results, even surpassing four of six LLMs. We also found that the largest Flan-T5 model, i.e., Flan-T5-XXL, when used with a zero-shot in-context learning (ICL) approach that only provides instructions for SATD identification, yields competitive results with traditional approaches but performs 6.4% to 9.2% worse than fine-tuned LLMs. For SATD classification, few-shot ICL approach, incorporating examples and category descriptions in prompts, outperforms the zero-shot approach and even surpasses the fine-tuned smaller Flan-T5 models. Moreover, our experiments demonstrate that incorporating contextual information, such as surrounding code, into the SATD classification task enables larger fine-tuned LLMs to improve their performance. Our study highlights the capabilities and limitations of LLMs for SATD tasks and the role of contextual information in achieving higher performance with larger LLMs, setting a foundation for future efforts to enhance these models for more effective technical debt management.",
+    "authors": [
+      {
+        "authorId": "9259222",
+        "name": "Mohammad Sadegh Sheikhaei"
+      },
+      {
+        "authorId": "2152949514",
+        "name": "Yuan Tian"
+      },
+      {
+        "authorId": "2275181339",
+        "name": "Shaowei Wang"
+      },
+      {
+        "authorId": "2301270255",
+        "name": "Bowen Xu"
+      }
+    ],
+    "citationCount": 22,
+    "externalIds": {
+      "ArXiv": "2405.06806",
+      "CorpusId": 269757919,
+      "DBLP": "journals/corr/abs-2405-06806",
+      "DOI": "10.1007/s10664-024-10548-3"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2405.06806, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "4053adcc254898ac50abe5f3c701c27b4cbce33b",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Empir Softw Eng"
+      ],
+      "alternate_urls": [
+        "https://link.springer.com/journal/10664"
+      ],
+      "id": "f528e58c-0e4e-45b0-9456-832847244f0e",
+      "issn": "1382-3256",
+      "name": "Empirical Software Engineering",
+      "type": "journal",
+      "url": "http://www.springer.com/computer/programming/journal/10664"
+    },
+    "title": "An empirical study on the effectiveness of large language models for SATD identification and classification",
+    "venue": "Empirical Software Engineering",
+    "year": 2024
+  },
+  {
+    "_paper_key": "doi:10.54660/.ijmrge.2023.4.1.901-909",
+    "_pass": "recent",
+    "_pass_rank": 8,
+    "_rank": 33,
+    "abstract": "Modernizing legacy systems is critical for organizations striving to enhance operational efficiency, scalability, and security in an increasingly data-driven and digital landscape. Traditional infrastructures, burdened by technical debt, security vulnerabilities, and operational inefficiencies, pose significant challenges to innovation and long-term sustainability. This paper explores a scalable approach to legacy system modernization, emphasizing next-generation data architectures and seamless integration strategies. It examines the limitations of outdated systems, the benefits of cloud-native and distributed architectures, and the role of microservices and event-driven frameworks in improving system agility. It also discusses data integration strategies, compares ETL and ELT processes, and highlights the significance of middleware solutions, API-driven ecosystems, and hybrid cloud environments in ensuring interoperability. AI-powered automation and phased transition models are essential for minimizing migration risks and ensuring business continuity. The paper concludes with recommendations for organizations seeking to transform legacy systems, advocating for structured modernization roadmaps, security-centric designs, and future-proof architectural strategies. By adopting these approaches, enterprises can achieve enhanced scalability, resilience, and adaptability in the evolving technological landscape.",
+    "authors": [
+      {
+        "authorId": "2349030665",
+        "name": "Olufunmilayo Ogunwole"
+      },
+      {
+        "authorId": "2337609185",
+        "name": "Ekene Cynthia Onukwulu"
+      },
+      {
+        "authorId": "2349031006",
+        "name": "Micah Oghale Joel"
+      },
+      {
+        "authorId": "2290203185",
+        "name": "E. Adaga"
+      },
+      {
+        "authorId": "2344895227",
+        "name": "Augustine Ifeanyi Ibeh"
+      }
+    ],
+    "citationCount": 22,
+    "externalIds": {
+      "CorpusId": 276858685,
+      "DOI": "10.54660/.ijmrge.2023.4.1.901-909"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.54660/.ijmrge.2023.4.1.901-909?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.54660/.ijmrge.2023.4.1.901-909, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "644bec18d908978bd2b63e5d8b2058d745d3e378",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Int J Multidiscip Res Growth Evaluation"
+      ],
+      "id": "f9d805b6-5b34-4d28-b7a8-d910d52c27fd",
+      "issn": "2582-7138",
+      "name": "International Journal of Multidisciplinary Research and Growth Evaluation",
+      "type": "journal"
+    },
+    "title": "Modernizing Legacy Systems: A Scalable Approach to Next-Generation Data Architectures and Seamless Integration",
+    "venue": "International Journal of Multidisciplinary Research and Growth Evaluation",
+    "year": 2023
+  },
+  {
+    "_paper_key": "doi:10.1109/ase56229.2023.00103",
+    "_pass": "recent",
+    "_pass_rank": 9,
+    "_rank": 34,
+    "abstract": "Upon evolving their software, organizations and individual developers have to spend a substantial effort to pay back technical debt, i.e, the fact that software is released in a shape not as good as it should be, e.g, in terms of functionality, reliability, or maintainability. This paper empirically investigates the extent to which technical debt can be automatically paid back by neural-based generative models, and in particular models exploiting different strategies for pre-training and fine-tuning. We start by extracting a dateset of 5,039 Self-Admitted Technical Debt (SATD) removals from 595 open-source projects. SATD refers to technical debt instances documented (e.g, via code comments) by developers. We use this dataset to experiment with seven different generative deep learning (DL) model configurations. Specifically, we compare transformers pre-trained and fine-tuned with different combinations of training objectives, including the fixing of generic code changes, SATD removals, and SATD-comment prompt tuning. Also, we investigate the applicability in this context of a recently-available Large Language Model (LLM)-based chat bot. Results of our study indicate that the automated repayment of SATD is a challenging task, with the best model we experimented with able to automatically fix \u223c2% to 8% of test instances, depending on the number of attempts it is allowed to make. Given the limited size of the fine-tuning dataset (\u223c5k instances), the model's pre-training plays a fundamental role in boosting performance. Also, the ability to remove SATD steadily drops if the comment documenting the SATD is not provided as input to the model. Finally, we found general-purpose LLMs to not be a competitive approach for addressing SATD.",
+    "authors": [
+      {
+        "authorId": "2079107343",
+        "name": "A. Mastropaolo"
+      },
+      {
+        "authorId": "1719962",
+        "name": "M. D. Penta"
+      },
+      {
+        "authorId": "1801330",
+        "name": "G. Bavota"
+      }
+    ],
+    "citationCount": 20,
+    "externalIds": {
+      "ArXiv": "2308.08943",
+      "CorpusId": 261030363,
+      "DBLP": "journals/corr/abs-2308-08943",
+      "DOI": "10.1109/ASE56229.2023.00103"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2308.08943, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "GREEN",
+      "url": "http://arxiv.org/pdf/2308.08943"
+    },
+    "paperId": "5ff180524742c1641dda3b9dbca20b0a32558364",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Autom Softw Eng",
+        "ASE",
+        "Automated Software Engineering",
+        "Int Conf Autom Softw Eng"
+      ],
+      "id": "1c2ab05c-7d69-465e-929d-0920857aedce",
+      "name": "International Conference on Automated Software Engineering",
+      "type": "conference",
+      "url": "http://ase.informatik.uni-essen.de/"
+    },
+    "title": "Towards Automatically Addressing Self-Admitted Technical Debt: How Far Are We?",
+    "venue": "International Conference on Automated Software Engineering",
+    "year": 2023
+  },
+  {
+    "_paper_key": "doi:10.1002/spe.3360",
+    "_pass": "recent",
+    "_pass_rank": 10,
+    "_rank": 35,
+    "abstract": "Given the increasing complexity and volume of Self\u2010Admitted Technical Debts (SATDs), how to efficiently detect them becomes critical in software engineering practice for improving code quality and project efficiency. Although current deep learning methods have achieved good performance in detecting SATDs in code comments, they lack explanation. Large language models such as ChatGPT are increasingly being applied to text classification tasks due to their ability to provide explanations for classification results, but it is unclear how effective ChatGPT is for SATD classification. As the first in\u2010depth study of ChatGPT for SATD detection, we evaluate ChatGPT's effectiveness, compare it with small deep learning models, and find that ChatGPT performs better on Recall, while small models perform better on Precision. Furthermore, to enhance the performance of these approaches, we propose a novel fusion approach named FSATD which combines ChatGPT with small models for SATD detection so as to provide reliable explanations. Through extensive experiments on 62,276 comments from 10 open\u2010source projects, we show that FSATD outperforms existing methods in performance of F1\u2010score in cross\u2010project scenarios. Additionally, FSATD allows for flexible adjustment of fusion strategies, adapting to different requirements of various application scenarios, and can achieve the best Precision, Recall, or F1\u2010score.",
+    "authors": [
+      {
+        "authorId": "2336064935",
+        "name": "Jun Li"
+      },
+      {
+        "authorId": "2112269207",
+        "name": "Lixian Li"
+      },
+      {
+        "authorId": "2302522987",
+        "name": "Jin Liu"
+      },
+      {
+        "authorId": "2306430468",
+        "name": "Xiao Yu"
+      },
+      {
+        "authorId": "2260602331",
+        "name": "Xiao Liu"
+      },
+      {
+        "authorId": "2300860996",
+        "name": "J. Keung"
+      }
+    ],
+    "citationCount": 19,
+    "externalIds": {
+      "CorpusId": 270834277,
+      "DBLP": "journals/spe/LiLLYLK25",
+      "DOI": "10.1002/spe.3360"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1002/spe.3360?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1002/spe.3360, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "732262a70950ecebb0cd52edc9a465f85ab6d7e1",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Softw  Pract Exp",
+        "Softw Pract  Exp",
+        "Software - Practice and Experience"
+      ],
+      "alternate_urls": [
+        "http://www.interscience.wiley.com/jpages/0038-0644/",
+        "https://onlinelibrary.wiley.com/journal/1097024X"
+      ],
+      "id": "3da56ce6-4a70-402c-a8b0-7dd39a3273d3",
+      "issn": "0038-0644",
+      "name": "Software, Practice & Experience",
+      "type": "journal",
+      "url": "http://www3.interscience.wiley.com/cgi-bin/jhome/1752"
+    },
+    "title": "Large language model ChatGPT versus small deep learning models for self\u2010admitted technical debt detection: Why not together?",
+    "venue": "Software, Practice & Experience",
+    "year": 2024
+  },
+  {
+    "_paper_key": "doi:10.1109/icse-fose59343.2023.00007",
+    "_pass": "recent",
+    "_pass_rank": 11,
+    "_rank": 36,
+    "abstract": "Technical Debt, considered by many to be the \u2018silent killer\u2019 of software projects, has undeniably become part of the everyday vocabulary of software engineers. We know it compromises the internal quality of a system, either deliberately or inadvertently. We understand Technical Debt is not all derogatory, often serving the purpose of expediency. But, it is associated with a clear risk, especially for large and complex systems with extended service life: if we do not properly manage Technical Debt, it threatens to \u201cbankrupt\u201d those systems. Software engineers and organizations that develop software-intensive systems are facing an increasingly more dire future state of those systems if they do not start incorporating Technical Debt management into their day to day practice. But how? What have the wins and losses of the past decade of research and practice in managing Technical Debt taught us and where should we focus next? In this paper, we examine the state of the art in both industry and research communities in managing Technical Debt; we subsequently distill the gaps in industrial practice and the research shortcomings, and synthesize them to define and articulate a vision for what Technical Debt management looks like five years hence.",
+    "authors": [
+      {
+        "authorId": "1727328",
+        "name": "P. Avgeriou"
+      },
+      {
+        "authorId": "2177439",
+        "name": "Ipek Ozkaya"
+      },
+      {
+        "authorId": "1709819",
+        "name": "A. Chatzigeorgiou"
+      },
+      {
+        "authorId": "2290086982",
+        "name": "Marcus Ciolkowski"
+      },
+      {
+        "authorId": "1755165",
+        "name": "Neil A. Ernst"
+      },
+      {
+        "authorId": "49848418",
+        "name": "Ronald J. Koontz"
+      },
+      {
+        "authorId": "2686396",
+        "name": "E. Poort"
+      },
+      {
+        "authorId": "2238802776",
+        "name": "Forrest Shull"
+      }
+    ],
+    "citationCount": 19,
+    "externalIds": {
+      "ArXiv": "2403.06484",
+      "CorpusId": 268255098,
+      "DBLP": "conf/fose-ws/AvgeriouOCCEKPS23",
+      "DOI": "10.1109/ICSE-FoSE59343.2023.00007"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2403.06484, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "ded3f6151f8286e3841fb295e1ba89fb16fc08dd",
+    "publicationTypes": [
+      "JournalArticle",
+      "Conference"
+    ],
+    "publicationVenue": null,
+    "title": "Technical Debt Management: The Road Ahead for Successful Software Delivery",
+    "venue": "2023 IEEE/ACM International Conference on Software Engineering: Future of Software Engineering (ICSE-FoSE)",
+    "year": 2023
+  },
+  {
+    "_paper_key": "doi:10.1145/3785001",
+    "_pass": "recent",
+    "_pass_rank": 12,
+    "_rank": 37,
+    "abstract": "The emergence of open-source ML libraries such as TensorFlow and Google Auto ML has enabled developers to harness state-of-the-art ML algorithms with minimal overhead. However, during this accelerated ML development process, said developers may often make sub-optimal design and implementation decisions, leading to the introduction of technical debt that, if not addressed promptly, can significantly impact on the quality of ML-based software. Developers frequently acknowledge these sub-optimal design and development choices through code comments written during development. These comments, which often highlight areas requiring additional work or refinement in the future are known as self-admitted technical debt (SATD). While prior research has demonstrated that SATD can serve as a reliable indicator of technical debt and has extensively studied SATD in traditional (non-ML) software, little attention has been given to this issue in the context of ML. This paper aims to investigate the occurrence of SATD in ML code by analyzing 318 open-source ML projects across five domains, along with 318 non-ML projects. We detected SATD in source code comments in various snapshots of the studied projects, conducted a manual analysis of a sample of the identified SATD to comprehend the nature of technical debt in the ML code, and performed a survival analysis of the SATD to understand the evolution dynamics of such debts. Our analyses yielded the following observations: (i) Machine learning projects have a median percentage of SATD that is twice that of non-machine learning projects. (ii) ML pipeline stages for data preprocessing and model generation logic are more susceptible to debt than model validation and deployment stages. (iii) SATDs appear in ML projects earlier in the development process compared to non-ML projects. (iv) Long-lasting SATDs are typically introduced during extensive code changes that span multiple files, which exhibit low complexity. Our research contributes to the understanding of technical debt in an ML context and underscores the need for targeted debt management strategies. This contribution is particularly relevant for developers and stakeholders in ML projects by aiding them in identifying and addressing technical debt proactively and paving the way for future research in developing automated tools and methodologies for managing SATD in an ML environment.",
+    "authors": [
+      {
+        "authorId": "1739176599",
+        "name": "Aaditya Bhatia"
+      },
+      {
+        "authorId": "1703493",
+        "name": "F. Khomh"
+      },
+      {
+        "authorId": "2254329941",
+        "name": "Bram Adams"
+      },
+      {
+        "authorId": "2256953216",
+        "name": "A. Hassan"
+      }
+    ],
+    "citationCount": 18,
+    "externalIds": {
+      "ArXiv": "2311.12019",
+      "CorpusId": 265295545,
+      "DBLP": "journals/corr/abs-2311-12019",
+      "DOI": "10.1145/3785001"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2311.12019, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "efe6d43d343234d0e0f9da27cb8f68e27e71433c",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "ACM Trans Softw Eng Methodol"
+      ],
+      "alternate_urls": [
+        "https://tosem.acm.org/",
+        "http://tosem.acm.org/",
+        "http://www.acm.org/pubs/tosem/",
+        "http://portal.acm.org/tosem"
+      ],
+      "id": "0730105a-4941-449f-9450-28cba8ae056b",
+      "issn": "1049-331X",
+      "name": "ACM Transactions on Software Engineering and Methodology",
+      "type": "journal",
+      "url": "http://www.acm.org/pubs/contents/journals/tosem/"
+    },
+    "title": "An Empirical Study of Self-Admitted Technical Debt in Machine Learning Software",
+    "venue": "ACM Transactions on Software Engineering and Methodology",
+    "year": 2023
+  },
+  {
+    "_paper_key": "doi:10.1145/3597503.3639176",
+    "_pass": "recent",
+    "_pass_rank": 13,
+    "_rank": 38,
+    "abstract": "Code intelligence tools such as GitHub Copilot have begun to bridge the gap between natural language and programming language. A frequent software development task is the management of technical debts, which are suboptimal solutions or unaddressed issues which hinder future software development. Developers have been found to \u201cself-admit\u201d technical debts (SATD) in software artifacts such as source code comments. Thus, is it possible that the information present in these comments can enhance code generative prompts to repay the described SATD? Or, does the inclusion of such comments instead cause code generative tools to reproduce the harmful symptoms of described technical debt? Does the modification of SATD impact this reaction? Despite the heavy maintenance costs caused by technical debt and the recent improvements of code intelligence tools, no prior works have sought to incorporate SATD towards prompt engineering. Inspired by this, this paper contributes and analyzes a dataset consisting of 36,381 TODO comments in the latest available revisions of their respective 102,424 repositories, from which we sample and manually generate 1,140 code bodies using GitHub Copilot. Our experiments show that GitHub Copilot can generate code with the symptoms of SATD, both prompted and unprompted. Moreover, we demonstrate the tool's ability to automatically repay SATD under different circumstances and qualitatively investigate the characteristics of successful and unsuccessful comments. Finally, we discuss gaps in which GitHub Copilot's successors and future researchers can improve upon code intelligence tasks to facilitate AI-assisted software maintenance.",
+    "authors": [
+      {
+        "authorId": "2281765966",
+        "name": "David OBrien"
+      },
+      {
+        "authorId": "2555876",
+        "name": "Sumon Biswas"
+      },
+      {
+        "authorId": "2306345",
+        "name": "S. Imtiaz"
+      },
+      {
+        "authorId": "2154809",
+        "name": "Rabe Abdalkareem"
+      },
+      {
+        "authorId": "2065557640",
+        "name": "Emad Shihab"
+      },
+      {
+        "authorId": "144212535",
+        "name": "Hridesh Rajan"
+      },
+      {
+        "authorId": "2282005449",
+        "name": "S. Mohammad"
+      },
+      {
+        "authorId": "2282005123",
+        "name": "Rabe Imtiaz"
+      },
+      {
+        "authorId": "2282003666",
+        "name": "Emad Abdalkareem"
+      },
+      {
+        "authorId": "2282005117",
+        "name": "Shihab Hridesh"
+      },
+      {
+        "authorId": "2073752901",
+        "name": "Rajan"
+      }
+    ],
+    "citationCount": 18,
+    "externalIds": {
+      "CorpusId": 267341784,
+      "DBLP": "conf/icse/OBrienBIASR24",
+      "DOI": "10.1145/3597503.3639176"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1145/3597503.3639176?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1145/3597503.3639176, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBY",
+      "status": "HYBRID",
+      "url": "https://dl.acm.org/doi/pdf/10.1145/3597503.3639176"
+    },
+    "paperId": "db325cc4eff690e16ee4996470acfd191350fd51",
+    "publicationTypes": [
+      "JournalArticle",
+      "Book",
+      "Conference"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Int Conf Softw Eng",
+        "ICSE"
+      ],
+      "id": "a36dc29e-4ea1-4567-b0fe-1c06daf8bee8",
+      "name": "International Conference on Software Engineering",
+      "type": "conference",
+      "url": "http://www.icse-conferences.org/"
+    },
+    "title": "Are Prompt Engineering and TODO Comments Friends or Foes? An Evaluation on GitHub Copilot",
+    "venue": "International Conference on Software Engineering",
+    "year": 2024
+  },
+  {
+    "_paper_key": "doi:10.1145/3642970.3655840",
+    "_pass": "recent",
+    "_pass_rank": 14,
+    "_rank": 39,
+    "abstract": "Large Language Models (LLMs) have become an essential tool in advancing artificial intelligence and machine learning, enabling outstanding capabilities in natural language processing, and understanding. However, the efficient deployment of LLMs in production environments reveals a complex landscape of challenges and technical debt. In this paper, we aim to highlight unique forms of challenges and technical debt associated with the deployment of LLMs, including those related to memory management, parallelism strategies, model compression, and attention optimization. These challenges emphasize the necessity of custom approaches to deploying LLMs, demanding customization and sophisticated engineering solutions not readily available in broad-use machine learning libraries or inference engines.",
+    "authors": [
+      {
+        "authorId": "4056113",
+        "name": "A. Menshawy"
+      },
+      {
+        "authorId": "38735056",
+        "name": "Z. Nawaz"
+      },
+      {
+        "authorId": "1752895998",
+        "name": "Mahmoud Fahmy"
+      }
+    ],
+    "citationCount": 16,
+    "externalIds": {
+      "CorpusId": 269280542,
+      "DBLP": "conf/euromlsys/MenshawyNF24",
+      "DOI": "10.1145/3642970.3655840"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1145/3642970.3655840?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1145/3642970.3655840, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "a405b73b0e68ae5a94482a792f85240ebc532b29",
+    "publicationTypes": [
+      "Book",
+      "JournalArticle"
+    ],
+    "publicationVenue": null,
+    "title": "Navigating Challenges and Technical Debt in Large Language Models Deployment",
+    "venue": "EuroMLSys@EuroSys",
+    "year": 2024
+  },
+  {
+    "_paper_key": "doi:10.1016/j.infsof.2023.107147",
+    "_pass": "recent",
+    "_pass_rank": 15,
+    "_rank": 40,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "9193590",
+        "name": "Reem Alfayez"
+      },
+      {
+        "authorId": "144014887",
+        "name": "R. Winn"
+      },
+      {
+        "authorId": "1965890693",
+        "name": "Wesam Alwehaibi"
+      },
+      {
+        "authorId": "3384605",
+        "name": "Elaine Venson"
+      },
+      {
+        "authorId": "144082233",
+        "name": "B. Boehm"
+      }
+    ],
+    "citationCount": 16,
+    "externalIds": {
+      "CorpusId": 255742392,
+      "DBLP": "journals/infsof/AlfayezWAVB23",
+      "DOI": "10.1016/j.infsof.2023.107147"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1016/j.infsof.2023.107147?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1016/j.infsof.2023.107147, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "publisher-specific-oa",
+      "status": "BRONZE",
+      "url": "https://www.sciencedirect.com/science/article/am/pii/S0950584923000010"
+    },
+    "paperId": "ee1cc2b38d6a87e3bff48b97250570710d90c72c",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Inf  Softw Technol",
+        "Information & Software Technology",
+        "Inf Softw Technol"
+      ],
+      "alternate_urls": [
+        "http://www.sciencedirect.com/science/journal/09505849"
+      ],
+      "id": "64ae7767-9467-4e70-9e31-e4185f9f16ff",
+      "issn": "0950-5849",
+      "name": "Information and Software Technology",
+      "type": "journal",
+      "url": "http://www.elsevier.com/wps/find/journaldescription.cws_home/525444/description#description"
+    },
+    "title": "How SonarQube-identified technical debt is prioritized: An exploratory case study",
+    "venue": "Information and Software Technology",
+    "year": 2023
+  },
+  {
+    "_paper_key": "doi:10.1109/access.2024.3380167",
+    "_pass": "recent",
+    "_pass_rank": 16,
+    "_rank": 41,
+    "abstract": "Software quality is critical, as low quality, or \u201cCode smell,\u201d increases technical debt and maintenance costs. There is a timely need for a collaborative model that detects and manages code smells by learning from diverse and distributed data sources while respecting privacy and providing a scalable solution for continuously integrating new patterns and practices in code quality management. However, the current literature is still missing such capabilities. This paper addresses the previous challenges by proposing a Federated Learning Code Smell Detection (FedCSD) approach, specifically targeting \u201cGod Class,\u201d to enable organizations to train distributed ML models while safeguarding data privacy collaboratively. We conduct experiments using manually validated datasets to detect and analyze code smell scenarios to validate our approach. Experiment 1, a centralized training experiment, revealed varying accuracies across datasets, with dataset two achieving the lowest accuracy (92.30%) and datasets one and three achieving the highest (98.90% and 99.5%, respectively). Experiment 2, focusing on cross-evaluation, showed a significant drop in accuracy (lowest: 63.80%) when fewer smells were present in the training dataset, reflecting technical debt. Experiment 3 involved splitting the dataset across 10 companies, resulting in a global model accuracy of 98.34%, comparable to the centralized model\u2019s highest accuracy. The application of federated ML techniques demonstrates promising performance improvements in code-smell detection, benefiting both software developers and researchers.",
+    "authors": [
+      {
+        "authorId": "12147027",
+        "name": "Sadi Alawadi"
+      },
+      {
+        "authorId": "51511346",
+        "name": "Khalid Alkharabsheh"
+      },
+      {
+        "authorId": "11033180",
+        "name": "Fahed Alkhabbas"
+      },
+      {
+        "authorId": "3320426",
+        "name": "V. Kebande"
+      },
+      {
+        "authorId": "17663383",
+        "name": "Feras M. Awaysheh"
+      },
+      {
+        "authorId": "2275651738",
+        "name": "Fabio Palomba"
+      },
+      {
+        "authorId": "2248618624",
+        "name": "Mohammed Awad"
+      }
+    ],
+    "citationCount": 16,
+    "externalIds": {
+      "ArXiv": "2306.00038",
+      "CorpusId": 264146344,
+      "DBLP": "journals/access/AlawadiAAKAPA24",
+      "DOI": "10.1109/ACCESS.2024.3380167"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2306.00038, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBYNCND",
+      "status": "GOLD",
+      "url": "https://ieeexplore.ieee.org/ielx7/6287639/6514899/10477413.pdf"
+    },
+    "paperId": "27c0b3467106c49e1d365b44e6a4cedc5b8972c4",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_urls": [
+        "http://ieeexplore.ieee.org/servlet/opac?punumber=6287639"
+      ],
+      "id": "2633f5b2-c15c-49fe-80f5-07523e770c26",
+      "issn": "2169-3536",
+      "name": "IEEE Access",
+      "type": "journal",
+      "url": "http://www.ieee.org/publications_standards/publications/ieee_access.html"
+    },
+    "title": "FedCSD: A Federated Learning Based Approach for Code-Smell Detection",
+    "venue": "IEEE Access",
+    "year": 2023
+  },
+  {
+    "_paper_key": "doi:10.1016/j.infsof.2023.107375",
+    "_pass": "recent",
+    "_pass_rank": 17,
+    "_rank": 42,
+    "abstract": "Technical Debt (TD) refers to non-optimal decisions made in software projects that may lead to short-term benefits, but potentially harm the system's maintenance in the long-term. Technical debt management (TDM) refers to a set of activities that are performed to handle TD, e.g., identification. These activities can entail tasks such as code and architectural analysis, which can be time-consuming if done manually. Thus, substantial research work has focused on automating TDM tasks (e.g., automatic identification of code smells). However, there is a lack of studies that summarize current approaches in TDM automation. This can hinder practitioners in selecting optimal automation strategies to efficiently manage TD. It can also prevent researchers from understanding the research landscape and addressing the research problems that matter the most. Thus, the main objective of this study is to provide an overview of the state of the art in TDM automation, analyzing the available tools, their use, and the challenges in automating TDM. For this, we conducted a systematic mapping study (SMS), and from an initial set of 1086 primary studies, 178 were selected to answer three research questions covering different facets of TDM automation. We found 121 automation artifacts, which were classified in 4 different types (i.e., tools, plugins, scripts, and bots); the inputs/outputs and interfaces were also collected and reported. Finally, a conceptual model is proposed that synthesizes the results and allows to discuss the current state of TDM automation and related challenges. The results show that the research community has investigated to a large extent how to perform various TDM activities automatically, considering the number of studies and automation artifacts we identified. More research is needed towards fully automated TDM, specially concerning the integration of the automation artifacts.",
+    "authors": [
+      {
+        "authorId": "1491179641",
+        "name": "Jo\u00e3o Paulo Biazotto"
+      },
+      {
+        "authorId": "144052468",
+        "name": "Daniel Feitosa"
+      },
+      {
+        "authorId": "1727328",
+        "name": "P. Avgeriou"
+      },
+      {
+        "authorId": "9092315",
+        "name": "E. Nakagawa"
+      }
+    ],
+    "citationCount": 14,
+    "externalIds": {
+      "ArXiv": "2311.18449",
+      "CorpusId": 265506045,
+      "DBLP": "journals/corr/abs-2311-18449",
+      "DOI": "10.1016/j.infsof.2023.107375"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2311.18449, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBY",
+      "status": "HYBRID",
+      "url": "https://doi.org/10.1016/j.infsof.2023.107375"
+    },
+    "paperId": "49364bca6ca718cc1de89d25da3b8670bb176292",
+    "publicationTypes": [
+      "JournalArticle",
+      "Review"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Inf  Softw Technol",
+        "Information & Software Technology",
+        "Inf Softw Technol"
+      ],
+      "alternate_urls": [
+        "http://www.sciencedirect.com/science/journal/09505849"
+      ],
+      "id": "64ae7767-9467-4e70-9e31-e4185f9f16ff",
+      "issn": "0950-5849",
+      "name": "Information and Software Technology",
+      "type": "journal",
+      "url": "http://www.elsevier.com/wps/find/journaldescription.cws_home/525444/description#description"
+    },
+    "title": "Technical Debt Management Automation: State of the Art and Future Perspectives",
+    "venue": "Information and Software Technology",
+    "year": 2023
+  },
+  {
+    "_paper_key": "doi:10.1109/ms.2023.3242137",
+    "_pass": "recent",
+    "_pass_rank": 18,
+    "_rank": 43,
+    "abstract": null,
+    "authors": [
+      {
+        "authorId": "2220990",
+        "name": "Ciera Jaspan"
+      },
+      {
+        "authorId": "2003808785",
+        "name": "Collin Green"
+      }
+    ],
+    "citationCount": 14,
+    "externalIds": {
+      "CorpusId": 258374464,
+      "DBLP": "journals/software/JaspanG23b",
+      "DOI": "10.1109/ms.2023.3242137"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1109/ms.2023.3242137?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1109/ms.2023.3242137, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "BRONZE",
+      "url": "https://ieeexplore.ieee.org/ielx7/52/10109325/10109339.pdf"
+    },
+    "paperId": "d22d6268939c82ceee2b2a7b9c73759b7736be4a",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "IEEE Softw"
+      ],
+      "alternate_urls": [
+        "http://ieeexplore.ieee.org/servlet/opac?punumber=52"
+      ],
+      "id": "119227a6-1b94-433e-a52d-8445a387dbbe",
+      "issn": "0740-7459",
+      "name": "IEEE Software",
+      "type": "journal",
+      "url": "http://www.computer.org/software"
+    },
+    "title": "Defining, Measuring, and Managing Technical Debt",
+    "venue": "IEEE Software",
+    "year": 2023
+  },
+  {
+    "_paper_key": "doi:10.36676/irt.v9.i2.1459",
+    "_pass": "recent",
+    "_pass_rank": 19,
+    "_rank": 44,
+    "abstract": "\u00a0The evolution of Salesforce's user interface (UI) development has been marked by significant advancements, with Lightning Web Components (LWC) emerging as a pivotal technology. LWC represents a modern approach to building user interfaces on the Salesforce platform, enabling developers to create highly responsive, efficient, and scalable applications. This paper explores the significance of LWC in modern Salesforce UI development, highlighting its architectural advantages, performance improvements, and alignment with web standards. By leveraging LWC, developers can build applications that not only enhance the user experience but also streamline development processes, reduce technical debt, and ensure long-term maintainability.\u00a0 LWC is built on native web standards, such as Web Components, which allows developers to utilize reusable components across multiple applications. This modularity simplifies development, reduces redundancy, and promotes a cleaner, more maintainable codebase. Additionally, LWC's adherence to modern JavaScript frameworks and its compatibility with standard HTML and CSS make it an attractive choice for developers familiar with these technologies. This compatibility allows for seamless integration with other web development practices and tools, reducing the learning curve and accelerating the adoption of LWC in Salesforce projects. One of the critical advantages of LWC is its performance efficiency. Unlike its predecessor, Aura, LWC leverages native browser capabilities, resulting in faster load times and improved application responsiveness. The lightweight nature of LWC components ensures that applications can handle large volumes of data and complex user interactions without compromising performance. This efficiency is particularly crucial in enterprise environments where Salesforce applications must support thousands of users and handle significant data processing tasks. Moreover, LWC's design aligns with Salesforce's commitment to providing a robust, scalable, and secure platform. The framework includes built-in security features, such as Locker Service, which enforces security best practices by isolating components and preventing unauthorized access to sensitive data. This emphasis on security makes LWC an ideal choice for organizations that prioritize data protection and regulatory compliance. LWC also offers enhanced customization capabilities, enabling developers to tailor Salesforce applications to meet specific business requirements. Through LWC, developers can create custom user interfaces that integrate seamlessly with Salesforce's backend services and third-party APIs. This flexibility allows businesses to deliver unique, branded experiences to their users while maintaining the robustness and reliability of the Salesforce platform. The paper also delves into the ecosystem surrounding LWC, including the availability of pre-built components, tools, and resources that accelerate development. Salesforce provides an extensive library of base components that developers can leverage to quickly assemble complex UIs. Additionally, the Salesforce community and marketplace offer a wealth of third-party components and solutions, further expanding the possibilities for UI customization and enhancement. The adoption of LWC also fosters collaboration among development teams. Its modular architecture allows multiple developers to work on different components simultaneously, reducing bottlenecks and speeding up the development cycle. This collaborative approach is supported by Salesforce's developer tools, such as Salesforce CLI and Visual Studio Code extensions, which streamline the development, testing, and deployment of LWC-based applications. In conclusion, Lightning Web Components represent a significant leap forward in Salesforce UI development, offering a modern, efficient, and secure framework for building high-quality applications. By embracing LWC, organizations can enhance their Salesforce applications' user experience, improve performance, and future-proof their investments in the Salesforce platform. As businesses continue to demand more sophisticated and responsive applications, LWC will play a crucial role in meeting these expectations and driving innovation within the Salesforce ecosystem.",
+    "authors": [
+      {
+        "authorId": "2318482441",
+        "name": "Abhishek Tangudu"
+      },
+      {
+        "authorId": "2318373615",
+        "name": "Akshun Chhapola"
+      },
+      {
+        "authorId": "2319195691",
+        "name": "Shalu Jain"
+      }
+    ],
+    "citationCount": 13,
+    "externalIds": {
+      "CorpusId": 272230429,
+      "DOI": "10.36676/irt.v9.i2.1459"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.36676/irt.v9.i2.1459?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.36676/irt.v9.i2.1459, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": "CLOSED",
+      "url": ""
+    },
+    "paperId": "8b160bc8b2e4c00d778feed0bfe5424fc4a30206",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Innov Res Thought"
+      ],
+      "id": "aa47f2af-08da-4a80-bf90-4ac65a429889",
+      "issn": "2454-308X",
+      "name": "Innovative Research Thoughts",
+      "type": "journal"
+    },
+    "title": "Leveraging Lightning Web Components for Modern Salesforce UI Development",
+    "venue": "Innovative Research Thoughts",
+    "year": 2023
+  },
+  {
+    "_paper_key": "doi:10.48550/arxiv.2501.16450",
+    "_pass": "recent",
+    "_pass_rank": 20,
+    "_rank": 45,
+    "abstract": "Ranking and recommendation systems are the foundation for numerous online experiences, ranging from search results to personalized content delivery. These systems have evolved into complex, multilayered architectures that leverage vast datasets and often incorporate thousands of predictive models. The maintenance and enhancement of these models is a labor intensive process that requires extensive feature engineering. This approach not only exacerbates technical debt but also hampers innovation in extending these systems to emerging problem domains. In this report, we present our research to address these challenges by utilizing a large foundation model with a textual interface for ranking and recommendation tasks. We illustrate several key advantages of our approach: (1) a single model can manage multiple predictive tasks involved in ranking and recommendation, (2) decoder models with textual interface due to their comprehension of reasoning capabilities, can generalize to new recommendation surfaces and out-of-domain problems, and (3) by employing natural language interfaces for task definitions and verbalizing member behaviors and their social connections, we eliminate the need for feature engineering and the maintenance of complex directed acyclic graphs of model dependencies. We introduce our research pre-production model, 360Brew V1.0, a 150B parameter, decoder-only model that has been trained and fine-tuned on LinkedIn's data and tasks. This model is capable of solving over 30 predictive tasks across various segments of the LinkedIn platform, achieving performance levels comparable to or exceeding those of current production systems based on offline metrics, without task-specific fine-tuning. Notably, each of these tasks is conventionally addressed by dedicated models that have been developed and maintained over multiple years by teams of a similar or larger size than our own.",
+    "authors": [
+      {
+        "authorId": "22593971",
+        "name": "Hamed Firooz"
+      },
+      {
+        "authorId": "2095979",
+        "name": "Maziar Sanjabi"
+      },
+      {
+        "authorId": "46665578",
+        "name": "Adrian Englhardt"
+      },
+      {
+        "authorId": "2278545430",
+        "name": "Aman Gupta"
+      },
+      {
+        "authorId": "2056745526",
+        "name": "B. Levine"
+      },
+      {
+        "authorId": "2342505973",
+        "name": "Dre Olgiati"
+      },
+      {
+        "authorId": "2767134",
+        "name": "Gungor Polatkan"
+      },
+      {
+        "authorId": "2310553133",
+        "name": "I. Melnychuk"
+      },
+      {
+        "authorId": "2342506020",
+        "name": "Karthik Ramgopal"
+      },
+      {
+        "authorId": "1994180605",
+        "name": "Kirill Talanine"
+      },
+      {
+        "authorId": "2311498225",
+        "name": "Kutta Srinivasan"
+      },
+      {
+        "authorId": "2342507027",
+        "name": "Luke Simon"
+      },
+      {
+        "authorId": "2334354656",
+        "name": "Natesh Sivasubramoniapillai"
+      },
+      {
+        "authorId": "1769060",
+        "name": "Necip Fazil Ayan"
+      },
+      {
+        "authorId": "2326443658",
+        "name": "Qingquan Song"
+      },
+      {
+        "authorId": "2342506177",
+        "name": "S. Sriram"
+      },
+      {
+        "authorId": "2283880007",
+        "name": "Souvik Ghosh"
+      },
+      {
+        "authorId": "2309354003",
+        "name": "Tao Song"
+      },
+      {
+        "authorId": "51911528",
+        "name": "Vignesh Kothapalli"
+      },
+      {
+        "authorId": "2323989408",
+        "name": "Xiaoling Zhai"
+      },
+      {
+        "authorId": "2177018597",
+        "name": "Ya Xu"
+      },
+      {
+        "authorId": "2342848628",
+        "name": "Yu Wang"
+      },
+      {
+        "authorId": "2284171190",
+        "name": "Yun Dai"
+      }
+    ],
+    "citationCount": 13,
+    "externalIds": {
+      "ArXiv": "2501.16450",
+      "CorpusId": 275932392,
+      "DBLP": "journals/corr/abs-2501-16450",
+      "DOI": "10.48550/arXiv.2501.16450"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://arxiv.org/abs/2501.16450, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": null,
+      "status": null,
+      "url": ""
+    },
+    "paperId": "1703b86eaf5103e5688e59c86b8277d6e3ef404a",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "ArXiv"
+      ],
+      "id": "1901e811-ee72-4b20-8f7e-de08cd395a10",
+      "issn": "2331-8422",
+      "name": "arXiv.org",
+      "url": "https://arxiv.org"
+    },
+    "title": "360Brew: A Decoder-only Foundation Model for Personalized Ranking and Recommendation",
+    "venue": "arXiv.org",
+    "year": 2025
+  },
+  {
+    "_paper_key": "doi:10.11591/ijece.v13i2.pp2142-2155",
+    "_pass": "recent",
+    "_pass_rank": 21,
+    "_rank": 46,
+    "abstract": "Recent studies show that it is possible to detect technical dept automatically from source code comments intentionally created by developers, a phenomenon known as self-admitted technical debt. This study proposes a system by which a comment or commit is classified as one of five dept types, namely, requirement, design, defect, test, and documentation. In addition to the traditional term frequency-inverse document frequency (TF-IDF), several word embeddings methods produced by different pre-trained language models were used for feature extraction, such as Word2Vec, GolVe, bidirectional encoder representations from transformers (BERT), and FastText. The generated features were used to train a set of classifiers including naive Bayes (NB), random forest (RF), support vector machines (SVM), and two configurations of convolutional neural network (CNN). Two datasets were used to train and test the proposed systems. Our collected dataset (A-dataset) includes a total of 1,513 comments and commits manually labeled. Additionally, a dataset, consisting of 4,071 labeled comments, used in previous studies (M-dataset) was also used in this study. The RF classifier achieved an accuracy of 0.822 with A-dataset and 0.820 with the M-dataset. CNN with A-dataset achieved an accuracy of 0.838 using BERT features. With M-dataset, the CNN achieves an accuracy of 0.809 and 0.812 with BERT and Word2Vec, respectively.",
+    "authors": [
+      {
+        "authorId": "2374045221",
+        "name": "Ahmed Sabbah"
+      },
+      {
+        "authorId": "2734294",
+        "name": "Abualsoud Hanani"
+      }
+    ],
+    "citationCount": 12,
+    "externalIds": {
+      "CorpusId": 254579479,
+      "DOI": "10.11591/ijece.v13i2.pp2142-2155"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.11591/ijece.v13i2.pp2142-2155?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.11591/ijece.v13i2.pp2142-2155, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBYSA",
+      "status": "GOLD",
+      "url": "https://ijece.iaescore.com/index.php/IJECE/article/download/25935/16463"
+    },
+    "paperId": "d13e60dce15b3a113af88d92fbc53fafab065141",
+    "publicationTypes": null,
+    "publicationVenue": {
+      "alternate_names": [
+        "Int J Electr Comput Eng",
+        "Int J Electr Comput Eng (IJECE",
+        "International Journal of Electrical and Computer Engineering"
+      ],
+      "id": "79ca3e12-1e1d-4da8-9915-54a393e8c512",
+      "issn": "2088-8708",
+      "name": "International Journal of Electrical and Computer Engineering (IJECE)",
+      "type": "journal",
+      "url": "http://iaesjournal.com/online/index.php/IJECE/issue/archive"
+    },
+    "title": "Self-admitted technical debt classification using natural language processing word embeddings",
+    "venue": "International Journal of Electrical and Computer Engineering (IJECE)",
+    "year": 2023
+  },
+  {
+    "_paper_key": "doi:10.1002/sys.21681",
+    "_pass": "recent",
+    "_pass_rank": 22,
+    "_rank": 47,
+    "abstract": "The metaphor of \u201ctechnical debt\u201d is used in software engineering to describe technical solutions that may be pragmatic in the near\u2010term but may have a negative long\u2010term impact. Similar decisions and similar dynamics are present in the field of systems engineering. This work investigates the current body of knowledge to identify if, and how, the technical debt metaphor is used within the systems engineering field and which systems engineering lifecycle stages are most susceptible to technical debt. A systematic literature review was conducted on 354 papers in February 2022, of which 18 were deemed relevant for inclusion in the study. The results of the systematic literature review show that the technical debt metaphor is not prevalent within systems engineering research and that existing research is limited to specific fields and theoretical discussions. This paper concludes with recommendations for future work to establish a research agenda on the identification and management of technical debt within systems engineering.",
+    "authors": [
+      {
+        "authorId": "70064515",
+        "name": "Howard Kleinwaks"
+      },
+      {
+        "authorId": "2186120257",
+        "name": "Ann Batchelor"
+      },
+      {
+        "authorId": "2222043174",
+        "name": "T. Bradley"
+      }
+    ],
+    "citationCount": 12,
+    "externalIds": {
+      "CorpusId": 258072008,
+      "DBLP": "journals/se/KleinwaksBB23",
+      "DOI": "10.1002/sys.21681"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.1002/sys.21681?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.1002/sys.21681, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBYNC",
+      "status": "HYBRID",
+      "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/sys.21681"
+    },
+    "paperId": "14128adb763f1740ba58a3992719b81c22c1d8de",
+    "publicationTypes": [
+      "JournalArticle",
+      "Review"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Syst Eng"
+      ],
+      "id": "34d27e28-7f37-4875-ad8f-1018aced1e41",
+      "issn": "1098-1241",
+      "name": "Systems Engineering",
+      "type": "journal",
+      "url": "http://www3.interscience.wiley.com/cgi-bin/jhome/39084"
+    },
+    "title": "Technical debt in systems engineering\u2014A systematic literature review",
+    "venue": "Systems Engineering",
+    "year": 2023
+  },
+  {
+    "_paper_key": "doi:10.5753/jserd.2023.3191",
+    "_pass": "recent",
+    "_pass_rank": 23,
+    "_rank": 48,
+    "abstract": "Context: Technical debt (TD) can bring short-term benefits to software projects, but its presence is associated with issues such as decreasing product quality. Recent literature has proposed various approaches for identifying and managing TD, but most of them focus on the software developers\u2019 point of view. Little is known about how project management practitioners perceive and manage TD items. Goal: This work aims to investigate how project management practitioners discuss and experience TD. Method: To achieve this goal, our work mines, curates, and selects a total of 108 TD-related discussions on the Stack Exchange Project Management (SEPM) Q&A site. These discussions amount to 547 posts and 882 text comments on the subject. We analyze this data set quantitatively and qualitatively, using open coding to derive TD types, indicators, and management practices. Results: We identified 74 indicators used for recognizing debt items and 126 TD management practices. The types of debt most discussed at SEPM are process and people debts. This contradicts studies done with developers where code and design debts are most discussed. Conclusion: The perspective considered by project management practitioners to analyze the TD phenomenon is different from the one considered by other roles in the software development process. Our work organizes the identified TD indicators and management practices into a Sankey diagram, which may assist TD management practitioners and serve as guidance for future research on the subject.",
+    "authors": [
+      {
+        "authorId": "152498146",
+        "name": "Felipe G. S. Gomes"
+      },
+      {
+        "authorId": "2203059762",
+        "name": "E. Santos"
+      },
+      {
+        "authorId": "1596974983",
+        "name": "S. Freire"
+      },
+      {
+        "authorId": "33871522",
+        "name": "T. Mendes"
+      },
+      {
+        "authorId": "2257173135",
+        "name": "Manoel G. Mendon\u00e7a"
+      },
+      {
+        "authorId": "2738811",
+        "name": "R. Sp\u00ednola"
+      }
+    ],
+    "citationCount": 12,
+    "externalIds": {
+      "CorpusId": 266380526,
+      "DBLP": "journals/jserd/GomesSFMMS23",
+      "DOI": "10.5753/jserd.2023.3191"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.5753/jserd.2023.3191?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.5753/jserd.2023.3191, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBY",
+      "status": "HYBRID",
+      "url": "https://sol.sbc.org.br/journals/index.php/jserd/article/download/3191/2334"
+    },
+    "paperId": "5fb75056a58c8b6e74e2d9de2c4b4d4b39d2daa2",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "J Softw Eng Res Dev"
+      ],
+      "alternate_urls": [
+        "https://jserd.springeropen.com/"
+      ],
+      "id": "f8c1288e-7248-48b1-9c43-c80bb91e8cad",
+      "issn": "2195-1721",
+      "name": "Journal of Software Engineering Research and Development",
+      "type": "journal",
+      "url": "http://www.jserd.com/"
+    },
+    "title": "Investigating the Point of View of Project Management Practitioners on Technical Debt - A Study on Stack Exchange",
+    "venue": "Journal of Software Engineering Research and Development",
+    "year": 2023
+  },
+  {
+    "_paper_key": "doi:10.1007/s10664-023-10287-x",
+    "_pass": "recent",
+    "_pass_rank": 24,
+    "_rank": 49,
+    "abstract": "Software refactoring is a behavior-preserving activity to improve the source code quality without changing its external behavior. Unfortunately, it is often a manual and error-prone task that may induce regressions in the source code. Researchers have provided initial compelling evidence of the relation between refactoring and defects, yet little is known about how much it may impact software security. This paper bridges this knowledge gap by presenting a large-scale empirical investigation into the effects of refactoring on the security profile of applications. We conduct a three-level mining software repository study to establish the impact of 14 refactoring types on (i) security-related metrics, (ii) security technical debt, and (iii) the introduction of known vulnerabilities. The study covers 39 projects and a total amount of 7,708 refactoring commits. The key results show that refactoring has a limited connection to security. However, Inline Method and Extract Interface statistically contribute to improving some security aspects connected to encapsulating security-critical code components. Extract Superclass and Pull Up Attribute refactoring are commonly found in commits violating specific security best practices for writing secure code. Finally, Extract Superclass and Extract & Move Method refactoring tend to occur more often in commits contributing to the introduction of vulnerabilities. We conclude by distilling lessons learned and recommendations for researchers and practitioners.",
+    "authors": [
+      {
+        "authorId": "1941163595",
+        "name": "Emanuele Iannone"
+      },
+      {
+        "authorId": "3332034",
+        "name": "Zadia Codabux"
+      },
+      {
+        "authorId": "2989307",
+        "name": "Valentina Lenarduzzi"
+      },
+      {
+        "authorId": "72187755",
+        "name": "Andrea De Lucia"
+      },
+      {
+        "authorId": "34946033",
+        "name": "Fabio Palomba"
+      }
+    ],
+    "citationCount": 12,
+    "externalIds": {
+      "CorpusId": 258846501,
+      "DBLP": "journals/ese/IannoneCLLP23",
+      "DOI": "10.1007/s10664-023-10287-x",
+      "PubMed": "37250850",
+      "PubMedCentral": "10209315"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://pmc.ncbi.nlm.nih.gov/articles/PMC10209315, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBY",
+      "status": "HYBRID",
+      "url": "https://link.springer.com/content/pdf/10.1007/s10664-023-10287-x.pdf"
+    },
+    "paperId": "df54e86570cb18ae5e1e9cd9948ff8465b22c330",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "alternate_names": [
+        "Empir Softw Eng"
+      ],
+      "alternate_urls": [
+        "https://link.springer.com/journal/10664"
+      ],
+      "id": "f528e58c-0e4e-45b0-9456-832847244f0e",
+      "issn": "1382-3256",
+      "name": "Empirical Software Engineering",
+      "type": "journal",
+      "url": "http://www.springer.com/computer/programming/journal/10664"
+    },
+    "title": "Rubbing salt in the wound? A large-scale investigation into the effects of refactoring on security",
+    "venue": "Empirical Software Engineering",
+    "year": 2023
+  },
+  {
+    "_paper_key": "doi:10.3390/software2020011",
+    "_pass": "recent",
+    "_pass_rank": 25,
+    "_rank": 50,
+    "abstract": "Model-Based Software Engineering (MBSE) is an architecture-based software development approach. Agile, on the other hand, is a light system development approach that originated in software development. To bring together the benefits of both approaches, this article proposes an integrated Agile MBSE approach that adopts a specific instance of the Agile approach (i.e., Scrum) in combination with a specific instance of an MBSE approach (i.e., Model-Based System Architecture Process\u2014\u201cMBSAP\u201d) to create an Agile MBSE approach called the integrated Scrum Model-Based System Architecture Process (sMBSAP). The proposed approach was validated through a pilot study that developed a health technology system over one year, successfully producing the desired software product. This work focuses on determining whether the proposed sMBSAP approach can deliver the desired Product Increments with the support of an MBSE process. The interaction of the Product Development Team with the MBSE tool, the generation of the system model, and the delivery of the Product Increments were observed. The preliminary results showed that the proposed approach contributed to achieving the desired system development outcomes and, at the same time, generated complete system architecture artifacts that would not have been developed if Agile had been used alone. Therefore, the main contribution of this research lies in introducing a practical and operational method for merging Agile and MBSE. In parallel, the results suggest that sMBSAP is a middle ground that is more aligned with federal and state regulations, as it addresses the technical debt concerns. Future work will analyze the results of a quasi-experiment on this approach focused on measuring system development performance through common metrics.",
+    "authors": [
+      {
+        "authorId": "2214702514",
+        "name": "Moe Huss"
+      },
+      {
+        "authorId": "2283390284",
+        "name": "D. Herber"
+      },
+      {
+        "authorId": "2449216",
+        "name": "J. Borky"
+      }
+    ],
+    "citationCount": 12,
+    "externalIds": {
+      "CorpusId": 258208031,
+      "DOI": "10.3390/software2020011"
+    },
+    "openAccessPdf": {
+      "disclaimer": "Notice: Paper or abstract available at https://api.unpaywall.org/v2/10.3390/software2020011?email=<INSERT_YOUR_EMAIL> or https://doi.org/10.3390/software2020011, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use.",
+      "license": "CCBY",
+      "status": "GOLD",
+      "url": "https://www.mdpi.com/2674-113X/2/2/11/pdf?version=1681726686"
+    },
+    "paperId": "25f07ac33314480d76482ca0e66a84cb9af16dd0",
+    "publicationTypes": [
+      "JournalArticle"
+    ],
+    "publicationVenue": {
+      "id": "b3cb25fa-ecb2-4762-badc-478facba2d64",
+      "issn": "2674-113X",
+      "name": "Software"
+    },
+    "title": "An Agile Model-Based Software Engineering Approach Illustrated through the Development of a Health Technology System",
+    "venue": "Software",
+    "year": 2023
+  }
+]

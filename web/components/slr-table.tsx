@@ -8,9 +8,16 @@ import { cn } from "@/lib/utils";
 
 interface Props {
   rows: OverlapRow[];
+  ranks?: Record<string, { rank: number; composite: number }>;
 }
 
-type SortKey = "slr_year" | "n_refs" | "hits" | "coverage_pct" | "slr_title";
+type SortKey =
+  | "slr_year"
+  | "n_refs"
+  | "hits"
+  | "coverage_pct"
+  | "slr_title"
+  | "rank";
 type SortDir = "asc" | "desc";
 
 function coverageClass(pct: number): string {
@@ -27,9 +34,14 @@ function shortId(id: string): string {
   return id.slice(0, 24);
 }
 
-export function SLRTable({ rows }: Props) {
-  const [sortKey, setSortKey] = useState<SortKey>("coverage_pct");
-  const [sortDir, setSortDir] = useState<SortDir>("desc");
+export function SLRTable({ rows, ranks }: Props) {
+  const hasRanks = !!ranks && Object.keys(ranks).length > 0;
+  const [sortKey, setSortKey] = useState<SortKey>(
+    hasRanks ? "rank" : "coverage_pct",
+  );
+  const [sortDir, setSortDir] = useState<SortDir>(
+    hasRanks ? "asc" : "desc",
+  );
   const [query, setQuery] = useState("");
 
   const sorted = useMemo(() => {
@@ -44,15 +56,23 @@ export function SLRTable({ rows }: Props) {
       : rows;
     return [...filtered].sort((a, b) => {
       const dir = sortDir === "asc" ? 1 : -1;
-      const av = a[sortKey];
-      const bv = b[sortKey];
+      if (sortKey === "rank") {
+        const ar = ranks?.[a.slr_id]?.rank ?? Number.MAX_SAFE_INTEGER;
+        const br = ranks?.[b.slr_id]?.rank ?? Number.MAX_SAFE_INTEGER;
+        return (ar - br) * dir;
+      }
+      const av = a[sortKey as keyof OverlapRow];
+      const bv = b[sortKey as keyof OverlapRow];
       if (typeof av === "number" && typeof bv === "number")
         return (av - bv) * dir;
       return String(av).localeCompare(String(bv)) * dir;
     });
-  }, [rows, sortKey, sortDir, query]);
+  }, [rows, ranks, sortKey, sortDir, query]);
 
   const headers: { key: SortKey; label: string; right?: boolean }[] = [
+    ...(hasRanks
+      ? [{ key: "rank" as SortKey, label: "#", right: true }]
+      : []),
     { key: "slr_year", label: "Year" },
     { key: "slr_title", label: "Title" },
     { key: "n_refs", label: "Refs", right: true },
@@ -120,6 +140,11 @@ export function SLRTable({ rows }: Props) {
                 }}
                 className="border-b border-[var(--color-border)] transition-colors hover:bg-[var(--color-surface-hover)]/60"
               >
+                {hasRanks && (
+                  <td className="px-4 py-3 text-right font-mono text-xs tabular-nums text-[var(--color-accent)]">
+                    {ranks?.[r.slr_id]?.rank ?? "-"}
+                  </td>
+                )}
                 <td className="px-4 py-3 font-mono text-xs tabular-nums text-[var(--color-text-muted)]">
                   {r.slr_year || "-"}
                 </td>

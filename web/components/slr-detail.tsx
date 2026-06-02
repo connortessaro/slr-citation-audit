@@ -12,7 +12,7 @@ interface Props {
   paperKey: string;
   year: number | null;
   venue: string;
-  coverage: number; // 0–100
+  coverage: number; // 0-100
   hits: number;
   misses: number;
   eligible: number;

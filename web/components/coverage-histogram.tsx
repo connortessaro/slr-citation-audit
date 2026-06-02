@@ -14,7 +14,7 @@ export function CoverageHistogram({ bins, counts, height = 200 }: Props) {
   const labels = useMemo(() => {
     const out: string[] = [];
     for (let i = 0; i < counts.length; i++) {
-      out.push(`${Math.round(bins[i])}–${Math.round(bins[i + 1])}%`);
+      out.push(`${Math.round(bins[i])}-${Math.round(bins[i + 1])}%`);
     }
     return out;
   }, [bins, counts]);

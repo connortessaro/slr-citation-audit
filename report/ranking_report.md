@@ -20,21 +20,21 @@ Each raw dim is min-max normalized across the SLR corpus; composite = weighted s
 
 | Rank | SLR | Year | Composite | Cov | Sem | Auth | Div | Judge |
 |------|-----|------|-----------|-----|-----|------|-----|-------|
-| 1 | Identification and measurement of Requirements Technical Debt in software develo | 2022 | 0.785 | 1.00 | 0.38 | 0.73 | 0.92 | 0.90 |
-| 2 | A systematic literature review on Technical Debt prioritization: Strategies, pro | 2021 | 0.748 | 0.80 | 0.39 | 0.76 | 0.93 | 0.85 |
-| 3 | Identification and Measurement of Technical Debt Requirements in Software Develo | 2021 | 0.748 | 0.95 | 0.36 | 0.76 | 0.93 | 0.75 |
-| 4 | Technical Debt Prioritization: State of the Art. A Systematic Literature Review | 2019 | 0.736 | 0.87 | 0.41 | 0.77 | 0.93 | 0.70 |
-| 5 | Technical Debt Aware Estimations in Software Engineering: A Systematic Mapping S | 2020 | 0.720 | 0.78 | 0.36 | 0.76 | 0.94 | 0.75 |
+| 1 | Identification and measurement of Requirements Technical Debt in software develo | 2022 | 0.877 | 1.00 | 0.85 | 0.73 | 0.95 | 0.87 |
+| 2 | A systematic literature review on Technical Debt prioritization: Strategies, pro | 2021 | 0.843 | 0.80 | 0.92 | 0.76 | 0.93 | 0.80 |
+| 3 | Identification and Measurement of Technical Debt Requirements in Software Develo | 2021 | 0.835 | 0.95 | 0.85 | 0.76 | 0.95 | 0.67 |
+| 4 | Technical Debt Prioritization: State of the Art. A Systematic Literature Review | 2019 | 0.821 | 0.87 | 0.93 | 0.77 | 0.93 | 0.60 |
+| 5 | Quantifying Technical Debt: A Systematic Mapping Study and a Conceptual Model | 2023 | 0.805 | 0.64 | 0.86 | 0.75 | 0.98 | 0.80 |
 
 ## Bottom 5 SLRs
 
 | Rank | SLR | Year | Composite | Cov | Sem | Auth | Div | Judge |
 |------|-----|------|-----------|-----|-----|------|-----|-------|
-| 70 | Demystifying data pipelines for AI-driven financial systems | 2025 | 0.090 | 0.00 | 0.00 | 0.00 | 0.00 | 0.45 |
-| 71 | Systematic Review of Code Smell Patterns and Their Impact on Software Technical  | 2026 | 0.090 | 0.00 | 0.00 | 0.00 | 0.00 | 0.45 |
-| 72 | A Systematic Literature Review on Technical Debt in Software Development: Types, | 2025 | 0.050 | 0.00 | 0.00 | 0.00 | 0.00 | 0.25 |
-| 73 | Systematic Literature Review of Technical Debt Competencies and Costs in Softwar | 2025 | 0.050 | 0.00 | 0.00 | 0.00 | 0.00 | 0.25 |
-| 74 | A Systematic Mapping Study Exploring Quantification Approaches to Code, Design,  | 2024 | 0.000 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| 70 | Investigate, Identify and Estimate the Technical Debt: A Systematic Mapping Stud | 2020 | 0.067 | 0.00 | 0.00 | 0.00 | 0.00 | 0.33 |
+| 71 | Demystifying data pipelines for AI-driven financial systems | 2025 | 0.053 | 0.00 | 0.00 | 0.00 | 0.00 | 0.27 |
+| 72 | Systematic Review of Code Smell Patterns and Their Impact on Software Technical  | 2026 | 0.053 | 0.00 | 0.00 | 0.00 | 0.00 | 0.27 |
+| 73 | A Systematic Literature Review on Technical Debt in Software Development: Types, | 2025 | 0.000 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
+| 74 | Systematic Literature Review of Technical Debt Competencies and Costs in Softwar | 2025 | 0.000 | 0.00 | 0.00 | 0.00 | 0.00 | 0.00 |
 
 ## Limitations
 

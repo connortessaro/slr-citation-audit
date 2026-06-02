@@ -314,28 +314,31 @@ code,
 .overview-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* hero → KPIs → charts (flex) → cohort | extremes (fixed min share) */
-  grid-template-rows: auto auto minmax(300px, 1fr) minmax(260px, 34vh);
+  /* hero → KPIs → charts (flex) → extremes (full width) */
+  grid-template-rows: auto auto minmax(200px, 1fr) minmax(180px, 28vh);
   grid-template-areas:
     "hero hero"
     "kpis kpis"
     "chartL chartR"
-    "cohort leaders";
+    "leaders leaders";
   gap: var(--space-3);
   padding: var(--space-3);
   flex: 1;
   min-height: 0;
   height: 100%;
-  overflow: hidden;
-  align-content: stretch;
+  overflow-x: hidden;
+  overflow-y: auto;
+  align-content: start;
 }
 
 .panel-hero {
   grid-area: hero;
+  min-height: auto;
 }
 
 .panel-kpis {
   grid-area: kpis;
+  min-height: auto;
 }
 
 .panel-chart-coverage {
@@ -344,10 +347,6 @@ code,
 
 .panel-chart-top {
   grid-area: chartR;
-}
-
-.panel-cohort {
-  grid-area: cohort;
 }
 
 .panel-leaders {
@@ -383,7 +382,7 @@ code,
 .chart-body {
   position: relative;
   flex: 1 1 auto;
-  min-height: 280px;
+  min-height: 0;
   width: 100%;
 }
 
@@ -393,7 +392,6 @@ code,
   height: 100% !important;
 }
 
-.panel-cohort,
 .panel-leaders {
   display: flex;
   flex-direction: column;
@@ -401,28 +399,6 @@ code,
   overflow: hidden;
 }
 
-.cohort-table-wrap {
-  flex: 1;
-  min-height: 0;
-  overflow: auto;
-}
-
-.cohort-table-wrap .data-table {
-  table-layout: auto;
-  font-size: var(--text-body);
-}
-
-.cohort-table-wrap .data-table th,
-.cohort-table-wrap .data-table td {
-  padding: var(--space-3) var(--space-4);
-  line-height: 1.4;
-}
-
-.cohort-table-wrap .data-table th {
-  font-size: 0.7rem;
-}
-
-.panel-cohort .card-title,
 .panel-leaders .card-title {
   flex-shrink: 0;
   margin-bottom: var(--space-2);
@@ -433,6 +409,7 @@ code,
   min-height: 0;
   overflow-y: auto;
   align-content: start;
+  gap: var(--space-6);
 }
 
 .panel-hero {
@@ -1505,15 +1482,13 @@ code,
 @media (max-width: 1100px) {
   .overview-grid {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto minmax(280px, 42vh) minmax(240px, auto) minmax(240px, auto);
+    grid-template-rows: auto auto minmax(220px, 40vh) minmax(200px, 32vh) auto;
     grid-template-areas:
       "hero"
       "kpis"
       "chartL"
       "chartR"
-      "cohort"
       "leaders";
-    overflow-y: auto;
   }
 
   .kpi-row {

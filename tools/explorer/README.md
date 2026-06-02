@@ -47,7 +47,7 @@ The subtitle in the sidebar reflects the active combination.
 
 | Page | Purpose |
 |------|---------|
-| **Overview** | Hero insight, KPIs (zero-coverage highlighted), charts, cohort table, coverage extremes, quick links |
+| **Overview** | Hero insight, KPIs (zero-coverage highlighted), charts, coverage extremes (full width), quick links |
 | **SLRs** | List + tabbed detail: Summary, References, Hits, Misses, Compare |
 | **Top cited** | Benchmark papers or SLR consensus bibliography (toggle); tabbed detail for citing/missing SLRs |
 | **Methods** | Renders `docs/research_paper_methods_snapshot.md` for the paper |

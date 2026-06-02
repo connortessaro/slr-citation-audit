@@ -54,14 +54,15 @@ export default function HomePage() {
       <section className="relative isolate overflow-hidden border-b border-[var(--color-border)]">
         <CssAurora />
         <h1 className="sr-only">
-          Citation coverage audit of {stats.slrCount} systematic literature
-          reviews across {stats.topCount} canonical technical-debt papers
+          {stats.slrCount} published SLRs on technical debt graded
+          against the {stats.topCount} most-cited papers in the field.
+          Average grade: {stats.meanCoveragePct.toFixed(1)}%.
         </h1>
         <div className="mx-auto grid max-w-7xl grid-cols-12 gap-6 px-4 pb-20 pt-20 sm:px-6 sm:pt-28">
           <div className="col-span-12 flex items-center gap-3">
             <span className="inline-block size-1.5 rounded-full bg-[var(--color-accent)] shadow-[0_0_12px_var(--color-accent)]" />
             <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-accent)]">
-              Citation coverage audit · {new Date().getFullYear()}
+              Average grade · {new Date().getFullYear()}
             </span>
           </div>
 
@@ -75,26 +76,67 @@ export default function HomePage() {
                     "'Iowan Old Style', 'Iowan', 'Palatino', Georgia, serif",
                 }}
               >
-                {stats.slrCount} published reviews compared against the{" "}
-                {stats.topCount} most-cited papers in the field. We only
-                count papers that came out before each review, so nobody
-                gets blamed for missing the future. Half the reviews cite
-                less than {stats.medianCoveragePct.toFixed(1)}% of those
-                papers. {worstZero} cite zero of them.
+                This audit grades {stats.slrCount} published SLRs in the{" "}
+                <em>technical debt</em> subfield (shortcuts in code that
+                cost time later) against a required-reading list — the{" "}
+                {stats.topCount} most-cited papers in the same area on
+                Semantic Scholar.{" "}
+                <strong className="text-[var(--color-text)]">
+                  Average grade: {stats.meanCoveragePct.toFixed(1)}%.
+                </strong>{" "}
+                Half cite less than{" "}
+                {stats.medianCoveragePct.toFixed(1)}% of the list.{" "}
+                {worstZero} cite zero of it. Papers published after an SLR
+                came out don't count against it — nobody gets blamed for
+                missing the future.
               </p>
             </FadeIn>
           </div>
 
           <div className="col-span-12 mt-2 grid grid-cols-3 gap-3 self-end sm:gap-4 lg:col-span-4 lg:grid-cols-1 lg:gap-6">
-            <Meta label="At 0% coverage" value={worstZero} tone="miss" />
             <Meta
-              label="Median coverage"
+              label="Cited none of the list"
+              value={worstZero}
+              tone="miss"
+            />
+            <Meta
+              label="Median grade"
               value={`${stats.medianCoveragePct.toFixed(1)}%`}
             />
             <Meta
-              label="Reviews / canonical"
-              value={`${stats.slrCount}/${stats.topCount}`}
+              label="SLRs × required list"
+              value={`${stats.slrCount} × ${stats.topCount}`}
             />
+          </div>
+        </div>
+      </section>
+
+      {/* SLR EXPLAINER — quick definition for cold visitors */}
+      <section className="border-b border-[var(--color-border)] bg-[var(--color-surface)]/30">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+          <div className="grid gap-6 lg:grid-cols-[14rem_1fr] lg:gap-12">
+            <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-accent)]">
+              What&apos;s an SLR?
+            </div>
+            <p
+              className="max-w-3xl text-base leading-relaxed text-[var(--color-text-muted)] sm:text-lg"
+              style={{
+                fontFamily:
+                  "'Iowan Old Style', 'Iowan', 'Palatino', Georgia, serif",
+              }}
+            >
+              <em>Systematic Literature Review.</em> A report that
+              summarizes a research field by pulling together a bunch of
+              other papers and their findings. SLRs are supposed to be the
+              go-to reference for anyone starting work in a field — which
+              is exactly why missing citations matters.{" "}
+              <Link
+                href="/about"
+                className="text-[var(--color-accent)] underline-offset-2 hover:underline"
+              >
+                Why I built this →
+              </Link>
+            </p>
           </div>
         </div>
       </section>
@@ -114,7 +156,7 @@ export default function HomePage() {
         >
           <div className="mx-auto max-w-5xl px-4 py-24 sm:px-6 sm:py-32">
             <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-accent)]">
-              The single strongest signal
+              The paper almost nobody cited
             </div>
             <ClipRevealH2
               className="mt-6 text-balance text-4xl tracking-tight text-[var(--color-text)] sm:text-5xl md:text-6xl lg:text-7xl"
@@ -143,9 +185,11 @@ export default function HomePage() {
                   "'Iowan Old Style', 'Iowan', 'Palatino', Georgia, serif",
               }}
             >
-              Cited by {mostCitedRefCount} of {stats.slrCount} reviews (
-              {mostCitedSlrPct.toFixed(1)}%). The strongest single-paper
-              signal in the dataset. Everything else trails by half.
+              This is the most-cited paper on the entire required-reading
+              list. Cited by {mostCitedRefCount} of {stats.slrCount}{" "}
+              published SLRs ({mostCitedSlrPct.toFixed(1)}%). Every other
+              paper trails by half — meaning even the strongest signal in
+              the field is one most SLRs ignore.
             </p>
             <Link
               href={`/papers/${encodeURIComponent(mostCitedTop.paper_key)}`}
@@ -163,7 +207,7 @@ export default function HomePage() {
           <div className="grid grid-cols-12 gap-10">
             <div className="col-span-12 lg:col-span-5">
               <h2 className="text-3xl font-semibold leading-tight tracking-tight text-[var(--color-text)] sm:text-4xl">
-                Most reviews miss most of the field.
+                Most SLRs fail the assignment.
               </h2>
               <p
                 className="mt-5 max-w-md text-base leading-relaxed text-[var(--color-text-muted)]"
@@ -172,20 +216,22 @@ export default function HomePage() {
                     "'Iowan Old Style', 'Iowan', 'Palatino', Georgia, serif",
                 }}
               >
-                Each bar groups reviews by how much of the canonical 50
-                they cite. Median sits at{" "}
+                Each bar groups SLRs by how much of the{" "}
+                {stats.topCount}-paper required-reading list they actually
+                cited. The middle SLR lands at{" "}
                 <span className="text-[var(--color-text)]">
                   {stats.medianCoveragePct.toFixed(1)}%
                 </span>
-                . The best review reaches{" "}
+                . The best SLR reaches{" "}
                 <Link
                   href={`/slrs/${encodeURIComponent(best?.slr_id ?? "")}`}
                   className="text-[var(--color-accent)] underline-offset-2 hover:underline"
                 >
                   {best?.coverage_pct.toFixed(1)}%
                 </Link>
-                ; <span className="text-[var(--color-miss)]">{worstZero}</span>{" "}
-                land at zero.
+                .{" "}
+                <span className="text-[var(--color-miss)]">{worstZero}</span>{" "}
+                cite none of it.
               </p>
             </div>
             <div className="col-span-12 lg:col-span-7">
@@ -200,9 +246,15 @@ export default function HomePage() {
       {/* FULL TABLE */}
       <section className="border-b border-[var(--color-border)]">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-          <h2 className="mb-8 text-3xl font-semibold leading-tight tracking-tight text-[var(--color-text)] sm:text-4xl">
-            All {stats.slrCount} SLRs
+          <h2 className="mb-2 text-3xl font-semibold leading-tight tracking-tight text-[var(--color-text)] sm:text-4xl">
+            Every SLR, ranked.
           </h2>
+          <p className="mb-8 max-w-2xl text-sm text-[var(--color-text-muted)]">
+            All {stats.slrCount} published SLRs. Click any row to see
+            exactly which required readings it cited and which it skipped.{" "}
+            <em>Grade</em> = % of the {stats.topCount}-paper required-reading
+            list this SLR cited (year-controlled).
+          </p>
           <SLRTable rows={overlap} ranks={ranksLookup} />
         </div>
       </section>
@@ -216,7 +268,7 @@ export default function HomePage() {
                 What this is
               </div>
               <h2 className="mt-3 max-w-2xl text-balance text-3xl font-semibold leading-tight tracking-tight text-[var(--color-text)] sm:text-4xl">
-                A coursework audit of how literature reviews cite the field they review.
+                Grading literature reviews on whether they cited the field they claim to review.
               </h2>
               <p
                 className="mt-5 max-w-2xl text-base leading-relaxed text-[var(--color-text-muted)]"
@@ -225,14 +277,14 @@ export default function HomePage() {
                     "'Iowan Old Style', 'Iowan', 'Palatino', Georgia, serif",
                 }}
               >
-                A six-step Python pipeline pulls every paper cited by every
-                published literature review in the technical-debt subfield,
-                lines them up against the {stats.topCount} most-cited
-                papers in the same area on Semantic Scholar, keeps only
-                papers that came out before each review, and reports how
-                much overlap there is. Built with a stable join key
-                (DOI → Semantic Scholar id → title) and a five-part
-                ranker. This site is the UI.
+                Coursework project. A six-step Python pipeline pulls every
+                paper cited by every published SLR in the technical-debt
+                subfield, lines them up against the {stats.topCount}{" "}
+                most-cited papers in the same area on Semantic Scholar,
+                keeps only papers that came out before each SLR, and
+                reports how much overlap there is. Then a five-part ranker
+                scores each SLR on coverage, topic fit, citation authority,
+                venue diversity, and an AI judge. This site is the UI.
               </p>
             </div>
             <div className="col-span-12 lg:col-span-5">

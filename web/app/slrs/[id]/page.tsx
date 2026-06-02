@@ -6,6 +6,7 @@ import {
   getTopCited,
   getMissedPairs,
   getRankFor,
+  getRanked,
 } from "@/lib/data";
 import { SLRDetail } from "@/components/slr-detail";
 
@@ -31,6 +32,7 @@ export default async function SLRDetailPage({ params }: Params) {
 
   const missedPairs = getMissedPairs().filter((m) => m.slr_id === id);
   const rank = getRankFor(id);
+  const rankTotal = getRanked().length;
 
   return (
     <SLRDetail
@@ -48,6 +50,7 @@ export default async function SLRDetailPage({ params }: Params) {
       missedFromTop={missedFromTop}
       missedPairs={missedPairs}
       rank={rank}
+      rankTotal={rankTotal}
     />
   );
 }

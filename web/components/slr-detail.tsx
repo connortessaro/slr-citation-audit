@@ -22,6 +22,7 @@ interface Props {
   missedFromTop: Paper[];
   missedPairs: MissedPairRow[];
   rank: RankRow | null;
+  rankTotal: number;
 }
 
 type Tab = "hits" | "missed" | "refs";
@@ -97,13 +98,24 @@ export function SLRDetail({
   hitsList,
   missedFromTop,
   rank,
+  rankTotal,
 }: Props) {
   const [tab, setTab] = useState<Tab>("hits");
 
   const tabs: { key: Tab; label: string; count: number; tone?: string }[] = [
-    { key: "hits", label: "Hits", count: hits, tone: "var(--color-accent)" },
-    { key: "missed", label: "Missed from top-50", count: misses, tone: "var(--color-miss)" },
-    { key: "refs", label: "All references", count: refs.length },
+    {
+      key: "hits",
+      label: "Cited from required list",
+      count: hits,
+      tone: "var(--color-accent)",
+    },
+    {
+      key: "missed",
+      label: "Skipped from required list",
+      count: misses,
+      tone: "var(--color-miss)",
+    },
+    { key: "refs", label: "Full bibliography", count: refs.length },
   ];
 
   const list =
@@ -183,7 +195,7 @@ export function SLRDetail({
       {/* Rank breakdown */}
       {rank && (
         <div className="mt-10">
-          <RankBreakdown row={rank} />
+          <RankBreakdown row={rank} total={rankTotal} />
         </div>
       )}
 

@@ -81,7 +81,7 @@ export interface ComparePair {
   shared: number;
   uniqueA: number;
   uniqueB: number;
-  jaccard: number;    // 0–1
+  jaccard: number;    // 0-1
 }
 
 let _pairs: ComparePair[] | null = null;

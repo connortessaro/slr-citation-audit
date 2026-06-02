@@ -44,7 +44,7 @@ export interface OverlapRow {
   eligible_top_n: number;
   hits: number;
   misses: number;
-  coverage_pct: number;     // 0–100 (NOT 0–1)
+  coverage_pct: number;     // 0-100 (NOT 0-1)
 }
 
 export interface TopCitedPaper extends Paper {
@@ -298,7 +298,7 @@ export interface OverviewStats {
   slrCount: number;
   topCount: number;
   slrsWithRefs: number;
-  meanCoveragePct: number;     // already 0–100
+  meanCoveragePct: number;     // already 0-100
   medianCoveragePct: number;
   zeroCoverage: number;
   totalRefs: number;

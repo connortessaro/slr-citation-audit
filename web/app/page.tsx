@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CssAurora } from "@/components/css-aurora";
 import { BigStat } from "@/components/big-stat";
 import { ClipRevealH2 } from "@/components/clip-reveal-h2";
+import { FadeIn } from "@/components/fade-in";
 import { CoverageHistogram } from "@/components/coverage-histogram";
 import { SLRTable } from "@/components/slr-table";
 import { RouteIndex } from "@/components/route-index";
@@ -62,18 +63,20 @@ export default function HomePage() {
 
           <div className="col-span-12 mt-10 lg:col-span-8">
             <BigStat value={stats.meanCoveragePct / 100} format="pct" />
-            <p
-              className="mt-8 max-w-xl text-pretty text-lg leading-relaxed text-[var(--color-text-muted)]"
-              style={{
-                fontFamily:
-                  "'Iowan Old Style', 'Iowan', 'Palatino', Georgia, serif",
-              }}
-            >
-              {stats.slrCount} published reviews, {stats.topCount} canonical
-              papers, year-matched. Half the field cites less than{" "}
-              {stats.medianCoveragePct.toFixed(1)}% of it. {worstZero} cite
-              zero.
-            </p>
+            <FadeIn delay={0.7}>
+              <p
+                className="mt-8 max-w-xl text-pretty text-lg leading-relaxed text-[var(--color-text-muted)]"
+                style={{
+                  fontFamily:
+                    "'Iowan Old Style', 'Iowan', 'Palatino', Georgia, serif",
+                }}
+              >
+                {stats.slrCount} published reviews, {stats.topCount} canonical
+                papers, year-matched. Half the field cites less than{" "}
+                {stats.medianCoveragePct.toFixed(1)}% of it. {worstZero} cite
+                zero.
+              </p>
+            </FadeIn>
           </div>
 
           <div className="col-span-12 mt-2 grid grid-cols-3 gap-4 self-end lg:col-span-4 lg:grid-cols-1 lg:gap-6">

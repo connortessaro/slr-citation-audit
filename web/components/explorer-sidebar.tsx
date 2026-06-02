@@ -23,6 +23,12 @@ export function ExplorerSidebar({ basePath, items, placeholder = "Filter…" }: 
   const pathname = usePathname();
   const [q, setQ] = useState("");
 
+  // On a detail route (/slrs/<id> or /papers/<id>) the layout stacks the
+  // sidebar above the detail pane below `lg`. Phones can't fit both, so we
+  // hide the sidebar on the detail route and show "← back" inside the detail
+  // header instead. On the index route we always show the sidebar.
+  const isDetail = pathname !== basePath && pathname.startsWith(`${basePath}/`);
+
   const filtered = useMemo(() => {
     const needle = q.trim().toLowerCase();
     if (!needle) return items;
@@ -35,14 +41,24 @@ export function ExplorerSidebar({ basePath, items, placeholder = "Filter…" }: 
   }, [items, q]);
 
   return (
-    <aside className="flex h-[calc(100vh-3.5rem-1px)] flex-col border-r border-[var(--color-border)] bg-[var(--color-bg-elevated)]/50">
+    <aside
+      aria-label="Index"
+      className={cn(
+        "flex flex-col border-b border-[var(--color-border)] bg-[var(--color-bg-elevated)]/50 lg:h-[calc(100vh-3.5rem-1px)] lg:max-h-none lg:border-b-0 lg:border-r",
+        // Below lg: collapse to ~50vh so detail pane is reachable below.
+        "max-h-[60vh]",
+        // Below lg on a detail page: hide so the detail owns the viewport.
+        isDetail && "hidden lg:flex",
+      )}
+    >
       <div className="border-b border-[var(--color-border)] p-3">
         <input
           type="search"
+          aria-label={placeholder}
           placeholder={placeholder}
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          className="w-full rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-2.5 py-1.5 text-xs placeholder:text-[var(--color-text-faint)] focus:border-[var(--color-accent)] focus:outline-none"
+          className="w-full rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-2.5 py-2 text-sm placeholder:text-[var(--color-text-faint)] focus:border-[var(--color-accent)] focus:outline-none sm:py-1.5 sm:text-xs"
         />
         <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.08em] text-[var(--color-text-subtle)]">
           {filtered.length} of {items.length}
@@ -56,6 +72,7 @@ export function ExplorerSidebar({ basePath, items, placeholder = "Filter…" }: 
             <Link
               key={it.id}
               href={href}
+              aria-current={active ? "page" : undefined}
               className={cn(
                 "block rounded-md px-3 py-2 transition-colors",
                 active

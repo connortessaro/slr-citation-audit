@@ -6,6 +6,12 @@ import unicodedata
 
 _DOI_PREFIX_PATTERN = re.compile(r"^(?:https?://(?:dx\.)?doi\.org/|doi:)", re.IGNORECASE)
 _NON_ALNUM = re.compile(r"[^a-z0-9]+")
+_KEY_FS_SAFE = re.compile(r"[^a-zA-Z0-9._-]+")
+
+
+def safe_filename(key: str, max_len: int = 200) -> str:
+    """Filesystem-safe slug for a paper_key. Used by cache layers under data/raw/."""
+    return _KEY_FS_SAFE.sub("_", key)[:max_len]
 
 
 def normalize_doi(doi: str | None) -> str | None:

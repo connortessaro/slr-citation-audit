@@ -5,3 +5,10 @@ ratelimit>=2.2
 tqdm>=4.66
 semanticscholar>=0.7
 bibtexparser>=1.4
+# Stage 06_rank (citation-quality ranking)
+sentence-transformers>=3.0
+networkx>=3.2
+openai>=1.40
+pymupdf>=1.24
+pydantic>=2.0
+numpy>=1.26

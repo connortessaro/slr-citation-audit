@@ -30,7 +30,13 @@ export function CoverageHistogram({ bins, counts, height = 200 }: Props) {
           const h = (c / max) * 100;
           const isActive = c > 0;
           return (
-            <div key={i} className="group relative flex-1">
+            <div
+              key={i}
+              className="group relative flex h-full flex-1 flex-col justify-end"
+            >
+              <div className="text-center font-mono text-[10px] text-[var(--color-text-subtle)] tabular-nums">
+                {c > 0 ? c : ""}
+              </div>
               <motion.div
                 initial={{ height: 0 }}
                 animate={{ height: `${h}%` }}
@@ -41,15 +47,11 @@ export function CoverageHistogram({ bins, counts, height = 200 }: Props) {
                 }}
                 className={
                   isActive
-                    ? "rounded-t-sm bg-[var(--color-accent)]/80 transition-colors group-hover:bg-[var(--color-accent)]"
-                    : "rounded-t-sm bg-[var(--color-border-strong)] transition-colors group-hover:bg-[var(--color-text-faint)]"
+                    ? "mt-1 rounded-t-sm bg-[var(--color-accent)]/80 transition-colors group-hover:bg-[var(--color-accent)]"
+                    : "mt-1 rounded-t-sm bg-[var(--color-border-strong)] transition-colors group-hover:bg-[var(--color-text-faint)]"
                 }
                 style={{ minHeight: c > 0 ? 4 : 1 }}
-              >
-                <div className="-mt-5 text-center font-mono text-[10px] text-[var(--color-text-subtle)]">
-                  {c > 0 ? c : ""}
-                </div>
-              </motion.div>
+              />
               <div className="pointer-events-none absolute left-1/2 top-full mt-1 -translate-x-1/2 whitespace-nowrap font-mono text-[10px] text-[var(--color-text-faint)] opacity-0 group-hover:opacity-100">
                 {labels[i]}
               </div>

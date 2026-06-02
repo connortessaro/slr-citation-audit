@@ -2,11 +2,19 @@
  * Load pipeline outputs and build indexes for the overlap explorer.
  */
 
-const DATA_PATHS = {
+export const DATA_PATHS = {
   corpus: "/data/processed/ss/slr_corpus.json",
   refs: "/data/processed/ss/slr_references.json",
-  topCited: "/data/processed/top_cited_techdebt.json",
-  overlap: "/data/processed/ss/overlap_matrix.csv",
+  top50: "/data/processed/top_cited_techdebt.json",
+  top100: "/data/processed/top_cited_techdebt_top100.json",
+  meta: "/data/processed/top_cited_techdebt_meta.json",
+  methodsDoc: "/docs/research_paper_methods_snapshot.md",
+};
+
+export const DEFAULT_SETTINGS = {
+  benchmarkSize: 50,
+  cohort: "all",
+  topPass: "all",
 };
 
 export function filterByYear(topCited, cutoffYear) {
@@ -16,6 +24,14 @@ export function filterByYear(topCited, cutoffYear) {
     if (p.year == null) return false;
     return Number(p.year) <= y;
   });
+}
+
+export function cohortMatch(slrYear, cohort) {
+  if (cohort === "all" || slrYear == null || slrYear === "") return true;
+  const y = Number(slrYear);
+  if (cohort === "2015-2019") return y >= 2015 && y <= 2019;
+  if (cohort === "2020+") return y >= 2020;
+  return true;
 }
 
 function parseCsv(text) {
@@ -62,78 +78,102 @@ async function fetchJson(path, label, onProgress) {
   return res.json();
 }
 
-export async function loadExplorerData(onProgress) {
+export async function loadExplorerBase(onProgress) {
   onProgress?.("Fetching pipeline data…");
-  const [corpus, refsBySlr, topCited, overlapText] = await Promise.all([
+  const [corpus, refsBySlr, top50, top100, meta] = await Promise.all([
     fetchJson(DATA_PATHS.corpus, "SLR corpus", onProgress),
     fetchJson(DATA_PATHS.refs, "reference lists", onProgress),
-    fetchJson(DATA_PATHS.topCited, "top-cited corpus", onProgress),
-    (async () => {
-      onProgress?.("Loading overlap matrix…");
-      const res = await fetch(DATA_PATHS.overlap);
-      if (!res.ok) throw new Error(`Failed to load overlap: ${res.status} ${res.statusText}`);
-      return res.text();
-    })(),
+    fetchJson(DATA_PATHS.top50, "top-cited (50)", onProgress),
+    fetchJson(DATA_PATHS.top100, "top-cited (100)", onProgress),
+    fetchJson(DATA_PATHS.meta, "top-cited meta", onProgress).catch(() => null),
   ]);
 
-  onProgress?.("Building indexes…");
-  const overlapRows = parseCsv(overlapText);
-  return buildModel(corpus, refsBySlr, topCited, overlapRows);
+  return { corpus, refsBySlr, top50, top100, meta };
+}
+
+/** @deprecated use loadExplorerBase + buildModel */
+export async function loadExplorerData(onProgress) {
+  const base = await loadExplorerBase(onProgress);
+  return buildModel(base, DEFAULT_SETTINGS);
 }
 
 function slrKey(slr) {
   return slr._paper_key || slr.paper_key;
 }
 
-export function buildModel(corpus, refsBySlr, topCited, overlapRows) {
+function filterTopByPass(topCited, topPass) {
+  if (topPass === "all") return topCited;
+  return topCited.filter((p) => p._pass === topPass);
+}
+
+function computeCohortSummary(slrs) {
+  const buckets = [
+    { id: "2015-2019", label: "2015–2019", lo: 2015, hi: 2019 },
+    { id: "2020+", label: "2020+", lo: 2020, hi: 2099 },
+  ];
+  return buckets.map((b) => {
+    const subset = slrs.filter((s) => {
+      const y = s.slr.year;
+      return y != null && Number(y) >= b.lo && Number(y) <= b.hi;
+    });
+    const cov = subset.map((s) => s.coveragePct).filter((v) => Number.isFinite(v));
+    const mean = cov.length ? cov.reduce((a, v) => a + v, 0) / cov.length : null;
+    const sorted = [...cov].sort((a, x) => a - x);
+    const median = sorted.length
+      ? sorted.length % 2
+        ? sorted[Math.floor(sorted.length / 2)]
+        : (sorted[sorted.length / 2 - 1] + sorted[sorted.length / 2]) / 2
+      : null;
+    return {
+      ...b,
+      n: subset.length,
+      meanCoverage: mean,
+      medianCoverage: median,
+    };
+  });
+}
+
+export function buildModel(base, settings = DEFAULT_SETTINGS) {
+  const benchmarkSize = settings.benchmarkSize === 100 ? 100 : 50;
+  const topCitedRaw = benchmarkSize === 100 ? base.top100 : base.top50;
+  const topCited = filterTopByPass(topCitedRaw, settings.topPass || "all");
+
   const topByKey = new Map();
   for (const p of topCited) {
     const k = p._paper_key;
     if (k) topByKey.set(k, p);
   }
 
-  const overlapBySlr = new Map();
-  for (const row of overlapRows) {
-    overlapBySlr.set(row.slr_id, {
-      ...row,
-      coverage_pct: row.coverage_pct === "" ? null : Number(row.coverage_pct),
-      n_refs: Number(row.n_refs),
-      eligible_top_n: Number(row.eligible_top_n),
-      hits: Number(row.hits),
-      misses: Number(row.misses),
-    });
-  }
+  const allSlrs = base.corpus
+    .map((slr) => {
+      const key = slrKey(slr);
+      const refs = base.refsBySlr[key] || [];
+      const refKeys = new Set(refs.map((r) => r.paper_key).filter(Boolean));
+      const eligible = filterByYear(topCited, slr.year);
+      const eligibleHits = [];
+      const eligibleMisses = [];
+      for (const p of eligible) {
+        const pk = p._paper_key;
+        if (refKeys.has(pk)) eligibleHits.push(p);
+        else eligibleMisses.push(p);
+      }
+      const computedCoverage = eligible.length ? (eligibleHits.length / eligible.length) * 100 : null;
+      return {
+        key,
+        slr,
+        refs,
+        refKeys,
+        refCount: refKeys.size,
+        eligible,
+        eligibleHits,
+        eligibleMisses,
+        overlap: {},
+        coveragePct: computedCoverage,
+      };
+    })
+    .filter((s) => s.refCount > 0);
 
-  const slrs = corpus.map((slr) => {
-    const key = slrKey(slr);
-    const refs = refsBySlr[key] || [];
-    const refKeys = new Set(refs.map((r) => r.paper_key).filter(Boolean));
-    const eligible = filterByYear(topCited, slr.year);
-    const eligibleHits = [];
-    const eligibleMisses = [];
-    for (const p of eligible) {
-      const pk = p._paper_key;
-      if (refKeys.has(pk)) eligibleHits.push(p);
-      else eligibleMisses.push(p);
-    }
-    const ov = overlapBySlr.get(key) || {};
-    const computedCoverage = eligible.length ? (eligibleHits.length / eligible.length) * 100 : null;
-    const fromOverlap = ov.coverage_pct;
-    const coveragePct = Number.isFinite(fromOverlap) ? fromOverlap : computedCoverage;
-    return {
-      key,
-      slr,
-      refs,
-      refKeys,
-      refCount: refKeys.size,
-      eligible,
-      eligibleHits,
-      eligibleMisses,
-      overlap: ov,
-      coveragePct,
-    };
-  });
-
+  const slrs = allSlrs.filter((s) => cohortMatch(s.slr.year, settings.cohort));
   slrs.sort((a, b) => (b.coveragePct ?? -1) - (a.coveragePct ?? -1));
 
   for (const s of slrs) {
@@ -165,20 +205,54 @@ export function buildModel(corpus, refsBySlr, topCited, overlapRows) {
   const consensusPapers = buildSlrCitedConsensus(slrs, topByKey);
   const pairwiseOverlaps = buildPairwiseOverlaps(slrs);
 
+  const covVals = slrs.map((s) => s.coveragePct).filter((v) => Number.isFinite(v));
   const summary = {
     slrCount: slrs.length,
+    slrCountAll: allSlrs.length,
     topCount: topCited.length,
+    benchmarkSize,
+    cohort: settings.cohort,
+    topPass: settings.topPass,
     withRefs: slrs.filter((s) => s.refCount > 0).length,
-    meanCoverage:
-      slrs.filter((s) => Number.isFinite(s.coveragePct)).reduce((a, s) => a + s.coveragePct, 0) /
-        (slrs.filter((s) => Number.isFinite(s.coveragePct)).length || 1),
-    medianCoverage: median(slrs.map((s) => s.coveragePct).filter((v) => Number.isFinite(v))),
+    meanCoverage: covVals.length ? covVals.reduce((a, v) => a + v, 0) / covVals.length : 0,
+    medianCoverage: median(covVals),
     zeroCoverage: slrs.filter((s) => s.coveragePct === 0).length,
     uniqueCitedPapers: consensusPapers.length,
     maxConsensusCites: consensusPapers[0]?.citingCount ?? 0,
+    cohortStats: computeCohortSummary(allSlrs),
   };
 
-  return { slrs, topPapers, topCited, topByKey, consensusPapers, pairwiseOverlaps, summary };
+  const metaPrimary = base.meta?.primary ?? null;
+  const settingsLabel = describeSettings(settings, metaPrimary);
+
+  return {
+    slrs,
+    allSlrs,
+    topPapers,
+    topCited,
+    topByKey,
+    consensusPapers,
+    pairwiseOverlaps,
+    summary,
+    meta: base.meta,
+    settings,
+    settingsLabel,
+  };
+}
+
+export function describeSettings(settings, metaPrimary) {
+  const n = settings.benchmarkSize === 100 ? 100 : 50;
+  const half = n / 2;
+  const cut = metaPrimary?.cutoff_year_inclusive_established ?? "≤ as_of−4";
+  let label = `Top ${n} two-pass · ${half} established (${cut}) + ${half} recent`;
+  if (settings.topPass && settings.topPass !== "all") {
+    label += ` · pass=${settings.topPass}`;
+  }
+  if (settings.cohort && settings.cohort !== "all") {
+    label += ` · SLRs ${settings.cohort}`;
+  }
+  label += " · date-controlled coverage";
+  return label;
 }
 
 /** Papers cited by SLRs, ranked by how many SLRs cite each (consensus bibliography). */
@@ -197,7 +271,7 @@ export function buildSlrCitedConsensus(slrs, topByKey) {
           key: pk,
           ref,
           citingSlrs: [],
-          inTop50: Boolean(topPaper),
+          inTopBenchmark: Boolean(topPaper),
           topRank: topPaper?._rank ?? null,
         };
         byKey.set(pk, entry);
@@ -282,4 +356,64 @@ function median(vals) {
   const s = [...vals].sort((a, b) => a - b);
   const m = Math.floor(s.length / 2);
   return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
+}
+
+/** Minimal markdown → HTML for Methods tab */
+export function renderMethodsHtml(markdown) {
+  const lines = markdown.split("\n");
+  const parts = [];
+  let inTable = false;
+  let tableRows = [];
+
+  function flushTable() {
+    if (!tableRows.length) return;
+    const [head, ...body] = tableRows;
+    const cells = (row) => row.split("|").slice(1, -1).map((c) => c.trim());
+    parts.push("<table class='methods-table'><thead><tr>");
+    cells(head).forEach((h) => {
+      parts.push(`<th>${escapeHtml(h)}</th>`);
+    });
+    parts.push("</tr></thead><tbody>");
+    body.forEach((row) => {
+      if (/^[\s|:-]+$/.test(row)) return;
+      parts.push("<tr>");
+      cells(row).forEach((c) => {
+        parts.push(`<td>${escapeHtml(c)}</td>`);
+      });
+      parts.push("</tr>");
+    });
+    parts.push("</tbody></table>");
+    tableRows = [];
+    inTable = false;
+  }
+
+  for (const line of lines) {
+    if (line.startsWith("|")) {
+      inTable = true;
+      tableRows.push(line);
+      continue;
+    }
+    if (inTable) flushTable();
+    if (line.startsWith("## ")) {
+      parts.push(`<h2>${escapeHtml(line.slice(3))}</h2>`);
+    } else if (line.startsWith("### ")) {
+      parts.push(`<h3>${escapeHtml(line.slice(4))}</h3>`);
+    } else if (line.startsWith("- ")) {
+      parts.push(`<li>${escapeHtml(line.slice(2))}</li>`);
+    } else if (line.trim() === "---") {
+      parts.push("<hr />");
+    } else if (line.trim()) {
+      parts.push(`<p>${escapeHtml(line)}</p>`);
+    }
+  }
+  if (inTable) flushTable();
+  return parts.join("\n");
+}
+
+function escapeHtml(s) {
+  return String(s)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 }

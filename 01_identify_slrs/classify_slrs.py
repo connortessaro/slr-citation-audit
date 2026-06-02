@@ -24,6 +24,7 @@ from typing import Iterable
 from lib.config import REPO_ROOT, load as load_config
 from lib.paperid import dedup_by_key, paper_key
 from lib.paths import Source, SourcePaths
+from lib.slr_labels import infer_study_type, matches_review_label
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -50,17 +51,15 @@ def _classify(
     if not any(k in text for k in keywords):
         return "EXCLUDE", "subfield keywords not in title or abstract", None
 
-    if not any(p in title for p in slr_patterns):
-        # Allow self-label in abstract only if abstract is present and clear.
-        if not any(p in abstract for p in slr_patterns):
-            return "EXCLUDE", "no SLR/SMS self-label in title or abstract", None
+    if not matches_review_label(paper.get("title"), paper.get("abstract"), slr_patterns):
+        return "EXCLUDE", "no secondary-study self-label in title or abstract", None
 
     year = paper.get("year")
     if year is None or not (year_min <= year <= year_max):
         return "EXCLUDE", f"year {year} outside [{year_min},{year_max}]", None
 
-    paper_type = "sms" if "mapping" in title else "slr"
-    return "INCLUDE", "SLR/SMS self-label + subfield fit", paper_type
+    paper_type = infer_study_type(paper.get("title"))
+    return "INCLUDE", "secondary-study self-label + subfield fit", paper_type
 
 
 def _load_existing_overrides(path: Path) -> dict[str, str]:

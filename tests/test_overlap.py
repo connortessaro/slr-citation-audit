@@ -94,6 +94,24 @@ class TestCompute:
 
 
 class TestRun:
+    def test_excludes_slrs_with_no_references(self, tmp_path: Path):
+        corpus_path = tmp_path / "corpus.json"
+        refs_path = tmp_path / "refs.json"
+        top_path = tmp_path / "top.json"
+        overlap_path = tmp_path / "overlap.csv"
+        missed_path = tmp_path / "missed.csv"
+
+        corpus_path.write_text(json.dumps([_slr("with_refs", 2018), _slr("no_refs", 2019)]))
+        refs_path.write_text(json.dumps({"with_refs": [_ref("p1")], "no_refs": []}))
+        top_path.write_text(json.dumps([_top_cited("p1", 2010, 100, 1)]))
+
+        co.run(corpus_path, refs_path, top_path, overlap_path, missed_path)
+
+        with overlap_path.open() as f:
+            overlap = list(csv.DictReader(f))
+        assert len(overlap) == 1
+        assert overlap[0]["slr_id"] == "with_refs"
+
     def test_writes_both_csvs(self, tmp_path: Path):
         corpus_path = tmp_path / "corpus.json"
         refs_path = tmp_path / "refs.json"

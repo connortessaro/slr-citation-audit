@@ -14,7 +14,7 @@ This rubric is applied by the assistant (no user review step). Decisions and per
 ## Inclusion criteria (ALL must hold)
 
 1. **Subfield fit:** title, abstract, or keywords mention "technical debt", "code debt", "design debt", or "architectural debt", and the paper is *about* technical debt as the primary topic (not a paper that merely cites the term in passing).
-2. **Methodology:** the paper explicitly identifies itself as a "systematic literature review", "systematic review", or "systematic mapping" in title or abstract, AND describes a search protocol (databases queried, search strings, inclusion/exclusion criteria).
+2. **Study type (automated):** title or abstract matches a pattern in `config/subfield.yaml` `slr_title_patterns` (systematic review family, literature review, SLR, survey, scoping review, mapping study, tertiary review, meta-analysis, etc.). See `docs/slr_identification_gates.md` for the widened list and rationale. **Note:** the pipeline does not require protocol keywords in the abstract for auto-inclusion (narrative surveys may pass if they self-label as a survey/review and mention technical debt).
 3. **Year:** publication year within `config/subfield.yaml` `year_min`–`year_max`.
 4. **Venue type:** peer-reviewed conference, journal, or workshop. Theses, technical reports, and preprints excluded unless cited heavily (≥50 citations on Semantic Scholar) — record in justification.
 5. **Language:** English. Non-English studies excluded and noted in limitations.
@@ -23,7 +23,7 @@ This rubric is applied by the assistant (no user review step). Decisions and per
 
 | Title pattern | Decision | Reason |
 |--------------|----------|--------|
-| "A Survey of …" with no documented protocol | EXCLUDE | Narrative survey |
+| "A Survey of …" with TD focus | INCLUDE (type=survey) | Wider self-label gate; may lack strict protocol |
 | "Technical Debt: An Overview" | EXCLUDE | Editorial / opinion |
 | "A Systematic Literature Review of Refactoring" | EXCLUDE | Wrong subfield |
 | "Systematic Mapping of Technical Debt Management" | INCLUDE | SMS, in scope |

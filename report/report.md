@@ -47,7 +47,7 @@ All candidates were deduplicated on a key derived from DOI, then Semantic Schola
 A candidate is included in the SLR corpus only if **all** of the following hold:
 
 1. The title or abstract mentions a subfield keyword (subfield fit).
-2. The title (or, exceptionally, the abstract) contains a systematic-review/mapping self-label.
+2. The title or abstract contains a secondary-study self-label (systematic review/mapping, literature review, SLR, survey, scoping review, mapping study, tertiary review, or meta-analysis — see `docs/slr_identification_gates.md`). This gate was widened in June 2026 so pre-2015 TD syntheses that omit the word *systematic* are not dropped solely for wording.
 3. Publication year falls in `[year_min, year_max]`.
 4. Venue is peer-reviewed (gray literature excluded unless heavily cited; documented).
 
@@ -55,11 +55,18 @@ Narrative surveys, editorials, tertiary reviews of unrelated topics, and any non
 
 ### 2.4 Reference extraction
 
-For each included SLR we queried Semantic Scholar's `/paper/{id}/references` endpoint, paginating until exhaustion. Each cited paper was normalised to a `(paper_key, title, year, venue, doi, citationCount, openAccessPdf)` record. Per-SLR results were cached so re-runs do not re-hit the API.
+For each included SLR we queried Semantic Scholar's `/paper/{id}/references` endpoint, paginating until exhaustion. Each cited paper was normalised to a `(paper_key, title, year, venue, doi, citationCount, openAccessPdf)` record. Per-SLR results were cached so re-runs do not re-hit the API. Where Semantic Scholar returned no references, we attempted Crossref backfill. SLRs that still had **no reference list** after backfill were **excluded** from the analysis corpus (overlap and coverage are undefined without bibliographies); exclusions are recorded in `data/manual/<source>/slr_decisions.csv` with reason `no reference list available (Semantic Scholar and Crossref)`.
 
 ### 2.5 Top-cited corpus construction
 
-The Semantic Scholar search API does not support "rank by citations" directly. We therefore issued a wide keyword search (limit = 1,000 per keyword), pooled the results, deduplicated by `paper_key`, filtered to papers whose title or abstract included a subfield keyword, then ranked locally by `citationCount` (descending). We took N = 50 as the primary top-cited corpus and additionally retained N = 100 as a robustness check.
+The Semantic Scholar search API does not support "rank by citations" directly. We therefore issued a wide keyword search (limit = 1,000 per keyword), pooled the results, deduplicated by `paper_key`, and filtered to papers whose title or abstract included a subfield keyword (see `data/manual/CLASSIFICATION.md`).
+
+To avoid a single lifetime-citation ranking favouring older papers, we used a **two-pass** benchmark (full detail in `docs/top_cited_methodology.md`):
+
+1. **Established pass** — papers with publication year ≤ `as_of_year − 4` (default: ≤ 2022 when `as_of_year = 2026`), ranked by Semantic Scholar `citationCount`, take 25.
+2. **Recent pass** — papers from the subsequent four calendar years, same ranking, take 25.
+
+The union (N = 50) is written to `top_cited_techdebt.json`; each record is tagged with `_pass` (`established` / `recent`). A parallel two-pass list with N = 100 supports robustness checks. Pool statistics are in `top_cited_techdebt_meta.json`.
 
 ### 2.6 Overlap computation with date controls
 
@@ -86,7 +93,7 @@ All analysis is implemented in Python and reproducible from the pipeline scripts
 
 We identified `{{n_slrs_raw}}` candidates across the three sources and `{{n_slrs}}` met the inclusion criteria after dedup and classification. The corpus spans `{{slr_year_min}}–{{slr_year_max}}` and includes both SLRs (n=`{{n_slr_type}}`) and systematic mapping studies (n=`{{n_sms_type}}`).
 
-**Semantic Scholar (SS) trimming update.** The SS discovery step intentionally over-collects a broad candidate pool. In the current SS-only run, the raw SS candidate file contained 8,417 records (8,417 unique after deduplication by `paper_key`). Applying the classification gates in §2.3 (subfield keyword fit; SLR/SMS self-label; and year bounds) reduced this to **74 included SLR/SMS papers** in the SS corpus (`data/processed/ss/slr_corpus.json`). The full exclusion audit trail (including per-paper reasons) is recorded in `data/manual/ss/slr_decisions.csv`.
+**Semantic Scholar (SS) trimming update.** The SS discovery step intentionally over-collects a broad candidate pool. In the current SS-only run, the raw SS candidate file contained 8,417 records (8,417 unique after deduplication by `paper_key`). Applying the classification gates in §2.3 (subfield keyword + widened secondary-study self-labels; see `docs/slr_identification_gates.md`) yielded **110** candidates; after reference extraction, Crossref backfill, and removal of SLRs with no bibliography (§2.4), **60** SLRs remain in `data/processed/ss/slr_corpus.json`. Most newly admitted titles at the classify stage lacked extractable reference lists. No pre-2015 paper in the SS pool both mentions technical debt and self-labels as a review under the widened patterns. The audit trail is in `data/manual/ss/slr_decisions.csv`.
 
 ### 3.2 Coverage of top-cited papers
 

@@ -46,6 +46,7 @@ def main() -> None:
         "fetch_references_crossref",
         "02_extract_refs/fetch_references_crossref.py",
     )
+    prune_slrs = _load_module("prune_empty_ref_slrs", "02_extract_refs/prune_empty_ref_slrs.py")
     top_cited = _load_module("fetch_top_cited", "03_top_cited/fetch_top_cited.py")
     overlap = _load_module("compute_overlap", "04_overlap/compute_overlap.py")
     gaps = _load_module("analyze_gaps", "05_explain_gaps/analyze_gaps.py")
@@ -74,6 +75,12 @@ def main() -> None:
                 f"{counts.get('empty', 0)} still empty,",
                 f"{counts.get('failed', 0)} failed",
             )
+        prune_stats = prune_slrs.run(source="ss")
+        print(
+            "Pruned SLRs with no references:",
+            f"{prune_stats['excluded']} excluded,",
+            f"{prune_stats['corpus_after']} retained",
+        )
 
     # Use the CLI-capable entrypoints for source routing (keeps defaults correct)
     if not args.skip_top:

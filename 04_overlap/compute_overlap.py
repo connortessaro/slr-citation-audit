@@ -32,6 +32,7 @@ from date_controls import filter_by_year  # noqa: E402
 from lib.config import REPO_ROOT  # noqa: E402
 from lib.paperid import paper_key  # noqa: E402
 from lib.paths import SourcePaths  # noqa: E402
+from lib.slr_refs import filter_corpus_with_refs, ref_keys  # noqa: E402
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -41,15 +42,6 @@ REFS_PATH = REPO_ROOT / "data" / "processed" / "slr_references.json"  # legacy d
 TOP_CITED_PATH = REPO_ROOT / "data" / "processed" / "top_cited_techdebt.json"
 OVERLAP_MATRIX_PATH = REPO_ROOT / "data" / "processed" / "overlap_matrix.csv"  # legacy default
 MISSED_PAIRS_PATH = REPO_ROOT / "data" / "processed" / "missed_pairs.csv"  # legacy default
-
-
-def _ref_keys(refs: list[dict]) -> set[str]:
-    keys: set[str] = set()
-    for ref in refs:
-        key = ref.get("paper_key") or paper_key(ref)
-        if key:
-            keys.add(key)
-    return keys
 
 
 def compute(
@@ -64,12 +56,12 @@ def compute(
         slr_key = slr.get("_paper_key") or paper_key(slr)
         slr_year = slr.get("year")
         refs = refs_by_slr.get(slr_key, [])
-        ref_keys = _ref_keys(refs)
+        cited_keys = ref_keys(refs)
         eligible = filter_by_year(top_cited, slr_year)
         eligible_keys = {p.get("_paper_key") or paper_key(p): p for p in eligible}
 
-        hits = [p for k, p in eligible_keys.items() if k in ref_keys]
-        misses = [p for k, p in eligible_keys.items() if k not in ref_keys]
+        hits = [p for k, p in eligible_keys.items() if k in cited_keys]
+        misses = [p for k, p in eligible_keys.items() if k not in cited_keys]
         eligible_n = len(eligible_keys)
         coverage = (len(hits) / eligible_n) if eligible_n else None
 
@@ -79,7 +71,7 @@ def compute(
             "slr_year": slr_year,
             "slr_venue": slr.get("venue"),
             "slr_type": slr.get("_classification_type"),
-            "n_refs": len(ref_keys),
+            "n_refs": len(cited_keys),
             "eligible_top_n": eligible_n,
             "hits": len(hits),
             "misses": len(misses),
@@ -124,6 +116,14 @@ def run(
     corpus = json.loads(corpus_path.read_text(encoding="utf-8"))
     refs_by_slr = json.loads(refs_path.read_text(encoding="utf-8"))
     top_cited = json.loads(top_cited_path.read_text(encoding="utf-8"))
+
+    corpus, excluded = filter_corpus_with_refs(corpus, refs_by_slr)
+    if excluded:
+        logger.info(
+            "Skipping %d SLRs with no references for overlap (of %d in corpus file)",
+            len(excluded),
+            len(corpus) + len(excluded),
+        )
 
     overlap_rows, missed_rows = compute(corpus, refs_by_slr, top_cited)
     _write_csv(overlap_path, overlap_rows, [

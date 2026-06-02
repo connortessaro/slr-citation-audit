@@ -32,6 +32,7 @@ class StubClient:
 def patched_run(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
     monkeypatch.setattr(ftc, "OUTPUT_PATH", tmp_path / "top.json")
     monkeypatch.setattr(ftc, "ROBUSTNESS_PATH", tmp_path / "top100.json")
+    monkeypatch.setattr(ftc, "META_PATH", tmp_path / "meta.json")
     return tmp_path
 
 
@@ -46,13 +47,49 @@ class TestSubfieldMatch:
         assert not ftc._subfield_match({"title": "Microservices", "abstract": ""}, ["technical debt"])
 
 
+class TestSplitEstablishedRecent:
+    def test_partition_by_cutoff(self):
+        papers = [
+            _paper("old", "Old", 2010, 10),
+            _paper("edge", "Edge", 2022, 20),
+            _paper("new", "New", 2023, 30),
+        ]
+        est, rec = ftc.split_established_recent(papers, as_of_year=2026, recent_years=4)
+        assert [p["paperId"] for p in est] == ["old", "edge"]
+        assert [p["paperId"] for p in rec] == ["new"]
+
+
+class TestTwoPassSelect:
+    def test_takes_half_from_each_pass(self):
+        pool = [
+            _paper("e1", "E1", 2015, 100, doi="10.1/e1"),
+            _paper("e2", "E2", 2010, 50, doi="10.1/e2"),
+            _paper("r1", "R1", 2023, 80, doi="10.1/r1"),
+            _paper("r2", "R2", 2024, 40, doi="10.1/r2"),
+        ]
+        top, meta = ftc.two_pass_select(pool, top_n=4, as_of_year=2026, recent_years=4)
+        assert len(top) == 4
+        assert [p["paperId"] for p in top[:2]] == ["e1", "e2"]
+        assert [p["paperId"] for p in top[2:]] == ["r1", "r2"]
+        assert top[0]["_pass"] == "established"
+        assert top[2]["_pass"] == "recent"
+        assert meta["established_selected"] == 2
+        assert meta["recent_selected"] == 2
+
+    def test_global_rank_is_sequential(self):
+        pool = [_paper("e1", "E1", 2015, 100, doi="10.1/e1"), _paper("r1", "R1", 2023, 80, doi="10.1/r1")]
+        top, _ = ftc.two_pass_select(pool, top_n=2, as_of_year=2026, recent_years=4)
+        assert [p["_rank"] for p in top] == [1, 2]
+
+
 class TestRun:
-    def test_ranks_by_citation_count_descending(self, patched_run: Path, monkeypatch: pytest.MonkeyPatch):
+    def test_two_pass_ranking(self, patched_run: Path, monkeypatch: pytest.MonkeyPatch):
         client = StubClient({
             "technical debt": [
-                _paper("a", "Paper A", 2010, 100, doi="10.1/a"),
-                _paper("b", "Paper B", 2012, 500, doi="10.1/b"),
-                _paper("c", "Paper C", 2015, 250, doi="10.1/c"),
+                _paper("old_high", "Old High", 2012, 500, doi="10.1/old"),
+                _paper("old_low", "Old Low", 2011, 100, doi="10.1/old2"),
+                _paper("new_high", "New High", 2023, 200, doi="10.1/new"),
+                _paper("new_low", "New Low", 2024, 50, doi="10.1/new2"),
             ],
             "design debt": [],
             "code debt": [],
@@ -60,10 +97,10 @@ class TestRun:
         })
         monkeypatch.setattr(ftc.SSClient, "from_config", classmethod(lambda cls: client))
 
-        top = ftc.run(top_n=3, robustness_n=3)
-        assert [p["paperId"] for p in top] == ["b", "c", "a"]
-        assert top[0]["_rank"] == 1
-        assert top[2]["_rank"] == 3
+        top = ftc.run(top_n=4, robustness_n=4)
+        assert [p["paperId"] for p in top] == ["old_high", "old_low", "new_high", "new_low"]
+        assert top[0]["_pass"] == "established"
+        assert top[2]["_pass"] == "recent"
 
     def test_dedups_across_keywords(self, patched_run: Path, monkeypatch: pytest.MonkeyPatch):
         shared = _paper("dup", "Shared Paper", 2015, 999, doi="10.1/dup")
@@ -74,7 +111,7 @@ class TestRun:
             "architectural debt": [],
         })
         monkeypatch.setattr(ftc.SSClient, "from_config", classmethod(lambda cls: client))
-        top = ftc.run(top_n=5)
+        top = ftc.run(top_n=2, robustness_n=2)
         ids = [p["paperId"] for p in top]
         assert ids.count("dup") == 1
         assert ids[0] == "dup"
@@ -89,11 +126,17 @@ class TestRun:
             "architectural debt": [],
         })
         monkeypatch.setattr(ftc.SSClient, "from_config", classmethod(lambda cls: client))
-        top = ftc.run(top_n=5)
+        top = ftc.run(top_n=5, robustness_n=5)
         assert [p["paperId"] for p in top] == ["on"]
 
-    def test_writes_top_and_robustness_files(self, patched_run: Path, monkeypatch: pytest.MonkeyPatch):
-        papers = [_paper(f"p{i}", f"Paper {i}", 2015, citations=i * 10, doi=f"10.1/p{i}") for i in range(120)]
+    def test_writes_top_robustness_and_meta(self, patched_run: Path, monkeypatch: pytest.MonkeyPatch):
+        papers = [
+            _paper(f"e{i}", f"Est {i}", 2010 + (i % 20), citations=1000 - i, doi=f"10.1/e{i}")
+            for i in range(60)
+        ] + [
+            _paper(f"r{i}", f"Rec {i}", 2023, citations=500 - i, doi=f"10.1/r{i}")
+            for i in range(60)
+        ]
         client = StubClient({
             "technical debt": papers,
             "design debt": [],
@@ -105,6 +148,9 @@ class TestRun:
 
         top_file = json.loads((patched_run / "top.json").read_text())
         robust_file = json.loads((patched_run / "top100.json").read_text())
+        meta = json.loads((patched_run / "meta.json").read_text())
         assert len(top_file) == 50
         assert len(robust_file) == 100
-        assert top_file[0]["citationCount"] >= top_file[-1]["citationCount"]
+        assert sum(1 for p in top_file if p["_pass"] == "established") == 25
+        assert sum(1 for p in top_file if p["_pass"] == "recent") == 25
+        assert meta["primary"]["method"] == "two_pass_citation_count"

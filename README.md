@@ -72,6 +72,7 @@ PYTHONPATH=. python 01_identify_slrs/classify_slrs.py --source ieee
 PYTHONPATH=. python 02_extract_refs/fetch_references.py --source ss
 # Crossref backfill for empty SS refs runs automatically in pipelines/ss/run.py (or standalone):
 PYTHONPATH=. python 02_extract_refs/fetch_references_crossref.py --source ss --merge
+PYTHONPATH=. python 02_extract_refs/prune_empty_ref_slrs.py --source ss
 PYTHONPATH=. python 02_extract_refs/fetch_references.py --source acm
 PYTHONPATH=. python 02_extract_refs/fetch_references.py --source ieee
 PYTHONPATH=. python 03_top_cited/fetch_top_cited.py
@@ -111,7 +112,7 @@ pytest -q
 |------|---------|
 | `01_identify_slrs/` | Find SLR candidates across ACM, IEEE, Semantic Scholar |
 | `02_extract_refs/` | Pull reference list for each SLR |
-| `03_top_cited/` | Identify top-50 cited papers in subfield |
+| `03_top_cited/` | Two-pass top-cited benchmark (Semantic Scholar) |
 | `04_overlap/` | Compute overlap with date controls |
 | `05_explain_gaps/` | Investigate gaps (venue, year, access) |
 | `data/raw/<source>/` | Per-source cached API JSON + exports |
@@ -125,8 +126,12 @@ pytest -q
 ## Method notes
 
 - **Citation source:** Semantic Scholar (single source; documented limitation).
-- **SLR classification:** manual review required (SLR vs general survey).
+- **Top-cited benchmark:** two-pass selection — half from papers older than four years (by `as_of_year`), half from the last four years, each half ranked by `citationCount`. See `docs/top_cited_methodology.md` and `config/subfield.yaml` (`top_cited:`).
+- **Paper snapshot:** `docs/research_paper_methods_snapshot.md` — methods, counts, and limitations for the write-up.
+- **Explorer:** `python tools/explorer/serve.py` — toggle top 50/100, SLR cohort, and benchmark pass live.
+- **SLR classification:** keyword + secondary-study self-label gates (`docs/slr_identification_gates.md`); optional manual overrides in `slr_decisions.csv`.
 - **Date control:** when comparing an SLR to top-cited list, top-cited is filtered to `pub_year ≤ SLR.pub_year`.
+- **No-reference SLRs:** excluded from `slr_corpus.json` after ref extraction (cannot score citation coverage without a bibliography).
 
 ## License
 

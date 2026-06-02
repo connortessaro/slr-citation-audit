@@ -31,6 +31,7 @@ def main() -> None:
     ieee_identify = _load_module("ieee_identify", "01_identify_slrs/search_ieee.py")
     classify = _load_module("classify_slrs", "01_identify_slrs/classify_slrs.py")
     fetch_refs = _load_module("fetch_references", "02_extract_refs/fetch_references.py")
+    prune_slrs = _load_module("prune_empty_ref_slrs", "02_extract_refs/prune_empty_ref_slrs.py")
     top_cited = _load_module("fetch_top_cited", "03_top_cited/fetch_top_cited.py")
     overlap = _load_module("compute_overlap", "04_overlap/compute_overlap.py")
     gaps = _load_module("analyze_gaps", "05_explain_gaps/analyze_gaps.py")
@@ -44,6 +45,7 @@ def main() -> None:
 
     if not args.skip_refs:
         fetch_refs.run(corpus_path=sp.corpus, output_path=sp.refs_out, cache_dir=sp.refs_cache)
+        prune_slrs.run(source="ieee")
     if not args.skip_top:
         top_cited.run()
 

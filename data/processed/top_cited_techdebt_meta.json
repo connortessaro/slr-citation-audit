@@ -1,0 +1,36 @@
+{
+  "primary": {
+    "as_of_year": 2026,
+    "backfill_count": 0,
+    "citation_source": "semantic_scholar",
+    "cutoff_year_inclusive_established": 2022,
+    "established_pool_size": 781,
+    "established_quota": 25,
+    "established_selected": 25,
+    "method": "two_pass_citation_count",
+    "pass_overlap_count": 0,
+    "pool_size": 958,
+    "recent_pool_size": 177,
+    "recent_quota": 25,
+    "recent_selected": 25,
+    "recent_years": 4,
+    "top_n": 50
+  },
+  "robustness": {
+    "as_of_year": 2026,
+    "backfill_count": 0,
+    "citation_source": "semantic_scholar",
+    "cutoff_year_inclusive_established": 2022,
+    "established_pool_size": 781,
+    "established_quota": 50,
+    "established_selected": 50,
+    "method": "two_pass_citation_count",
+    "pass_overlap_count": 0,
+    "pool_size": 958,
+    "recent_pool_size": 177,
+    "recent_quota": 50,
+    "recent_selected": 50,
+    "recent_years": 4,
+    "top_n": 100
+  }
+}

@@ -59,3 +59,30 @@ class TestConfigFromEnv:
         env_file.write_text("SLR_TITLE_PATTERNS=Systematic Review,Mapping Study\n", encoding="utf-8")
         cfg = Config.from_env(env_path=env_file, example_path=tmp_path / "absent.example")
         assert cfg.slr_title_patterns == ["systematic review", "mapping study"]
+
+
+class TestRankingConfigRegressions:
+    """Regressions found during /verify run of stage 06_rank."""
+
+    def test_empty_env_override_disables_fulltext(
+        self, tmp_path: Path, monkeypatch: pytest.MonkeyPatch, clean_env: None
+    ):
+        """`FULLTEXT_ENABLED=` in .env must mean False, not fall through to default."""
+        monkeypatch.delenv("FULLTEXT_ENABLED", raising=False)
+        env_file = tmp_path / ".env"
+        env_file.write_text("FULLTEXT_ENABLED=\n", encoding="utf-8")
+        cfg = Config.from_env(env_path=env_file, example_path=tmp_path / "absent.example")
+        assert cfg.fulltext_enabled is False
+
+    def test_malformed_rank_weights_logs_warning(
+        self, tmp_path: Path, monkeypatch: pytest.MonkeyPatch, clean_env: None, caplog
+    ):
+        """Wrong-length RANK_WEIGHTS must log a warning, not silently reset."""
+        monkeypatch.delenv("RANK_WEIGHTS", raising=False)
+        env_file = tmp_path / ".env"
+        env_file.write_text("RANK_WEIGHTS=0.5,0.5\n", encoding="utf-8")
+        with caplog.at_level("WARNING", logger="lib.config"):
+            cfg = Config.from_env(env_path=env_file, example_path=tmp_path / "absent.example")
+        assert cfg.rank_weights == (0.2, 0.2, 0.2, 0.2, 0.2)
+        assert any("RANK_WEIGHTS" in rec.message for rec in caplog.records), \
+            f"expected RANK_WEIGHTS warning, got: {[r.message for r in caplog.records]}"

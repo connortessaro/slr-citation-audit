@@ -103,3 +103,4 @@ Smoke tests in `web/tests/`:
 - Pipeline changes (Python untouched)
 - Old `tools/explorer/` deletion — keep until new is shipped, then remove in final phase
 
+

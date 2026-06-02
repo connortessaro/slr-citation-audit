@@ -102,8 +102,8 @@ export default function AboutPage() {
         </p>
         <p className="mt-4">
           So treat the grade as a <em>signal</em>, not a verdict. The site
-          shows the raw numbers and the per-SLR drilldown so you can
-          interpret each one in context. The{" "}
+          shows the raw numbers and the per-SLR drilldown to support
+          context-aware interpretation of each one. The{" "}
           <Link
             href="/slrs"
             className="text-[var(--color-accent)] underline-offset-2 hover:underline"

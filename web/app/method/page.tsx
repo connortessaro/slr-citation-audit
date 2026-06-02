@@ -103,8 +103,8 @@ export default function MethodPage() {
           fontFamily: "'Iowan Old Style', 'Iowan', 'Palatino', Georgia, serif",
         }}
       >
-        The site you&apos;re reading reads those flat files at build time.
-        No database, no API call from your browser. Push to{" "}
+        The site reads those flat files at build time. No database, no
+        API call from the browser. Push to{" "}
         <Code>main</Code> and Vercel rebuilds the static pages with the
         latest pipeline outputs.
       </p>

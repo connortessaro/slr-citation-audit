@@ -21,11 +21,12 @@ export default function ComparePage() {
         Compare
       </div>
       <h1 className="mt-2 text-balance text-3xl font-semibold tracking-tight text-[var(--color-text)] sm:text-4xl">
-        Pairwise SLR reference overlap
+        How much do two reviews share?
       </h1>
       <p className="mt-3 max-w-3xl text-sm text-[var(--color-text-muted)]">
-        Jaccard similarity between the reference sets of any two SLRs.
-        Suggests which reviews are working from the same source corpus.
+        For any two reviews: how many references they share divided by how
+        many references they have between them. 100% would mean they cite
+        the same papers; 0% means they cite completely different ones.
       </p>
 
       <ComparePicker picks={picks} initialPairs={pairs} />

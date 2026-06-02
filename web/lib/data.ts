@@ -226,6 +226,51 @@ export function getOverlap(): OverlapRow[] {
   return _overlap;
 }
 
+/* ------------------------------------------------------------------ */
+/* Ranker (stage 06)                                                  */
+/* ------------------------------------------------------------------ */
+
+export interface RankDims {
+  coverage: number;
+  semantic: number;
+  authority: number;
+  diversity: number;
+  llm_judge: number;
+}
+
+export interface RankRow {
+  slr_key: string;
+  slr_title: string;
+  slr_venue: string;
+  slr_year: number;
+  rank: number;
+  composite: number;       // 0-1, final weighted score
+  raw: RankDims;            // raw per-dim values (different scales)
+  normalized: RankDims;     // min-max normalized 0-1
+  n_refs: number;
+  n_refs_embedded: number;
+  judge_justification: string | null;
+}
+
+let _ranked: RankRow[] | null = null;
+export function getRanked(): RankRow[] {
+  if (_ranked) return _ranked;
+  const raw = tryReadJSON<unknown>(
+    "ranked_slrs.json",
+    "ss/ranked_slrs.json",
+  );
+  if (!Array.isArray(raw)) {
+    _ranked = [];
+    return _ranked;
+  }
+  _ranked = (raw as RankRow[]).slice().sort((a, b) => a.rank - b.rank);
+  return _ranked;
+}
+
+export function getRankFor(slr_key: string): RankRow | null {
+  return getRanked().find((r) => r.slr_key === slr_key) ?? null;
+}
+
 export interface MissedPairRow {
   slr_id: string;
   paper_key: string;

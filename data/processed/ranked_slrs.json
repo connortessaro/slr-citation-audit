@@ -1,14 +1,14 @@
 [
   {
-    "composite": 0.6051856449236364,
-    "judge_justification": null,
+    "composite": 0.7851856449236363,
+    "judge_justification": "The SLR covers 66 primary studies from 2010-2020, including foundational works by Ernst (2012), Li et al. (2014, 2015a), and Rios et al. (2018a), demonstrating good coverage of the Requirements Technical Debt literature. The search spans 2010-2020 with studies through 2020 included, and references several 2019-2020 publications, showing adequate recency. However, the reference list provided shows limited venue diversity, with heavy concentration in a few venues (Brazilian Symposium on Software Quality, EUROMICRO, IEEE RE), and notable absences of key TD management works by Avgeriou, Martini, and others who appear as authors but whose seminal works aren't clearly cited. The methodology follows Kitchenham and Charters (2007) with manual and automatic searches plus snowballing, quality assessment using Dyba et al. criteria, and use of Atlas.ti for qualitative analysis, which is rigorous and well-documented. Comprehensiveness is moderate: while causes, strategies, and metrics are addressed, the metrics section appears truncated in the full text, and the 66 studies seem to lean heavily on a connected research community (Seaman, Sp\u00ednola, Mendon\u00e7a, Martini), creating some echo chamber risk.",
     "n_refs": 105,
     "n_refs_embedded": 105,
     "normalized": {
       "authority": 0.7267775743445887,
       "coverage": 1.0,
       "diversity": 0.917363469373019,
-      "llm_judge": 0.0,
+      "llm_judge": 0.8999999999999999,
       "semantic": 0.38178718090057373
     },
     "rank": 1,
@@ -16,7 +16,7 @@
       "authority": 3.832882926296022,
       "coverage": 0.4082,
       "diversity": 0.45868173468650963,
-      "llm_judge": 0.0,
+      "llm_judge": 0.72,
       "semantic": 0.38178718090057373
     },
     "slr_key": "doi:10.1016/j.jss.2022.111483",
@@ -25,73 +25,23 @@
     "slr_year": 2022
   },
   {
-    "composite": 0.5981442948667518,
-    "judge_justification": null,
-    "n_refs": 96,
-    "n_refs_embedded": 96,
-    "normalized": {
-      "authority": 0.7562308832951651,
-      "coverage": 0.9500244977951985,
-      "diversity": 0.9264418239009727,
-      "llm_judge": 0.0,
-      "semantic": 0.3580242693424225
-    },
-    "rank": 2,
-    "raw": {
-      "authority": 3.9882139229924896,
-      "coverage": 0.38780000000000003,
-      "diversity": 0.4632209119504865,
-      "llm_judge": 0.0,
-      "semantic": 0.3580242693424225
-    },
-    "slr_key": "ss:5fc62339115dd42c4b6a521204ce70f37a24bfec",
-    "slr_title": "Identification and Measurement of Technical Debt Requirements in Software Development: a Systematic Literature Review",
-    "slr_venue": "arXiv.org",
-    "slr_year": 2021
-  },
-  {
-    "composite": 0.5960134199514798,
-    "judge_justification": null,
-    "n_refs": 75,
-    "n_refs_embedded": 75,
-    "normalized": {
-      "authority": 0.7740108061448888,
-      "coverage": 0.871141597256247,
-      "diversity": 0.9291376294102335,
-      "llm_judge": 0.0,
-      "semantic": 0.40577706694602966
-    },
-    "rank": 3,
-    "raw": {
-      "authority": 4.08198176218734,
-      "coverage": 0.3556,
-      "diversity": 0.46456881470511685,
-      "llm_judge": 0.0,
-      "semantic": 0.40577706694602966
-    },
-    "slr_key": "ss:ecd5e2bb6b635c01b8dd0ee37487f2a78fa8b680",
-    "slr_title": "Technical Debt Prioritization: State of the Art. A Systematic Literature Review",
-    "slr_venue": "arXiv.org",
-    "slr_year": 2019
-  },
-  {
-    "composite": 0.5783270498307669,
-    "judge_justification": null,
+    "composite": 0.7483270498307668,
+    "judge_justification": "The SLR covers a broad range of Technical Debt prioritization studies from 2017\u20132021, including key venues like IEEE/ACM TechDebt, ICSME, and JSS, demonstrating solid coverage of the field. However, it omits several foundational works on Technical Debt (e.g., Kruchten, Nord, or early Avgeriou papers) and relies heavily on 2018 TechDebt conference proceedings, creating a slight echo-chamber effect. The methodology is clearly described and follows established SLR guidelines, but the reference list skews toward recent empirical studies and tools, lacking seminal theoretical or conceptual papers that shaped the TD prioritization discourse.",
     "n_refs": 76,
     "n_refs_embedded": 76,
     "normalized": {
       "authority": 0.7647607572923244,
       "coverage": 0.7998530132288094,
       "diversity": 0.9336839606559394,
-      "llm_judge": 0.0,
+      "llm_judge": 0.85,
       "semantic": 0.39333751797676086
     },
-    "rank": 4,
+    "rank": 2,
     "raw": {
       "authority": 4.033198811851577,
       "coverage": 0.3265,
       "diversity": 0.4668419803279698,
-      "llm_judge": 0.0,
+      "llm_judge": 0.68,
       "semantic": 0.39333751797676086
     },
     "slr_key": "doi:10.1016/j.jss.2020.110827",
@@ -100,48 +50,73 @@
     "slr_year": 2021
   },
   {
-    "composite": 0.5721193993175122,
-    "judge_justification": null,
-    "n_refs": 18,
-    "n_refs_embedded": 15,
+    "composite": 0.7481442948667518,
+    "judge_justification": "The SLR covers a reasonable range of studies from 2010-2020, with a mix of recent (2020) and older works, though it leans heavily on 2020 publications. References span multiple venues including top software engineering journals and conferences, but lacks some canonical early works on technical debt (e.g., Cunningham 1992). The methodology appears sound with both manual and automatic searches yielding 61 primary studies from 7499 initial results. Overall, this is an adequate systematic literature review that meets basic quality standards.",
+    "n_refs": 96,
+    "n_refs_embedded": 96,
     "normalized": {
-      "authority": 0.9841393104758767,
-      "coverage": 0.5156785889269966,
-      "diversity": 0.9655108357520402,
-      "llm_judge": 0.0,
-      "semantic": 0.3952682614326477
+      "authority": 0.7562308832951651,
+      "coverage": 0.9500244977951985,
+      "diversity": 0.9264418239009727,
+      "llm_judge": 0.7499999999999999,
+      "semantic": 0.3580242693424225
     },
-    "rank": 5,
+    "rank": 3,
     "raw": {
-      "authority": 5.190158438255907,
-      "coverage": 0.21050000000000002,
-      "diversity": 0.4827554178760202,
-      "llm_judge": 0.0,
-      "semantic": 0.3952682614326477
+      "authority": 3.9882139229924896,
+      "coverage": 0.38780000000000003,
+      "diversity": 0.4632209119504865,
+      "llm_judge": 0.6,
+      "semantic": 0.3580242693424225
     },
-    "slr_key": "doi:10.5220/0005914605720579",
-    "slr_title": "Decision Criteria for the Payment of Technical Debt in Software Projects: A Systematic Mapping Study",
-    "slr_venue": "International Conference on Enterprise Information Systems",
-    "slr_year": 2016
+    "slr_key": "ss:5fc62339115dd42c4b6a521204ce70f37a24bfec",
+    "slr_title": "Identification and Measurement of Technical Debt Requirements in Software Development: a Systematic Literature Review",
+    "slr_venue": "arXiv.org",
+    "slr_year": 2021
   },
   {
-    "composite": 0.570222110895441,
-    "judge_justification": null,
+    "composite": 0.7360134199514798,
+    "judge_justification": "The SLR covers 38 primary studies up to 2018, but the reference list includes several papers from 2019-2021 that postdate the review's stated cutoff, suggesting inconsistent temporal boundaries. The references are heavily concentrated in IEEE/ACM TechDebt conference proceedings and a few journals, indicating moderate venue diversity but some echo-chamber risk. The methodology follows a consolidated SLR approach, which is adequate, though the inclusion of post-2018 references in a review claiming coverage only until 2018 raises methodological concerns. The review addresses technical debt prioritization broadly but the reference list shows limited representation of foundational/seminal works in technical debt (e.g., Cunningham's original metaphor, or key early empirical studies), weakening comprehensiveness.",
+    "n_refs": 75,
+    "n_refs_embedded": 75,
+    "normalized": {
+      "authority": 0.7740108061448888,
+      "coverage": 0.871141597256247,
+      "diversity": 0.9291376294102335,
+      "llm_judge": 0.7000000000000001,
+      "semantic": 0.40577706694602966
+    },
+    "rank": 4,
+    "raw": {
+      "authority": 4.08198176218734,
+      "coverage": 0.3556,
+      "diversity": 0.46456881470511685,
+      "llm_judge": 0.56,
+      "semantic": 0.40577706694602966
+    },
+    "slr_key": "ss:ecd5e2bb6b635c01b8dd0ee37487f2a78fa8b680",
+    "slr_title": "Technical Debt Prioritization: State of the Art. A Systematic Literature Review",
+    "slr_venue": "arXiv.org",
+    "slr_year": 2019
+  },
+  {
+    "composite": 0.720222110895441,
+    "judge_justification": "The SLR covers core technical debt literature (Kruchten, Cunningham, Seaman, Guo) and includes relevant estimation and agile references, but misses some highly-cited estimation-specific works (e.g., J\u00f8rgensen on software effort estimation) and several key technical debt management papers. The reference list is dominated by 2015\u20132018 publications with a few older seminal works, providing reasonable but not outstanding recency for a 2020 study. Venues are reasonably diverse across IEEE, ACM, and Springer outlets, though heavily weighted toward software engineering conferences and journals with limited cross-disciplinary representation. Methodology references include Kitchenham, Petersen, and Wohlin, which appropriately support the systematic mapping study design. Overall, the review is adequate and aligns with its stated method, but the citation choices are not comprehensive enough to be considered excellent.",
     "n_refs": 82,
     "n_refs_embedded": 82,
     "normalized": {
       "authority": 0.762025944347079,
       "coverage": 0.7817246447819696,
       "diversity": 0.9441030340432245,
-      "llm_judge": 0.0,
+      "llm_judge": 0.7499999999999999,
       "semantic": 0.36325693130493164
     },
-    "rank": 6,
+    "rank": 5,
     "raw": {
       "authority": 4.018775942717375,
       "coverage": 0.3191,
       "diversity": 0.47205151702161235,
-      "llm_judge": 0.0,
+      "llm_judge": 0.6,
       "semantic": 0.36325693130493164
     },
     "slr_key": "doi:10.37190/e-inf200102",
@@ -150,15 +125,40 @@
     "slr_year": 2020
   },
   {
-    "composite": 0.5531500963739787,
-    "judge_justification": null,
+    "composite": 0.7121193993175123,
+    "judge_justification": "The SLR covers key foundational works in Technical Debt (e.g., references [12], [15]) and includes relevant systematic reviews ([1], [2], [3]), indicating adequate coverage of seminal literature. However, it lacks citations to highly influential early works such as Cunningham\u2019s 1992 paper on the WyCash system, which coined the term 'technical debt,' representing a notable omission. The reference list is reasonably up-to-date for a 2016 publication, including works from 2012\u20132015, but misses some contemporaneous contributions in top venues like ICSE or IEEE Software beyond what's listed. Venue diversity is limited\u2014most references are from a narrow set of journals and workshops (e.g., multiple MTD workshops), with few citations from broader software engineering conferences or high-impact journals outside the immediate TD niche. Methodologically, the paper appropriately cites established guidelines for systematic mappings ([16], [17]), aligning with best practices. While the scope is focused on decision criteria for TD payment, the exclusion of foundational metaphor origins and underrepresentation of diverse research groups weakens overall comprehensiveness.",
+    "n_refs": 18,
+    "n_refs_embedded": 15,
+    "normalized": {
+      "authority": 0.9841393104758767,
+      "coverage": 0.5156785889269966,
+      "diversity": 0.9655108357520402,
+      "llm_judge": 0.7000000000000001,
+      "semantic": 0.3952682614326477
+    },
+    "rank": 6,
+    "raw": {
+      "authority": 5.190158438255907,
+      "coverage": 0.21050000000000002,
+      "diversity": 0.4827554178760202,
+      "llm_judge": 0.56,
+      "semantic": 0.3952682614326477
+    },
+    "slr_key": "doi:10.5220/0005914605720579",
+    "slr_title": "Decision Criteria for the Payment of Technical Debt in Software Projects: A Systematic Mapping Study",
+    "slr_venue": "International Conference on Enterprise Information Systems",
+    "slr_year": 2016
+  },
+  {
+    "composite": 0.6931500963739787,
+    "judge_justification": "The SLR covers a reasonable range of technical debt tools and management activities, with references spanning 2005-2021. However, it lacks seminal foundational works on technical debt (e.g., Ward Cunningham's original 1992 metaphor, or key early papers by Kruchten, Nord, or Brown). The reference list is adequate in size but shows gaps in foundational citations. Recent works (2018-2021) are reasonably represented, though the 2021 publication date limits inclusion of very latest research. Venue diversity is moderate, with references from IEEE, ACM, and Springer, but the reference list appears somewhat narrow for a systematic mapping study claiming to identify 50 tools. The methodology references (Kitchenham 2006, Petersen 2015) are appropriate for systematic mapping studies in software engineering. Overall, the SLR demonstrates adequate but not exceptional coverage of the technical debt tools landscape.",
     "n_refs": 27,
     "n_refs_embedded": 27,
     "normalized": {
       "authority": 0.8578391383165939,
       "coverage": 0.5499755022048016,
       "diversity": 0.9329871192243981,
-      "llm_judge": 0.0,
+      "llm_judge": 0.7000000000000001,
       "semantic": 0.42494872212409973
     },
     "rank": 7,
@@ -166,7 +166,7 @@
       "authority": 4.524076007335937,
       "coverage": 0.2245,
       "diversity": 0.4664935596121992,
-      "llm_judge": 0.0,
+      "llm_judge": 0.56,
       "semantic": 0.42494872212409973
     },
     "slr_key": "doi:10.5220/0010459100880098",
@@ -175,73 +175,23 @@
     "slr_year": 2021
   },
   {
-    "composite": 0.5389513646359549,
-    "judge_justification": null,
-    "n_refs": 52,
-    "n_refs_embedded": 14,
-    "normalized": {
-      "authority": 0.7103293262051522,
-      "coverage": 0.5987261146496815,
-      "diversity": 0.9696741642215323,
-      "llm_judge": 0.0,
-      "semantic": 0.4160272181034088
-    },
-    "rank": 8,
-    "raw": {
-      "authority": 3.746138079335134,
-      "coverage": 0.2444,
-      "diversity": 0.48483708211076626,
-      "llm_judge": 0.0,
-      "semantic": 0.4160272181034088
-    },
-    "slr_key": "doi:10.5220/0007675900950106",
-    "slr_title": "Automated Measurement of Technical Debt: A Systematic Literature Review",
-    "slr_venue": "International Conference on Enterprise Information Systems",
-    "slr_year": 2019
-  },
-  {
-    "composite": 0.5180501251999224,
-    "judge_justification": null,
-    "n_refs": 55,
-    "n_refs_embedded": 55,
-    "normalized": {
-      "authority": 0.7669375399928898,
-      "coverage": 0.48995590396864286,
-      "diversity": 0.9228698580386745,
-      "llm_judge": 0.0,
-      "semantic": 0.4104873239994049
-    },
-    "rank": 9,
-    "raw": {
-      "authority": 4.044678738505585,
-      "coverage": 0.2,
-      "diversity": 0.46143492901933736,
-      "llm_judge": 0.0,
-      "semantic": 0.4104873239994049
-    },
-    "slr_key": "doi:10.48550/arxiv.2406.12026",
-    "slr_title": "Systematic literature review on forecasting and prediction of technical debt evolution",
-    "slr_venue": "arXiv.org",
-    "slr_year": 2024
-  },
-  {
-    "composite": 0.5131679111904432,
-    "judge_justification": null,
+    "composite": 0.6731679111904432,
+    "judge_justification": "The SLR cites foundational works like Sculley et al. (2015) and Cunningham (1992), ensuring canonical coverage. However, it omits key recent contributions post-2020, limiting recency. Venues are diverse (IEEE, ACM, Springer), but author representation skews toward industry (Google, Microsoft), reducing academic diversity. The methodology is rigorous, following Kitchenham and Wohlin guidelines with clear protocols. Comprehensiveness is moderate: while 21 primary studies are analyzed, the small sample size and narrow focus on TD/antipatterns exclude broader AI quality aspects.",
     "n_refs": 55,
     "n_refs_embedded": 55,
     "normalized": {
       "authority": 0.901828088406323,
       "coverage": 0.3500734933855953,
       "diversity": 0.9846790255957681,
-      "llm_judge": 0.0,
+      "llm_judge": 0.7999999999999999,
       "semantic": 0.3292589485645294
     },
-    "rank": 10,
+    "rank": 8,
     "raw": {
       "authority": 4.756065135366833,
       "coverage": 0.1429,
       "diversity": 0.4923395127978842,
-      "llm_judge": 0.0,
+      "llm_judge": 0.64,
       "semantic": 0.3292589485645294
     },
     "slr_key": "doi:10.1109/techdebt52882.2021.00016",
@@ -250,48 +200,73 @@
     "slr_year": 2021
   },
   {
-    "composite": 0.4984003470298761,
-    "judge_justification": null,
-    "n_refs": 48,
-    "n_refs_embedded": 48,
+    "composite": 0.658951364635955,
+    "judge_justification": "The SLR covers 2012-2017 references, missing key foundational work like Ward Cunningham's original 1992 TD metaphor and seminal papers by Kruchten et al. and Brown et al. on TD taxonomy. The reference list is heavily concentrated on MTD workshop papers and a narrow set of venues, lacking diversity in publication sources. The methodology section is vague about search strings, databases used, and inclusion/exclusion criteria, making reproducibility questionable. With only 21 papers selected from 331, the filtering process is unclear and the review lacks depth in synthesis.",
+    "n_refs": 52,
+    "n_refs_embedded": 14,
     "normalized": {
-      "authority": 0.8271946282508413,
-      "coverage": 0.4000489955903968,
-      "diversity": 0.9340118480425327,
-      "llm_judge": 0.0,
-      "semantic": 0.33074626326560974
+      "authority": 0.7103293262051522,
+      "coverage": 0.5987261146496815,
+      "diversity": 0.9696741642215323,
+      "llm_judge": 0.6,
+      "semantic": 0.4160272181034088
     },
-    "rank": 11,
+    "rank": 9,
     "raw": {
-      "authority": 4.362462848699813,
-      "coverage": 0.16329999999999997,
-      "diversity": 0.46700592402126645,
-      "llm_judge": 0.0,
-      "semantic": 0.33074626326560974
+      "authority": 3.746138079335134,
+      "coverage": 0.2444,
+      "diversity": 0.48483708211076626,
+      "llm_judge": 0.48,
+      "semantic": 0.4160272181034088
     },
-    "slr_key": "doi:10.1002/smr.2516",
-    "slr_title": "The Pandora's box of social, process, and people debts in software engineering",
-    "slr_venue": "J. Softw. Evol. Process.",
-    "slr_year": 2022
+    "slr_key": "doi:10.5220/0007675900950106",
+    "slr_title": "Automated Measurement of Technical Debt: A Systematic Literature Review",
+    "slr_venue": "International Conference on Enterprise Information Systems",
+    "slr_year": 2019
   },
   {
-    "composite": 0.4950725935843716,
-    "judge_justification": null,
+    "composite": 0.6580501251999225,
+    "judge_justification": "The SLR covers key technical debt forecasting works from 2015-2023, including recent deep learning approaches (2022-2023) and foundational TD literature. However, it misses seminal TD works by Kruchten, Cunningham, and the foundational 2010-2012 papers that established the TD metaphor. The reference list is heavily concentrated in software engineering venues (JSS, IEEE TSE) with limited cross-disciplinary diversity. The methodology follows established SLR practices with 14 primary studies from 646 papers, which is reasonable but the screening process details are unclear. The review adequately addresses its stated objective but lacks depth in connecting forecasting methods to broader software evolution literature.",
+    "n_refs": 55,
+    "n_refs_embedded": 55,
+    "normalized": {
+      "authority": 0.7669375399928898,
+      "coverage": 0.48995590396864286,
+      "diversity": 0.9228698580386745,
+      "llm_judge": 0.7000000000000001,
+      "semantic": 0.4104873239994049
+    },
+    "rank": 10,
+    "raw": {
+      "authority": 4.044678738505585,
+      "coverage": 0.2,
+      "diversity": 0.46143492901933736,
+      "llm_judge": 0.56,
+      "semantic": 0.4104873239994049
+    },
+    "slr_key": "doi:10.48550/arxiv.2406.12026",
+    "slr_title": "Systematic literature review on forecasting and prediction of technical debt evolution",
+    "slr_venue": "arXiv.org",
+    "slr_year": 2024
+  },
+  {
+    "composite": 0.6450725935843716,
+    "judge_justification": "The SLR covers a reasonable range of technical debt and agile software development literature from 2010-2017, including key works like the 2012 IEEE Software article on TD theory and practice. However, it misses seminal foundational works such as Cunningham's original 1992 TD metaphor paper and key agile TD studies by Kruchten and Nord. The references span multiple venues (JSS, IST, ESEM, ICSE) but lean heavily on workshop proceedings and mapping studies rather than primary empirical research. The methodology references are adequate but the overall citation set lacks the canonical depth expected for a comprehensive SLR on this topic.",
     "n_refs": 58,
     "n_refs_embedded": 58,
     "normalized": {
       "authority": 0.8150838043451392,
       "coverage": 0.39882410583047523,
       "diversity": 0.9681689130128146,
-      "llm_judge": 0.0,
+      "llm_judge": 0.7499999999999999,
       "semantic": 0.29328614473342896
     },
-    "rank": 12,
+    "rank": 11,
     "raw": {
       "authority": 4.29859272968382,
       "coverage": 0.1628,
       "diversity": 0.4840844565064074,
-      "llm_judge": 0.0,
+      "llm_judge": 0.6,
       "semantic": 0.29328614473342896
     },
     "slr_key": "doi:10.1016/j.infsof.2016.10.004",
@@ -300,48 +275,23 @@
     "slr_year": 2017
   },
   {
-    "composite": 0.4714617161676283,
-    "judge_justification": null,
-    "n_refs": 46,
-    "n_refs_embedded": 46,
-    "normalized": {
-      "authority": 0.7724908118350974,
-      "coverage": 0.29397354238118567,
-      "diversity": 0.9316967375509658,
-      "llm_judge": 0.0,
-      "semantic": 0.35914748907089233
-    },
-    "rank": 13,
-    "raw": {
-      "authority": 4.073965609180251,
-      "coverage": 0.12,
-      "diversity": 0.465848368775483,
-      "llm_judge": 0.0,
-      "semantic": 0.35914748907089233
-    },
-    "slr_key": "doi:10.1016/j.infsof.2023.107375",
-    "slr_title": "Technical Debt Management Automation: State of the Art and Future Perspectives",
-    "slr_venue": "Information and Software Technology",
-    "slr_year": 2023
-  },
-  {
-    "composite": 0.46895330158525717,
-    "judge_justification": null,
+    "composite": 0.6389533015852572,
+    "judge_justification": "The SLR covers a broad range of technical debt quantification approaches, including smells, ROI, and architectural debt, with references spanning 2015\u20132022. However, it lacks some foundational works (e.g., Kruchten\u2019s TD conceptualization) and over-indexes on recent conference papers (e.g., TechDebt, EUROMICRO) while underrepresenting seminal journal articles. The methodology is clearly described and aligns with SMS standards, but the reference list is somewhat narrow in venue diversity and misses key early contributions.",
     "n_refs": 66,
     "n_refs_embedded": 33,
     "normalized": {
       "authority": 0.7527931022438367,
       "coverage": 0.6369426751592356,
       "diversity": 0.9550307305232135,
-      "llm_judge": 0.0,
+      "llm_judge": 0.85,
       "semantic": 0.0
     },
-    "rank": 14,
+    "rank": 12,
     "raw": {
       "authority": 3.9700837374156115,
       "coverage": 0.26,
       "diversity": 0.47751536526160687,
-      "llm_judge": 0.0,
+      "llm_judge": 0.68,
       "semantic": 0.0
     },
     "slr_key": "doi:10.48550/arxiv.2303.06535",
@@ -350,15 +300,65 @@
     "slr_year": 2023
   },
   {
-    "composite": 0.45716808628410777,
-    "judge_justification": null,
+    "composite": 0.6384003470298761,
+    "judge_justification": "The SLR covers key NTD concepts like social, process, and people debt, citing relevant works such as [5], [13], [15], and [30]. However, it misses foundational TD literature (e.g., Kruchten, Tom, Nord, or the original 1992 Ward Cunningham metaphor) that contextualizes NTD. The reference list is dominated by post-2015 studies, with limited inclusion of seminal pre-2015 works. Venue diversity is moderate but leans heavily toward JSS and conference proceedings; author diversity appears limited with potential clustering. The methodology follows standard systematic mapping practices [28], though details on protocol registration or inter-rater reliability are absent. Overall, the review adequately maps the emerging NTD landscape but lacks depth in historical grounding and broader disciplinary integration.",
+    "n_refs": 48,
+    "n_refs_embedded": 48,
+    "normalized": {
+      "authority": 0.8271946282508413,
+      "coverage": 0.4000489955903968,
+      "diversity": 0.9340118480425327,
+      "llm_judge": 0.7000000000000001,
+      "semantic": 0.33074626326560974
+    },
+    "rank": 13,
+    "raw": {
+      "authority": 4.362462848699813,
+      "coverage": 0.16329999999999997,
+      "diversity": 0.46700592402126645,
+      "llm_judge": 0.56,
+      "semantic": 0.33074626326560974
+    },
+    "slr_key": "doi:10.1002/smr.2516",
+    "slr_title": "The Pandora's box of social, process, and people debts in software engineering",
+    "slr_venue": "J. Softw. Evol. Process.",
+    "slr_year": 2022
+  },
+  {
+    "composite": 0.6214617161676282,
+    "judge_justification": "The SLR covers a reasonable range of TD automation topics (tools, smells, measurement) with 30 references spanning 2016-2022, but omits seminal foundational works (e.g., Cunningham's 1992 TD metaphor, Avgeriou's architectural debt work, Li et al.'s systematic TD reviews). Venue diversity is adequate with IST, JSS, EMSE, and ICSE represented, though heavily skewed toward a few venues. The 2023 publication date limits inclusion of very recent work, and the reference list appears to be a partial sample rather than the full 178-study corpus, making full assessment difficult.",
+    "n_refs": 46,
+    "n_refs_embedded": 46,
+    "normalized": {
+      "authority": 0.7724908118350974,
+      "coverage": 0.29397354238118567,
+      "diversity": 0.9316967375509658,
+      "llm_judge": 0.7499999999999999,
+      "semantic": 0.35914748907089233
+    },
+    "rank": 14,
+    "raw": {
+      "authority": 4.073965609180251,
+      "coverage": 0.12,
+      "diversity": 0.465848368775483,
+      "llm_judge": 0.6,
+      "semantic": 0.35914748907089233
+    },
+    "slr_key": "doi:10.1016/j.infsof.2023.107375",
+    "slr_title": "Technical Debt Management Automation: State of the Art and Future Perspectives",
+    "slr_venue": "Information and Software Technology",
+    "slr_year": 2023
+  },
+  {
+    "composite": 0.6071680862841078,
+    "judge_justification": "The SLR covers a reasonable range of SATD detection approaches from 2014 to 2025, including heuristic, ML, DL, and Transformer-based methods, but omits several canonical works in the field such as the foundational studies by Potdar and Shihab (2014) and Maldonado et al. (2017) that established the SATD concept and early detection baselines. The recency is strong with 2024-2025 publications well represented, though the inclusion of only 30 references for a decade-long review suggests some gaps. Venue diversity is moderate, spanning top-tier venues like JSS, ASE, FSE, and SANER, but also includes lower-tier or less selective conferences, and there is notable author concentration with multiple papers from overlapping research groups. The methodology dimension scores lower because the SLR does not clearly cite or follow established SLR guidelines such as Kitchenham and Charters (2007) or Petersen et al. (2008), which are standard references for systematic reviews in software engineering. Overall comprehensiveness is adequate but not exhaustive, as key survey and benchmarking works in SATD detection appear missing.",
     "n_refs": 129,
     "n_refs_embedded": 30,
     "normalized": {
       "authority": 0.7102036701828729,
       "coverage": 0.6369426751592356,
       "diversity": 0.9386940860784301,
-      "llm_judge": 0.0,
+      "llm_judge": 0.7499999999999999,
       "semantic": 0.0
     },
     "rank": 15,
@@ -366,7 +366,7 @@
       "authority": 3.7454753940248247,
       "coverage": 0.26,
       "diversity": 0.46934704303921515,
-      "llm_judge": 0.0,
+      "llm_judge": 0.6,
       "semantic": 0.0
     },
     "slr_key": "doi:10.1002/smr.70104",
@@ -375,15 +375,15 @@
     "slr_year": 2023
   },
   {
-    "composite": 0.4436178699643509,
-    "judge_justification": null,
+    "composite": 0.6036178699643509,
+    "judge_justification": "The review covers key snowballing methodology papers (Wohlin 2014, Jalali & Wohlin 2012, Badampudi et al. 2015) and gray literature in SE (Garousi et al. 2021), which is appropriate. However, it omits foundational gray literature methodology work (e.g., Adams et al. 2017, Godin et al. 2015) and lacks recent snowballing advances post-2022. The reference list is heavily concentrated in Information and Software Technology and Stack Overflow studies, creating a narrow venue/author echo chamber. Methodology alignment is strong with direct citations to snowballing guidelines. Overall, the review is adequate but not comprehensive for a methodology-focused SLR.",
     "n_refs": 24,
     "n_refs_embedded": 24,
     "normalized": {
       "authority": 0.9481426534811934,
       "coverage": 0.04899559039686428,
       "diversity": 0.9326227265510728,
-      "llm_judge": 0.0,
+      "llm_judge": 0.7999999999999999,
       "semantic": 0.2883283793926239
     },
     "rank": 16,
@@ -391,12 +391,487 @@
       "authority": 5.000319102441125,
       "coverage": 0.02,
       "diversity": 0.4663113632755365,
-      "llm_judge": 0.0,
+      "llm_judge": 0.64,
       "semantic": 0.2883283793926239
     },
     "slr_key": "doi:10.48550/arxiv.2407.14991",
     "slr_title": "Investigating the use of Snowballing on Gray Literature Reviews",
     "slr_venue": "arXiv.org",
+    "slr_year": 2024
+  },
+  {
+    "composite": 0.5551685968211947,
+    "judge_justification": "The SLR covers a reasonable range of technical debt literature from 2010-2016, including foundational works like [10] and [14]. However, it misses some canonical early works on technical debt (e.g., Cunningham's original 1992 concept). The references span multiple venues (IEEE Software, Information and Software Technology, conference proceedings) but are concentrated in a relatively narrow set of authors and research groups. The methodology appears adequate for a systematic mapping study but the reference list suggests some gaps in comprehensive coverage of the field.",
+    "n_refs": 81,
+    "n_refs_embedded": 15,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.6837334639882411,
+      "diversity": 0.870258469264003,
+      "llm_judge": 0.7499999999999999,
+      "semantic": 0.47185105085372925
+    },
+    "rank": 17,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.2791,
+      "diversity": 0.4351292346320016,
+      "llm_judge": 0.6,
+      "semantic": 0.47185105085372925
+    },
+    "slr_key": "doi:10.1016/j.jss.2016.10.018",
+    "slr_title": "Identification and analysis of the elements required to manage technical debt by means of a systematic mapping study",
+    "slr_venue": "Journal of Systems and Software",
+    "slr_year": 2017
+  },
+  {
+    "composite": 0.5451570712539584,
+    "judge_justification": "The SLR covers key foundational works on technical debt (Cunningham 1992, Li et al. 2015, Alves et al. 2016) and includes recent studies up to 2020, but misses some important recent works. The references span multiple venues (JSS, IST, IEEE Softw., ESEC/FSE) with reasonable author diversity. The methodology follows established guidelines (Kitchenham & Charters 2007, Petersen et al. 2015) appropriately. However, the reference list is relatively short (30 refs) for a systematic mapping study, and some entries appear incomplete or lack proper venue information, suggesting gaps in comprehensiveness.",
+    "n_refs": 32,
+    "n_refs_embedded": 23,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.5499755022048016,
+      "diversity": 0.8697261093006623,
+      "llm_judge": 0.85,
+      "semantic": 0.456083744764328
+    },
+    "rank": 18,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.2245,
+      "diversity": 0.43486305465033126,
+      "llm_judge": 0.68,
+      "semantic": 0.456083744764328
+    },
+    "slr_key": "doi:10.1007/978-3-031-08965-7_14",
+    "slr_title": "Exploring Technical Debt Tools: A Systematic Mapping Study",
+    "slr_venue": "International Conference on Enterprise Information Systems",
+    "slr_year": 2021
+  },
+  {
+    "composite": 0.5444845301821907,
+    "judge_justification": "The SLR covers a reasonable range of topics related to continuous deployment and software architecture, but lacks some foundational works in the field. The references are mostly from 2013-2018, which is adequate but could benefit from more recent studies. The venues and authors show moderate diversity, with a mix of conferences and journals. The methodology is well-described and follows a systematic approach using Grounded Theory. However, the comprehensiveness could be improved by including more varied perspectives and a broader range of publication types.",
+    "n_refs": 55,
+    "n_refs_embedded": 12,
+    "normalized": {
+      "authority": 1.0,
+      "coverage": 0.0,
+      "diversity": 0.9224226509109532,
+      "llm_judge": 0.7999999999999999,
+      "semantic": 0.0
+    },
+    "rank": 19,
+    "raw": {
+      "authority": 5.273804615879257,
+      "coverage": 0.0,
+      "diversity": 0.4612113254554767,
+      "llm_judge": 0.64,
+      "semantic": 0.0
+    },
+    "slr_key": "ss:5c1fc36810af573bb166635a79f9fa4125de65a6",
+    "slr_title": "Towards a Theory on Architecting for Continuous Deployment",
+    "slr_venue": "arXiv.org",
+    "slr_year": 2021
+  },
+  {
+    "composite": 0.5434198083440516,
+    "judge_justification": "The SLR covers a broad range of technical debt identification and management topics from 2010 to 2022, including recent trends like self-admitted debt and holistic approaches, but lacks explicit mention of seminal foundational works (e.g., Kruchten, Cunningham, or McConnell) that are central to the field. The references are predominantly recent (2019\u20132022), supporting strong recency, though this comes at the expense of anchoring in earlier canonical literature. Venue diversity is moderate, with representation from top journals (e.g., IEEE TSE, JSS) and specialized conferences (e.g., TechDebt), but there is noticeable clustering in Brazilian symposia and limited inclusion of broader software engineering venues. The methodology aligns with standard systematic mapping practices, replicating a prior study, but provides minimal detail on search strategy, inclusion/exclusion criteria, or quality assessment, weakening methodological transparency. Overall, the review is adequate and timely but would benefit from deeper engagement with foundational sources and more rigorous methodological reporting.",
+    "n_refs": 101,
+    "n_refs_embedded": 44,
+    "normalized": {
+      "authority": 0.5562156494818313,
+      "coverage": 0.4409603135717785,
+      "diversity": 0.919923078666648,
+      "llm_judge": 0.7999999999999999,
+      "semantic": 0.0
+    },
+    "rank": 20,
+    "raw": {
+      "authority": 2.933372659661561,
+      "coverage": 0.18,
+      "diversity": 0.4599615393333241,
+      "llm_judge": 0.64,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.5753/jserd.2023.2671",
+    "slr_title": "Identification and Management of Technical Debt: A Systematic Mapping Study Update",
+    "slr_venue": "Journal of Software Engineering Research and Development",
+    "slr_year": 2023
+  },
+  {
+    "composite": 0.534570905033377,
+    "judge_justification": "The SLR covers a reasonable range of references from 2014-2020, including relevant venues like ECSA, ICSE, and Information and Software Technology. However, it lacks seminal foundational works on layered architecture patterns (e.g., Buschmann's Pattern-Oriented Software Architecture) and key software architecture reconstruction literature. The references span multiple venues and authors, showing moderate diversity. The methodology references (e.g., systematic mapping guidelines) are present but the overall approach appears adequate rather than exemplary. The review is comprehensive enough for its scope but misses some canonical works in the field.",
+    "n_refs": 179,
+    "n_refs_embedded": 13,
+    "normalized": {
+      "authority": 0.7124118026881436,
+      "coverage": 0.24987751102400782,
+      "diversity": 0.9605652114547337,
+      "llm_judge": 0.7499999999999999,
+      "semantic": 0.0
+    },
+    "rank": 21,
+    "raw": {
+      "authority": 3.7571206534235944,
+      "coverage": 0.102,
+      "diversity": 0.480282605727367,
+      "llm_judge": 0.6,
+      "semantic": 0.0
+    },
+    "slr_key": "ss:fdd97b88db207bd2429c1b73454dd19f9a351136",
+    "slr_title": "Systematically reviewing the layered architectural pattern principles and their use to reconstruct software architectures",
+    "slr_venue": "arXiv.org",
+    "slr_year": 2021
+  },
+  {
+    "composite": 0.5306600032497023,
+    "judge_justification": "The SLR covers key foundational works on technical debt (e.g., Fowler 2009, Li et al. 2015) and includes recent studies up to 2017, showing good coverage of the field. However, it lacks some seminal software architecture references (e.g., Bass, Clements, Kazman) and relies heavily on a narrow set of venues (mostly JSS and IEEE Software). The methodology is adequate but not explicitly detailed in the abstract or references. Overall, it provides a solid foundation for architectural technical debt but could be more comprehensive in scope and methodological transparency.",
+    "n_refs": 74,
+    "n_refs_embedded": 9,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.38118569328760415,
+      "diversity": 0.904689918339783,
+      "llm_judge": 0.85,
+      "semantic": 0.5174244046211243
+    },
+    "rank": 22,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.15560000000000002,
+      "diversity": 0.4523449591698916,
+      "llm_judge": 0.68,
+      "semantic": 0.5174244046211243
+    },
+    "slr_key": "doi:10.1016/j.jss.2017.09.025",
+    "slr_title": "Managing architectural technical debt: A unified model and systematic literature review",
+    "slr_venue": "Journal of Systems and Software",
+    "slr_year": 2018
+  },
+  {
+    "composite": 0.52,
+    "judge_justification": "The SLR covers foundational decision theory (Kahneman & Tversky, Keeney & Raiffa, Von Neumann & Morgenstern) and intertemporal choice (Loewenstein et al.), which is appropriate. However, it omits canonical technical debt works by Kruchten, Cunningham, or Li et al., and relies heavily on a narrow set of authors (Becker, McCord appear in 3 of 19 references), creating an echo chamber effect. The reference list is small (19 items) for an SLR, and several entries are tangential (e.g., qualitative social research forum, software best practices) rather than core technical debt literature.",
+    "n_refs": 19,
+    "n_refs_embedded": 1,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.9999999999999998,
+      "llm_judge": 0.6,
+      "semantic": 1.0
+    },
+    "rank": 23,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.5,
+      "llm_judge": 0.48,
+      "semantic": 1.0
+    },
+    "slr_key": "doi:10.1145/3194164.3194171",
+    "slr_title": "Trade-Off Decisions across Time in Technical Debt Management: A Systematic Literature Review",
+    "slr_venue": "2018 IEEE/ACM International Conference on Technical Debt (TechDebt)",
+    "slr_year": 2018
+  },
+  {
+    "composite": 0.516159153947327,
+    "judge_justification": "The SLR covers 94 primary studies from 1992 to 2013, including seminal works like Cunningham (1992), Fowler (2009), and McConnell (2008), ensuring strong foundational coverage. However, the search ends in 2013, missing significant recent developments in technical debt research, which limits recency. The references span multiple venues (conferences, journals, workshops) and include both academic and industrial authors, showing good diversity. The methodology is rigorous, following Kitchenham and Charters (2007) guidelines with clear search strategies, inclusion/exclusion criteria, and quality assessment. The study provides a comprehensive classification of technical debt types, management activities, and tools, though some areas like requirements TD and versioning TD are understudied.",
+    "n_refs": 33,
+    "n_refs_embedded": 7,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.3160215580597746,
+      "diversity": 0.8974602008183248,
+      "llm_judge": 1.0,
+      "semantic": 0.36731401085853577
+    },
+    "rank": 24,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.129,
+      "diversity": 0.4487301004091625,
+      "llm_judge": 0.8,
+      "semantic": 0.36731401085853577
+    },
+    "slr_key": "doi:10.1016/j.jss.2014.12.027",
+    "slr_title": "A systematic mapping study on technical debt and its management",
+    "slr_venue": "Journal of Systems and Software",
+    "slr_year": 2015
+  },
+  {
+    "composite": 0.5054016477430953,
+    "judge_justification": "The SLR covers a broad range of references from 1997 to 2022, including foundational works on technical debt (e.g., [25], [29]) and recent RTD-specific studies (e.g., [1], [3], [4]), demonstrating good coverage and comprehensiveness. However, the recency is slightly limited as the most recent reference is from 2022, with no 2023 or 2024 publications included despite the paper being published in 2024. The diversity of venues is moderate, spanning journals like Information and Software Technology and conferences such as ICSE and RE, though there is a noticeable concentration in a few outlets. Methodologically, the inclusion of systematic mapping guidelines ([19], [27]) and tertiary studies ([5], [10], [26]) supports a rigorous approach, aligning well with the stated systematic mapping methodology.",
+    "n_refs": 82,
+    "n_refs_embedded": 22,
+    "normalized": {
+      "authority": 0.39107583901570686,
+      "coverage": 0.29397354238118567,
+      "diversity": 0.9419588573185835,
+      "llm_judge": 0.8999999999999999,
+      "semantic": 0.0
+    },
+    "rank": 25,
+    "raw": {
+      "authority": 2.062457564959888,
+      "coverage": 0.12,
+      "diversity": 0.4709794286592919,
+      "llm_judge": 0.72,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1007/s00766-024-00424-3",
+    "slr_title": "Modelling the quantification of requirements technical debt",
+    "slr_venue": "Requirements Engineering",
+    "slr_year": 2024
+  },
+  {
+    "composite": 0.4918460369003427,
+    "judge_justification": "The SLR covers a reasonable range of technical debt literature from 2011-2022, including seminal works like the 2012 IEEE Software paper and recent 2021-2022 SLRs, but misses foundational technical debt sources such as Cunningham's original 1992 metaphor and key works by Kruchten, Nord, and others. Venue diversity is moderate with representation from IEEE, Journal of Systems and Software, and Systems Engineering, though heavily concentrated in software/technical debt venues rather than core systems engineering outlets. The methodology appears sound with a systematic search yielding 18 relevant papers from 354, but the narrow final set and limited engagement with broader systems engineering lifecycle literature constrain overall comprehensiveness.",
+    "n_refs": 43,
+    "n_refs_embedded": 10,
+    "normalized": {
+      "authority": 0.582178398980535,
+      "coverage": 0.19598236158745713,
+      "diversity": 0.931069423933721,
+      "llm_judge": 0.7499999999999999,
+      "semantic": 0.0
+    },
+    "rank": 26,
+    "raw": {
+      "authority": 3.070295127808741,
+      "coverage": 0.08,
+      "diversity": 0.46553471196686064,
+      "llm_judge": 0.6,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1002/sys.21681",
+    "slr_title": "Technical debt in systems engineering\u2014A systematic literature review",
+    "slr_venue": "Systems Engineering",
+    "slr_year": 2023
+  },
+  {
+    "composite": 0.4903244007398483,
+    "judge_justification": "The SLR covers a reasonable range of topics related to LLMs in software engineering, including code generation, maintenance, and evolvability. However, it lacks some canonical works in software maintenance and evolvability, such as the seminal works by Lehman on software evolution, and misses key references on technical debt and software quality. The references are recent, with most from 2020-2025, but the inclusion of older foundational works is limited. The venue diversity is moderate, with references from arXiv, IEEE, ACM, and Springer, but lacks representation from top-tier software engineering journals like IEEE Transactions on Software Engineering or ACM Transactions on Software Engineering and Methodology. The methodology references are adequate but could be strengthened by including more established guidelines for systematic literature reviews in software engineering, such as those by Kitchenham and Charters. Overall, the SLR is adequate but not exceptional in any dimension.",
+    "n_refs": 45,
+    "n_refs_embedded": 5,
+    "normalized": {
+      "authority": 0.7213592105203597,
+      "coverage": 0.0,
+      "diversity": 0.9802627931788819,
+      "llm_judge": 0.7499999999999999,
+      "semantic": 0.0
+    },
+    "rank": 27,
+    "raw": {
+      "authority": 3.80430753414929,
+      "coverage": 0.0,
+      "diversity": 0.49013139658944105,
+      "llm_judge": 0.6,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.48550/arxiv.2601.20879",
+    "slr_title": "A Survey on Large Language Model Impact on Software Evolvability and Maintainability: the Good, the Bad, the Ugly, and the Remedy",
+    "slr_venue": "arXiv.org",
+    "slr_year": 2026
+  },
+  {
+    "composite": 0.48718977372650374,
+    "judge_justification": "The review covers key SATD detection tools and references some foundational works (e.g., [24], [26], [27], [29]), but omits seminal contributions like Potdar & Shihab (2014) and Maldonado et al. that are central to SATD literature. The reference list is skewed toward FAIR/open-science topics (e.g., [1], [3], [5], [13], [15], [16], [23], [25], [30]) that are tangential to the core focus on SATD detection tools, diluting topical relevance. Venue diversity is limited, with heavy concentration in a few journals and conferences, and several references (e.g., [8], [12], [14], [19]) appear off-topic. While recent works (2021\u20132024) are included, the lack of canonical SATD references and the inclusion of peripheral FAIR/opensource content weaken alignment with a rigorous SLR methodology.",
+    "n_refs": 36,
+    "n_refs_embedded": 7,
+    "normalized": {
+      "authority": 0.6659782383276109,
+      "coverage": 0.14698677119059284,
+      "diversity": 0.9729838591143146,
+      "llm_judge": 0.65,
+      "semantic": 0.0
+    },
+    "rank": 28,
+    "raw": {
+      "authority": 3.5122391073672907,
+      "coverage": 0.06,
+      "diversity": 0.4864919295571574,
+      "llm_judge": 0.52,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.48550/arxiv.2412.14217",
+    "slr_title": "Development and Adoption of SATD Detection Tools: A State-of-practice Report",
+    "slr_venue": "BElgian-NEtherlands software eVOLution symposium",
+    "slr_year": 2024
+  },
+  {
+    "composite": 0.4806038692233781,
+    "judge_justification": "The reference list is heavily concentrated in 2024\u20132025, with no seminal pre-2023 works on AI-assisted software engineering (e.g., no citations of foundational Copilot studies from 2021\u20132022, no Peng et al. 2023 on few-shot prompting, or key works by Chen et al. 2021), which is a serious gap for an SLR claiming to map the state of the field. Venue diversity is moderate, spanning ACM, IEEE, and arXiv, but the list is dominated by empirical case studies and lacks broader theoretical or survey-level references that would contextualize findings. The methodology dimension scores low because the SLR does not cite any established SLR guidelines (e.g., Kitchenham, PRISMA) or prior tertiary studies in SE/AI, making the review process opaque. Comprehensiveness is adequate for the narrow scope of GenAI coding assistants but omits important adjacent areas like automated program repair, AI-driven requirements engineering foundations, and human-AI teamwork theory.",
+    "n_refs": 64,
+    "n_refs_embedded": 1,
+    "normalized": {
+      "authority": 0.6034132083040246,
+      "coverage": 0.04899559039686428,
+      "diversity": 0.9506105474160016,
+      "llm_judge": 0.7999999999999999,
+      "semantic": 0.0
+    },
+    "rank": 29,
+    "raw": {
+      "authority": 3.182283363236276,
+      "coverage": 0.02,
+      "diversity": 0.4753052737080009,
+      "llm_judge": 0.64,
+      "semantic": 0.0
+    },
+    "slr_key": "ss:b1493d15df91d58ae6c5f052deda332479b27edf",
+    "slr_title": "The State of Generative AI in Software Development: Insights from Literature and a Developer Survey",
+    "slr_venue": "",
+    "slr_year": 2026
+  },
+  {
+    "composite": 0.4749673656218487,
+    "judge_justification": "The SLR covers a reasonable range of topics related to microservices quality assessment, including performance, scalability, security, and architectural patterns, but omits some foundational works in software architecture and quality modeling that are widely cited in the field. The references are predominantly from 2020\u20132023, indicating good recency, though a few seminal earlier works could strengthen historical context. Venues are diverse, spanning journals like Journal of Systems and Software and conferences such as ICSA and EUROMICRO, but there is a noticeable concentration in IEEE and Springer outlets without broader inclusion of top-tier venues like ICSE or FSE. The methodology appears systematic with clear inclusion of mapping studies and literature reviews, yet lacks explicit mention of search strings, databases used, or quality appraisal criteria, weakening methodological transparency. While the review identifies key challenges and opportunities, it does not deeply engage with empirical validation or meta-analysis, limiting its comprehensiveness.",
+    "n_refs": 87,
+    "n_refs_embedded": 2,
+    "normalized": {
+      "authority": 0.603442713827852,
+      "coverage": 0.0,
+      "diversity": 0.9713941142813916,
+      "llm_judge": 0.7999999999999999,
+      "semantic": 0.0
+    },
+    "rank": 30,
+    "raw": {
+      "authority": 3.1824389696040316,
+      "coverage": 0.0,
+      "diversity": 0.4856970571406959,
+      "llm_judge": 0.64,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.12720/jait.14.5.991-1002",
+    "slr_title": "Research Opportunities in Microservices Quality Assessment: A Systematic Literature Review",
+    "slr_venue": "Journal of Advances in Information Technology",
+    "slr_year": 2023
+  },
+  {
+    "composite": 0.46424135049842524,
+    "judge_justification": "The SLR focuses narrowly on TechDebt conference papers (2018\u20132021), omitting seminal foundational works like Kruchten et al.'s early technical debt framework or Cunningham\u2019s original 1992 metaphor, which weakens coverage. While recent references are well-represented, the lack of pre-2018 literature and reliance on a single conference series limits temporal and thematic breadth. Venue diversity is low\u2014most citations are from IEEE/ACM TechDebt or closely related IEEE venues, with minimal inclusion of broader software engineering outlets. The method aligns with its stated goal of assessing reproducibility in technical debt research, but the scope is narrow by design. Overall, the review is adequate but not comprehensive due to its restricted source pool and absence of canonical references.",
+    "n_refs": 62,
+    "n_refs_embedded": 20,
+    "normalized": {
+      "authority": 0.6164356683493221,
+      "coverage": 0.09995100440960314,
+      "diversity": 0.9048200797332008,
+      "llm_judge": 0.7000000000000001,
+      "semantic": 0.0
+    },
+    "rank": 31,
+    "raw": {
+      "authority": 3.2509612731332695,
+      "coverage": 0.0408,
+      "diversity": 0.4524100398666005,
+      "llm_judge": 0.56,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.2478/ausi-2021-0016",
+    "slr_title": "Reproducibility in the technical debt domain",
+    "slr_venue": "Acta Universitatis Sapientiae: Informatica",
+    "slr_year": 2021
+  },
+  {
+    "composite": 0.46049749586449606,
+    "judge_justification": "The SLR covers 69 primary studies from diverse venues including TD-specific workshops, SE journals, and IT publications, showing reasonable breadth. However, the search was completed in September 2013, making it outdated for a 2015 publication with no inclusion of more recent works. The reference list includes seminal works like Cunningham (1992) and Boehm's software economics, but lacks broader economic/financial theory references beyond basic debt terminology. The methodology follows Kitchenham's SLR guidelines rigorously with clear protocol, quality assessment, and multi-phase filtering. The glossary and classification scheme provide useful synthesis, though the heavy reliance on software economics methods (73%) over true financial approaches suggests the field itself was still maturing.",
+    "n_refs": 39,
+    "n_refs_embedded": 9,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.3160215580597746,
+      "diversity": 0.9206198357143047,
+      "llm_judge": 0.7499999999999999,
+      "semantic": 0.3158460855484009
+    },
+    "rank": 32,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.129,
+      "diversity": 0.4603099178571525,
+      "llm_judge": 0.6,
+      "semantic": 0.3158460855484009
+    },
+    "slr_key": "doi:10.1016/j.infsof.2015.04.001",
+    "slr_title": "The financial aspect of managing technical debt: A systematic literature review",
+    "slr_venue": "Information and Software Technology",
+    "slr_year": 2015
+  },
+  {
+    "composite": 0.45145804888343394,
+    "judge_justification": "The SLR covers a reasonable range of software product management topics from 2015-2020, with references from relevant venues like Journal of Systems and Software, Information and Software Technology, and Empirical Software Engineering. However, it lacks seminal foundational works in product management (e.g., Cooper's stage-gate model, Christensen's innovation theories) and relies heavily on agile/technical debt literature rather than core product management scholarship. The reference list shows moderate diversity across venues and years but misses key product management conferences and journals. The methodology references are present but not comprehensive for an SLR of this scope.",
+    "n_refs": 104,
+    "n_refs_embedded": 7,
+    "normalized": {
+      "authority": 0.5586616770771573,
+      "coverage": 0.04997550220480157,
+      "diversity": 0.8986530651352109,
+      "llm_judge": 0.7499999999999999,
+      "semantic": 0.0
+    },
+    "rank": 33,
+    "raw": {
+      "authority": 2.946272531284359,
+      "coverage": 0.0204,
+      "diversity": 0.4493265325676056,
+      "llm_judge": 0.6,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1007/s10664-022-10134-5",
+    "slr_title": "A comprehensive overview of software product management challenges",
+    "slr_venue": "Empirical Software Engineering",
+    "slr_year": 2022
+  },
+  {
+    "composite": 0.4496332052254391,
+    "judge_justification": "The SLR covers foundational works on technical debt (e.g., Cunningham 1992, Li 2014, Kruchten 2013) and includes key methodology references (Kitchenham 2007, Petersen 2008), but misses several important early and mid-2010s contributions in top venues. The recency is adequate for a 2016 publication, including works up to 2015, though it lacks some contemporaneous 2015\u20132016 studies. Diversity is moderate: it spans journals and conferences but is concentrated in a narrow set of authors and venues (e.g., multiple papers from IST and JSS). Methodology references are present but not deeply integrated into the review design. Overall, the citation profile is competent but not exceptional, warranting a score of 3 across dimensions.",
+    "n_refs": 20,
+    "n_refs_embedded": 4,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.12885840274375307,
+      "diversity": 0.9671320180863536,
+      "llm_judge": 0.7499999999999999,
+      "semantic": 0.4021756052970886
+    },
+    "rank": 34,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0526,
+      "diversity": 0.4835660090431769,
+      "llm_judge": 0.6,
+      "semantic": 0.4021756052970886
+    },
+    "slr_key": "doi:10.1016/j.infsof.2015.10.008",
+    "slr_title": "Identification and management of technical debt: A systematic mapping study",
+    "slr_venue": "Information and Software Technology",
+    "slr_year": 2016
+  },
+  {
+    "composite": 0.4406840932114349,
+    "judge_justification": "The reference list is heavily skewed toward very recent (2020\u20112023) conference and journal papers, omitting seminal works on technical debt (e.g., Cunningham 1992, Brown et al. 2010) and foundational agile/lean literature. Important systematic reviews and books on lean software development and technical debt are absent, indicating a narrow and incomplete base.",
+    "n_refs": 44,
+    "n_refs_embedded": 10,
+    "normalized": {
+      "authority": 0.5607702645278618,
+      "coverage": 0.09799118079372857,
+      "diversity": 0.9446590207355843,
+      "llm_judge": 0.6,
+      "semantic": 0.0
+    },
+    "rank": 35,
+    "raw": {
+      "authority": 2.95739280951487,
+      "coverage": 0.04,
+      "diversity": 0.47232951036779225,
+      "llm_judge": 0.48,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.33022/ijcs.v12i6.3612",
+    "slr_title": "Lean and Agile Software Development for Managing Technical Debt on A Large-scale Software: A Systematic Literature Review",
+    "slr_venue": "Indonesian Journal of Computer Science",
     "slr_year": 2024
   },
   {
@@ -411,7 +886,7 @@
       "llm_judge": 0.0,
       "semantic": 0.3084276616573334
     },
-    "rank": 17,
+    "rank": 36,
     "raw": {
       "authority": 4.559956791102114,
       "coverage": 0.0213,
@@ -425,31 +900,6 @@
     "slr_year": 2020
   },
   {
-    "composite": 0.4051685968211947,
-    "judge_justification": null,
-    "n_refs": 81,
-    "n_refs_embedded": 15,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.6837334639882411,
-      "diversity": 0.870258469264003,
-      "llm_judge": 0.0,
-      "semantic": 0.47185105085372925
-    },
-    "rank": 18,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.2791,
-      "diversity": 0.4351292346320016,
-      "llm_judge": 0.0,
-      "semantic": 0.47185105085372925
-    },
-    "slr_key": "doi:10.1016/j.jss.2016.10.018",
-    "slr_title": "Identification and analysis of the elements required to manage technical debt by means of a systematic mapping study",
-    "slr_venue": "Journal of Systems and Software",
-    "slr_year": 2017
-  },
-  {
     "composite": 0.40239600752360694,
     "judge_justification": null,
     "n_refs": 34,
@@ -461,7 +911,7 @@
       "llm_judge": 0.0,
       "semantic": 0.0
     },
-    "rank": 19,
+    "rank": 37,
     "raw": {
       "authority": 4.435104597741915,
       "coverage": 0.0851,
@@ -475,465 +925,15 @@
     "slr_year": 2020
   },
   {
-    "composite": 0.39999999999999997,
-    "judge_justification": null,
-    "n_refs": 19,
-    "n_refs_embedded": 1,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.9999999999999998,
-      "llm_judge": 0.0,
-      "semantic": 1.0
-    },
-    "rank": 20,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.5,
-      "llm_judge": 0.0,
-      "semantic": 1.0
-    },
-    "slr_key": "doi:10.1145/3194164.3194171",
-    "slr_title": "Trade-Off Decisions across Time in Technical Debt Management: A Systematic Literature Review",
-    "slr_venue": "2018 IEEE/ACM International Conference on Technical Debt (TechDebt)",
-    "slr_year": 2018
-  },
-  {
-    "composite": 0.38457090503337704,
-    "judge_justification": null,
-    "n_refs": 179,
-    "n_refs_embedded": 13,
-    "normalized": {
-      "authority": 0.7124118026881436,
-      "coverage": 0.24987751102400782,
-      "diversity": 0.9605652114547337,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 21,
-    "raw": {
-      "authority": 3.7571206534235944,
-      "coverage": 0.102,
-      "diversity": 0.480282605727367,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "ss:fdd97b88db207bd2429c1b73454dd19f9a351136",
-    "slr_title": "Systematically reviewing the layered architectural pattern principles and their use to reconstruct software architectures",
-    "slr_venue": "arXiv.org",
-    "slr_year": 2021
-  },
-  {
-    "composite": 0.38448453018219064,
-    "judge_justification": null,
-    "n_refs": 55,
-    "n_refs_embedded": 12,
-    "normalized": {
-      "authority": 1.0,
-      "coverage": 0.0,
-      "diversity": 0.9224226509109532,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 22,
-    "raw": {
-      "authority": 5.273804615879257,
-      "coverage": 0.0,
-      "diversity": 0.4612113254554767,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "ss:5c1fc36810af573bb166635a79f9fa4125de65a6",
-    "slr_title": "Towards a Theory on Architecting for Continuous Deployment",
-    "slr_venue": "arXiv.org",
-    "slr_year": 2021
-  },
-  {
-    "composite": 0.3834198083440516,
-    "judge_justification": null,
-    "n_refs": 101,
-    "n_refs_embedded": 44,
-    "normalized": {
-      "authority": 0.5562156494818313,
-      "coverage": 0.4409603135717785,
-      "diversity": 0.919923078666648,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 23,
-    "raw": {
-      "authority": 2.933372659661561,
-      "coverage": 0.18,
-      "diversity": 0.4599615393333241,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.5753/jserd.2023.2671",
-    "slr_title": "Identification and Management of Technical Debt: A Systematic Mapping Study Update",
-    "slr_venue": "Journal of Software Engineering Research and Development",
-    "slr_year": 2023
-  },
-  {
-    "composite": 0.3751570712539584,
-    "judge_justification": null,
-    "n_refs": 32,
-    "n_refs_embedded": 23,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.5499755022048016,
-      "diversity": 0.8697261093006623,
-      "llm_judge": 0.0,
-      "semantic": 0.456083744764328
-    },
-    "rank": 24,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.2245,
-      "diversity": 0.43486305465033126,
-      "llm_judge": 0.0,
-      "semantic": 0.456083744764328
-    },
-    "slr_key": "doi:10.1007/978-3-031-08965-7_14",
-    "slr_title": "Exploring Technical Debt Tools: A Systematic Mapping Study",
-    "slr_venue": "International Conference on Enterprise Information Systems",
-    "slr_year": 2021
-  },
-  {
-    "composite": 0.3606600032497023,
-    "judge_justification": null,
-    "n_refs": 74,
-    "n_refs_embedded": 9,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.38118569328760415,
-      "diversity": 0.904689918339783,
-      "llm_judge": 0.0,
-      "semantic": 0.5174244046211243
-    },
-    "rank": 25,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.15560000000000002,
-      "diversity": 0.4523449591698916,
-      "llm_judge": 0.0,
-      "semantic": 0.5174244046211243
-    },
-    "slr_key": "doi:10.1016/j.jss.2017.09.025",
-    "slr_title": "Managing architectural technical debt: A unified model and systematic literature review",
-    "slr_venue": "Journal of Systems and Software",
-    "slr_year": 2018
-  },
-  {
-    "composite": 0.35718977372650373,
-    "judge_justification": null,
-    "n_refs": 36,
-    "n_refs_embedded": 7,
-    "normalized": {
-      "authority": 0.6659782383276109,
-      "coverage": 0.14698677119059284,
-      "diversity": 0.9729838591143146,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 26,
-    "raw": {
-      "authority": 3.5122391073672907,
-      "coverage": 0.06,
-      "diversity": 0.4864919295571574,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.48550/arxiv.2412.14217",
-    "slr_title": "Development and Adoption of SATD Detection Tools: A State-of-practice Report",
-    "slr_venue": "BElgian-NEtherlands software eVOLution symposium",
-    "slr_year": 2024
-  },
-  {
-    "composite": 0.34184603690034265,
-    "judge_justification": null,
-    "n_refs": 43,
-    "n_refs_embedded": 10,
-    "normalized": {
-      "authority": 0.582178398980535,
-      "coverage": 0.19598236158745713,
-      "diversity": 0.931069423933721,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 27,
-    "raw": {
-      "authority": 3.070295127808741,
-      "coverage": 0.08,
-      "diversity": 0.46553471196686064,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.1002/sys.21681",
-    "slr_title": "Technical debt in systems engineering\u2014A systematic literature review",
-    "slr_venue": "Systems Engineering",
-    "slr_year": 2023
-  },
-  {
-    "composite": 0.3403244007398483,
-    "judge_justification": null,
-    "n_refs": 45,
-    "n_refs_embedded": 5,
-    "normalized": {
-      "authority": 0.7213592105203597,
-      "coverage": 0.0,
-      "diversity": 0.9802627931788819,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 28,
-    "raw": {
-      "authority": 3.80430753414929,
-      "coverage": 0.0,
-      "diversity": 0.49013139658944105,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.48550/arxiv.2601.20879",
-    "slr_title": "A Survey on Large Language Model Impact on Software Evolvability and Maintainability: the Good, the Bad, the Ugly, and the Remedy",
-    "slr_venue": "arXiv.org",
-    "slr_year": 2026
-  },
-  {
-    "composite": 0.3254016477430952,
-    "judge_justification": null,
-    "n_refs": 82,
-    "n_refs_embedded": 22,
-    "normalized": {
-      "authority": 0.39107583901570686,
-      "coverage": 0.29397354238118567,
-      "diversity": 0.9419588573185835,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 29,
-    "raw": {
-      "authority": 2.062457564959888,
-      "coverage": 0.12,
-      "diversity": 0.4709794286592919,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.1007/s00766-024-00424-3",
-    "slr_title": "Modelling the quantification of requirements technical debt",
-    "slr_venue": "Requirements Engineering",
-    "slr_year": 2024
-  },
-  {
-    "composite": 0.32424135049842523,
-    "judge_justification": null,
-    "n_refs": 62,
-    "n_refs_embedded": 20,
-    "normalized": {
-      "authority": 0.6164356683493221,
-      "coverage": 0.09995100440960314,
-      "diversity": 0.9048200797332008,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 30,
-    "raw": {
-      "authority": 3.2509612731332695,
-      "coverage": 0.0408,
-      "diversity": 0.4524100398666005,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.2478/ausi-2021-0016",
-    "slr_title": "Reproducibility in the technical debt domain",
-    "slr_venue": "Acta Universitatis Sapientiae: Informatica",
-    "slr_year": 2021
-  },
-  {
-    "composite": 0.32068409321143493,
-    "judge_justification": null,
-    "n_refs": 44,
-    "n_refs_embedded": 10,
-    "normalized": {
-      "authority": 0.5607702645278618,
-      "coverage": 0.09799118079372857,
-      "diversity": 0.9446590207355843,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 31,
-    "raw": {
-      "authority": 2.95739280951487,
-      "coverage": 0.04,
-      "diversity": 0.47232951036779225,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.33022/ijcs.v12i6.3612",
-    "slr_title": "Lean and Agile Software Development for Managing Technical Debt on A Large-scale Software: A Systematic Literature Review",
-    "slr_venue": "Indonesian Journal of Computer Science",
-    "slr_year": 2024
-  },
-  {
-    "composite": 0.3206038692233781,
-    "judge_justification": null,
-    "n_refs": 64,
-    "n_refs_embedded": 1,
-    "normalized": {
-      "authority": 0.6034132083040246,
-      "coverage": 0.04899559039686428,
-      "diversity": 0.9506105474160016,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 32,
-    "raw": {
-      "authority": 3.182283363236276,
-      "coverage": 0.02,
-      "diversity": 0.4753052737080009,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "ss:b1493d15df91d58ae6c5f052deda332479b27edf",
-    "slr_title": "The State of Generative AI in Software Development: Insights from Literature and a Developer Survey",
-    "slr_venue": "",
-    "slr_year": 2026
-  },
-  {
-    "composite": 0.3161591539473271,
-    "judge_justification": null,
-    "n_refs": 33,
-    "n_refs_embedded": 7,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.3160215580597746,
-      "diversity": 0.8974602008183248,
-      "llm_judge": 0.0,
-      "semantic": 0.36731401085853577
-    },
-    "rank": 33,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.129,
-      "diversity": 0.4487301004091625,
-      "llm_judge": 0.0,
-      "semantic": 0.36731401085853577
-    },
-    "slr_key": "doi:10.1016/j.jss.2014.12.027",
-    "slr_title": "A systematic mapping study on technical debt and its management",
-    "slr_venue": "Journal of Systems and Software",
-    "slr_year": 2015
-  },
-  {
-    "composite": 0.3149673656218487,
-    "judge_justification": null,
-    "n_refs": 87,
-    "n_refs_embedded": 2,
-    "normalized": {
-      "authority": 0.603442713827852,
-      "coverage": 0.0,
-      "diversity": 0.9713941142813916,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 34,
-    "raw": {
-      "authority": 3.1824389696040316,
-      "coverage": 0.0,
-      "diversity": 0.4856970571406959,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.12720/jait.14.5.991-1002",
-    "slr_title": "Research Opportunities in Microservices Quality Assessment: A Systematic Literature Review",
-    "slr_venue": "Journal of Advances in Information Technology",
-    "slr_year": 2023
-  },
-  {
-    "composite": 0.31049749586449604,
-    "judge_justification": null,
-    "n_refs": 39,
-    "n_refs_embedded": 9,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.3160215580597746,
-      "diversity": 0.9206198357143047,
-      "llm_judge": 0.0,
-      "semantic": 0.3158460855484009
-    },
-    "rank": 35,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.129,
-      "diversity": 0.4603099178571525,
-      "llm_judge": 0.0,
-      "semantic": 0.3158460855484009
-    },
-    "slr_key": "doi:10.1016/j.infsof.2015.04.001",
-    "slr_title": "The financial aspect of managing technical debt: A systematic literature review",
-    "slr_venue": "Information and Software Technology",
-    "slr_year": 2015
-  },
-  {
-    "composite": 0.30145804888343397,
-    "judge_justification": null,
-    "n_refs": 104,
-    "n_refs_embedded": 7,
-    "normalized": {
-      "authority": 0.5586616770771573,
-      "coverage": 0.04997550220480157,
-      "diversity": 0.8986530651352109,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 36,
-    "raw": {
-      "authority": 2.946272531284359,
-      "coverage": 0.0204,
-      "diversity": 0.4493265325676056,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.1007/s10664-022-10134-5",
-    "slr_title": "A comprehensive overview of software product management challenges",
-    "slr_venue": "Empirical Software Engineering",
-    "slr_year": 2022
-  },
-  {
-    "composite": 0.29963320522543907,
-    "judge_justification": null,
-    "n_refs": 20,
-    "n_refs_embedded": 4,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.12885840274375307,
-      "diversity": 0.9671320180863536,
-      "llm_judge": 0.0,
-      "semantic": 0.4021756052970886
-    },
-    "rank": 37,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0526,
-      "diversity": 0.4835660090431769,
-      "llm_judge": 0.0,
-      "semantic": 0.4021756052970886
-    },
-    "slr_key": "doi:10.1016/j.infsof.2015.10.008",
-    "slr_title": "Identification and management of technical debt: A systematic mapping study",
-    "slr_venue": "Information and Software Technology",
-    "slr_year": 2016
-  },
-  {
-    "composite": 0.21222616632092778,
-    "judge_justification": null,
+    "composite": 0.3822261663209278,
+    "judge_justification": "The SLR covers 143 publications and includes canonical works such as Cunningham (1992), Kitchenham & Charters (2007), and Leveson (2011), demonstrating strong foundational coverage. However, the reference list shows a concentration of software engineering and systems engineering journals, with limited representation from aerospace-specific T&E literature. The recency is adequate with several 2022-2025 references, though some key recent works in AI/ML for systems engineering are missing. The methodology follows established SLR guidelines (Kitchenham & Charters, 2007) and design science research methodology (Hevner et al., 2004; Peffers et al., 2007), providing a solid methodological foundation. The comprehensiveness is limited by the narrow focus on software-centric TD literature, with insufficient coverage of hardware-software integration debt in aerospace contexts, which is the paper's stated contribution area.",
     "n_refs": 34,
     "n_refs_embedded": 4,
     "normalized": {
       "authority": 0.0,
       "coverage": 0.09799118079372857,
       "diversity": 0.9631396508109104,
-      "llm_judge": 0.0,
+      "llm_judge": 0.85,
       "semantic": 0.0
     },
     "rank": 38,
@@ -941,7 +941,7 @@
       "authority": 0.0,
       "coverage": 0.04,
       "diversity": 0.4815698254054553,
-      "llm_judge": 0.0,
+      "llm_judge": 0.68,
       "semantic": 0.0
     },
     "slr_key": "doi:10.3390/systems14050591",
@@ -950,223 +950,23 @@
     "slr_year": 2026
   },
   {
-    "composite": 0.2,
-    "judge_justification": null,
-    "n_refs": 7,
-    "n_refs_embedded": 0,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 1.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 39,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.5000000000000001,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.1109/fie63693.2025.11328472",
-    "slr_title": "Assessing Refactoring in Education: A Systematic Literature Review on Evaluation, Goals, and Impact",
-    "slr_venue": "Frontiers in Education Conference",
-    "slr_year": 2025
-  },
-  {
-    "composite": 0.2,
-    "judge_justification": null,
-    "n_refs": 5,
-    "n_refs_embedded": 0,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 1.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 40,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.5000000000000001,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.23919/cisti52073.2021.9476368",
-    "slr_title": "Agile Development Practices Applied to Software Startups : A Systematic Mapping Review",
-    "slr_venue": "Iberian Conference on Information Systems and Technologies",
-    "slr_year": 2021
-  },
-  {
-    "composite": 0.19999999999999996,
-    "judge_justification": null,
-    "n_refs": 9,
-    "n_refs_embedded": 1,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.9999999999999998,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 41,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.5,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.1145/3275245.3275267",
-    "slr_title": "Technical Debt Management in Brazilian Software Organizations: A Need, an Expectation, or a Fact?",
-    "slr_venue": "Brazilian Symposium on Software Quality",
-    "slr_year": 2018
-  },
-  {
-    "composite": 0.19999999999999996,
-    "judge_justification": null,
-    "n_refs": 10,
-    "n_refs_embedded": 0,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.9999999999999998,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 42,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.5,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.1109/tse.2022.3214764",
-    "slr_title": "Managing Technical Debt Using Intelligent Techniques - A Systematic Mapping Study",
-    "slr_venue": "IEEE Transactions on Software Engineering",
-    "slr_year": 2023
-  },
-  {
-    "composite": 0.19999999999999996,
-    "judge_justification": null,
-    "n_refs": 4,
-    "n_refs_embedded": 0,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.9999999999999998,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 43,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.5,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.1109/re57278.2023.00021",
-    "slr_title": "Quantifying Requirements Technical Debt: A Systematic Mapping Study and a Conceptual Model",
-    "slr_venue": "IEEE International Requirements Engineering Conference",
-    "slr_year": 2023
-  },
-  {
-    "composite": 0.19999999999999996,
-    "judge_justification": null,
-    "n_refs": 10,
-    "n_refs_embedded": 0,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.9999999999999998,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 44,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.5,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.1145/3613372.3613399",
-    "slr_title": "Architectural Technical Debt - A Systematic Mapping Study",
-    "slr_venue": "Brazilian Symposium on Software Engineering",
-    "slr_year": 2023
-  },
-  {
-    "composite": 0.19999999999999996,
-    "judge_justification": null,
-    "n_refs": 11,
-    "n_refs_embedded": 0,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.9999999999999998,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 45,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.5,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.1145/3524843.3528097",
-    "slr_title": "Comprehending the Use of Intelligent Techniques to Support Technical Debt Management",
-    "slr_venue": "2022 IEEE/ACM International Conference on Technical Debt (TechDebt)",
-    "slr_year": 2022
-  },
-  {
-    "composite": 0.19999999999999993,
-    "judge_justification": null,
-    "n_refs": 10,
-    "n_refs_embedded": 3,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.9999999999999996,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 46,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.4999999999999999,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.1109/seaa56994.2022.00050",
-    "slr_title": "Quantifying TD Interest: Are we Getting Closer, or Not Even That?",
-    "slr_venue": "EUROMICRO Conference on Software Engineering and Advanced Applications",
-    "slr_year": 2022
-  },
-  {
-    "composite": 0.18412396714286094,
-    "judge_justification": null,
+    "composite": 0.344123967142861,
+    "judge_justification": "The SLR covers a reasonable range of SATD detection studies from 2015\u20132025, including recent LLM-based approaches (e.g., [11], [12], [14]), earning a 4 for recency. However, it omits seminal foundational works like Potdar & Shihab\u2019s original SATD identification study and key early NLP-based detection methods, limiting coverage to 3. Diversity is moderate with contributions from journals (IEEE Access, JSS, Appl. Sci.) and conferences, but lacks representation from top-tier venues like ICSE or ASE, warranting a 3. Methodology is adequate but vague\u2014no explicit mention of PRISMA, search strings, or quality appraisal criteria\u2014scoring 3. Comprehensiveness is acceptable given the synthesis of objectives, techniques, and gaps, but the absence of a detailed protocol or risk-of-bias assessment caps it at 3.",
     "n_refs": 22,
     "n_refs_embedded": 0,
     "normalized": {
       "authority": 0.0,
       "coverage": 0.0,
       "diversity": 0.9206198357143047,
-      "llm_judge": 0.0,
+      "llm_judge": 0.7999999999999999,
       "semantic": 0.0
     },
-    "rank": 47,
+    "rank": 39,
     "raw": {
       "authority": 0.0,
       "coverage": 0.0,
       "diversity": 0.4603099178571525,
-      "llm_judge": 0.0,
+      "llm_judge": 0.64,
       "semantic": 0.0
     },
     "slr_key": "doi:10.1109/access.2026.3661069",
@@ -1175,23 +975,148 @@
     "slr_year": 2026
   },
   {
-    "composite": 0.17192646712424328,
-    "judge_justification": null,
+    "composite": 0.33,
+    "judge_justification": "The SLR cites the Agile Manifesto and a 2017 survey on agile practices in startups, which are relevant and foundational. However, the reference list is very short (only 5 references), indicating limited coverage of the literature. The references span 2001-2021, showing some recency, but the small number limits diversity and comprehensiveness. The methodology reference (systematic mapping) is appropriate but the overall citation practice appears narrow for a systematic review claiming 60 primary studies.",
+    "n_refs": 5,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 1.0,
+      "llm_judge": 0.65,
+      "semantic": 0.0
+    },
+    "rank": 40,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.5000000000000001,
+      "llm_judge": 0.52,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.23919/cisti52073.2021.9476368",
+    "slr_title": "Agile Development Practices Applied to Software Startups : A Systematic Mapping Review",
+    "slr_venue": "Iberian Conference on Information Systems and Technologies",
+    "slr_year": 2021
+  },
+  {
+    "composite": 0.32999999999999996,
+    "judge_justification": "The SLR covers some foundational works on technical debt and intelligent techniques, but lacks depth in recent and diverse references. The inclusion of older references like [5] and [8] without more recent counterparts suggests limited recency. The reference list is narrow, with few studies directly addressing the intersection of intelligent techniques and technical debt management, impacting diversity and comprehensiveness.",
+    "n_refs": 10,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.9999999999999998,
+      "llm_judge": 0.65,
+      "semantic": 0.0
+    },
+    "rank": 41,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.5,
+      "llm_judge": 0.52,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1109/tse.2022.3214764",
+    "slr_title": "Managing Technical Debt Using Intelligent Techniques - A Systematic Mapping Study",
+    "slr_venue": "IEEE Transactions on Software Engineering",
+    "slr_year": 2023
+  },
+  {
+    "composite": 0.32999999999999996,
+    "judge_justification": "The reference list is heavily skewed toward a few core TD works (e.g., [2], [7]) and generic SE review guides ([4]), with several entries having incomplete metadata ([3], [5], [8], [9], [11]), suggesting limited breadth. While it includes a mix of 2007\u20132019 sources, the 2010\u20132020 search window is only partially reflected, and recent intelligent-technique advances are underrepresented. Venue diversity is low, clustering around a handful of journals/conferences, and author diversity is unclear due to missing details. The mapping to the stated systematic mapping protocol is adequate but not exemplary, and the overall reference set feels narrow for an SLR on intelligent techniques in TDM.",
+    "n_refs": 11,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.9999999999999998,
+      "llm_judge": 0.65,
+      "semantic": 0.0
+    },
+    "rank": 42,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.5,
+      "llm_judge": 0.52,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1145/3524843.3528097",
+    "slr_title": "Comprehending the Use of Intelligent Techniques to Support Technical Debt Management",
+    "slr_venue": "2022 IEEE/ACM International Conference on Technical Debt (TechDebt)",
+    "slr_year": 2022
+  },
+  {
+    "composite": 0.31999999999999995,
+    "judge_justification": "The SLR omits canonical TD Interest quantification work by Avgeriou, Kruchten, or Nord et al., relying instead on a narrow set of 10 references with limited venue diversity (mostly conferences). While it cites Kitchenham's SLR guidelines (ref 6) and a systematic mapping study (ref 3), the reference list lacks seminal TD Interest papers and relies heavily on recent but less foundational works. The 2022 publication year is reasonably current, but the narrow scope of cited literature undermines comprehensiveness.",
+    "n_refs": 10,
+    "n_refs_embedded": 3,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.9999999999999996,
+      "llm_judge": 0.6,
+      "semantic": 0.0
+    },
+    "rank": 43,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.4999999999999999,
+      "llm_judge": 0.48,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1109/seaa56994.2022.00050",
+    "slr_title": "Quantifying TD Interest: Are we Getting Closer, or Not Even That?",
+    "slr_venue": "EUROMICRO Conference on Software Engineering and Advanced Applications",
+    "slr_year": 2022
+  },
+  {
+    "composite": 0.30999999999999994,
+    "judge_justification": "The reference list is extremely short (only 10 items) for a systematic mapping study covering a decade of research on Architectural Technical Debt. It omits many canonical works in the field (e.g., foundational papers by Kruchten, Nord, Ozkaya, or key ATD identification studies). Several references are tangential or generic (e.g., Fleiss et al. on statistics, Brooks' Mythical Man-Month) rather than directly relevant to ATD. The list lacks diversity in venues and authors, with no clear representation of the breadth of software architecture or technical debt literature. The methodology reference (Kitchenham & Charters) is appropriate, but the overall citation choices do not reflect a rigorous or comprehensive mapping of the ATD domain.",
+    "n_refs": 10,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.9999999999999998,
+      "llm_judge": 0.5499999999999999,
+      "semantic": 0.0
+    },
+    "rank": 44,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.5,
+      "llm_judge": 0.44,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1145/3613372.3613399",
+    "slr_title": "Architectural Technical Debt - A Systematic Mapping Study",
+    "slr_venue": "Brazilian Symposium on Software Engineering",
+    "slr_year": 2023
+  },
+  {
+    "composite": 0.3019264671242433,
+    "judge_justification": "The SLR covers foundational works on technical debt prioritization, including early studies and a systematic mapping study, but lacks more recent publications from 2019\u20132021, which limits its currency. The references are concentrated in a few venues like TechDebt and EASE, with limited diversity in sources. The methodology follows a systematic mapping process, but the selection of only 51 unique papers from 112 studies raises questions about inclusion criteria. Overall, it provides a reasonable overview but misses broader context and recent advances.",
     "n_refs": 9,
     "n_refs_embedded": 5,
     "normalized": {
       "authority": 0.0,
       "coverage": 0.04997550220480157,
       "diversity": 0.8096568334164148,
-      "llm_judge": 0.0,
+      "llm_judge": 0.65,
       "semantic": 0.0
     },
-    "rank": 48,
+    "rank": 45,
     "raw": {
       "authority": 0.0,
       "coverage": 0.0204,
       "diversity": 0.4048284167082075,
-      "llm_judge": 0.0,
+      "llm_judge": 0.52,
       "semantic": 0.0
     },
     "slr_key": "doi:10.1109/seaa53835.2021.00034",
@@ -1200,15 +1125,90 @@
     "slr_year": 2021
   },
   {
-    "composite": 0.10666782205914353,
-    "judge_justification": null,
+    "composite": 0.30000000000000004,
+    "judge_justification": "The reference list is extremely sparse (7 refs for a 64-paper SLR), omitting canonical refactoring education work (e.g., Stigler, Keuning, Haendler). Recency is mixed (2024\u20132009) but lacks a clear recent corpus. Venue diversity is low (mostly niche or non-standard outlets). No clear search protocol or inclusion/exclusion criteria are evident from the references. The small, unrepresentative sample suggests weak comprehensiveness.",
+    "n_refs": 7,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 1.0,
+      "llm_judge": 0.5,
+      "semantic": 0.0
+    },
+    "rank": 46,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.5000000000000001,
+      "llm_judge": 0.4,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1109/fie63693.2025.11328472",
+    "slr_title": "Assessing Refactoring in Education: A Systematic Literature Review on Evaluation, Goals, and Impact",
+    "slr_venue": "Frontiers in Education Conference",
+    "slr_year": 2025
+  },
+  {
+    "composite": 0.29999999999999993,
+    "judge_justification": "The reference list is extremely sparse (7 entries) and omits canonical TD work by Kruchten, Cunningham, and others. Most references are Brazilian symposium proceedings with limited international reach, creating a narrow echo chamber. The qSLR methodology cites only generic systematic review guides (refs 7-8) without established SLR protocols for SE. The 2009 and 2002 references are outdated for a 2018 paper on an active research area.",
+    "n_refs": 9,
+    "n_refs_embedded": 1,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.9999999999999998,
+      "llm_judge": 0.5,
+      "semantic": 0.0
+    },
+    "rank": 47,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.5,
+      "llm_judge": 0.4,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1145/3275245.3275267",
+    "slr_title": "Technical Debt Management in Brazilian Software Organizations: A Need, an Expectation, or a Fact?",
+    "slr_venue": "Brazilian Symposium on Software Quality",
+    "slr_year": 2018
+  },
+  {
+    "composite": 0.27999999999999997,
+    "judge_justification": "The reference list is extremely sparse with only 4 entries, missing canonical works on Technical Debt (e.g., Kruchten et al., Cunningham, or the foundational TD literature) and key RTD-specific studies. The references are narrowly concentrated in a few venues (Dagstuhl, RE conference) without representation of major software engineering journals or broader systematic review methodology sources. The methodology reference is limited to a single mapping study guide, lacking comprehensive coverage of systematic review protocols. The recency is mixed with one 2023 preprint but otherwise older works, and the overall scope appears insufficient for a systematic mapping study claiming to model RTD quantification.",
+    "n_refs": 4,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.9999999999999998,
+      "llm_judge": 0.39999999999999997,
+      "semantic": 0.0
+    },
+    "rank": 48,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.5,
+      "llm_judge": 0.32,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1109/re57278.2023.00021",
+    "slr_title": "Quantifying Requirements Technical Debt: A Systematic Mapping Study and a Conceptual Model",
+    "slr_venue": "IEEE International Requirements Engineering Conference",
+    "slr_year": 2023
+  },
+  {
+    "composite": 0.2566678220591435,
+    "judge_justification": "The SLR covers foundational TD prioritization work (e.g., Ribeiro et al. 2016, Letouzey & Ilkiewicz 2012) and includes a quasi-gold standard search strategy, earning solid methodology marks. However, several references are incomplete or lack titles (e.g., refs [1], [10], [12], [16], [19], [22]), undermining verifiability. The reference list mixes software engineering sources with generic decision theory/finance texts (e.g., knapsack problems, investment analysis) that are tangentially related, suggesting limited topical focus. Recency is moderate with most sources from 2011\u20132018, reasonable for a 2020 review. Venue diversity is narrow, dominated by IEEE and a few SE-specific outlets.",
     "n_refs": 29,
     "n_refs_embedded": 2,
     "normalized": {
       "authority": 0.0,
       "coverage": 0.10436060754532092,
       "diversity": 0.0,
-      "llm_judge": 0.0,
+      "llm_judge": 0.7499999999999999,
       "semantic": 0.42897850275039673
     },
     "rank": 49,
@@ -1216,7 +1216,7 @@
       "authority": 0.0,
       "coverage": 0.0426,
       "diversity": 0.0,
-      "llm_judge": 0.0,
+      "llm_judge": 0.6,
       "semantic": 0.42897850275039673
     },
     "slr_key": "doi:10.1145/3387906.3388630",
@@ -1225,98 +1225,23 @@
     "slr_year": 2020
   },
   {
-    "composite": 0.06616443395614624,
-    "judge_justification": null,
-    "n_refs": 5,
-    "n_refs_embedded": 1,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.3308221697807312
-    },
-    "rank": 50,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.3308221697807312
-    },
-    "slr_key": "doi:10.1109/uyms50627.2020.9247070",
-    "slr_title": "Methods for Identifying Architectural Debt: A Systematic Mapping Study",
-    "slr_venue": "Ulusal Yaz\u0131l\u0131m M\u00fchendisli\u011fi Sempozyumu",
-    "slr_year": 2020
-  },
-  {
-    "composite": 0.04899559039686429,
-    "judge_justification": null,
-    "n_refs": 20,
-    "n_refs_embedded": 10,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.24497795198432143,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 51,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.1,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.1145/3701625.3701669",
-    "slr_title": "Technical Debt Management in Agile Software Development: A Systematic Mapping Study",
-    "slr_venue": "Brazilian Symposium on Software Quality",
-    "slr_year": 2024
-  },
-  {
-    "composite": 0.04479947090148926,
-    "judge_justification": null,
-    "n_refs": 5,
-    "n_refs_embedded": 1,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.2239973545074463
-    },
-    "rank": 52,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.2239973545074463
-    },
-    "slr_key": "doi:10.1109/conisoft55708.2022.00032",
-    "slr_title": "A Systematic Mapping Study on Technical Debt in Microservices",
-    "slr_venue": "2022 10th International Conference in Software Engineering Research and Innovation (CONISOFT)",
-    "slr_year": 2022
-  },
-  {
-    "composite": 0.03998040176384126,
-    "judge_justification": null,
+    "composite": 0.20998040176384128,
+    "judge_justification": "The SLR covers key foundational works in Technical Debt (Cunningham 1992, Li et al. 2015, Alves et al. 2016) and includes relevant systematic reviews on related topics (Azeem et al. 2019, Kaur 2020). However, the reference list is relatively narrow with only 26 references, and several are tangential (e.g., ISO standards, general AI surveys). The recency is adequate with publications through 2021, though the study period ends in 2020. Diversity is moderate with references from multiple venues but dominated by a few research groups. Methodology is well-supported with established systematic review guidelines (Kitchenham & Brereton 2013, Petersen et al. 2008, Wohlin 2014). Comprehensiveness is limited by the small reference count and absence of some notable works in intelligent TDM.",
     "n_refs": 26,
     "n_refs_embedded": 8,
     "normalized": {
       "authority": 0.0,
       "coverage": 0.19990200881920628,
       "diversity": 0.0,
-      "llm_judge": 0.0,
+      "llm_judge": 0.85,
       "semantic": 0.0
     },
-    "rank": 53,
+    "rank": 50,
     "raw": {
       "authority": 0.0,
       "coverage": 0.0816,
       "diversity": 0.0,
-      "llm_judge": 0.0,
+      "llm_judge": 0.68,
       "semantic": 0.0
     },
     "slr_key": "doi:10.5753/ise.2022.227051",
@@ -1325,48 +1250,48 @@
     "slr_year": 2022
   },
   {
-    "composite": 0.0,
-    "judge_justification": null,
-    "n_refs": 0,
-    "n_refs_embedded": 0,
+    "composite": 0.2089955903968643,
+    "judge_justification": "The SLR covers key foundational works in technical debt (Li et al. 2015, Alves et al. 2016, Avgeriou et al. 2016) and includes the Kitchenham and Petersen guidelines for systematic reviews, demonstrating good coverage of canonical references. However, there is a heavy concentration of papers from the same research group (Freire, Sp\u00ednola, Seaman, Mendon\u00e7a appear repeatedly across refs 9-14), creating an echo chamber effect that limits author and institutional diversity. The recency is adequate with publications through 2024, though the core TD-agile intersection references skew toward 2015-2018. Methodology is well-aligned with established systematic mapping guidelines (Kitchenham 2007, Petersen et al. 2015). Comprehensiveness is moderate \u2014 39 papers are mapped but the reference list shows limited geographic and institutional diversity, with many studies originating from the same collaboration network.",
+    "n_refs": 20,
+    "n_refs_embedded": 10,
     "normalized": {
       "authority": 0.0,
-      "coverage": 0.0,
+      "coverage": 0.24497795198432143,
       "diversity": 0.0,
-      "llm_judge": 0.0,
+      "llm_judge": 0.7999999999999999,
       "semantic": 0.0
     },
-    "rank": 54,
+    "rank": 51,
     "raw": {
       "authority": 0.0,
-      "coverage": 0.0,
+      "coverage": 0.1,
       "diversity": 0.0,
-      "llm_judge": 0.0,
+      "llm_judge": 0.64,
       "semantic": 0.0
     },
-    "slr_key": "doi:10.61467/2007.1558.2025.v16i4.1150",
-    "slr_title": "A Systematic Literature Review on Technical Debt in Software Development: Types, Tools, and Concerns",
-    "slr_venue": "International Journal of Combinatorial Optimization Problems and Informatics",
-    "slr_year": 2025
+    "slr_key": "doi:10.1145/3701625.3701669",
+    "slr_title": "Technical Debt Management in Agile Software Development: A Systematic Mapping Study",
+    "slr_venue": "Brazilian Symposium on Software Quality",
+    "slr_year": 2024
   },
   {
-    "composite": 0.0,
-    "judge_justification": null,
+    "composite": 0.15,
+    "judge_justification": "The SLR addresses contextual factors in technical debt management, a niche but growing area. Without seeing the actual references, the scores reflect a baseline assumption of adequate but not exceptional coverage, recency, and diversity typical of conference SLRs in this domain.",
     "n_refs": 0,
     "n_refs_embedded": 0,
     "normalized": {
       "authority": 0.0,
       "coverage": 0.0,
       "diversity": 0.0,
-      "llm_judge": 0.0,
+      "llm_judge": 0.7499999999999999,
       "semantic": 0.0
     },
-    "rank": 55,
+    "rank": 52,
     "raw": {
       "authority": 0.0,
       "coverage": 0.0,
       "diversity": 0.0,
-      "llm_judge": 0.0,
+      "llm_judge": 0.6,
       "semantic": 0.0
     },
     "slr_key": "doi:10.24251/hicss.2025.758",
@@ -1375,23 +1300,523 @@
     "slr_year": 2025
   },
   {
-    "composite": 0.0,
-    "judge_justification": null,
+    "composite": 0.15,
+    "judge_justification": "The SLR provides a dataset of papers on trade-off decisions in technical debt management, but without specific references listed, it is difficult to assess the quality of citation choices. The abstract suggests a focus on a niche topic, which may limit the breadth of references. Given the lack of detailed information, a moderate score is assigned across all dimensions.",
     "n_refs": 0,
     "n_refs_embedded": 0,
     "normalized": {
       "authority": 0.0,
       "coverage": 0.0,
       "diversity": 0.0,
-      "llm_judge": 0.0,
+      "llm_judge": 0.7499999999999999,
       "semantic": 0.0
+    },
+    "rank": 53,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.6,
+      "semantic": 0.0
+    },
+    "slr_key": "ss:0e3ac7de691a092785b476a408d3f7bf76eb16ae",
+    "slr_title": "Trade-off Decisions Across Time in Technical Debt Management : Dataset of Papers used in a Systematic Literature Review",
+    "slr_venue": "",
+    "slr_year": 2018
+  },
+  {
+    "composite": 0.15,
+    "judge_justification": "The review covers relevant topics (LLM agents, GUI testing, code security) and includes recent 2024-2025 preprints, but omits canonical mobile testing works (e.g., Amalfitano et al.'s GUI testing survey, Choudhary et al.'s ASE 2015 study) and foundational SE venues (ICSE, FSE, TSE beyond one paper). Venue diversity is moderate with arXiv preprints, IEEE TSE, and Information & Software Technology, yet lacks top-tier SE conference proceedings. The methodology is weakly supported\u2014only one generic SE survey checklist is cited, with no explicit search protocol, inclusion/exclusion criteria, or quality assessment references. Overall, the reference list is adequate for a niche topic but falls short of a rigorous SLR standard.",
+    "n_refs": 28,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.7499999999999999,
+      "semantic": 0.0
+    },
+    "rank": 54,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.6,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.70315/uloap.ulirs.2026.0301009",
+    "slr_title": "Accelerating Mobile Application Development and Testing with Artificial Intelligence: A Systematic Literature Review",
+    "slr_venue": "Universal Library of Innovative Research and Studies",
+    "slr_year": 2026
+  },
+  {
+    "composite": 0.15,
+    "judge_justification": "The SLR is from 2015 and focuses on technical debt definitions, a well-established topic. Without specific references, it's assumed to cover foundational works adequately but may lack the most recent developments post-2015. The venue and abstract suggest a systematic approach, but without detailed methodology or reference list, a neutral score is appropriate across dimensions.",
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.7499999999999999,
+      "semantic": 0.0
+    },
+    "rank": 55,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.6,
+      "semantic": 0.0
+    },
+    "slr_key": "ss:a4252d6a5d9522a85984379f8ee3bf118df782c1",
+    "slr_title": "A systematic mapping study on technical debt definition",
+    "slr_venue": "",
+    "slr_year": 2015
+  },
+  {
+    "composite": 0.14616443395614626,
+    "judge_justification": "The SLR claims to review 28 primary studies on architectural debt identification methods but only lists 5 references, all of which are foundational technical debt works rather than the actual primary studies reviewed. The references are outdated (2007-2009) and do not reflect the 2011-2020 scope stated in the abstract. There is no diversity in venues or authors, and the methodology cannot be assessed from the provided references. The citation list appears to be incomplete or placeholder content rather than the actual bibliography of the systematic review.",
+    "n_refs": 5,
+    "n_refs_embedded": 1,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.39999999999999997,
+      "semantic": 0.3308221697807312
     },
     "rank": 56,
     "raw": {
       "authority": 0.0,
       "coverage": 0.0,
       "diversity": 0.0,
-      "llm_judge": 0.0,
+      "llm_judge": 0.32,
+      "semantic": 0.3308221697807312
+    },
+    "slr_key": "doi:10.1109/uyms50627.2020.9247070",
+    "slr_title": "Methods for Identifying Architectural Debt: A Systematic Mapping Study",
+    "slr_venue": "Ulusal Yaz\u0131l\u0131m M\u00fchendisli\u011fi Sempozyumu",
+    "slr_year": 2020
+  },
+  {
+    "composite": 0.14479947090148926,
+    "judge_justification": "The SLR cites only 5 references, which is extremely sparse for a systematic mapping study. The references lack clear bibliographic details (missing venues, authors, and page numbers), making it difficult to assess their quality or relevance. There is no evidence of a comprehensive search strategy, and the narrow reference list suggests significant canonical works on technical debt (e.g., Kruchten, Cunningham, Li et al.) and microservices (e.g., Dragoni, Newman, Richardson) are missing. The recency is mixed (2014\u20132019), but the absence of any post-2019 references is concerning for a 2022 publication.",
+    "n_refs": 5,
+    "n_refs_embedded": 1,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.5,
+      "semantic": 0.2239973545074463
+    },
+    "rank": 57,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.4,
+      "semantic": 0.2239973545074463
+    },
+    "slr_key": "doi:10.1109/conisoft55708.2022.00032",
+    "slr_title": "A Systematic Mapping Study on Technical Debt in Microservices",
+    "slr_venue": "2022 10th International Conference in Software Engineering Research and Innovation (CONISOFT)",
+    "slr_year": 2022
+  },
+  {
+    "composite": 0.14,
+    "judge_justification": "The SLR covers foundational TD work (e.g., [1], [9], [11]) and includes recent studies (2020\u20132022), but misses seminal TD sources like Kruchten et al. or Tom et al. (2013). Venue diversity is limited, with heavy reliance on Brazilian/regional sources and few top-tier SE venues. Methodology references Kitchenham [7] and Petersen\u2019s mapping guidelines [8], showing adequate rigor. The review is reasonably comprehensive for its scope but lacks broader interdisciplinary or industry perspectives.",
+    "n_refs": 20,
+    "n_refs_embedded": 1,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.7000000000000001,
+      "semantic": 0.0
+    },
+    "rank": 58,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.56,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1145/3592813.3592925",
+    "slr_title": "Identifying and Measuring Technical Debt in Software Requirements: a supporting guide",
+    "slr_venue": "Brazilian Symposium on Information Systems",
+    "slr_year": 2023
+  },
+  {
+    "composite": 0.13,
+    "judge_justification": "The SLR covers 171 articles with 21 relevant studies, showing moderate coverage. The 2025 publication year suggests recent work. However, diversity appears limited with only 5 primary studies from a single conference venue. Methodology mentions systematic review but lacks detailed search strategy description. Comprehensiveness is adequate with identification of multiple debt types and mitigation strategies.",
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.65,
+      "semantic": 0.0
+    },
+    "rank": 59,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.52,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1109/amitic68284.2025.11214613",
+    "slr_title": "Social Debt in Agile Software Development",
+    "slr_venue": "2025 IEEE VIII Congreso Internacional en Inteligencia Ambiental, Ingenieria de Software y Salud Electronica y Movil (AmITIC)",
+    "slr_year": 2025
+  },
+  {
+    "composite": 0.13,
+    "judge_justification": "The SLR covers foundational works in requirements engineering and technical debt, including canonical references like [3] and [8]. However, the recency is mixed, with some references from 2008 and 2010, and only a few recent works like [4] and [10] from 2024. The diversity is moderate, spanning safety-critical systems, requirements engineering, and modeling languages, but lacks broader interdisciplinary perspectives. The methodology is weak, as the systematic mapping study is not well-documented or transparent in its execution. Comprehensiveness is limited, with only seven models identified and a narrow focus on environment assumptions without broader RTD context.",
+    "n_refs": 10,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.65,
+      "semantic": 0.0
+    },
+    "rank": 60,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.52,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1109/techdebt66644.2025.00012",
+    "slr_title": "Requirements Technical Debt Through the Lens of Environment Assumptions",
+    "slr_venue": "2025 IEEE/ACM International Conference on Technical Debt (TechDebt)",
+    "slr_year": 2025
+  },
+  {
+    "composite": 0.13,
+    "judge_justification": "The SLR covers 2014\u20132017 and cites 43 primary studies plus related reviews, showing adequate but not exhaustive coverage. It includes recent work for its time (up to 2017) but is now dated. Diversity is limited: most studies are from IEEE/ACM venues with few journals or industry sources, and the reference list is dominated by a small set of authors. Methodology is weak: the search string is only 'technical debt' in abstracts, with no snowballing, limited databases, and minimal quality appraisal. Comprehensiveness is adequate for its narrow scope (types, indicators, estimators, tools) but lacks deeper synthesis or thematic analysis.",
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.65,
+      "semantic": 0.0
+    },
+    "rank": 61,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.52,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.5121/ijsea.2018.9501",
+    "slr_title": "Investigate, Identify and Estimate the Technical Debt: A Systematic Mapping Study",
+    "slr_venue": "International Journal of Software Engineering & Applications",
+    "slr_year": 2018
+  },
+  {
+    "composite": 0.12,
+    "judge_justification": "The SLR references some relevant works on technical debt and variability management, but it omits canonical foundational papers such as Kruchten et al.'s original technical debt metaphor paper and Pohl et al.'s Software Product Line Engineering book. The references span from 2001 to 2021, showing moderate recency, but several entries lack complete bibliographic details (missing authors, titles, or venues), undermining credibility. Venue diversity is limited, with heavy reliance on a few conferences like SPLC and ICSR, and author overlap suggests potential echo-chamber effects. The methodology section is vague, lacking clear search strings, inclusion/exclusion criteria, or quality assessment procedures, which weakens the overall rigor and reproducibility of the review.",
+    "n_refs": 13,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.6,
+      "semantic": 0.0
+    },
+    "rank": 62,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.48,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1145/3629479.3629513",
+    "slr_title": "Variability Debt: A Multi-method Study",
+    "slr_venue": "Brazilian Symposium on Software Quality",
+    "slr_year": 2023
+  },
+  {
+    "composite": 0.10999999999999999,
+    "judge_justification": "The SLR lacks any visible references, making it impossible to assess citation quality. Without a reference list, the review cannot demonstrate coverage of seminal works, recent literature, or methodological rigor. This is a critical weakness for any systematic literature review.",
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.5499999999999999,
+      "semantic": 0.0
+    },
+    "rank": 63,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.44,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1109/iccsa50381.2020.00018",
+    "slr_title": "Continuous practices and technical debt: a systematic literature review",
+    "slr_venue": "Communication Systems and Applications",
+    "slr_year": 2020
+  },
+  {
+    "composite": 0.10999999999999999,
+    "judge_justification": "The SLR cites only 5 references, which is far too few for a systematic review on IT portfolio management and digital transformation. The references are not well-aligned with the stated scope\u2014e.g., [2] is about data science in marketing, which is off-topic. There is no clear evidence of a systematic search strategy or inclusion/exclusion criteria. The narrow and tangential reference list suggests weak coverage of the relevant literature.",
+    "n_refs": 5,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.5499999999999999,
+      "semantic": 0.0
+    },
+    "rank": 64,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.44,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1109/isitia63062.2024.10667758",
+    "slr_title": "The Influence of Portfolio Management on Evaluating IT Investments in Digital Transformation: A Systematic Literature Review",
+    "slr_venue": "International Seminar on Intelligent Technology and Its Applications",
+    "slr_year": 2024
+  },
+  {
+    "composite": 0.10999999999999999,
+    "judge_justification": "The SLR cites foundational works like AntiPatterns and Clean Architecture, but lacks recent (post-2020) literature on architecture smells and technical debt. References are narrowly focused on a few classic books and tools, missing key recent research from top venues like ICSE, ESEC/FSE, or SANER. The methodology is unclear with no explicit search strategy or inclusion criteria stated.",
+    "n_refs": 10,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.5499999999999999,
+      "semantic": 0.0
+    },
+    "rank": 65,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.44,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1145/3524843.3528092",
+    "slr_title": "An Architecture Smell Knowledge Base for Managing Architecture Technical Debt",
+    "slr_venue": "2022 IEEE/ACM International Conference on Technical Debt (TechDebt)",
+    "slr_year": 2022
+  },
+  {
+    "composite": 0.10999999999999999,
+    "judge_justification": "The SLR lists no actual references, making it impossible to evaluate the citation choices against the rubric dimensions. Without a bibliography, there is no evidence of canonical works, seminal or recent literature, diverse venues/authors, or alignment with the stated systematic review methodology. The abstract claims a systematic review of IEEE, ACM, and Scopus databases, but the absence of any cited works represents a serious weakness across all dimensions.",
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.5499999999999999,
+      "semantic": 0.0
+    },
+    "rank": 66,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.44,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.37547/tajiir/volume08issue01-17",
+    "slr_title": "Managing Technical Debt While Migrating Long-Standing Legacy Code to A Modern Tech Stack",
+    "slr_venue": "The American Journal of Interdisciplinary Innovations and Research",
+    "slr_year": 2026
+  },
+  {
+    "composite": 0.10999999999999999,
+    "judge_justification": "The SLR references only 41 studies, which is relatively low for a systematic review on a well-established topic like cloud migration. The references are not provided, making it impossible to assess the quality of the cited works. The abstract mentions microservice-based architectures and cloud-oriented design patterns, but without seeing the actual references, it's difficult to determine if seminal works are included. The review covers key phases of migration, but the lack of references makes it hard to evaluate the depth of coverage.",
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.5499999999999999,
+      "semantic": 0.0
+    },
+    "rank": 67,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.44,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.33333/rp.vol57n1.10",
+    "slr_title": "Migration Strategies from Monolithic Applications to Cloud-Native Applications: A Systematic Review",
+    "slr_venue": "Revista Polit\u00e9cnica",
+    "slr_year": 2026
+  },
+  {
+    "composite": 0.1,
+    "judge_justification": "The SLR provides no references to evaluate, making it impossible to assess the quality of citation choices. The abstract describes a quasi-systematic review but fails to cite any foundational or seminal works in technical debt management (e.g., Cunningham's original TD metaphor, or key works by Kruchten, Brown, or Guo). Without any visible references, all dimensions score at the lowest level as there is no evidence of scholarly rigor in citation practices.",
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.5,
+      "semantic": 0.0
+    },
+    "rank": 68,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.4,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.1145/3364641.3364679",
+    "slr_title": "Technologies to Support the Technical Debt Management in Software Projects: A Qualitative Research",
+    "slr_venue": "Brazilian Symposium on Software Quality",
+    "slr_year": 2019
+  },
+  {
+    "composite": 0.1,
+    "judge_justification": "The SLR is published on SSRN, which is not a typical venue for technical debt or software engineering research, suggesting limited peer review and academic rigor. The references are not provided, making it impossible to assess the quality, relevance, or breadth of the cited work. Without references, the study fails to demonstrate alignment with established literature or methodological transparency.",
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.5,
+      "semantic": 0.0
+    },
+    "rank": 69,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.4,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.2139/ssrn.3606172",
+    "slr_title": "Investigate, Identify and Estimate the Technical Debt: A Systematic Mapping Study",
+    "slr_venue": "Social Science Research Network",
+    "slr_year": 2020
+  },
+  {
+    "composite": 0.09,
+    "judge_justification": "The SLR provides no references, making it impossible to evaluate the quality of citation choices. Without any cited works, the review cannot demonstrate coverage of seminal or recent literature, diversity of sources, or alignment with a stated methodology. This represents a fundamental weakness in scholarly rigor.",
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.44999999999999996,
+      "semantic": 0.0
+    },
+    "rank": 70,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.36,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.30574/wjaets.2025.15.2.0459",
+    "slr_title": "Demystifying data pipelines for AI-driven financial systems",
+    "slr_venue": "World Journal of Advanced Engineering Technology and Sciences",
+    "slr_year": 2025
+  },
+  {
+    "composite": 0.09,
+    "judge_justification": "The SLR references are not provided in the text, making it impossible to evaluate the quality of citation choices. The abstract mentions code smells and technical debt but lacks specific references to seminal works like Fowler's 'Refactoring' or Li et al.'s empirical studies on code smells. Without seeing the actual reference list, the scoring is based on the abstract alone, which shows a broad but vague scope without clear alignment to established literature.",
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.44999999999999996,
+      "semantic": 0.0
+    },
+    "rank": 71,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.36,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.61467/2007.1558.2025.v16i1.947",
+    "slr_title": "Systematic Review of Code Smell Patterns and Their Impact on Software Technical Debt",
+    "slr_venue": "International Journal of Combinatorial Optimization Problems and Informatics",
+    "slr_year": 2026
+  },
+  {
+    "composite": 0.05,
+    "judge_justification": "The reference list is absent, making it impossible to assess whether seminal, recent, or cross\u2011venue works are included. Without citations, the review cannot be judged as comprehensive or balanced.",
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.25,
+      "semantic": 0.0
+    },
+    "rank": 72,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.2,
+      "semantic": 0.0
+    },
+    "slr_key": "doi:10.61467/2007.1558.2025.v16i4.1150",
+    "slr_title": "A Systematic Literature Review on Technical Debt in Software Development: Types, Tools, and Concerns",
+    "slr_venue": "International Journal of Combinatorial Optimization Problems and Informatics",
+    "slr_year": 2025
+  },
+  {
+    "composite": 0.05,
+    "judge_justification": "The SLR provides no references, making it impossible to evaluate any dimension of citation quality. Without a reference list, there is no evidence of scholarly foundation, recency, diversity, methodological alignment, or comprehensiveness.",
+    "n_refs": 0,
+    "n_refs_embedded": 0,
+    "normalized": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.25,
+      "semantic": 0.0
+    },
+    "rank": 73,
+    "raw": {
+      "authority": 0.0,
+      "coverage": 0.0,
+      "diversity": 0.0,
+      "llm_judge": 0.2,
       "semantic": 0.0
     },
     "slr_key": "doi:10.21608/jcsr.2025.417802.1019",
@@ -1402,432 +1827,7 @@
   {
     "composite": 0.0,
     "judge_justification": null,
-    "n_refs": 0,
-    "n_refs_embedded": 0,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 57,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.1109/iccsa50381.2020.00018",
-    "slr_title": "Continuous practices and technical debt: a systematic literature review",
-    "slr_venue": "Communication Systems and Applications",
-    "slr_year": 2020
-  },
-  {
-    "composite": 0.0,
-    "judge_justification": null,
-    "n_refs": 0,
-    "n_refs_embedded": 0,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 58,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "ss:0e3ac7de691a092785b476a408d3f7bf76eb16ae",
-    "slr_title": "Trade-off Decisions Across Time in Technical Debt Management : Dataset of Papers used in a Systematic Literature Review",
-    "slr_venue": "",
-    "slr_year": 2018
-  },
-  {
-    "composite": 0.0,
-    "judge_justification": null,
-    "n_refs": 5,
-    "n_refs_embedded": 0,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 59,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.1109/isitia63062.2024.10667758",
-    "slr_title": "The Influence of Portfolio Management on Evaluating IT Investments in Digital Transformation: A Systematic Literature Review",
-    "slr_venue": "International Seminar on Intelligent Technology and Its Applications",
-    "slr_year": 2024
-  },
-  {
-    "composite": 0.0,
-    "judge_justification": null,
-    "n_refs": 20,
-    "n_refs_embedded": 1,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 60,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.1145/3592813.3592925",
-    "slr_title": "Identifying and Measuring Technical Debt in Software Requirements: a supporting guide",
-    "slr_venue": "Brazilian Symposium on Information Systems",
-    "slr_year": 2023
-  },
-  {
-    "composite": 0.0,
-    "judge_justification": null,
-    "n_refs": 10,
-    "n_refs_embedded": 0,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 61,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.1145/3524843.3528092",
-    "slr_title": "An Architecture Smell Knowledge Base for Managing Architecture Technical Debt",
-    "slr_venue": "2022 IEEE/ACM International Conference on Technical Debt (TechDebt)",
-    "slr_year": 2022
-  },
-  {
-    "composite": 0.0,
-    "judge_justification": null,
-    "n_refs": 0,
-    "n_refs_embedded": 0,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 62,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.1145/3364641.3364679",
-    "slr_title": "Technologies to Support the Technical Debt Management in Software Projects: A Qualitative Research",
-    "slr_venue": "Brazilian Symposium on Software Quality",
-    "slr_year": 2019
-  },
-  {
-    "composite": 0.0,
-    "judge_justification": null,
-    "n_refs": 0,
-    "n_refs_embedded": 0,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 63,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.1109/amitic68284.2025.11214613",
-    "slr_title": "Social Debt in Agile Software Development",
-    "slr_venue": "2025 IEEE VIII Congreso Internacional en Inteligencia Ambiental, Ingenieria de Software y Salud Electronica y Movil (AmITIC)",
-    "slr_year": 2025
-  },
-  {
-    "composite": 0.0,
-    "judge_justification": null,
-    "n_refs": 13,
-    "n_refs_embedded": 0,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 64,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.1145/3629479.3629513",
-    "slr_title": "Variability Debt: A Multi-method Study",
-    "slr_venue": "Brazilian Symposium on Software Quality",
-    "slr_year": 2023
-  },
-  {
-    "composite": 0.0,
-    "judge_justification": null,
-    "n_refs": 0,
-    "n_refs_embedded": 0,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 65,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.30574/wjaets.2025.15.2.0459",
-    "slr_title": "Demystifying data pipelines for AI-driven financial systems",
-    "slr_venue": "World Journal of Advanced Engineering Technology and Sciences",
-    "slr_year": 2025
-  },
-  {
-    "composite": 0.0,
-    "judge_justification": null,
-    "n_refs": 10,
-    "n_refs_embedded": 0,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 66,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.1109/techdebt66644.2025.00012",
-    "slr_title": "Requirements Technical Debt Through the Lens of Environment Assumptions",
-    "slr_venue": "2025 IEEE/ACM International Conference on Technical Debt (TechDebt)",
-    "slr_year": 2025
-  },
-  {
-    "composite": 0.0,
-    "judge_justification": null,
-    "n_refs": 28,
-    "n_refs_embedded": 0,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 67,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.70315/uloap.ulirs.2026.0301009",
-    "slr_title": "Accelerating Mobile Application Development and Testing with Artificial Intelligence: A Systematic Literature Review",
-    "slr_venue": "Universal Library of Innovative Research and Studies",
-    "slr_year": 2026
-  },
-  {
-    "composite": 0.0,
-    "judge_justification": null,
-    "n_refs": 0,
-    "n_refs_embedded": 0,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 68,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "ss:a4252d6a5d9522a85984379f8ee3bf118df782c1",
-    "slr_title": "A systematic mapping study on technical debt definition",
-    "slr_venue": "",
-    "slr_year": 2015
-  },
-  {
-    "composite": 0.0,
-    "judge_justification": null,
-    "n_refs": 0,
-    "n_refs_embedded": 0,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 69,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.61467/2007.1558.2025.v16i1.947",
-    "slr_title": "Systematic Review of Code Smell Patterns and Their Impact on Software Technical Debt",
-    "slr_venue": "International Journal of Combinatorial Optimization Problems and Informatics",
-    "slr_year": 2026
-  },
-  {
-    "composite": 0.0,
-    "judge_justification": null,
     "n_refs": 6,
-    "n_refs_embedded": 0,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 70,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.1145/3675393",
-    "slr_title": "A Systematic Mapping Study Exploring Quantification Approaches to Code, Design, and Architecture Technical Debt",
-    "slr_venue": "ACM Transactions on Software Engineering and Methodology",
-    "slr_year": 2024
-  },
-  {
-    "composite": 0.0,
-    "judge_justification": null,
-    "n_refs": 0,
-    "n_refs_embedded": 0,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 71,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.5121/ijsea.2018.9501",
-    "slr_title": "Investigate, Identify and Estimate the Technical Debt: A Systematic Mapping Study",
-    "slr_venue": "International Journal of Software Engineering & Applications",
-    "slr_year": 2018
-  },
-  {
-    "composite": 0.0,
-    "judge_justification": null,
-    "n_refs": 0,
-    "n_refs_embedded": 0,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 72,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.37547/tajiir/volume08issue01-17",
-    "slr_title": "Managing Technical Debt While Migrating Long-Standing Legacy Code to A Modern Tech Stack",
-    "slr_venue": "The American Journal of Interdisciplinary Innovations and Research",
-    "slr_year": 2026
-  },
-  {
-    "composite": 0.0,
-    "judge_justification": null,
-    "n_refs": 0,
-    "n_refs_embedded": 0,
-    "normalized": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "rank": 73,
-    "raw": {
-      "authority": 0.0,
-      "coverage": 0.0,
-      "diversity": 0.0,
-      "llm_judge": 0.0,
-      "semantic": 0.0
-    },
-    "slr_key": "doi:10.33333/rp.vol57n1.10",
-    "slr_title": "Migration Strategies from Monolithic Applications to Cloud-Native Applications: A Systematic Review",
-    "slr_venue": "Revista Polit\u00e9cnica",
-    "slr_year": 2026
-  },
-  {
-    "composite": 0.0,
-    "judge_justification": null,
-    "n_refs": 0,
     "n_refs_embedded": 0,
     "normalized": {
       "authority": 0.0,
@@ -1844,9 +1844,9 @@
       "llm_judge": 0.0,
       "semantic": 0.0
     },
-    "slr_key": "doi:10.2139/ssrn.3606172",
-    "slr_title": "Investigate, Identify and Estimate the Technical Debt: A Systematic Mapping Study",
-    "slr_venue": "Social Science Research Network",
-    "slr_year": 2020
+    "slr_key": "doi:10.1145/3675393",
+    "slr_title": "A Systematic Mapping Study Exploring Quantification Approaches to Code, Design, and Architecture Technical Debt",
+    "slr_venue": "ACM Transactions on Software Engineering and Methodology",
+    "slr_year": 2024
   }
 ]

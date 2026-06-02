@@ -24,16 +24,16 @@
 | | |
 |---|---|
 | 🌐 **Live site** | https://web-liard-zeta-83.vercel.app |
-| 🎯 **About** | [/about](https://web-liard-zeta-83.vercel.app/about) — why this exists |
-| 🛠️ **Method** | [/method](https://web-liard-zeta-83.vercel.app/method) — 6-stage pipeline |
-| 🪐 **3D graph** | [/graph](https://web-liard-zeta-83.vercel.app/graph) — citation network |
+| 🎯 **About** | [/about](https://web-liard-zeta-83.vercel.app/about) - why this exists |
+| 🛠️ **Method** | [/method](https://web-liard-zeta-83.vercel.app/method) - 6-stage pipeline |
+| 🪐 **3D graph** | [/graph](https://web-liard-zeta-83.vercel.app/graph) - citation network |
 
 ---
 
 ## 🎯 Why this exists
 
 When researchers want to learn about a field they don't already work in,
-they reach for a **systematic literature review** — an SLR. The pitch is
+they reach for a **systematic literature review** - an SLR. The pitch is
 simple: somebody else read all the important papers, weighed the evidence,
 and wrote it up. The SLR becomes the shortcut.
 
@@ -80,11 +80,11 @@ pnpm dev          # http://localhost:3000
 
 Min-max normalized per dimension, weighted sum (default equal 0.2 each):
 
-1. 📚 **Coverage** — % of the 50 required-reading papers this SLR cited
-2. 🧠 **Semantic** — mean cosine similarity between SLR vector and reference vectors (Qwen3-Embedding-0.6B)
-3. 🏛️ **Authority** — mean `log(1 + citationCount)` of references
-4. 🌐 **Diversity** — Shannon entropy of venues + first authors
-5. 🤖 **LLM judge** — rubric scoring via OpenRouter (DeepSeek / owl-alpha), temperature 0, cached
+1. 📚 **Coverage** - % of the 50 required-reading papers this SLR cited
+2. 🧠 **Semantic** - mean cosine similarity between SLR vector and reference vectors (Qwen3-Embedding-0.6B)
+3. 🏛️ **Authority** - mean `log(1 + citationCount)` of references
+4. 🌐 **Diversity** - Shannon entropy of venues + first authors
+5. 🤖 **LLM judge** - rubric scoring via OpenRouter (DeepSeek / owl-alpha), temperature 0, cached
 
 ---
 
@@ -139,7 +139,7 @@ slr-citation-audit/
 | `/` | Hero, big stat, route index, most-cited callout, distribution histogram, full SLR table sorted by composite rank |
 | `/about` | Why this audit exists + caveats + a guided tour |
 | `/slrs/[id]` | Per-SLR coverage gauge, hit list, miss list, full bibliography, 5-dim rank breakdown with AI judge's justification |
-| `/papers/[id]` | Per-paper SLR recall — which SLRs cite it vs miss it (date-eligible) |
+| `/papers/[id]` | Per-paper SLR recall - which SLRs cite it vs miss it (date-eligible) |
 | `/consensus` | Most-cited papers across all SLR bibliographies (whether on the required list or not) |
 | `/compare` | Pairwise reference overlap between any two SLRs |
 | `/graph` | 3D citation network (R3F + 3d-force-graph) |
@@ -174,4 +174,4 @@ Stored in `.env` (gitignored). See [`.env.example`](.env.example) for the full l
 
 ## 📖 License
 
-[MIT](LICENSE) © 2026 Connor Tessaro. Coursework project — private use, no PII.
+[MIT](LICENSE) © 2026 Connor Tessaro. Coursework project - private use, no PII.

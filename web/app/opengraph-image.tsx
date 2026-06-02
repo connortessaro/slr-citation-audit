@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { getOverviewStats } from "@/lib/data";
 
 export const runtime = "nodejs";
-export const alt = "slr.audit — citation coverage of technical-debt SLRs";
+export const alt = "slr.audit - citation coverage of technical-debt SLRs";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

@@ -78,7 +78,7 @@ export default function HomePage() {
               >
                 This audit grades {stats.slrCount} published SLRs in the{" "}
                 <em>technical debt</em> subfield (shortcuts in code that
-                cost time later) against a required-reading list — the{" "}
+                cost time later) against a required-reading list - the{" "}
                 {stats.topCount} most-cited papers in the same area on
                 Semantic Scholar.{" "}
                 <strong className="text-[var(--color-text)]">
@@ -87,7 +87,7 @@ export default function HomePage() {
                 Half cite less than{" "}
                 {stats.medianCoveragePct.toFixed(1)}% of the list.{" "}
                 {worstZero} cite zero of it. Papers published after an SLR
-                came out don't count against it — nobody gets blamed for
+                came out don't count against it - nobody gets blamed for
                 missing the future.
               </p>
             </FadeIn>
@@ -111,7 +111,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SLR EXPLAINER — quick definition for cold visitors */}
+      {/* SLR EXPLAINER - quick definition for cold visitors */}
       <section className="border-b border-[var(--color-border)] bg-[var(--color-surface)]/30">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
           <div className="grid gap-6 lg:grid-cols-[14rem_1fr] lg:gap-12">
@@ -128,7 +128,7 @@ export default function HomePage() {
               <em>Systematic Literature Review.</em> A report that
               summarizes a research field by pulling together a bunch of
               other papers and their findings. SLRs are supposed to be the
-              go-to reference for anyone starting work in a field — which
+              go-to reference for anyone starting work in a field - which
               is exactly why missing citations matters.{" "}
               <Link
                 href="/about"
@@ -148,7 +148,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* MOST-CITED CALLOUT — editorial break: full-bleed serif */}
+      {/* MOST-CITED CALLOUT - editorial break: full-bleed serif */}
       {mostCitedTop && (
         <section
           className="border-y border-[var(--color-border)]"
@@ -188,7 +188,7 @@ export default function HomePage() {
               This is the most-cited paper on the entire required-reading
               list. Cited by {mostCitedRefCount} of {stats.slrCount}{" "}
               published SLRs ({mostCitedSlrPct.toFixed(1)}%). Every other
-              paper trails by half — meaning even the strongest signal in
+              paper trails by half - meaning even the strongest signal in
               the field is one most SLRs ignore.
             </p>
             <Link

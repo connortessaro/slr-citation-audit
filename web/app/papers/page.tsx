@@ -34,11 +34,12 @@ export default function PapersIndexPage() {
         Top cited
       </div>
       <h1 className="mt-3 text-3xl font-semibold tracking-tight text-[var(--color-text)] sm:text-4xl">
-        {top.length} canonical papers in the corpus
+        The {top.length}-paper required-reading list
       </h1>
       <p className="mt-4 max-w-xl text-sm leading-relaxed text-[var(--color-text-muted)]">
-        Pick from the sidebar for a single paper&apos;s recall across the
-        review corpus. Highlights below.
+        The {top.length} most-cited papers on technical debt - the
+        benchmark every SLR is graded against. Pick from the sidebar for
+        a single paper&apos;s history across every SLR. Highlights below.
       </p>
 
       <section className="mt-12">

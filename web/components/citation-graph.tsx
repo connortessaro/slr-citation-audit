@@ -90,7 +90,7 @@ export function CitationGraph({ data }: Props) {
 
   return (
     <div className="relative w-full md:h-[calc(100vh-3.5rem-1px)]">
-      {/* sr-only h1 — every page should have one. The desktop canvas has
+      {/* sr-only h1 - every page should have one. The desktop canvas has
           no visible heading; the mobile fallback shows the visible one. */}
       <h1 className="sr-only">
         3D citation graph · {data.nodes.length} nodes · {data.links.length}{" "}
@@ -108,7 +108,7 @@ export function CitationGraph({ data }: Props) {
         <p className="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
           {data.nodes.length} nodes, {data.links.length} edges. Pinch-zoom
           fights the WebGL pan on phones. Open this route on a desktop
-          browser, or jump to the consensus list — same canonical top-N
+          browser, or jump to the consensus list - same canonical top-N
           and which reviews actually cite each one.
         </p>
         <a

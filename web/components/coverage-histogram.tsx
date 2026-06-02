@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { useMemo } from "react";
 
 interface Props {
-  bins: number[]; // length N+1 — bin edges (0..100)
+  bins: number[]; // length N+1 - bin edges (0..100)
   counts: number[]; // length N
   height?: number;
 }

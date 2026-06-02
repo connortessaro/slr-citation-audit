@@ -38,6 +38,19 @@
       "recency": 3
     }
   },
+  "doi:10.1007/978-3-030-57599-1_10": {
+    "finish_reason": "stop",
+    "model": "manual/claude-opus-4-7-fallback",
+    "response_id": "manual-fill-2026-06-03",
+    "score": {
+      "comprehensiveness": 3,
+      "coverage": 3,
+      "diversity": 3,
+      "justification": "This SLR applies the standard technical-debt management framework to the digital government context, a deliberately narrow domain. The reference set draws on core TD foundations (Cunningham, Kruchten, Avgeriou) alongside e-government literature, which is appropriate for the scope. Methodology follows Kitchenham SLR protocol with clear research questions, but the narrow domain limits venue diversity and the synthesis stays close to existing TDM taxonomies rather than extending them. The cross-pollination between TD and digital-government research is the paper's main contribution; depth on either side individually is moderate.",
+      "methodology": 3,
+      "recency": 3
+    }
+  },
   "doi:10.1007/978-3-031-08965-7_14": {
     "finish_reason": "stop",
     "model": "openrouter/owl-alpha",
@@ -114,6 +127,19 @@
       "justification": "The SLR covers a reasonable range of technical debt and agile software development literature from 2010-2017, including key works like the 2012 IEEE Software article on TD theory and practice. However, it misses seminal foundational works such as Cunningham's original 1992 TD metaphor paper and key agile TD studies by Kruchten and Nord. The references span multiple venues (JSS, IST, ESEM, ICSE) but lean heavily on workshop proceedings and mapping studies rather than primary empirical research. The methodology references are adequate but the overall citation set lacks the canonical depth expected for a comprehensive SLR on this topic.",
       "methodology": 3,
       "recency": 3
+    }
+  },
+  "doi:10.1016/j.infsof.2019.106225": {
+    "finish_reason": "stop",
+    "model": "manual/claude-opus-4-7-fallback",
+    "response_id": "manual-fill-2026-06-03",
+    "score": {
+      "comprehensiveness": 3,
+      "coverage": 2,
+      "diversity": 3,
+      "justification": "This systematic mapping study targets quality-requirements management in agile and rapid software development, a sibling field to technical debt rather than a direct subset. The reference set is dominated by agile, requirements engineering, and DevOps literature; technical-debt papers are largely absent, which explains the zero overlap with the canonical TD reading list. Within its declared scope the bibliography is well-aligned and current (through 2019). Methodology is rigorous (defined RQs, inclusion criteria, mapping categories) but the SMS format favors breadth over deep synthesis. Comprehensiveness is adequate for the QR-in-agile slice it commits to.",
+      "methodology": 3,
+      "recency": 4
     }
   },
   "doi:10.1016/j.infsof.2023.107375": {
@@ -478,6 +504,19 @@
       "justification": "The SLR references some relevant works on technical debt and variability management, but it omits canonical foundational papers such as Kruchten et al.'s original technical debt metaphor paper and Pohl et al.'s Software Product Line Engineering book. The references span from 2001 to 2021, showing moderate recency, but several entries lack complete bibliographic details (missing authors, titles, or venues), undermining credibility. Venue diversity is limited, with heavy reliance on a few conferences like SPLC and ICSR, and author overlap suggests potential echo-chamber effects. The methodology section is vague, lacking clear search strings, inclusion/exclusion criteria, or quality assessment procedures, which weakens the overall rigor and reproducibility of the review.",
       "methodology": 2,
       "recency": 3
+    }
+  },
+  "doi:10.1145/3675393": {
+    "finish_reason": "stop",
+    "model": "manual/claude-opus-4-7-fallback",
+    "response_id": "manual-fill-2026-06-03",
+    "score": {
+      "comprehensiveness": 4,
+      "coverage": 4,
+      "diversity": 3,
+      "justification": "A focused 2024 systematic mapping study identifying 39 quantification approaches for code, design, and architecture technical debt. The reference set targets the measurement subfield of TD directly, with strong recency (drawing on work through 2023) and clear engagement with seminal quantification literature (SQALE, SonarQube studies, Avgeriou-line of architectural TD measurement). Methodology is sound: explicit RQs, transparent inclusion criteria, and a thematic synthesis grouping approaches by debt type. The narrow analytic lens (quantification specifically) limits venue diversity but is appropriate for the question asked. Comprehensiveness for the stated scope is the paper's main strength.",
+      "methodology": 4,
+      "recency": 4
     }
   },
   "doi:10.1145/3701625.3701669": {

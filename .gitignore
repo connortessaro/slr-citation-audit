@@ -27,3 +27,6 @@ data/raw/*
 
 # Vercel CLI metadata
 .vercel/
+
+# Embeddings cache (regenerable from 06_rank/embed.py; large binary)
+data/processed/embeddings.npz

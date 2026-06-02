@@ -79,7 +79,7 @@ export function ConsensusTable({ rows }: Props) {
                   {p.title}
                 </div>
                 <div className="mt-0.5 truncate font-mono text-[11px] text-[var(--color-text-faint)]">
-                  {p.year ?? "—"}
+                  {p.year ?? "-"}
                   {p.citationCount > 0 && ` · ${p.citationCount.toLocaleString()} cites`}
                   {p.inTop50 && p.rank && (
                     <span className="ml-2 text-[var(--color-accent)]">

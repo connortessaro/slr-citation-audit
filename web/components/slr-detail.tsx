@@ -2,8 +2,9 @@
 
 import { motion } from "motion/react";
 import { useState } from "react";
-import type { Paper, MissedPairRow } from "@/lib/data";
+import type { Paper, MissedPairRow, RankRow } from "@/lib/data";
 import { cn } from "@/lib/utils";
+import { RankBreakdown } from "./rank-breakdown";
 
 interface Props {
   title: string;
@@ -19,6 +20,7 @@ interface Props {
   hitsList: Paper[];
   missedFromTop: Paper[];
   missedPairs: MissedPairRow[];
+  rank: RankRow | null;
 }
 
 type Tab = "hits" | "missed" | "refs";
@@ -93,6 +95,7 @@ export function SLRDetail({
   refs,
   hitsList,
   missedFromTop,
+  rank,
 }: Props) {
   const [tab, setTab] = useState<Tab>("hits");
 
@@ -118,7 +121,7 @@ export function SLRDetail({
         {title}
       </h1>
       <div className="mt-2 font-mono text-xs text-[var(--color-text-muted)]">
-        {year ?? "—"} · {venue || "Unknown venue"}
+        {year ?? "-"} · {venue || "Unknown venue"}
       </div>
 
       <div className="mt-8 grid gap-6 sm:grid-cols-[1.5fr_1fr]">
@@ -169,6 +172,13 @@ export function SLRDetail({
           </p>
         </div>
       </div>
+
+      {/* Rank breakdown */}
+      {rank && (
+        <div className="mt-10">
+          <RankBreakdown row={rank} />
+        </div>
+      )}
 
       {/* Tabs */}
       <div className="mt-10">

@@ -38,7 +38,7 @@ function SlrRow({
           {title}
         </div>
         <div className="mt-0.5 truncate font-mono text-[11px] text-[var(--color-text-faint)]">
-          {s.slr_year || "—"} · {s.slr_venue} · coverage{" "}
+          {s.slr_year || "-"} · {s.slr_venue} · coverage{" "}
           {s.coverage_pct.toFixed(1)}%
         </div>
       </div>

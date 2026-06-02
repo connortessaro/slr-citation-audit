@@ -13,10 +13,10 @@
   --color-surface-hover: #1c1c1c;
   --color-border: rgba(255, 255, 255, 0.06);
   --color-border-strong: rgba(255, 255, 255, 0.12);
-  --color-text: #ededed;
-  --color-text-muted: #a1a1a1;
-  --color-text-subtle: #6b6b6b;
-  --color-text-faint: #4a4a4a;
+  --color-text: #f4f4f5;
+  --color-text-muted: #b4b4b4;
+  --color-text-subtle: #909090;
+  --color-text-faint: #6b6b6b;
 
   /* Accent (vivid green — locks Linear/Vercel-grade neon) */
   --color-accent: #00ff88;

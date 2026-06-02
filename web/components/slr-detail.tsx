@@ -22,6 +22,7 @@ interface Props {
   missedFromTop: Paper[];
   missedPairs: MissedPairRow[];
   rank: RankRow | null;
+  rankTotal: number;
 }
 
 type Tab = "hits" | "missed" | "refs";
@@ -97,6 +98,7 @@ export function SLRDetail({
   hitsList,
   missedFromTop,
   rank,
+  rankTotal,
 }: Props) {
   const [tab, setTab] = useState<Tab>("hits");
 
@@ -183,7 +185,7 @@ export function SLRDetail({
       {/* Rank breakdown */}
       {rank && (
         <div className="mt-10">
-          <RankBreakdown row={rank} />
+          <RankBreakdown row={rank} total={rankTotal} />
         </div>
       )}
 

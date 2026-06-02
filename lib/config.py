@@ -1,11 +1,14 @@
 """Load pipeline configuration from .env (with .env.example as fallback)."""
 from __future__ import annotations
 
+import logging
 import os
 from dataclasses import dataclass
 from pathlib import Path
 
 from dotenv import dotenv_values
+
+logger = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 ENV_PATH = REPO_ROOT / ".env"
@@ -65,23 +68,38 @@ class Config:
             file_values.update(dotenv_values(env_path))
 
         def get(name: str) -> str:
-            return (
-                os.environ.get(name)
-                or (file_values.get(name) or "")
-                or _DEFAULTS.get(name, "")
-            )
+            # Precedence: explicit env > .env file > .env.example > _DEFAULTS.
+            # An explicitly-set empty string at any level wins over later layers
+            # so users can unset a default by writing `NAME=` in .env.
+            if name in os.environ:
+                return os.environ[name]
+            if name in file_values:
+                return file_values[name] or ""
+            return _DEFAULTS.get(name, "")
 
-        weights = tuple(float(x) for x in _csv(get("RANK_WEIGHTS")))
+        def get_int(name: str) -> int:
+            # Empty/blank override falls through to _DEFAULTS so users don't have
+            # to know the numeric default to keep one. Booleans/strings honor empty
+            # via `get(...)` directly.
+            raw = get(name)
+            return int(raw) if raw.strip() else int(_DEFAULTS[name])
+
+        raw_weights = _csv(get("RANK_WEIGHTS"))
+        weights = tuple(float(x) for x in raw_weights)
         if len(weights) != 5:
+            logger.warning(
+                "RANK_WEIGHTS has %d values (need 5); resetting to equal weights (0.2 each). Got: %r",
+                len(weights), raw_weights,
+            )
             weights = (0.2, 0.2, 0.2, 0.2, 0.2)
 
         return cls(
             subfield=get("SUBFIELD"),
             keywords=_csv(get("KEYWORDS")),
-            year_min=int(get("YEAR_MIN")),
-            year_max=int(get("YEAR_MAX")),
+            year_min=get_int("YEAR_MIN"),
+            year_max=get_int("YEAR_MAX"),
             slr_title_patterns=[p.lower() for p in _csv(get("SLR_TITLE_PATTERNS"))],
-            top_n=int(get("TOP_N")),
+            top_n=get_int("TOP_N"),
             ss_base_url=get("SS_BASE_URL"),
             ss_api_key=get("SEMANTIC_SCHOLAR_API_KEY") or None,
             openrouter_api_key=get("OPENROUTER_API_KEY") or None,
@@ -90,7 +108,7 @@ class Config:
             embed_model=get("EMBED_MODEL"),
             rank_weights=weights,
             fulltext_enabled=get("FULLTEXT_ENABLED").lower() in ("1", "true", "yes"),
-            fulltext_max_tokens=int(get("FULLTEXT_MAX_TOKENS")),
+            fulltext_max_tokens=get_int("FULLTEXT_MAX_TOKENS"),
         )
 
 

@@ -53,6 +53,10 @@ RANKED_JSON = REPO_ROOT / "data" / "processed" / "ranked_slrs.json"
 REPORT_PATH = REPO_ROOT / "report" / "ranking_report.md"
 
 DIM_NAMES = ("coverage", "semantic", "authority", "diversity", "llm_judge")
+CSV_FIELDNAMES = (
+    "rank", "slr_key", "slr_title", "slr_year", "slr_venue",
+    "composite", *DIM_NAMES, "n_refs", "n_refs_embedded",
+)
 
 
 # ---------- pure scoring functions ----------
@@ -122,12 +126,12 @@ def llm_judge_score(payload: dict | None) -> float:
 
 
 def min_max_normalize(values: list[float]) -> list[float]:
-    """Scale to [0, 1]. Returns 0.5 for everyone if all equal. Empty -> []."""
+    """Scale to [0, 1]. All-equal at 0 -> 0.0 (no signal); all-equal otherwise -> 0.5 (tie). Empty -> []."""
     if not values:
         return []
     lo, hi = min(values), max(values)
     if hi - lo < 1e-12:
-        return [0.5 for _ in values]
+        return [0.0 if abs(hi) < 1e-12 else 0.5 for _ in values]
     return [(v - lo) / (hi - lo) for v in values]
 
 
@@ -212,8 +216,7 @@ def _compute_raw_dims(
                 "llm_judge": llm_judge_score(judge_map.get(slr_key)),
             },
             "judge_justification": (
-                (judge_map.get(slr_key) or {}).get("score", {}).get("justification")
-                if judge_map.get(slr_key) else None
+                ((judge_map.get(slr_key) or {}).get("score") or {}).get("justification")
             ),
         })
     return rows
@@ -244,12 +247,8 @@ def _write_outputs(
 
     # CSV
     csv_path.parent.mkdir(parents=True, exist_ok=True)
-    fieldnames = [
-        "rank", "slr_key", "slr_title", "slr_year", "slr_venue",
-        "composite", *DIM_NAMES, "n_refs", "n_refs_embedded",
-    ]
     with csv_path.open("w", encoding="utf-8", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=fieldnames)
+        w = csv.DictWriter(f, fieldnames=list(CSV_FIELDNAMES))
         w.writeheader()
         for r in rows_sorted:
             row = {
@@ -366,9 +365,9 @@ def run(
 
     rows = _compute_raw_dims(corpus, refs_by_slr, coverage_map, metadata, embeddings, judge_map)
     if not rows:
-        logger.warning("No SLR rows produced (empty corpus); writing empty outputs and skipping ranking.")
+        logger.warning("No SLR rows produced (empty corpus); writing header-only outputs and skipping ranking.")
         csv_path.parent.mkdir(parents=True, exist_ok=True)
-        csv_path.write_text("", encoding="utf-8")
+        csv_path.write_text(",".join(CSV_FIELDNAMES) + "\n", encoding="utf-8")
         json_path.write_text("[]", encoding="utf-8")
         report_path.parent.mkdir(parents=True, exist_ok=True)
         report_path.write_text("# SLR Citation-Quality Ranking\n\n_Empty corpus._\n", encoding="utf-8")

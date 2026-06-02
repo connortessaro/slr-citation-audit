@@ -14,7 +14,7 @@ gaps. Output: 3,000-word report with implications for SLR practice.
 
 1. What proportion of the top-50 most-cited technical debt papers are cited by
    each published SLR (with date controls)?
-2. Where SLRs miss highly-cited papers, what explains the omission — venue,
+2. Where SLRs miss highly-cited papers, what explains the omission - venue,
    publication year, accessibility, or other features?
 3. What practical implications follow for how SLRs should be conducted?
 
@@ -24,34 +24,34 @@ gaps. Output: 3,000-word report with implications for SLR practice.
 - **SLR sources:** ACM DL, IEEE Xplore, Semantic Scholar.
 - **Citation source:** Semantic Scholar exclusively (acknowledged limitation).
 - **Top-cited corpus size:** N = 50.
-- **Year range:** 2000–2025 (subject to refinement at Day 2 sign-off).
+- **Year range:** 2000-2026.
 
 ## Pipeline (5 stages)
 
 | Stage | Purpose | Inputs | Outputs |
 |-------|---------|--------|---------|
 | 01_identify_slrs | Find SLR candidates across 3 sources, dedupe, manually classify SLR vs general survey | keyword config, manual decisions CSV | `data/processed/slr_corpus.json` |
-| 02_extract_refs | Pull each SLR's reference list via Semantic Scholar | slr_corpus.json | `slr_references.json` |
-| 03_top_cited | Identify top-50 most-cited papers in subfield | keyword config | `top_cited_techdebt.json` |
+| 02_extract_refs | Pull each SLR's reference list via Semantic Scholar; prune SLRs with no refs | slr_corpus.json | `slr_references.json` |
+| 03_top_cited | Two-pass top-cited benchmark (established + recent, SS citations) | keyword config | `top_cited_techdebt.json`, `top_cited_techdebt_meta.json` |
 | 04_overlap | Date-controlled overlap per SLR | corpus + refs + top-cited | `overlap_matrix.csv` |
 | 05_explain_gaps | Enrich missed-paper records with venue, year, access | overlap_matrix + top-cited | `gap_analysis.csv` |
 
-Final stage: `report/report.md` — 3,000-word writeup synthesising results.
+Final stage: `report/report.md` - 3,000-word writeup synthesising results.
 
 ## Key methodology decisions
 
 - **Single citation source.** Semantic Scholar API is the authoritative count.
   Cross-DB variance is acknowledged as a limitation in the report, not papered
   over with averaging.
-- **Manual SLR classification.** The boolean "is this paper an SLR?" cannot be
-  resolved by title keywords alone (papers self-describe as "survey",
-  "mapping", "review"). Manual review feeds `data/manual/slr_decisions.csv`
-  with justification per paper.
+- **SLR classification.** Automated gates: subfield keywords plus widened
+  secondary-study self-labels (`docs/slr_identification_gates.md`). Optional
+  manual overrides in `data/manual/slr_decisions.csv`.
 - **Date control.** When computing overlap for an SLR published in year Y, the
   top-cited list is filtered to papers with `pub_year <= Y`. This prevents
   blaming SLRs for missing papers that did not yet exist.
-- **Top-cited size N=50.** Tractable for manual sanity-checking; large enough
-  to capture canonical works.
+- **Top-cited size N=50 (two-pass).** Half from papers older than four years
+  (by `as_of_year`), half from the last four years, each ranked by Semantic
+  Scholar `citationCount`. See `docs/top_cited_methodology.md`.
 
 ## Repo layout
 
@@ -74,14 +74,14 @@ slr-citation-audit/
 
 ## Data cache
 
-- `data/raw/` — one JSON file per API query (gitignored). Easy to inspect, easy
+- `data/raw/` - one JSON file per API query (gitignored). Easy to inspect, easy
   to re-fetch on cache miss.
-- `data/processed/` — merged + deduped pipeline outputs (tracked).
-- `data/manual/` — human-coded decisions (tracked).
+- `data/processed/` - merged + deduped pipeline outputs (tracked).
+- `data/manual/` - human-coded decisions (tracked).
 
 ## Dependencies
 
-`requests`, `pandas`, `pyyaml`, `ratelimit`, `tqdm`. No package install — scripts
+`requests`, `pandas`, `pyyaml`, `ratelimit`, `tqdm`. No package install - scripts
 run directly from numbered dirs.
 
 ## Risks & mitigations

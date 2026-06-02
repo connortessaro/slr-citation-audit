@@ -22,18 +22,18 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://web-e4qhnnknz-connor-tessaros-projects.vercel.app"),
   title: "slr.audit · citation coverage of technical-debt SLRs",
   description:
-    "60 published technical-debt literature reviews compared against the 50 most-cited papers in the field. Half cite under 5% of them. 24 cite zero.",
+    "74 published technical-debt literature reviews graded against the 50 most-cited papers in the field. Half cite under 2% of them. 36 cite zero.",
   openGraph: {
     title: "slr.audit",
     description:
-      "60 published reviews, 50 most-cited papers, year-matched. Half cite under 5%. 24 cite zero.",
+      "74 published reviews, 50 most-cited papers, year-matched. Half cite under 2%. 36 cite zero.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "slr.audit",
     description:
-      "60 published reviews, 50 most-cited papers, year-matched. Half cite under 5%. 24 cite zero.",
+      "74 published reviews, 50 most-cited papers, year-matched. Half cite under 2%. 36 cite zero.",
   },
 };
 

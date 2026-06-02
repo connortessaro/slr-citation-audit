@@ -118,7 +118,7 @@ export function SLRDetail({
         {title}
       </h1>
       <div className="mt-2 font-mono text-xs text-[var(--color-text-muted)]">
-        {year ?? "—"} · {venue || "Unknown venue"}
+        {year ?? "-"} · {venue || "Unknown venue"}
       </div>
 
       <div className="mt-8 grid gap-6 sm:grid-cols-[1.5fr_1fr]">

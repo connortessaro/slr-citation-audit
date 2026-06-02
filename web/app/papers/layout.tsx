@@ -6,7 +6,7 @@ export default function PapersLayout({ children }: { children: React.ReactNode }
   const items: SidebarItem[] = top.map((p) => ({
     id: p.paper_key,
     title: p.title || "(no title)",
-    meta: `${p.year ?? "—"} · ${(p.authors ?? []).slice(0, 2).join(", ")}`,
+    meta: `${p.year ?? "-"} · ${(p.authors ?? []).slice(0, 2).join(", ")}`,
     badge: `#${p.rank}`,
     badgeTone: "accent",
   }));

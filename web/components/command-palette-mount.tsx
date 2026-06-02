@@ -22,14 +22,14 @@ export function CommandPaletteMount() {
     ...overlap.map((o) => ({
       id: `slr-${o.slr_id}`,
       title: titleByKey.get(o.slr_id) || o.slr_title || o.slr_id,
-      meta: `${o.slr_year || "—"} · cov ${o.coverage_pct.toFixed(0)}%`,
+      meta: `${o.slr_year || "-"} · cov ${o.coverage_pct.toFixed(0)}%`,
       href: `/slrs/${encodeURIComponent(o.slr_id)}`,
       group: "SLRs" as const,
     })),
     ...top.map((p) => ({
       id: `paper-${p.paper_key}`,
       title: p.title || p.paper_key,
-      meta: `#${p.rank} · ${p.year ?? "—"} · ${(p.citationCount ?? 0).toLocaleString()} cites`,
+      meta: `#${p.rank} · ${p.year ?? "-"} · ${(p.citationCount ?? 0).toLocaleString()} cites`,
       href: `/papers/${encodeURIComponent(p.paper_key)}`,
       group: "Top cited" as const,
     })),

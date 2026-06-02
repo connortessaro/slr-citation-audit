@@ -12,7 +12,7 @@ export default function SLRsLayout({ children }: { children: React.ReactNode }) 
     .map((o) => ({
       id: o.slr_id,
       title: o.slr_title || titleByKey.get(o.slr_id) || "(no title)",
-      meta: `${o.slr_year || "—"} · ${o.slr_venue || ""}`.trim(),
+      meta: `${o.slr_year || "-"} · ${o.slr_venue || ""}`.trim(),
       badge: `${o.coverage_pct.toFixed(0)}%`,
       badgeTone:
         o.coverage_pct >= 30

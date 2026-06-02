@@ -3,10 +3,12 @@ import { CssAurora } from "@/components/css-aurora";
 import { BigStat } from "@/components/big-stat";
 import { CoverageHistogram } from "@/components/coverage-histogram";
 import { SLRTable } from "@/components/slr-table";
+import { RouteIndex } from "@/components/route-index";
 import {
   getCoverageHistogram,
   getOverlap,
   getOverviewStats,
+  getRefsMap,
   getTopCited,
 } from "@/lib/data";
 
@@ -15,6 +17,7 @@ export default function HomePage() {
   const histo = getCoverageHistogram(10);
   const overlap = getOverlap();
   const top = getTopCited();
+  const refsMap = getRefsMap();
 
   const sortedCov = [...overlap]
     .filter((o) => o.eligible_top_n > 0)
@@ -24,16 +27,26 @@ export default function HomePage() {
     (o) => o.eligible_top_n > 0 && o.coverage_pct === 0,
   ).length;
 
+  // Most-cited paper in the canonical corpus + how many SLRs in our set
+  // actually reference it.
   const mostCitedTop = [...top].sort(
     (a, b) => (b.citationCount ?? 0) - (a.citationCount ?? 0),
   )[0];
+  const mostCitedRefCount = mostCitedTop
+    ? Object.values(refsMap).filter((refs) =>
+        refs.some((r) => r.paper_key === mostCitedTop.paper_key),
+      ).length
+    : 0;
+  const mostCitedSlrPct = stats.slrCount
+    ? (mostCitedRefCount / stats.slrCount) * 100
+    : 0;
 
   return (
     <>
-      {/* HERO — editorial, single huge stat, asymmetric */}
+      {/* HERO */}
       <section className="relative isolate overflow-hidden border-b border-[var(--color-border)]">
         <CssAurora />
-        <div className="mx-auto grid max-w-7xl grid-cols-12 gap-6 px-6 pb-24 pt-20 sm:pt-32">
+        <div className="mx-auto grid max-w-7xl grid-cols-12 gap-6 px-6 pb-20 pt-20 sm:pt-28">
           <div className="col-span-12 flex items-center gap-3">
             <span className="inline-block size-1.5 rounded-full bg-[var(--color-accent)] shadow-[0_0_12px_var(--color-accent)]" />
             <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-accent)]">
@@ -41,10 +54,7 @@ export default function HomePage() {
             </span>
           </div>
 
-          <div className="col-span-12 mt-12 lg:col-span-8">
-            <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-text-subtle)]">
-              Mean coverage of the canonical top-{stats.topCount}
-            </div>
+          <div className="col-span-12 mt-10 lg:col-span-8">
             <BigStat value={stats.meanCoveragePct / 100} format="pct" />
             <p
               className="mt-8 max-w-xl text-pretty text-lg leading-relaxed text-[var(--color-text-muted)]"
@@ -53,75 +63,81 @@ export default function HomePage() {
                   "'Iowan Old Style', 'Iowan', 'Palatino', Georgia, serif",
               }}
             >
-              The Systematic Literature Reviews that define the
-              technical-debt subfield cite, on average, fewer than one in ten
-              of its most influential papers — even within their own
-              publication horizon.
+              {stats.slrCount} published reviews, {stats.topCount} canonical
+              papers, year-matched. Half the field cites less than{" "}
+              {stats.medianCoveragePct.toFixed(1)}% of it. {worstZero} cite
+              zero.
             </p>
           </div>
 
           <div className="col-span-12 mt-2 grid grid-cols-3 gap-4 self-end lg:col-span-4 lg:grid-cols-1 lg:gap-6">
-            <Meta label="SLRs analyzed" value={stats.slrCount} />
-            <Meta label="Canonical corpus" value={stats.topCount} />
-            <Meta label="SLRs at 0% coverage" value={worstZero} tone="miss" />
-          </div>
-        </div>
-
-        <div className="border-t border-[var(--color-border)] bg-[var(--color-bg)]/60 backdrop-blur-sm">
-          <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4 font-mono text-[11px] text-[var(--color-text-subtle)]">
-            <span className="hidden sm:inline">
-              ↓ scroll · or press{" "}
-              <kbd className="rounded border border-[var(--color-border-strong)] px-1 py-0.5">⌘K</kbd>{" "}
-              to search
-            </span>
-            <span className="flex flex-wrap items-center gap-4">
-              <NavLink href="/slrs" label="SLRs" />
-              <NavLink href="/papers" label="Top cited" />
-              <NavLink href="/consensus" label="Consensus" />
-              <NavLink href="/compare" label="Compare" />
-              <NavLink href="/graph" label="Graph" accent />
-              <NavLink href="/method" label="Method" />
-            </span>
+            <Meta label="At 0% coverage" value={worstZero} tone="miss" />
+            <Meta
+              label="Median coverage"
+              value={`${stats.medianCoveragePct.toFixed(1)}%`}
+            />
+            <Meta
+              label="Corpus"
+              value={`${stats.slrCount}/${stats.topCount}`}
+            />
           </div>
         </div>
       </section>
 
-      {/* MOST-CITED CALLOUT */}
+      {/* ROUTE INDEX (lifted above the most-cited callout) */}
+      <section className="border-b border-[var(--color-border)]">
+        <div className="mx-auto max-w-7xl px-6 py-16">
+          <RouteIndex />
+        </div>
+      </section>
+
+      {/* MOST-CITED CALLOUT — editorial break: full-bleed serif */}
       {mostCitedTop && (
-        <section className="border-b border-[var(--color-border)]">
-          <div className="mx-auto max-w-7xl px-6 py-20">
-            <div className="grid grid-cols-12 gap-6">
-              <div className="col-span-12 lg:col-span-4">
-                <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-text-subtle)]">
-                  The paper everyone should cite
-                </div>
-                <h2 className="mt-3 text-balance text-3xl font-semibold leading-tight tracking-tight text-[var(--color-text)] sm:text-4xl">
-                  {mostCitedTop.title}
-                </h2>
-                <p className="mt-4 font-mono text-xs text-[var(--color-text-muted)]">
-                  {(mostCitedTop.authors ?? []).slice(0, 3).join(", ")}
-                  {(mostCitedTop.authors?.length ?? 0) > 3 &&
-                    ` +${(mostCitedTop.authors?.length ?? 0) - 3}`}
-                  {mostCitedTop.year ? ` · ${mostCitedTop.year}` : ""}
-                  {mostCitedTop.venue ? ` · ${mostCitedTop.venue}` : ""}
-                </p>
-                <Link
-                  href={`/papers/${encodeURIComponent(mostCitedTop.paper_key)}`}
-                  className="mt-6 inline-flex items-center gap-2 font-mono text-xs text-[var(--color-accent)] hover:underline"
-                >
-                  Who cites it →
-                </Link>
-              </div>
-              <div className="col-span-12 grid grid-cols-2 gap-6 lg:col-span-8 lg:grid-cols-3 lg:gap-10">
-                <Inline
-                  label="Cites on Semantic Scholar"
-                  value={(mostCitedTop.citationCount ?? 0).toLocaleString()}
-                  highlight
-                />
-                <Inline label="Rank in corpus" value={`#${mostCitedTop.rank}`} />
-                <Inline label="Published" value={mostCitedTop.year?.toString() ?? "—"} />
-              </div>
+        <section
+          className="border-y border-[var(--color-border)]"
+          style={{ background: "var(--color-accent-soft)" }}
+        >
+          <div className="mx-auto max-w-5xl px-6 py-24 sm:py-32">
+            <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-accent)]">
+              The single strongest signal
             </div>
+            <h2
+              className="mt-6 text-balance text-4xl tracking-tight text-[var(--color-text)] sm:text-5xl md:text-6xl lg:text-7xl"
+              style={{
+                fontFamily:
+                  "'Iowan Old Style', 'Iowan', 'Palatino', Georgia, serif",
+                lineHeight: 1.05,
+              }}
+            >
+              &ldquo;{mostCitedTop.title}&rdquo;
+            </h2>
+            <p className="mt-8 font-mono text-sm text-[var(--color-text-muted)]">
+              {(mostCitedTop.authors ?? []).slice(0, 3).join(", ")}
+              {(mostCitedTop.authors?.length ?? 0) > 3 &&
+                ` +${(mostCitedTop.authors?.length ?? 0) - 3}`}
+              {mostCitedTop.year ? ` · ${mostCitedTop.year}` : ""}
+              {mostCitedTop.venue ? ` · ${mostCitedTop.venue}` : ""}
+              {mostCitedTop.citationCount
+                ? ` · ${mostCitedTop.citationCount.toLocaleString()} cites`
+                : ""}
+            </p>
+            <p
+              className="mt-6 max-w-2xl text-base leading-relaxed text-[var(--color-text-muted)] sm:text-lg"
+              style={{
+                fontFamily:
+                  "'Iowan Old Style', 'Iowan', 'Palatino', Georgia, serif",
+              }}
+            >
+              Cited by {mostCitedRefCount} of {stats.slrCount} reviews (
+              {mostCitedSlrPct.toFixed(1)}%). The strongest single-paper
+              signal in the dataset. Everything else trails by half.
+            </p>
+            <Link
+              href={`/papers/${encodeURIComponent(mostCitedTop.paper_key)}`}
+              className="mt-8 inline-flex items-center gap-2 font-mono text-sm text-[var(--color-accent)] hover:underline"
+            >
+              Who cites it →
+            </Link>
           </div>
         </section>
       )}
@@ -131,10 +147,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-6 py-20">
           <div className="grid grid-cols-12 gap-10">
             <div className="col-span-12 lg:col-span-5">
-              <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-text-subtle)]">
-                Coverage distribution
-              </div>
-              <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-tight text-[var(--color-text)] sm:text-4xl">
+              <h2 className="text-3xl font-semibold leading-tight tracking-tight text-[var(--color-text)] sm:text-4xl">
                 Most reviews miss most of the field.
               </h2>
               <p
@@ -172,14 +185,9 @@ export default function HomePage() {
       {/* FULL TABLE */}
       <section className="border-b border-[var(--color-border)]">
         <div className="mx-auto max-w-7xl px-6 py-20">
-          <div className="mb-8">
-            <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-text-subtle)]">
-              Every review, ranked
-            </div>
-            <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-tight text-[var(--color-text)] sm:text-4xl">
-              All {stats.slrCount} SLRs
-            </h2>
-          </div>
+          <h2 className="mb-8 text-3xl font-semibold leading-tight tracking-tight text-[var(--color-text)] sm:text-4xl">
+            All {stats.slrCount} SLRs
+          </h2>
           <SLRTable rows={overlap} />
         </div>
       </section>
@@ -205,40 +213,27 @@ export default function HomePage() {
                 A 6-stage Python pipeline pulls every paper cited by every
                 published SLR in the technical-debt subfield, joins it
                 against the Semantic Scholar top-{stats.topCount} for the
-                same area, filters by publication year, and reports coverage.
-                Built with <code className="font-mono text-[var(--color-text)]">paper_key</code>{" "}
+                same area, filters by publication year, and reports
+                coverage. Built with{" "}
+                <code className="font-mono text-[var(--color-text)]">
+                  paper_key
+                </code>{" "}
                 dedup (DOI → SS id → title), rate-limited bulk API access,
                 and a 5-dimension ranker. The UI is this site.
               </p>
             </div>
             <div className="col-span-12 lg:col-span-5">
-              <ol className="space-y-3 font-mono text-sm">
-                {[
-                  { n: "/slrs", t: "Per-review coverage gauge + ref lists" },
-                  { n: "/papers", t: "Per-paper SLR recall + miss list" },
-                  { n: "/consensus", t: "Most-cited paper across SLRs" },
-                  { n: "/compare", t: "Pairwise reference overlap (Jaccard)" },
-                  { n: "/graph", t: "Citation network in 3D" },
-                ].map((x) => (
-                  <li
-                    key={x.n}
-                    className="group flex items-baseline gap-4 border-b border-[var(--color-border)] pb-3"
-                  >
-                    <Link
-                      href={x.n}
-                      className="text-[var(--color-accent)] transition-colors group-hover:text-[var(--color-text)]"
-                    >
-                      {x.n}
-                    </Link>
-                    <span className="flex-1 text-[var(--color-text-muted)] transition-colors group-hover:text-[var(--color-text)]">
-                      {x.t}
-                    </span>
-                    <span className="text-[var(--color-text-faint)] transition-transform group-hover:translate-x-0.5 group-hover:text-[var(--color-accent)]">
-                      →
-                    </span>
-                  </li>
-                ))}
-              </ol>
+              <Link
+                href="/method"
+                className="group block rounded-md border border-[var(--color-border)] bg-[var(--color-surface)]/30 p-6 transition-colors hover:border-[var(--color-border-strong)] hover:bg-[var(--color-surface)]/60"
+              >
+                <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-text-subtle)]">
+                  Read the method
+                </div>
+                <div className="mt-3 font-mono text-base text-[var(--color-text)] group-hover:text-[var(--color-accent)]">
+                  6 stages · paper_key · date control · ranker →
+                </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -253,7 +248,7 @@ function Meta({
   tone = "default",
 }: {
   label: string;
-  value: number;
+  value: number | string;
   tone?: "default" | "miss";
 }) {
   return (
@@ -268,57 +263,8 @@ function Meta({
             : "text-[var(--color-text)]"
         }`}
       >
-        {value.toLocaleString()}
+        {typeof value === "number" ? value.toLocaleString() : value}
       </div>
     </div>
-  );
-}
-
-function Inline({
-  label,
-  value,
-  highlight = false,
-}: {
-  label: string;
-  value: string;
-  highlight?: boolean;
-}) {
-  return (
-    <div>
-      <div className="font-mono text-[10px] uppercase tracking-[0.12em] text-[var(--color-text-subtle)]">
-        {label}
-      </div>
-      <div
-        className={`mt-2 font-mono font-medium tabular-nums leading-none ${
-          highlight ? "text-[var(--color-accent)]" : "text-[var(--color-text)]"
-        }`}
-        style={{ fontSize: "clamp(36px, 5vw, 56px)" }}
-      >
-        {value}
-      </div>
-    </div>
-  );
-}
-
-function NavLink({
-  href,
-  label,
-  accent = false,
-}: {
-  href: string;
-  label: string;
-  accent?: boolean;
-}) {
-  return (
-    <Link
-      href={href}
-      className={
-        accent
-          ? "text-[var(--color-accent)] transition-opacity hover:opacity-80"
-          : "text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-text)]"
-      }
-    >
-      {label}
-    </Link>
   );
 }

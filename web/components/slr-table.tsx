@@ -69,14 +69,19 @@ export function SLRTable({ rows, ranks }: Props) {
     });
   }, [rows, ranks, sortKey, sortDir, query]);
 
-  const headers: { key: SortKey; label: string; right?: boolean }[] = [
+  const headers: {
+    key: SortKey;
+    label: string;
+    right?: boolean;
+    hideOnMobile?: boolean;
+  }[] = [
     ...(hasRanks
       ? [{ key: "rank" as SortKey, label: "#", right: true }]
       : []),
-    { key: "slr_year", label: "Year" },
+    { key: "slr_year", label: "Year", hideOnMobile: true },
     { key: "slr_title", label: "Title" },
-    { key: "n_refs", label: "Refs", right: true },
-    { key: "hits", label: "Hits", right: true },
+    { key: "n_refs", label: "Refs", right: true, hideOnMobile: true },
+    { key: "hits", label: "Hits", right: true, hideOnMobile: true },
     { key: "coverage_pct", label: "Cov", right: true },
   ];
 
@@ -98,10 +103,11 @@ export function SLRTable({ rows, ranks }: Props) {
         </h2>
         <input
           type="search"
+          aria-label="Filter SLRs"
           placeholder="Filter…"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-48 rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-2.5 py-1 text-xs placeholder:text-[var(--color-text-faint)] focus:border-[var(--color-accent)] focus:outline-none"
+          className="w-32 rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-2.5 py-1 text-xs placeholder:text-[var(--color-text-faint)] focus:border-[var(--color-accent)] focus:outline-none sm:w-48"
         />
       </div>
       <div className="overflow-x-auto rounded-md border border-[var(--color-border)] bg-[var(--color-surface)]/30">
@@ -115,6 +121,7 @@ export function SLRTable({ rows, ranks }: Props) {
                   className={cn(
                     "cursor-pointer select-none px-4 py-2.5 font-mono text-[11px] font-medium uppercase tracking-[0.08em] text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-text)]",
                     h.right && "text-right",
+                    h.hideOnMobile && "hidden md:table-cell",
                   )}
                 >
                   {h.label}
@@ -145,10 +152,10 @@ export function SLRTable({ rows, ranks }: Props) {
                     {ranks?.[r.slr_id]?.rank ?? "-"}
                   </td>
                 )}
-                <td className="px-4 py-3 font-mono text-xs tabular-nums text-[var(--color-text-muted)]">
+                <td className="hidden px-4 py-3 font-mono text-xs tabular-nums text-[var(--color-text-muted)] md:table-cell">
                   {r.slr_year || "-"}
                 </td>
-                <td className="max-w-[42rem] px-4 py-3">
+                <td className="px-4 py-3 md:max-w-[42rem]">
                   <Link
                     href={`/slrs/${encodeURIComponent(r.slr_id)}`}
                     className="line-clamp-2 text-[var(--color-text)] hover:text-[var(--color-accent)] hover:underline"
@@ -156,13 +163,14 @@ export function SLRTable({ rows, ranks }: Props) {
                     {r.slr_title || "(no title)"}
                   </Link>
                   <div className="mt-0.5 truncate font-mono text-[11px] text-[var(--color-text-faint)]">
+                    <span className="md:hidden">{r.slr_year || "-"} · </span>
                     {r.slr_venue} · {shortId(r.slr_id)}
                   </div>
                 </td>
-                <td className="px-4 py-3 text-right font-mono tabular-nums text-[var(--color-text-muted)]">
+                <td className="hidden px-4 py-3 text-right font-mono tabular-nums text-[var(--color-text-muted)] md:table-cell">
                   {r.n_refs || "-"}
                 </td>
-                <td className="px-4 py-3 text-right font-mono tabular-nums text-[var(--color-text-muted)]">
+                <td className="hidden px-4 py-3 text-right font-mono tabular-nums text-[var(--color-text-muted)] md:table-cell">
                   {r.hits}
                 </td>
                 <td

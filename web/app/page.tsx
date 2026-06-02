@@ -134,7 +134,7 @@ export default function HomePage() {
                 href="/about"
                 className="text-[var(--color-accent)] underline-offset-2 hover:underline"
               >
-                Why I built this →
+                Why this audit exists →
               </Link>
             </p>
           </div>

@@ -76,12 +76,11 @@ export default function HomePage() {
                     "'Iowan Old Style', 'Iowan', 'Palatino', Georgia, serif",
                 }}
               >
-                I made a required-reading list of the{" "}
-                {stats.topCount} most-cited papers on{" "}
-                <em>technical debt</em> (shortcuts in code that cost time
-                later). Then I graded {stats.slrCount} published SLRs in
-                that field on how many of those required readings they
-                actually cited.{" "}
+                This audit grades {stats.slrCount} published SLRs in the{" "}
+                <em>technical debt</em> subfield (shortcuts in code that
+                cost time later) against a required-reading list — the{" "}
+                {stats.topCount} most-cited papers in the same area on
+                Semantic Scholar.{" "}
                 <strong className="text-[var(--color-text)]">
                   Average grade: {stats.meanCoveragePct.toFixed(1)}%.
                 </strong>{" "}
@@ -105,7 +104,7 @@ export default function HomePage() {
               value={`${stats.medianCoveragePct.toFixed(1)}%`}
             />
             <Meta
-              label="Surveys × required list"
+              label="SLRs × required list"
               value={`${stats.slrCount} × ${stats.topCount}`}
             />
           </div>
@@ -188,9 +187,9 @@ export default function HomePage() {
             >
               This is the most-cited paper on the entire required-reading
               list. Cited by {mostCitedRefCount} of {stats.slrCount}{" "}
-              published surveys ({mostCitedSlrPct.toFixed(1)}%). Every other
+              published SLRs ({mostCitedSlrPct.toFixed(1)}%). Every other
               paper trails by half — meaning even the strongest signal in
-              the field is one most surveys ignore.
+              the field is one most SLRs ignore.
             </p>
             <Link
               href={`/papers/${encodeURIComponent(mostCitedTop.paper_key)}`}
@@ -219,7 +218,7 @@ export default function HomePage() {
               >
                 Each bar groups SLRs by how much of the{" "}
                 {stats.topCount}-paper required-reading list they actually
-                cited. The middle survey lands at{" "}
+                cited. The middle SLR lands at{" "}
                 <span className="text-[var(--color-text)]">
                   {stats.medianCoveragePct.toFixed(1)}%
                 </span>

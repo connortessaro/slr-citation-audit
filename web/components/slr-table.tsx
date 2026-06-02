@@ -10,7 +10,7 @@ interface Props {
   rows: OverlapRow[];
 }
 
-type SortKey = "year" | "n_refs" | "hits" | "coverage_pct" | "title";
+type SortKey = "slr_year" | "n_refs" | "hits" | "coverage_pct" | "slr_title";
 type SortDir = "asc" | "desc";
 
 function coverageClass(pct: number): string {
@@ -53,8 +53,8 @@ export function SLRTable({ rows }: Props) {
   }, [rows, sortKey, sortDir, query]);
 
   const headers: { key: SortKey; label: string; right?: boolean }[] = [
-    { key: "year", label: "Year" },
-    { key: "title", label: "Title" },
+    { key: "slr_year", label: "Year" },
+    { key: "slr_title", label: "Title" },
     { key: "n_refs", label: "Refs", right: true },
     { key: "hits", label: "Hits", right: true },
     { key: "coverage_pct", label: "Cov", right: true },
@@ -65,7 +65,7 @@ export function SLRTable({ rows }: Props) {
     else {
       setSortKey(k);
       setSortDir(
-        k === "title" || k === "year" ? "asc" : "desc",
+        k === "slr_title" || k === "slr_year" ? "asc" : "desc",
       );
     }
   };

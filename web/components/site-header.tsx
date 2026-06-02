@@ -53,9 +53,15 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2 text-xs text-[var(--color-text-muted)]">
-          <kbd className="hidden rounded border border-[var(--color-border-strong)] px-1.5 py-0.5 font-mono text-[10px] md:inline-block">
-            ⌘K
-          </kbd>
+          <button
+            type="button"
+            aria-label="Open command palette"
+            onClick={() => window.dispatchEvent(new Event("slr-cmdk-open"))}
+            className="hidden items-center gap-1.5 rounded border border-[var(--color-border)] bg-[var(--color-surface)] px-2 py-1 font-mono text-[10px] text-[var(--color-text-muted)] transition-colors hover:border-[var(--color-accent-soft)] hover:text-[var(--color-text)] md:inline-flex"
+          >
+            <kbd className="font-mono">⌘K</kbd>
+            <span className="text-[var(--color-text-faint)]">search</span>
+          </button>
           <a
             href="https://github.com/connortessaro/slr-citation-audit"
             target="_blank"

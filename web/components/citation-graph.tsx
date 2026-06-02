@@ -317,6 +317,7 @@ export function CitationGraph({ data }: Props) {
           citation links · drag to orbit · scroll to zoom
         </div>
       </div>
+      </div>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CssAurora } from "@/components/css-aurora";
 import { BigStat } from "@/components/big-stat";
+import { ClipRevealH2 } from "@/components/clip-reveal-h2";
 import { CoverageHistogram } from "@/components/coverage-histogram";
 import { SLRTable } from "@/components/slr-table";
 import { RouteIndex } from "@/components/route-index";
@@ -106,7 +107,7 @@ export default function HomePage() {
             <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--color-accent)]">
               The single strongest signal
             </div>
-            <h2
+            <ClipRevealH2
               className="mt-6 text-balance text-4xl tracking-tight text-[var(--color-text)] sm:text-5xl md:text-6xl lg:text-7xl"
               style={{
                 fontFamily:
@@ -115,7 +116,7 @@ export default function HomePage() {
               }}
             >
               &ldquo;{mostCitedTop.title}&rdquo;
-            </h2>
+            </ClipRevealH2>
             <p className="mt-8 font-mono text-sm text-[var(--color-text-muted)]">
               {(mostCitedTop.authors ?? []).slice(0, 3).join(", ")}
               {(mostCitedTop.authors?.length ?? 0) > 3 &&

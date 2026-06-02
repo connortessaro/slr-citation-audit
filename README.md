@@ -1,91 +1,115 @@
 # slr-citation-audit
 
-Evaluating citation coverage of Systematic Literature Reviews (SLRs) in the **technical debt** subfield.
+A citation-coverage audit of Systematic Literature Reviews in the **technical-debt** subfield.
 
-Compares papers cited by published SLRs against the most-cited papers in the same space (via Semantic Scholar) to measure coverage gaps and investigate causes.
+74 published reviews, 50 canonical papers, year-matched. Half the field cites less than 2% of it. 36 cite zero.
 
-## Setup
+Live site: **<https://web-e4qhnnknz-connor-tessaros-projects.vercel.app>**
+
+The repo is two things in one tree:
+1. A 6-stage Python pipeline that pulls every paper cited by every published SLR, joins it against the Semantic Scholar top-50 for the same area, controls for publication year, and produces a 5-dimension composite ranking.
+2. A Next.js 16 site under `web/` that renders the pipeline outputs as a dark-first, editorial dashboard.
+
+## Quick links
+
+- **Method explainer (live):** /method on the site, or `web/app/method/page.tsx`
+- **Audit report:** [`AUDIT_REPORT.md`](./AUDIT_REPORT.md) (writing / CRO / design pass)
+- **Build plan for the site:** [`web/BUILD_PLAN.md`](./web/BUILD_PLAN.md)
+- **Motion roadmap:** [`web/MOTION_PLAN.md`](./web/MOTION_PLAN.md)
+
+## Pipeline
 
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env
-# Edit .env to add your API keys.
+cp .env.example .env   # add SEMANTIC_SCHOLAR_API_KEY + OPENROUTER_API_KEY
 ```
 
-### Configuration via `.env`
+Run each stage in order. Each writes to `data/processed/`. Re-running is safe; everything is cache-backed.
 
-All configuration lives in `.env` (gitignored). `.env.example` is the tracked template — copy it and fill in values.
+| Stage | Reads | Writes | Purpose |
+|---|---|---|---|
+| `01_identify_slrs/` | SS API, ACM/IEEE BibTeX | `slr_corpus.json` | Find + classify SLR candidates |
+| `02_extract_refs/` | corpus | `slr_references.json` | Pull each SLR's reference list |
+| `03_top_cited/` | SS API (subfield query) | `top_cited_techdebt.json` | Top-N most-cited papers |
+| `04_overlap/` | refs + top-cited | `overlap_matrix.csv` | Date-controlled coverage |
+| `05_explain_gaps/` | overlap + metadata | `gap_analysis.csv` | Venue / year / access reasons |
+| `06_rank/` | corpus + refs + overlap + metadata | `ranked_slrs.json` | 5-dim composite rank |
 
-| Variable | Required? | Purpose |
-|----------|-----------|---------|
-| `SEMANTIC_SCHOLAR_API_KEY` | strongly recommended | Anon pool returns `429 Too Many Requests` during peak hours. Request: <https://www.semanticscholar.org/product/api#api-key-form> |
-| `IEEE_XPLORE_API_KEY` | optional | Without it, IEEE search falls back to manual BibTeX exports in `data/raw/ieee_exports/`. Register: <https://developer.ieee.org/member/register> |
-| `SUBFIELD`, `KEYWORDS`, `YEAR_MIN`, `YEAR_MAX`, `SLR_TITLE_PATTERNS`, `TOP_N`, `SS_BASE_URL` | optional | Retarget the pipeline to a different subfield without code changes |
+### Stage 06 — Ranker
 
-ACM Digital Library has no public API. Workflow: search <https://dl.acm.org/action/doSearch> → export results as BibTeX → drop into `data/raw/acm_exports/`.
+Five dimensions, min-max normalized then weighted sum (default 0.2 each, configurable via `RANK_WEIGHTS`):
 
-## Run
+1. **Coverage** — canonical-paper recall, reused from stage 04.
+2. **Semantic** — mean cosine similarity between SLR vector and reference vectors (Qwen3-Embedding-0.6B via sentence-transformers).
+3. **Authority** — mean `log(1 + citationCount)` of references.
+4. **Diversity** — `0.5 * H(venues) + 0.5 * H(first authors)` (Shannon entropy).
+5. **LLM judge** — DeepSeek-style rubric via OpenRouter, temperature 0, cached per-SLR. 71/74 SLRs scored in the current build (owl-alpha + qwen fallbacks; the remaining 3 hit schema-validation errors and are scored on the other four dimensions only).
 
-Pipeline is staged. Run each in order:
+Pure scoring functions in `06_rank/rank.py` are independently testable and have no I/O — that's where new tests should hook in.
+
+## Web (`/web`)
+
+Next.js 16 App Router. React 19. Tailwind v4. Motion v12. React Three Fiber. Pure static build — reads `data/processed/*.json` at build time, no runtime API calls.
 
 ```bash
-python 01_identify_slrs/search_semantic_scholar.py
-python 01_identify_slrs/search_acm.py
-python 01_identify_slrs/search_ieee.py
-python 01_identify_slrs/merge_and_classify.py
-python 02_extract_refs/fetch_references.py
-python 03_top_cited/fetch_top_cited.py
-python 04_overlap/compute_overlap.py
-python 05_explain_gaps/analyze_gaps.py
-python report/build_figures.py
+cd web
+pnpm install
+pnpm dev          # http://localhost:3000
+pnpm build        # production build
+pnpm test         # Playwright smoke tests
 ```
 
-Outputs land in `data/processed/`. Figures in `report/figures/`. Final writeup in `report/report.md`.
+Routes:
 
-## CI / hosted pipeline
+| Route | What it shows |
+|---|---|
+| `/` | Hero stat, route index, most-cited callout, distribution histogram, full SLR table sorted by composite rank |
+| `/slrs` / `/slrs/[id]` | Per-review coverage gauge, hits, missed canonical papers, all references, plus the rank breakdown with the LLM judge's per-SLR justification |
+| `/papers` / `/papers/[id]` | Per-paper SLR recall, which SLRs cite it vs miss it (date-eligible) |
+| `/consensus` | Most-cited papers across the union of all SLR bibliographies |
+| `/compare` | Pairwise Jaccard similarity between any two SLRs' reference sets |
+| `/graph` | 3D citation network (R3F + 3d-force-graph) |
+| `/method` | This pipeline, explained |
 
-Two GitHub Actions workflows:
-
-- **`tests`** — runs pytest on every push / PR.
-- **`pipeline`** — manual trigger (`workflow_dispatch`). Runs all 7 stages against live Semantic Scholar (and IEEE if `secrets.IEEE_XPLORE_API_KEY` is set), uploads `data/processed/` + `report/figures/` as build artifacts, and (if `commit_results=true`) pushes outputs to a `pipeline/results/<run_id>` branch.
-
-Required repo secrets:
-
-- `SEMANTIC_SCHOLAR_API_KEY` (already added).
-- `IEEE_XPLORE_API_KEY` (optional; manual BibTeX export is the fallback).
-
-Trigger the pipeline: **Actions → pipeline → Run workflow**.
+Deployed on Vercel with auto-builds on push to `main`. Project root directory is `web/`; data files at `../data/processed/` are read at build time.
 
 ## Tests
 
 ```bash
 pip install -r requirements-dev.txt
-pytest -q
+pytest -q                  # all pipeline tests
+cd web && pnpm test        # Playwright smoke for the site
 ```
+
+## CI
+
+`.github/workflows/`:
+
+- `tests` — pytest on every push / PR.
+- `pipeline` — manual (`workflow_dispatch`). Runs all stages live, uploads `data/processed/` + `report/figures/` as artifacts; with `commit_results=true` pushes to `pipeline/results/<run_id>`.
+
+Required secrets: `SEMANTIC_SCHOLAR_API_KEY`, optionally `IEEE_XPLORE_API_KEY` (IEEE falls back to manual BibTeX in `data/raw/ieee_exports/`). `OPENROUTER_API_KEY` is read locally for stage 06 but is never required by the pipeline workflow.
 
 ## Layout
 
 | Path | Purpose |
-|------|---------|
-| `01_identify_slrs/` | Find SLR candidates across ACM, IEEE, Semantic Scholar |
-| `02_extract_refs/` | Pull reference list for each SLR |
-| `03_top_cited/` | Identify top-50 cited papers in subfield |
-| `04_overlap/` | Compute overlap with date controls |
-| `05_explain_gaps/` | Investigate gaps (venue, year, access) |
+|---|---|
+| `01_identify_slrs/` … `06_rank/` | Pipeline stages |
+| `lib/` | Shared helpers (SS client, `paper_key` dedup, config) |
+| `tests/` | Pytest suite |
 | `data/raw/` | Cached API JSON (gitignored) |
-| `data/processed/` | Merged tracked outputs |
+| `data/processed/` | Tracked pipeline outputs |
 | `data/manual/` | Human-coded SLR-vs-survey decisions + rubric |
-| `lib/` | Shared helpers (SS client, paper-ID normalisation, config) |
-| `tests/` | Pytest suite (67 tests as of Phase 7) |
-| `report/` | Final 3,000-word writeup + figures |
-| `docs/plans/` | Design + implementation plans |
+| `web/` | Next.js site (its own README + plans inside) |
+| `report/` | Long-form writeup + figures + ranking_report.md |
 
 ## Method notes
 
-- **Citation source:** Semantic Scholar (single source; documented limitation).
-- **SLR classification:** manual review required (SLR vs general survey).
-- **Date control:** when comparing an SLR to top-cited list, top-cited is filtered to `pub_year ≤ SLR.pub_year`.
+- **Citation source:** Semantic Scholar. Known limitation; some SLRs return zero refs because SS doesn't have the bibliography.
+- **SLR classification:** manual review (SLR vs general survey vs tertiary study).
+- **Date control:** comparing an SLR to top-cited papers, top-cited is filtered to `pub_year ≤ SLR.pub_year`. Counting a paper an SLR couldn't have read isn't a miss; it's a calendar.
+- **`paper_key`:** stable identifier across stages, resolved as normalized DOI → Semantic Scholar `paperId` → normalized title. Change it once and every join downstream stays consistent.
 
 ## License
 

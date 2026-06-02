@@ -1,5 +1,5 @@
 /**
- * Static data loader — reads pipeline JSON outputs at build time.
+ * Static data loader - reads pipeline JSON outputs at build time.
  * Adapts to the on-disk schema where keys are `_paper_key`/`_rank`/etc.
  */
 

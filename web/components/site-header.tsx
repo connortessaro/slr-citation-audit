@@ -73,7 +73,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-1 text-xs text-[var(--color-text-muted)] sm:gap-2">
-          {/* Mobile search icon — same event as ⌘K */}
+          {/* Mobile search icon - same event as ⌘K */}
           <button
             type="button"
             aria-label="Open search"

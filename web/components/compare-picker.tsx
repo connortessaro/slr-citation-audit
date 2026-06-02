@@ -121,8 +121,9 @@ export function ComparePicker({ picks, initialPairs }: Props) {
 
         {!pair && aId !== bId && (
           <div className="mt-6 rounded-md border border-dashed border-[var(--color-border-strong)] bg-[var(--color-surface)]/20 p-6 text-sm text-[var(--color-text-muted)]">
-            No shared references. These SLRs draw from disjoint corpora,
-            or one has no extracted references in the dataset.
+            No shared references. These SLRs cite completely different
+            sets of papers, or one has no extracted references in the
+            dataset.
           </div>
         )}
       </div>

@@ -28,7 +28,7 @@ export default function AboutPage() {
       >
         When researchers want to learn about a field they don&apos;t
         already work in, they reach for a <em>systematic literature
-        review</em> — an SLR. The pitch is simple: somebody else read all
+        review</em> - an SLR. The pitch is simple: somebody else read all
         the important papers, weighed the evidence, and wrote it up.
         Readers save weeks of reading. The SLR becomes the shortcut.
       </p>
@@ -47,8 +47,8 @@ export default function AboutPage() {
 
       <Section title="What the audit does">
         <p>
-          The audit picks one field — <em>technical debt</em> in software
-          engineering — and builds a required-reading list of the{" "}
+          The audit picks one field - <em>technical debt</em> in software
+          engineering - and builds a required-reading list of the{" "}
           {stats.topCount} most-cited papers on the topic according to
           Semantic Scholar. Then it pulls the bibliographies of{" "}
           {stats.slrCount} published SLRs in the same field and grades
@@ -75,7 +75,7 @@ export default function AboutPage() {
           taught, what gets funded, and what new researchers read first. If
           the SLRs in a field systematically miss the most-cited work in
           that same field, then the &ldquo;shortcut&rdquo; isn&apos;t a
-          shortcut — it&apos;s a detour around the canon.
+          shortcut - it&apos;s a detour around the canon.
         </p>
         <p className="mt-4">
           One paper on the list (
@@ -94,10 +94,10 @@ export default function AboutPage() {
       <Section title="What this isn't claiming">
         <p>
           A low grade isn&apos;t automatically a bad SLR. Some SLRs are
-          deliberately narrow — &ldquo;technical debt in microservices&rdquo;
+          deliberately narrow - &ldquo;technical debt in microservices&rdquo;
           shouldn&apos;t cite ML-debt papers. Some came out before key
           papers existed (which the year-control handles). And the
-          most-cited list is one definition of a canon — citation count is
+          most-cited list is one definition of a canon - citation count is
           a flawed proxy for importance.
         </p>
         <p className="mt-4">
@@ -126,7 +126,7 @@ export default function AboutPage() {
                 Overview
               </Link>
             </strong>{" "}
-            — headline numbers, the most-cited paper callout, the
+            - headline numbers, the most-cited paper callout, the
             distribution histogram, and the full SLR table sorted by rank.
           </li>
           <li>
@@ -138,7 +138,7 @@ export default function AboutPage() {
                 SLRs
               </Link>
             </strong>{" "}
-            — every SLR with its grade, miss list, hit list, and rank
+            - every SLR with its grade, miss list, hit list, and rank
             breakdown.
           </li>
           <li>
@@ -150,7 +150,7 @@ export default function AboutPage() {
                 Top cited
               </Link>
             </strong>{" "}
-            — the {stats.topCount}-paper required-reading list, each with
+            - the {stats.topCount}-paper required-reading list, each with
             how many SLRs actually cited it.
           </li>
           <li>
@@ -162,7 +162,7 @@ export default function AboutPage() {
                 Consensus
               </Link>
             </strong>{" "}
-            — which papers the SLRs agree on (regardless of whether
+            - which papers the SLRs agree on (regardless of whether
             they&apos;re on the required list).
           </li>
           <li>
@@ -174,7 +174,7 @@ export default function AboutPage() {
                 Compare
               </Link>
             </strong>{" "}
-            — pick any two SLRs and see how much their bibliographies
+            - pick any two SLRs and see how much their bibliographies
             overlap.
           </li>
           <li>
@@ -186,7 +186,7 @@ export default function AboutPage() {
                 Graph
               </Link>
             </strong>{" "}
-            — the whole citation network in 3D. Orphan clusters = SLRs
+            - the whole citation network in 3D. Orphan clusters = SLRs
             that miss everything.
           </li>
           <li>
@@ -198,7 +198,7 @@ export default function AboutPage() {
                 Method
               </Link>
             </strong>{" "}
-            — the full 6-step pipeline, stack, and join logic.
+            - the full 6-step pipeline, stack, and join logic.
           </li>
         </ul>
       </Section>
@@ -210,7 +210,7 @@ export default function AboutPage() {
         <p className="mt-3 text-sm leading-relaxed text-[var(--color-text-muted)]">
           One field ({stats.slrCount} published SLRs, {candidates}{" "}
           candidates from the pipeline), one canonical reading list ({stats.topCount}{" "}
-          papers), year-controlled. Coursework — private use, no PII. The
+          papers), year-controlled. Coursework - private use, no PII. The
           methodology generalizes to any field with enough SLRs to make
           the comparison meaningful.
         </p>

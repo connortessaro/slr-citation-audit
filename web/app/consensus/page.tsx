@@ -51,7 +51,7 @@ export default function ConsensusPage() {
                     {p.title}
                   </div>
                   <div className="mt-0.5 truncate font-mono text-[11px] text-[var(--color-text-faint)]">
-                    {p.year ?? "—"}
+                    {p.year ?? "-"}
                     {p.inTop50 && (
                       <span className="ml-2 rounded bg-[var(--color-accent-soft)] px-1 py-0.5 text-[var(--color-accent)]">
                         TOP-50 #{p.rank}

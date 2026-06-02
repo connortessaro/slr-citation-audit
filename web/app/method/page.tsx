@@ -36,7 +36,7 @@ export default function MethodPage() {
         mapping study&quot; | &quot;tertiary study&quot;</Code>. Hits are
         deduplicated, manually classified in{" "}
         <Code>data/manual/slr_decisions.csv</Code>, and the survivors form
-        the SLR corpus.
+        the set of SLRs audited.
       </Section>
 
       <Section n="02" title="Extract references">
@@ -47,7 +47,7 @@ export default function MethodPage() {
         <Code>paper_key</Code>.
       </Section>
 
-      <Section n="03" title="Top-cited corpus">
+      <Section n="03" title="Build required-reading list">
         Semantic Scholar is asked for the most-cited papers in the same
         subfield using the same keyword set as stage 01, capped at the
         top-50. Each carries its publication year so stage 04 can apply the
@@ -64,7 +64,7 @@ export default function MethodPage() {
 
       <Section n="05" title="Explain the gaps">
         Each miss is annotated with venue, age, open-access status, and
-        whether it&apos;s consistently missed across the corpus:{" "}
+        whether it&apos;s consistently missed across every SLR:{" "}
         <Code>missed_pairs.csv</Code>,{" "}
         <Code>gap_summary_by_venue.csv</Code>,{" "}
         <Code>gap_summary_by_age.csv</Code>.
@@ -94,8 +94,8 @@ export default function MethodPage() {
         calls <Code>paper_key</Code>. Resolution order: normalized DOI →
         Semantic Scholar <Code>paperId</Code> → normalized title. That
         priority is the single source of truth for joining SLRs against
-        references against the top-cited corpus. Change it once and every
-        stage downstream stays consistent.
+        references against the required-reading list. Change it once and
+        every stage downstream stays consistent.
       </p>
       <p
         className="mt-4 text-base leading-relaxed text-[var(--color-text-muted)]"

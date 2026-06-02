@@ -72,7 +72,7 @@ export function getConsensus(): ConsensusRow[] {
 }
 
 /* ------------------------------------------------------------------ */
-/* Compare — pairwise Jaccard of SLR reference sets                   */
+/* Compare - pairwise Jaccard of SLR reference sets                   */
 /* ------------------------------------------------------------------ */
 
 export interface ComparePair {

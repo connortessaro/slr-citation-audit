@@ -8,6 +8,7 @@ import {
   getCoverageHistogram,
   getOverlap,
   getOverviewStats,
+  getRanked,
   getRefsMap,
   getTopCited,
 } from "@/lib/data";
@@ -18,6 +19,10 @@ export default function HomePage() {
   const overlap = getOverlap();
   const top = getTopCited();
   const refsMap = getRefsMap();
+  const ranked = getRanked();
+  const ranksLookup = Object.fromEntries(
+    ranked.map((r) => [r.slr_key, { rank: r.rank, composite: r.composite }]),
+  );
 
   const sortedCov = [...overlap]
     .filter((o) => o.eligible_top_n > 0)
@@ -188,7 +193,7 @@ export default function HomePage() {
           <h2 className="mb-8 text-3xl font-semibold leading-tight tracking-tight text-[var(--color-text)] sm:text-4xl">
             All {stats.slrCount} SLRs
           </h2>
-          <SLRTable rows={overlap} />
+          <SLRTable rows={overlap} ranks={ranksLookup} />
         </div>
       </section>
 

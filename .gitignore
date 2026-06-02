@@ -21,3 +21,9 @@ data/raw/*
 
 # Firecrawl / research caches
 .firecrawl/
+
+# Playwright MCP snapshot dumps (local QA artifacts)
+.playwright-mcp/
+
+# Vercel CLI metadata
+.vercel/

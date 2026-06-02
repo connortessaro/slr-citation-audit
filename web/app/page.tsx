@@ -75,12 +75,17 @@ export default function HomePage() {
                     "'Iowan Old Style', 'Iowan', 'Palatino', Georgia, serif",
                 }}
               >
-                {stats.slrCount} published reviews compared against the{" "}
-                {stats.topCount} most-cited papers in the field. We only
-                count papers that came out before each review, so nobody
-                gets blamed for missing the future. Half the reviews cite
-                less than {stats.medianCoveragePct.toFixed(1)}% of those
-                papers. {worstZero} cite zero of them.
+                A <em>systematic literature review</em> (SLR) is a paper
+                that surveys other papers on one topic.{" "}
+                <em>Technical debt</em> means shortcuts in code that cost
+                time later, like financial debt. This site checks{" "}
+                {stats.slrCount} published SLRs in that subfield against
+                the {stats.topCount} most-cited papers on Semantic
+                Scholar. Papers published after a review came out don't
+                count as misses, so nobody gets blamed for the future.
+                Half the reviews cite less than{" "}
+                {stats.medianCoveragePct.toFixed(1)}% of the most-cited
+                set. {worstZero} cite zero of them.
               </p>
             </FadeIn>
           </div>
@@ -92,8 +97,8 @@ export default function HomePage() {
               value={`${stats.medianCoveragePct.toFixed(1)}%`}
             />
             <Meta
-              label="Reviews / canonical"
-              value={`${stats.slrCount}/${stats.topCount}`}
+              label="Reviews · most-cited set"
+              value={`${stats.slrCount} · ${stats.topCount}`}
             />
           </div>
         </div>

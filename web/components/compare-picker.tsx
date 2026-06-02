@@ -85,7 +85,7 @@ export function ComparePicker({ picks, initialPairs }: Props) {
                 {(pair.jaccard * 100).toFixed(1)}%
               </div>
               <div className="font-mono text-sm text-[var(--color-text-subtle)]">
-                Jaccard
+                of references shared
               </div>
             </div>
 

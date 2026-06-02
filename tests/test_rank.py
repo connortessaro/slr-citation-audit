@@ -239,3 +239,61 @@ def test_judge_one_uses_cache(tmp_path, monkeypatch):
         refs=[],
     )
     assert out == cached_payload
+
+
+# ---- regression: malformed judge cache + empty-corpus + no-signal dim ----
+
+def test_compute_raw_dims_survives_null_score_payload():
+    """Cached judge payload with score:null must not crash rank.py."""
+    corpus = [{"_paper_key": "ss:slr1", "title": "X", "year": 2020, "venue": "v"}]
+    rows = rank._compute_raw_dims(
+        corpus=corpus,
+        refs_by_slr={"ss:slr1": []},
+        coverage_map={"ss:slr1": 0.5},
+        metadata={},
+        embeddings={},
+        judge_map={"ss:slr1": {"score": None, "model": "x"}},
+    )
+    assert len(rows) == 1
+    assert rows[0]["judge_justification"] is None
+
+
+def test_run_empty_corpus_writes_csv_with_header(tmp_path):
+    """Empty corpus must still emit a CSV with the header row (not a 0-byte file)."""
+    import json
+    pd = tmp_path / "processed"
+    pd.mkdir()
+    (pd / "slr_corpus.json").write_text("[]", encoding="utf-8")
+    (pd / "slr_references.json").write_text("{}", encoding="utf-8")
+    (pd / "overlap_matrix.csv").write_text("slr_id,coverage_pct\n", encoding="utf-8")
+    (pd / "paper_metadata.json").write_text("{}", encoding="utf-8")
+    np.savez(
+        pd / "embeddings.npz",
+        keys=np.array([]),
+        vecs=np.zeros((0, 4), dtype=np.float32),
+        embed_source=np.array([]),
+        model=np.array("test"),
+    )
+    csv_out = tmp_path / "ranked.csv"
+    json_out = tmp_path / "ranked.json"
+    report_out = tmp_path / "report.md"
+    rank.run(
+        corpus_path=pd / "slr_corpus.json",
+        refs_path=pd / "slr_references.json",
+        overlap_path=pd / "overlap_matrix.csv",
+        metadata_path=pd / "paper_metadata.json",
+        embeddings_path=pd / "embeddings.npz",
+        judge_path=pd / "missing_judge.json",
+        csv_path=csv_out,
+        json_path=json_out,
+        report_path=report_out,
+    )
+    content = csv_out.read_text(encoding="utf-8")
+    assert content.startswith("rank,slr_key,"), f"expected header, got: {content!r}"
+
+
+def test_min_max_normalize_all_zero_returns_zero():
+    """All-zero raw values mean 'no signal' — must return 0.0 each, not 0.5."""
+    assert rank.min_max_normalize([0.0, 0.0, 0.0]) == [0.0, 0.0, 0.0]
+    # Non-zero ties should still return 0.5 (genuine tie).
+    assert rank.min_max_normalize([0.7, 0.7, 0.7]) == [0.5, 0.5, 0.5]

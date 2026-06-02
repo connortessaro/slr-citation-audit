@@ -167,8 +167,8 @@ export function SLRDetail({
             {refCount}
           </div>
           <p className="mt-3 text-xs text-[var(--color-text-muted)]">
-            From Semantic Scholar reference lists. Includes papers outside the
-            top-50, used to compute the date-controlled coverage gauge.
+            From Semantic Scholar reference lists. All references the
+            review made, not just the ones in the canonical top 50.
           </p>
         </div>
       </div>

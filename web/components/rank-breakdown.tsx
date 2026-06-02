@@ -13,30 +13,32 @@ const DIM_META: Array<{
   {
     key: "coverage",
     label: "Coverage",
-    blurb: "% of canonical top-50 papers the SLR cites (date-controlled).",
+    blurb:
+      "How many of the 50 most-cited papers in the field this review actually cites. Only counts papers published before the review came out.",
   },
   {
     key: "semantic",
-    label: "Semantic",
+    label: "Topic match",
     blurb:
-      "Mean cosine similarity between the SLR vector and its references' vectors. Qwen3-Embedding-0.6B.",
+      "How well the review's references match the review's own topic. We compare them as vectors and average the similarity. High = bibliography is on-topic.",
   },
   {
     key: "authority",
     label: "Authority",
-    blurb: "Mean log(1 + citationCount) of the SLR's references.",
+    blurb:
+      "How well-cited the review's references are, on average. High = the review draws from heavily-cited work.",
   },
   {
     key: "diversity",
     label: "Diversity",
     blurb:
-      "0.5 * H(venues) + 0.5 * H(first authors). Shannon entropy of the bibliography.",
+      "Whether the bibliography spreads across many venues and authors, or concentrates in a few. High = broad reading.",
   },
   {
     key: "llm_judge",
     label: "LLM judge",
     blurb:
-      "DeepSeek V3 rubric pass, temperature 0, cached per SLR via OpenRouter.",
+      "An AI (DeepSeek-style, via OpenRouter) reads the review's title, abstract, and 30 closest references, then scores the bibliography quality.",
   },
 ];
 

@@ -71,10 +71,12 @@ export default function HomePage() {
                     "'Iowan Old Style', 'Iowan', 'Palatino', Georgia, serif",
                 }}
               >
-                {stats.slrCount} published reviews, {stats.topCount} canonical
-                papers, year-matched. Half the field cites less than{" "}
-                {stats.medianCoveragePct.toFixed(1)}% of it. {worstZero} cite
-                zero.
+                {stats.slrCount} published reviews compared against the{" "}
+                {stats.topCount} most-cited papers in the field. We only
+                count papers that came out before each review, so nobody
+                gets blamed for missing the future. Half the reviews cite
+                less than {stats.medianCoveragePct.toFixed(1)}% of those
+                papers. {worstZero} cite zero of them.
               </p>
             </FadeIn>
           </div>
@@ -86,7 +88,7 @@ export default function HomePage() {
               value={`${stats.medianCoveragePct.toFixed(1)}%`}
             />
             <Meta
-              label="Corpus"
+              label="Reviews / canonical"
               value={`${stats.slrCount}/${stats.topCount}`}
             />
           </div>
@@ -166,8 +168,8 @@ export default function HomePage() {
                     "'Iowan Old Style', 'Iowan', 'Palatino', Georgia, serif",
                 }}
               >
-                Each bar is a slice of SLRs binned by how much of the
-                date-controlled canonical corpus they cite. Median sits at{" "}
+                Each bar groups reviews by how much of the canonical 50
+                they cite. Median sits at{" "}
                 <span className="text-[var(--color-text)]">
                   {stats.medianCoveragePct.toFixed(1)}%
                 </span>
@@ -210,7 +212,7 @@ export default function HomePage() {
                 What this is
               </div>
               <h2 className="mt-3 max-w-2xl text-balance text-3xl font-semibold leading-tight tracking-tight text-[var(--color-text)] sm:text-4xl">
-                A coursework audit of how SLRs cite the field they review.
+                A coursework audit of how literature reviews cite the field they review.
               </h2>
               <p
                 className="mt-5 max-w-2xl text-base leading-relaxed text-[var(--color-text-muted)]"
@@ -219,16 +221,14 @@ export default function HomePage() {
                     "'Iowan Old Style', 'Iowan', 'Palatino', Georgia, serif",
                 }}
               >
-                A 6-stage Python pipeline pulls every paper cited by every
-                published SLR in the technical-debt subfield, joins it
-                against the Semantic Scholar top-{stats.topCount} for the
-                same area, filters by publication year, and reports
-                coverage. Built with{" "}
-                <code className="font-mono text-[var(--color-text)]">
-                  paper_key
-                </code>{" "}
-                dedup (DOI → SS id → title), rate-limited bulk API access,
-                and a 5-dimension ranker. The UI is this site.
+                A six-step Python pipeline pulls every paper cited by every
+                published literature review in the technical-debt subfield,
+                lines them up against the {stats.topCount} most-cited
+                papers in the same area on Semantic Scholar, keeps only
+                papers that came out before each review, and reports how
+                much overlap there is. Built with a stable join key
+                (DOI → Semantic Scholar id → title) and a five-part
+                ranker. This site is the UI.
               </p>
             </div>
             <div className="col-span-12 lg:col-span-5">
@@ -240,7 +240,7 @@ export default function HomePage() {
                   Read the method
                 </div>
                 <div className="mt-3 font-mono text-base text-[var(--color-text)] group-hover:text-[var(--color-accent)]">
-                  6 stages · paper_key · date control · ranker →
+                  6 steps · stable join key · year-matched · 5-part rank →
                 </div>
               </Link>
             </div>

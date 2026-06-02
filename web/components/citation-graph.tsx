@@ -90,6 +90,13 @@ export function CitationGraph({ data }: Props) {
 
   return (
     <div className="relative w-full md:h-[calc(100vh-3.5rem-1px)]">
+      {/* sr-only h1 — every page should have one. The desktop canvas has
+          no visible heading; the mobile fallback shows the visible one. */}
+      <h1 className="sr-only">
+        3D citation graph · {data.nodes.length} nodes · {data.links.length}{" "}
+        edges
+      </h1>
+
       {/* Mobile fallback: WebGL pan + native pinch-zoom fight on touch. */}
       <div className="block px-4 py-12 md:hidden">
         <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--color-accent)]">

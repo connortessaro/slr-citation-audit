@@ -61,18 +61,42 @@ export function CommandPalette({ items }: Props) {
           onClick={() => setOpen(false)}
         >
           <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Command palette"
             initial={{ opacity: 0, scale: 0.96, y: -8 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: -8 }}
             transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
             onClick={(e) => e.stopPropagation()}
-            className="w-full max-w-xl rounded-lg border border-[var(--color-border-strong)] bg-[var(--color-bg-elevated)] shadow-[0_24px_80px_-12px_rgba(0,0,0,0.8)]"
+            className="relative w-full max-w-xl rounded-lg border border-[var(--color-border-strong)] bg-[var(--color-bg-elevated)] shadow-[0_24px_80px_-12px_rgba(0,0,0,0.8)]"
           >
+            <button
+              type="button"
+              aria-label="Close command palette"
+              onClick={() => setOpen(false)}
+              className="absolute right-2 top-2 inline-flex h-10 w-10 items-center justify-center rounded-md text-[var(--color-text-muted)] transition-colors hover:bg-[var(--color-surface)] hover:text-[var(--color-text)] md:hidden"
+            >
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-5 w-5"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
             <Command className="flex flex-col">
               <Command.Input
                 autoFocus
+                aria-label="Search SLRs, papers, navigation"
                 placeholder="Search SLRs, papers, navigation…"
-                className="w-full border-b border-[var(--color-border)] bg-transparent px-4 py-3 text-sm placeholder:text-[var(--color-text-faint)] focus:outline-none"
+                className="w-full border-b border-[var(--color-border)] bg-transparent px-4 py-3 pr-12 text-sm placeholder:text-[var(--color-text-faint)] focus:outline-none"
               />
               <Command.List className="max-h-[60vh] overflow-y-auto p-2">
                 <Command.Empty className="py-8 text-center text-sm text-[var(--color-text-subtle)]">

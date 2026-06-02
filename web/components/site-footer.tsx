@@ -3,8 +3,8 @@ import Link from "next/link";
 export function SiteFooter() {
   return (
     <footer className="border-t border-[var(--color-border)] bg-[var(--color-bg)]">
-      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-6 font-mono text-[11px] text-[var(--color-text-subtle)]">
-        <div>
+      <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 px-4 py-6 font-mono text-[11px] text-[var(--color-text-subtle)] sm:gap-4 sm:px-6 md:flex-row md:items-center md:gap-4">
+        <div className="break-words">
           74 SLRs · 50 canonical papers ·{" "}
           <code className="text-[var(--color-text-muted)]">paper_key</code>{" "}
           (DOI → SS id → title) · static build, no runtime
@@ -14,11 +14,12 @@ export function SiteFooter() {
             href="https://github.com/connortessaro/slr-citation-audit"
             target="_blank"
             rel="noreferrer"
+            aria-label="GitHub repository"
             className="hover:text-[var(--color-text)]"
           >
             github
           </a>
-          <span className="text-[var(--color-text-faint)]">·</span>
+          <span aria-hidden className="text-[var(--color-text-faint)]">·</span>
           <Link href="/method" className="hover:text-[var(--color-text)]">
             method
           </Link>

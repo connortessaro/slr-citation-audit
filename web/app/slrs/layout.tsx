@@ -25,7 +25,7 @@ export default function SLRsLayout({ children }: { children: React.ReactNode }) 
     }));
 
   return (
-    <div className="grid grid-cols-[320px_1fr]">
+    <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr]">
       <ExplorerSidebar
         basePath="/slrs"
         items={items}

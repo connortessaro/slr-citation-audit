@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Link from "next/link";
 import { useState } from "react";
 import type { Paper, MissedPairRow, RankRow } from "@/lib/data";
 import { cn } from "@/lib/utils";
@@ -113,7 +114,13 @@ export function SLRDetail({
         : refs;
 
   return (
-    <div className="mx-auto max-w-5xl px-8 py-10">
+    <div className="mx-auto max-w-5xl px-4 py-10 sm:px-8">
+      <Link
+        href="/slrs"
+        className="mb-4 inline-flex items-center gap-1 font-mono text-[11px] uppercase tracking-[0.12em] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] lg:hidden"
+      >
+        ← All SLRs
+      </Link>
       <div className="font-mono text-[10px] uppercase tracking-[0.12em] text-[var(--color-text-subtle)]">
         SLR · {paperKey}
       </div>

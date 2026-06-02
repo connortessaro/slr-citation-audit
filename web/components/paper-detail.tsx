@@ -79,7 +79,13 @@ export function PaperDetail({
     eligibleSlrs > 0 ? (citingSlrs.length / eligibleSlrs) * 100 : 0;
 
   return (
-    <div className="mx-auto max-w-5xl px-8 py-10">
+    <div className="mx-auto max-w-5xl px-4 py-10 sm:px-8">
+      <Link
+        href="/papers"
+        className="mb-4 inline-flex items-center gap-1 font-mono text-[11px] uppercase tracking-[0.12em] text-[var(--color-text-muted)] hover:text-[var(--color-accent)] lg:hidden"
+      >
+        ← All top cited
+      </Link>
       <div className="flex items-center gap-3">
         <span className="rounded bg-[var(--color-accent-soft)] px-2 py-0.5 font-mono text-xs font-semibold text-[var(--color-accent)]">
           #{paper.rank}

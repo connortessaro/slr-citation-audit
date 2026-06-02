@@ -17,7 +17,7 @@ export default function AboutPage() {
         About
       </div>
       <h1 className="mt-3 text-balance text-4xl font-semibold leading-tight tracking-tight text-[var(--color-text)] sm:text-5xl">
-        Why I built this
+        Why this audit exists
       </h1>
 
       <p
@@ -29,8 +29,8 @@ export default function AboutPage() {
         When researchers want to learn about a field they don&apos;t
         already work in, they reach for a <em>systematic literature
         review</em> — an SLR. The pitch is simple: somebody else read all
-        the important papers, weighed the evidence, and wrote it up. You
-        save weeks of reading. The SLR becomes the shortcut.
+        the important papers, weighed the evidence, and wrote it up.
+        Readers save weeks of reading. The SLR becomes the shortcut.
       </p>
       <p
         className="mt-5 text-lg leading-relaxed text-[var(--color-text-muted)]"
@@ -38,18 +38,22 @@ export default function AboutPage() {
           fontFamily: "'Iowan Old Style', 'Iowan', 'Palatino', Georgia, serif",
         }}
       >
-        This site asks a sharper question: <strong className="text-[var(--color-text)]">when an SLR claims to summarize a field, does it actually cite the field it claims to summarize?</strong>
+        This site asks a sharper question:{" "}
+        <strong className="text-[var(--color-text)]">
+          when an SLR claims to summarize a field, does it actually cite
+          the field it claims to summarize?
+        </strong>
       </p>
 
-      <Section title="What I did">
+      <Section title="What the audit does">
         <p>
-          I picked one field — <em>technical debt</em> in software
-          engineering — and built a required-reading list of the{" "}
+          The audit picks one field — <em>technical debt</em> in software
+          engineering — and builds a required-reading list of the{" "}
           {stats.topCount} most-cited papers on the topic according to
-          Semantic Scholar. Then I pulled the bibliographies of{" "}
-          {stats.slrCount} published SLRs in the same field and graded each
-          one on how many of those {stats.topCount} required readings it
-          actually cited.
+          Semantic Scholar. Then it pulls the bibliographies of{" "}
+          {stats.slrCount} published SLRs in the same field and grades
+          each one on how many of those {stats.topCount} required readings
+          it actually cited.
         </p>
         <p className="mt-4">
           The result is on the{" "}
@@ -82,12 +86,12 @@ export default function AboutPage() {
             see Top Cited
           </Link>
           ) has over a thousand citations and is referenced by exactly one
-          of the {stats.slrCount} SLRs. That&apos;s the kind of gap this
-          audit makes visible.
+          of the {stats.slrCount}&nbsp;SLRs. That&apos;s the kind of gap
+          this audit makes visible.
         </p>
       </Section>
 
-      <Section title="What I'm not claiming">
+      <Section title="What this isn't claiming">
         <p>
           A low grade isn&apos;t automatically a bad SLR. Some SLRs are
           deliberately narrow — &ldquo;technical debt in microservices&rdquo;

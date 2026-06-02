@@ -172,6 +172,12 @@ Stored in `.env` (gitignored). See [`.env.example`](.env.example) for the full l
 
 ---
 
+## 👥 Built by
+
+- **Connor**
+- **Tony**
+- **Jaden**
+
 ## 📖 License
 
-[MIT](LICENSE) © 2026 Connor Tessaro. Coursework project - private use, no PII.
+[MIT](LICENSE) © 2026. Coursework project - private use, no PII.

@@ -76,13 +76,13 @@ export function SLRTable({ rows, ranks }: Props) {
     hideOnMobile?: boolean;
   }[] = [
     ...(hasRanks
-      ? [{ key: "rank" as SortKey, label: "#", right: true }]
+      ? [{ key: "rank" as SortKey, label: "Rank", right: true }]
       : []),
     { key: "slr_year", label: "Year", hideOnMobile: true },
-    { key: "slr_title", label: "Title" },
+    { key: "slr_title", label: "SLR", right: false },
     { key: "n_refs", label: "Refs", right: true, hideOnMobile: true },
-    { key: "hits", label: "Hits", right: true, hideOnMobile: true },
-    { key: "coverage_pct", label: "Cov", right: true },
+    { key: "hits", label: "Cited", right: true, hideOnMobile: true },
+    { key: "coverage_pct", label: "Grade", right: true },
   ];
 
   const toggleSort = (k: SortKey) => {

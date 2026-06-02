@@ -103,9 +103,19 @@ export function SLRDetail({
   const [tab, setTab] = useState<Tab>("hits");
 
   const tabs: { key: Tab; label: string; count: number; tone?: string }[] = [
-    { key: "hits", label: "Hits", count: hits, tone: "var(--color-accent)" },
-    { key: "missed", label: "Missed from top-50", count: misses, tone: "var(--color-miss)" },
-    { key: "refs", label: "All references", count: refs.length },
+    {
+      key: "hits",
+      label: "Cited from required list",
+      count: hits,
+      tone: "var(--color-accent)",
+    },
+    {
+      key: "missed",
+      label: "Skipped from required list",
+      count: misses,
+      tone: "var(--color-miss)",
+    },
+    { key: "refs", label: "Full bibliography", count: refs.length },
   ];
 
   const list =

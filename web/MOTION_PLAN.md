@@ -15,22 +15,22 @@ Stack: `motion` v12 (Motion's React API, ex Framer Motion).
 | Coverage gauge fill | `components/slr-detail.tsx` `CoverageGauge` | width tween |
 | Route index stagger | `components/route-index.tsx` (new) | `useInView` + per-item delay |
 
-## Next pass — Route + section motion
+## Next pass - Route + section motion
 
 Anchor: tighter sense of motion identity. None of the below adds heavy code.
 
-1. **Layout-level page transitions** — wrap `<main>` in `layout.tsx` with a client `<PageTransition>` component using `AnimatePresence` keyed on `usePathname()`. 200ms fade + 4px y. Buys the site a recognizable cadence between routes.
-2. **Scroll-driven section reveals on `/`** — wrap each `<section>` body in `motion.div` with `useInView({once: true, margin: "-15%"})`. Hero stays static (above the fold), every other section fades-in once it enters viewport.
-3. **Hero subhead fade-in after the BigStat lands** — `motion.p` with `initial={{opacity: 0}}` and `animate={{opacity: 1}}` delayed `1s` (after count-up). Sells the build-up.
-4. **Most-cited callout typographic entrance** — `motion.h2` with `clipPath` reveal (`inset(0 100% 0 0)` → `inset(0 0% 0 0)`) on enter. One deliberate cinema moment, fits the editorial break.
-5. **SLR table sort-change FLIP** — when sort key changes, animate row reordering via `layout` prop on `motion.tr`. Motion v12 ships free layout animations.
+1. **Layout-level page transitions** - wrap `<main>` in `layout.tsx` with a client `<PageTransition>` component using `AnimatePresence` keyed on `usePathname()`. 200ms fade + 4px y. Buys the site a recognizable cadence between routes.
+2. **Scroll-driven section reveals on `/`** - wrap each `<section>` body in `motion.div` with `useInView({once: true, margin: "-15%"})`. Hero stays static (above the fold), every other section fades-in once it enters viewport.
+3. **Hero subhead fade-in after the BigStat lands** - `motion.p` with `initial={{opacity: 0}}` and `animate={{opacity: 1}}` delayed `1s` (after count-up). Sells the build-up.
+4. **Most-cited callout typographic entrance** - `motion.h2` with `clipPath` reveal (`inset(0 100% 0 0)` → `inset(0 0% 0 0)`) on enter. One deliberate cinema moment, fits the editorial break.
+5. **SLR table sort-change FLIP** - when sort key changes, animate row reordering via `layout` prop on `motion.tr`. Motion v12 ships free layout animations.
 
-## Polish pass — Microinteractions
+## Polish pass - Microinteractions
 
-6. **Hover lift on cards** — turn the static `transition-colors` into a `motion.div` with `whileHover={{y: -2}}` on KPI tiles, explore cards, route index rows. ~10ms of warmth.
-7. **⌘K kbd nudge** — header `⌘K search` button: `whileHover={{scale: 1.04}}`, `whileTap={{scale: 0.97}}`. Tells users it's interactive.
-8. **Graph node click feedback** — `/graph` node selection triggers a brief `motion.div` flash on the detail panel border. Connects 3D selection to 2D readout.
-9. **Theme-toggle FLIP morph** — when adding light theme, use `motion.div` with `layoutId="theme-pill"` between sun/moon icons.
+6. **Hover lift on cards** - turn the static `transition-colors` into a `motion.div` with `whileHover={{y: -2}}` on KPI tiles, explore cards, route index rows. ~10ms of warmth.
+7. **⌘K kbd nudge** - header `⌘K search` button: `whileHover={{scale: 1.04}}`, `whileTap={{scale: 0.97}}`. Tells users it's interactive.
+8. **Graph node click feedback** - `/graph` node selection triggers a brief `motion.div` flash on the detail panel border. Connects 3D selection to 2D readout.
+9. **Theme-toggle FLIP morph** - when adding light theme, use `motion.div` with `layoutId="theme-pill"` between sun/moon icons.
 
 ## Constraints
 

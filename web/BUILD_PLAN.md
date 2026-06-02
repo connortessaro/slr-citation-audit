@@ -1,4 +1,4 @@
-# SLR Audit — Web Redesign Build Plan
+# SLR Audit - Web Redesign Build Plan
 
 Branch: `feat/explorer-redesign` (forked from `features/tonyBranch`)
 Target: portfolio-grade rewrite of `tools/explorer/`.
@@ -7,7 +7,7 @@ Target: portfolio-grade rewrite of `tools/explorer/`.
 
 | | |
 |--|--|
-| Direction | A — Linear/Vercel dark-first minimal pro |
+| Direction | A - Linear/Vercel dark-first minimal pro |
 | Stack | Next.js 15 App Router + TypeScript |
 | Style | Tailwind v4 + shadcn/ui |
 | Motion | Framer Motion (Motion's React API) |
@@ -21,8 +21,8 @@ Target: portfolio-grade rewrite of `tools/explorer/`.
 
 ## 3D usage
 
-- **Hero aurora shader bg** — full-bleed R3F `<Canvas>` in header. TSL fragment shader (Perlin/simplex drift). Pauses off-viewport, reduced-motion = static gradient.
-- **`/graph` route** — citation network (74 SLRs + 60 top papers, edges = ref citations). Hover highlight, click → detail, mobile 2D fallback.
+- **Hero aurora shader bg** - full-bleed R3F `<Canvas>` in header. TSL fragment shader (Perlin/simplex drift). Pauses off-viewport, reduced-motion = static gradient.
+- **`/graph` route** - citation network (74 SLRs + 60 top papers, edges = ref citations). Hover highlight, click → detail, mobile 2D fallback.
 
 ## Motion modules
 
@@ -41,9 +41,9 @@ Target: portfolio-grade rewrite of `tools/explorer/`.
 |--|--|--|
 | `/` | Overview tab | KPIs, coverage hist, top-cited chart, sortable SLR table |
 | `/slrs` | SLRs tab | Sidebar list → detail (refs, hits, misses, gauge) |
-| `/slrs/[id]` | — | Direct deep-link to one SLR |
+| `/slrs/[id]` | - | Direct deep-link to one SLR |
 | `/papers` | Top cited tab | Sidebar → which SLRs cite vs miss |
-| `/papers/[id]` | — | Deep-link |
+| `/papers/[id]` | - | Deep-link |
 | `/consensus` | SLR consensus tab | Most-cited across all SLR bibliographies |
 | `/compare` | Compare SLRs tab | Pairwise reference overlap (Jaccard) |
 | `/graph` | new | 3D citation network |
@@ -54,10 +54,10 @@ Target: portfolio-grade rewrite of `tools/explorer/`.
 | # | Phase | Output |
 |--|--|--|
 | 0 | Scaffold Next 15 app in `web/`, install deps, init shadcn, copy data files | `web/` boots `pnpm dev` |
-| 1 | App shell — root layout, dark theme, header w/ aurora bg, nav, footer, Geist fonts | `/` renders shell |
-| 2 | Overview route — KPI tiles w/ count-up, coverage hist, top-cited chart, SLR table | `/` matches old overview |
+| 1 | App shell - root layout, dark theme, header w/ aurora bg, nav, footer, Geist fonts | `/` renders shell |
+| 2 | Overview route - KPI tiles w/ count-up, coverage hist, top-cited chart, SLR table | `/` matches old overview |
 | 3 | SLR + paper detail routes | `/slrs`, `/slrs/[id]`, `/papers`, `/papers/[id]` |
-| 4 | `/graph` — R3F force network | network renders |
+| 4 | `/graph` - R3F force network | network renders |
 | 5 | `/compare` + `/consensus` | parity w/ old explorer |
 | 6 | ⌘K palette, theme toggle, View Transitions, a11y pass | Lighthouse ≥ 95 |
 | 7 | Playwright E2E (webapp-testing skill), Vercel deploy, README | live preview URL |
@@ -101,6 +101,6 @@ Smoke tests in `web/tests/`:
 - Server actions / API routes (data is static)
 - Auth, DB, real-time
 - Pipeline changes (Python untouched)
-- Old `tools/explorer/` deletion — keep until new is shipped, then remove in final phase
+- Old `tools/explorer/` deletion - keep until new is shipped, then remove in final phase
 
 

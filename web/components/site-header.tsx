@@ -1,8 +1,10 @@
 "use client";
 
+import { motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "./theme-toggle";
 
 const NAV = [
   { href: "/", label: "Overview" },
@@ -41,12 +43,19 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "rounded-md px-3 py-1.5 transition-colors",
+                  "relative rounded-md px-3 py-1.5 transition-colors",
                   active
-                    ? "text-[var(--color-text)] bg-[var(--color-surface)]"
-                    : "text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-surface)]",
+                    ? "text-[var(--color-text)]"
+                    : "text-[var(--color-text-muted)] hover:text-[var(--color-text)]",
                 )}
               >
+                {active && (
+                  <motion.span
+                    layoutId="nav-active-pill"
+                    transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                    className="absolute inset-0 -z-10 rounded-md bg-[var(--color-surface)]"
+                  />
+                )}
                 {item.label}
               </Link>
             );
@@ -63,6 +72,7 @@ export function SiteHeader() {
             <kbd className="font-mono">⌘K</kbd>
             <span className="text-[var(--color-text-faint)]">search</span>
           </button>
+          <ThemeToggle />
           <a
             href="https://github.com/connortessaro/slr-citation-audit"
             target="_blank"

@@ -1,0 +1,35 @@
+id,title,authors,year,venue,doi
+R01,A systematic literature review of technical debt prioritization,Alfayez,2020,International Conference on Technical Debt 2020,
+R02,Identification and management of technical debt: A systematic mapping study,Alves,2016,Inf. Softw. Technol.,10.1016/j.infsof.2015.10.008
+R03,The financial aspect of managing technical debt: A systematic literature review,Ampatzoglou,2015,Inf. Softw. Technol.,10.1016/j.infsof.2015.04.001
+R04,Automatic detection of instability architectural smells,Arcelli Fontana,2016,Proc. 32nd Intern. Conf. on Software Maintenance and Evolution (ICSME 2016),
+R05,Reducing friction in software development,Avgeriou,2016,IEEE Softw.,10.1109/ms.2016.13
+R06,Managing technical debt in software engineering (dagstuhl seminar 16162),Avgeriou,2016,Dagstuhl Rep.,
+R07,An overview and comparison of technical debt measurement tools,Avgeriou,2020,IEEE Software,
+R08,Analyzing the concept of technical debt in the context of agile software development: A systematic literature review,Behutiye,2017,Inf. Softw. Technol.,10.1016/j.infsof.2016.10.004
+R09,Managing architectural technical debt: A unified model and systematic literature review,Besker,2018,J. Syst. Softw.,10.1016/j.jss.2017.09.025
+R10,Technical debt cripples software developer productivity: A longitudinal study on developers’ daily software development work,Besker,2018,International Conference on Technical Debt,
+R11,Technical debt triage in backlog management,Besker,2019,International Conference on Technical Debt,
+R12,"Embracing technical debt, from a startup company perspective",Besker,2018,2018 IEEE International Conference on Software Maintenance and Evolution (ICSME),
+R13,Using thematic analysis in psychology,Braun,2006,Qual. Res. Psychol.,10.1191/1478088706qp063oa
+R14,Estimating the breaking point for technical debt,Chatzigeorgiou,2015,International Workshop on Managing Technical Debt (MTD),
+R15,The wycash portfolio management system,Cunningham,1992,SIGPLAN OOPS Mess.,10.1145/157710.157715
+R16,Empirical studies of agile software development: A systematic review,Dybå,2008,Inf. Softw. Technol.,10.1016/j.infsof.2008.01.006
+R17,Identification and analysis of the elements required to manage technical debt by means of a systematic mapping study,Fernández-Sánchez,2017,J. Syst. Softw.,10.1016/j.jss.2016.10.018
+R18,Arcan: A tool for architectural smells detection,Fontana,2017,International Conference on Software Architecture Workshops (ICSAW),
+R19,Automated measurement of technical debt: A systematic literature review,Khomyakov,2019,ICEIS,
+R20,A systematic review of systematic review process research in software engineering,Kitchenham,2013,Inf. Softw. Technol.,10.1016/j.infsof.2013.07.010
+R21,,Kitchenham,2007,Guidelines for performing systematic literature reviews in software engineering,
+R22,A systematic mapping study on technical debt and its management,Li,2015,J. Syst. Softw.,10.1016/j.jss.2014.12.027
+R23,Anacondebt: A tool to assess and track technical debt,Martini,2018,International Conference on Technical Debt,
+R24,A multiple case study of continuous architecting in large agile companies: Current gaps and the CAFFEA framework,Martini,2016,Conference on Software Architecture (WICSA),
+R25,An empirically developed method to aid decisions on architectural technical debt refactoring: Anacondebt,Martini,2016,International Conference on Software Engineering Companion (ICSE-C),
+R26,,,,,10.1145/2889160.2889224
+R27,Investigating architectural technical debt accumulation and refactoring over time: A multiple-case study,Martini,2015,Inf. Softw. Technol.,10.1016/j.infsof.2015.07.005
+R28,,McConnell,2013,Managing technical debt,
+R29,,,,,10.5220/0005914605720579
+R30,"A tertiary study on technical debt: Types, management strategies, research trends, and base information for practitioners",Rios,2018,Inf. Softw. Technol.,10.1016/j.infsof.2018.05.010
+R31,Using technical debt data in decision making: Potential decision approaches,Seaman,2012,2012 Third International Workshop on Managing Technical Debt (MTD),
+R32,An exploration of technical debt,Tom,2013,J. Syst. Softw.,10.1016/j.jss.2012.12.052
+R33,Guidelines for snowballing in systematic literature studies and a replication in software engineering,Wohlin,2014,EASE 2014,
+R34,,Wohlin,2012,Experimentation in Software Engineering,

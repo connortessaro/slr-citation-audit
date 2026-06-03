@@ -38,6 +38,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from lib.config import REPO_ROOT  # noqa: E402
 from lib.paperid import normalize_doi  # noqa: E402
+from lib.scrape_adapters import pick_adapter  # noqa: E402
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
@@ -45,6 +46,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 CROSSREF_BASE = "https://api.crossref.org/works"
 DEFAULT_MAILTO = "116526628+connortessaro@users.noreply.github.com"
 RAW_CACHE_DIR = REPO_ROOT / "data" / "raw" / "crossref"
+SCRAPE_CACHE_DIR = REPO_ROOT / "data" / "raw" / "scrape"
 MANUAL_DIR = REPO_ROOT / "data" / "manual"
 CSV_FIELDS = ("id", "title", "authors", "year", "venue", "doi")
 
@@ -147,34 +149,111 @@ def fetch_and_write(
     }
 
 
+def fetch_and_write_appendix(
+    url: str,
+    slug: str,
+    *,
+    refresh: bool = False,
+    scrape_cache_dir: Path | None = None,
+    manual_dir: Path | None = None,
+) -> dict:
+    """Pull Appendix-B (selected primary studies) for one SLR landing-page URL.
+
+    Picks an adapter by URL host, fetches the page via Playwright (cached),
+    parses the appendix block, and writes data/manual/<slug>/appendix_b.csv.
+    Returns a summary dict.
+
+    Adapter dispatch failure (unknown publisher) -> summary dict with
+    `error: "no-adapter"` and zero rows written. Caller decides to escalate.
+    """
+    from lib.page_fetcher import fetch_page_markdown  # lazy: avoids playwright import in test path
+
+    scrape_cache_dir = scrape_cache_dir if scrape_cache_dir is not None else SCRAPE_CACHE_DIR
+    manual_dir = manual_dir if manual_dir is not None else MANUAL_DIR
+
+    adapter = pick_adapter(url)
+    if adapter is None:
+        logger.error("No scrape adapter registered for URL %s", url)
+        return {"slug": slug, "skipped": False, "error": "no-adapter", "n_studies": 0}
+
+    csv_path = manual_dir / slug / "appendix_b.csv"
+    if csv_path.exists() and not refresh:
+        logger.info("Skip %s: %s exists (use --refresh to overwrite)", slug, csv_path)
+        return {"slug": slug, "skipped": True, "csv_path": str(csv_path)}
+
+    cache_path = scrape_cache_dir / slug / "page.md"
+    page_md = fetch_page_markdown(url, cache_path=cache_path, refresh=refresh)
+    studies = adapter.parse_appendix(page_md)
+    rows = [s.as_row() for s in studies]
+    write_csv(rows, csv_path)
+
+    logger.info("Wrote %d primary studies to %s", len(rows), csv_path)
+    return {
+        "slug": slug,
+        "skipped": False,
+        "csv_path": str(csv_path),
+        "cache_path": str(cache_path),
+        "n_studies": len(rows),
+        "adapter": adapter.host,
+    }
+
+
 def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n", 1)[0])
-    parser.add_argument("--doi", required=True, help="SLR DOI (e.g. 10.1016/j.jss.2020.110827)")
+    parser.add_argument(
+        "--mode",
+        choices=("refs", "appendix", "both"),
+        default="refs",
+        help="What to pull (default: refs only)",
+    )
+    parser.add_argument("--doi", help="SLR DOI (required for refs mode)")
+    parser.add_argument("--url", help="SLR landing-page URL (required for appendix mode)")
     parser.add_argument("--slug", required=True, help="Output slug (kebab-case)")
     parser.add_argument("--refresh", action="store_true", help="Re-fetch + overwrite")
     parser.add_argument("--mailto", default=DEFAULT_MAILTO, help="Crossref polite-pool email")
-    return parser.parse_args(argv)
+    args = parser.parse_args(argv)
+
+    if args.mode in ("refs", "both") and not args.doi:
+        parser.error("--doi is required for mode=refs and mode=both")
+    if args.mode in ("appendix", "both") and not args.url:
+        parser.error("--url is required for mode=appendix and mode=both")
+    return args
 
 
 def main(argv: list[str] | None = None) -> int:
     args = _parse_args(argv)
-    try:
-        result = fetch_and_write(
-            doi=args.doi,
-            slug=args.slug,
-            refresh=args.refresh,
-            mailto=args.mailto,
-        )
-    except urllib.error.HTTPError as exc:
-        logger.error("Crossref HTTP %s for DOI %s: %s", exc.code, args.doi, exc.reason)
-        return 2
-    except urllib.error.URLError as exc:
-        logger.error("Network error fetching DOI %s: %s", args.doi, exc.reason)
-        return 3
+    rc = 0
 
-    if result.get("skipped"):
-        return 0
-    return 0
+    if args.mode in ("refs", "both"):
+        try:
+            fetch_and_write(
+                doi=args.doi,
+                slug=args.slug,
+                refresh=args.refresh,
+                mailto=args.mailto,
+            )
+        except urllib.error.HTTPError as exc:
+            logger.error("Crossref HTTP %s for DOI %s: %s", exc.code, args.doi, exc.reason)
+            rc = 2
+        except urllib.error.URLError as exc:
+            logger.error("Network error fetching DOI %s: %s", args.doi, exc.reason)
+            rc = 3
+
+    if args.mode in ("appendix", "both") and rc == 0:
+        try:
+            result = fetch_and_write_appendix(
+                url=args.url,
+                slug=args.slug,
+                refresh=args.refresh,
+            )
+        except Exception as exc:
+            logger.error("Appendix scrape failed for %s: %s", args.url, exc)
+            rc = 4
+        else:
+            if result.get("error") == "no-adapter":
+                rc = 5
+
+    return rc
 
 
 if __name__ == "__main__":

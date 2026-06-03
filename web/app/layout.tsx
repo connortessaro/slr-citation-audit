@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Barlow_Condensed, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { CommandPaletteMount } from "@/components/command-palette-mount";
 import { PageTransition } from "@/components/page-transition";
 
-const geistSans = Geist({
+const barlowCondensed = Barlow_Condensed({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -53,7 +54,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-theme="dark"
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      className={`${barlowCondensed.variable} ${geistMono.variable} antialiased`}
       suppressHydrationWarning
     >
       <head>

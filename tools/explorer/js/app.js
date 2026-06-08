@@ -10,8 +10,11 @@ import {
   destroyCharts,
   renderCoverageHistogram,
   renderTopCitedBar,
-  renderConsensusBar,
+  renderTopSummaryBenchmarkBar,
+  renderTopSummaryConsensusBar,
+  renderBenchmarkCitationRateBar,
   resizeOverviewCharts,
+  resizeTopCharts,
 } from "./charts.js";
 
 let explorerBase = null;
@@ -24,6 +27,8 @@ let selectedConsensusKey = null;
 let slrDetailTab = "summary";
 let topDetailTab = "summary";
 let topMode = "benchmark";
+let selectedCompareKey = null;
+let selectedCompareCat = null;
 let compareSlrA = null;
 let compareSlrB = null;
 
@@ -228,19 +233,26 @@ function bindTopMode() {
         renderTopList($("#top-search")?.value || "");
         if (selectedTopKey) selectTop(selectedTopKey);
         else showTopEmpty();
-      } else {
+      } else if (topMode === "consensus") {
         renderConsensusList($("#top-search")?.value || "");
         if (selectedConsensusKey) selectConsensus(selectedConsensusKey);
         else renderConsensusOverview();
+      } else {
+        renderCompareList($("#top-search")?.value || "");
+        if (selectedCompareKey) selectCompare(selectedCompareKey, selectedCompareCat);
+        else renderCompareOverview();
       }
     });
   });
 }
 
 function updateTopListVisibility() {
+  const isBenchmark = topMode === "benchmark";
   const isConsensus = topMode === "consensus";
-  $("#top-list").hidden = isConsensus;
+  const isCompare = topMode === "compare";
+  $("#top-list").hidden = !isBenchmark;
   $("#consensus-list").hidden = !isConsensus;
+  $("#compare-list").hidden = !isCompare;
   $("#consensus-filter-wrap").hidden = !isConsensus;
 }
 
@@ -263,16 +275,22 @@ async function loadMethodsTab() {
 
 function refreshAllViews() {
   renderOverview();
+  renderTopSummary();
   renderSlrList($("#slr-search")?.value || "");
   if (topMode === "benchmark") {
     renderTopList($("#top-search")?.value || "");
-  } else {
+  } else if (topMode === "consensus") {
     renderConsensusList($("#top-search")?.value || "");
+  } else {
+    renderCompareList($("#top-search")?.value || "");
   }
   if (selectedSlrKey) selectSlr(selectedSlrKey);
   if (topMode === "benchmark" && selectedTopKey) selectTop(selectedTopKey);
   else if (topMode === "consensus" && selectedConsensusKey) selectConsensus(selectedConsensusKey);
+  else if (topMode === "compare" && selectedCompareKey) selectCompare(selectedCompareKey, selectedCompareCat);
+  else if (topMode === "compare") renderCompareOverview();
   else if (topMode === "consensus") renderConsensusOverview();
+  else if (topMode === "benchmark") showTopEmpty();
 }
 
 let overviewLayoutObserver = null;
@@ -290,16 +308,35 @@ function bindOverviewLayoutResize() {
   window.addEventListener("resize", bump);
 }
 
+let topLayoutObserver = null;
+
+function bindTopLayoutResize() {
+  const strip = document.querySelector(".top-summary-strip");
+  if (!strip || topLayoutObserver) return;
+  const bump = () => {
+    if (activeView !== "top") return;
+    resizeTopCharts();
+  };
+  topLayoutObserver = new ResizeObserver(() => requestAnimationFrame(bump));
+  topLayoutObserver.observe(strip);
+  strip.querySelectorAll(".chart-body-compact").forEach((el) => topLayoutObserver.observe(el));
+  window.addEventListener("resize", bump);
+}
+
 function bootstrapUi() {
   updateSettingsChrome();
   updateTopListVisibility();
   bindOverviewLayoutResize();
+  bindTopLayoutResize();
   renderOverview();
+  renderTopSummary();
   renderSlrList();
   renderTopList();
   renderConsensusList();
+  renderCompareList();
   $("#slr-detail").innerHTML = `<p class="empty">Select an SLR from the list.</p>`;
   showTopEmpty();
+  if (topMode === "consensus") renderConsensusOverview();
 }
 
 function bindNav() {
@@ -324,9 +361,14 @@ function switchView(view) {
     requestAnimationFrame(() => selectSlr(selectedSlrKey));
   } else if (view === "top") {
     requestAnimationFrame(() => {
+      renderTopSummary();
       if (topMode === "benchmark" && selectedTopKey) selectTop(selectedTopKey);
       else if (topMode === "consensus" && selectedConsensusKey) selectConsensus(selectedConsensusKey);
+      else if (topMode === "compare" && selectedCompareKey) selectCompare(selectedCompareKey, selectedCompareCat);
+      else if (topMode === "compare") renderCompareOverview();
       else if (topMode === "consensus") renderConsensusOverview();
+      else showTopEmpty();
+      resizeTopCharts();
     });
   } else if (view === "methods") {
     loadMethodsTab();
@@ -430,6 +472,262 @@ function renderOverview() {
   const sorted = [...slrs].sort((a, b) => (b.coveragePct ?? 0) - (a.coveragePct ?? 0));
   renderLeaderList("#overview-top-slrs", sorted.slice(0, 5));
   renderLeaderList("#overview-bottom-slrs", sorted.slice(-5).reverse());
+}
+
+function renderTopSummary() {
+  if (!model) return;
+  const { summary, topCited, consensusPapers, compareSummary } = model;
+  const cs = compareSummary;
+  const benchLabel = summary.benchmarkSize === 100 ? "top-100" : "top-50";
+  const threshold = cs.highConsensusThreshold;
+
+  const headline = $("#top-hero-headline");
+  const sub = $("#top-hero-sub");
+  if (headline) {
+    headline.innerHTML =
+      `Only <strong>${cs.inAnySlrBibliography}</strong> of <strong>${cs.benchmarkSize}</strong> ${benchLabel} benchmark papers appear in any SLR bibliography; <strong>${cs.highConsensusOutside}</strong> papers are cited by ${threshold}+ SLRs but sit outside the benchmark.`;
+  }
+  if (sub) {
+    sub.textContent = `${cs.inBoth.length} benchmark papers cited by at least one SLR · ${fmtPct(cs.overlapPct)} overlap with benchmark set.`;
+  }
+
+  $("#top-kpi-benchmark").textContent = summary.benchmarkSize;
+  $("#top-kpi-median-rate").textContent = fmtPct(cs.medianBenchmarkSlrRate);
+  $("#top-kpi-in-both").textContent = cs.inBoth.length;
+  $("#top-kpi-outside").textContent = cs.highConsensusOutside;
+  const outsideSub = $("#top-kpi-outside-sub");
+  if (outsideSub) outsideSub.textContent = `${threshold}+ SLRs, not in benchmark`;
+
+  const mostMissedEl = $("#top-kpi-most-missed");
+  const mostMissedSub = $("#top-kpi-most-missed-sub");
+  if (cs.mostMissed && mostMissedEl) {
+    const rate = cs.mostMissed.eligibleSlrCount
+      ? (cs.mostMissed.citingCount / cs.mostMissed.eligibleSlrCount) * 100
+      : 0;
+    mostMissedEl.textContent = `#${cs.mostMissed.paper._rank ?? "?"}`;
+    if (mostMissedSub) {
+      const title = cs.mostMissed.paper.title || "";
+      mostMissedSub.textContent = `${title.slice(0, 40)}${title.length > 40 ? "…" : ""} · ${rate.toFixed(0)}% SLR rate`;
+    }
+  } else if (mostMissedEl) {
+    mostMissedEl.textContent = "—";
+    if (mostMissedSub) mostMissedSub.textContent = "";
+  }
+
+  try {
+    requestAnimationFrame(() => {
+      const benchCanvas = $("#chart-top-summary-benchmark");
+      const consCanvas = $("#chart-top-summary-consensus");
+      if (benchCanvas) renderTopSummaryBenchmarkBar(benchCanvas, topCited, 10);
+      if (consCanvas) renderTopSummaryConsensusBar(consCanvas, consensusPapers, 15, summary.slrCount);
+      resizeTopCharts();
+    });
+  } catch (e) {
+    console.warn("Top summary charts skipped:", e);
+  }
+}
+
+function switchToCompareMode(key, cat) {
+  topMode = "compare";
+  document.querySelectorAll("[data-top-mode]").forEach((b) =>
+    b.classList.toggle("active", b.dataset.topMode === "compare")
+  );
+  updateTopListVisibility();
+  renderCompareList($("#top-search")?.value || "");
+  selectCompare(key, cat);
+}
+
+function compareOverlapVizHtml(cs) {
+  const benchOnly = cs.benchmarkOnly.length;
+  const both = cs.inBoth.length;
+  const consOnly = cs.consensusOnly.length;
+  const total = benchOnly + both + consOnly || 1;
+  const wBench = (benchOnly / total) * 100;
+  const wBoth = (both / total) * 100;
+  const wCons = (consOnly / total) * 100;
+  return `
+    <div class="overlap-viz compare-overlap-viz">
+      <div class="overlap-bar" title="Benchmark-only ${benchOnly} · Both ${both} · Consensus-only ${consOnly}">
+        <div class="overlap-seg-benchmark-only" style="width:${wBench}%"></div>
+        <div class="overlap-seg-both" style="width:${wBoth}%"></div>
+        <div class="overlap-seg-consensus-only" style="width:${wCons}%"></div>
+      </div>
+      <div class="overlap-legend">
+        <span class="legend-benchmark-only">Benchmark only (${benchOnly})</span>
+        <span class="legend-both">In both (${both})</span>
+        <span class="legend-consensus-only">SLR-only (${consOnly})</span>
+      </div>
+    </div>`;
+}
+
+function renderCompareOverview() {
+  const panel = $("#top-detail");
+  const { compareSummary, summary } = model;
+  const cs = compareSummary;
+  panel.innerHTML = `
+    <header class="detail-header">
+      <h2>Benchmark vs SLR consensus</h2>
+      <p class="detail-sub">How the Semantic Scholar top-cited benchmark differs from what SLRs collectively cite.</p>
+    </header>
+    <div class="detail-body">
+      ${compareOverlapVizHtml(cs)}
+      <div class="stat-grid compact">
+        <div class="stat-card"><span class="stat-label">Benchmark papers</span><span class="stat-value">${cs.benchmarkSize}</span></div>
+        <div class="stat-card"><span class="stat-label">Cited by any SLR</span><span class="stat-value stat-hit">${cs.inAnySlrBibliography}</span></div>
+        <div class="stat-card"><span class="stat-label">Never cited</span><span class="stat-value stat-miss">${cs.benchmarkOnly.length}</span></div>
+        <div class="stat-card"><span class="stat-label">SLR-only papers</span><span class="stat-value">${cs.consensusOnly.length}</span></div>
+      </div>
+      <div class="chart-card-inline"><canvas id="chart-benchmark-rate"></canvas></div>
+      <p class="hint">Lowest benchmark citation rates among eligible papers — red = zero SLRs cite it.</p>
+    </div>
+  `;
+  try {
+    renderBenchmarkCitationRateBar($("#chart-benchmark-rate"), model.topPapers, 10);
+  } catch (e) {
+    console.warn("Benchmark rate chart skipped:", e);
+  }
+}
+
+function renderCompareList(filter = "") {
+  const q = filter.trim().toLowerCase();
+  const cs = model.compareSummary;
+  const el = $("#compare-list");
+  if (!el) return;
+
+  function matchTitle(title) {
+    if (!q) return true;
+    return (title || "").toLowerCase().includes(q);
+  }
+
+  function sectionHtml(title, items, cat, renderItem) {
+    const filtered = items.filter((item) => matchTitle(renderItem.title(item)));
+    if (!filtered.length) {
+      return `<div class="compare-section"><h3 class="compare-section-header">${esc(title)}</h3><p class="compare-section-empty">None match.</p></div>`;
+    }
+    return `<div class="compare-section">
+      <h3 class="compare-section-header">${esc(title)} (${filtered.length})</h3>
+      ${filtered
+        .map((item) => {
+          const key = renderItem.key(item);
+          const selected = selectedCompareKey === key && selectedCompareCat === cat;
+          return `<button type="button" class="list-item ${selected ? "selected" : ""}" data-key="${attrKey(key)}" data-compare-cat="${cat}">
+            ${renderItem.rankHtml(item)}
+            <span class="list-item-title">${esc(renderItem.title(item)?.slice(0, 64) || key)}${(renderItem.title(item)?.length || 0) > 64 ? "…" : ""}</span>
+            <span class="list-item-meta">${renderItem.meta(item)}</span>
+          </button>`;
+        })
+        .join("")}
+    </div>`;
+  }
+
+  el.innerHTML =
+    sectionHtml("Benchmark misses", cs.benchmarkIgnored, "miss", {
+      key: (t) => t.key,
+      title: (t) => t.paper.title,
+      rankHtml: (t) => `<span class="list-item-rank">#${t.paper._rank ?? "?"}</span>`,
+      meta: (t) => {
+        const rate = t.eligibleSlrCount ? ((t.citingCount / t.eligibleSlrCount) * 100).toFixed(0) : 0;
+        return `${fmtYear(t.paper.year)} · ${t.citingCount}/${t.eligibleSlrCount} SLRs (${rate}%)`;
+      },
+    }) +
+    sectionHtml("SLR favorites outside benchmark", cs.slrFavorites, "favorite", {
+      key: (p) => p.key,
+      title: (p) => p.ref.title,
+      rankHtml: (p) => `<span class="list-item-rank">${p.citingCount}/${model.summary.slrCount}</span>`,
+      meta: (p) => `${fmtYear(p.ref.year)} · ${p.ref.citationCount ?? "—"} SS cites`,
+    }) +
+    sectionHtml("Aligned (in both)", cs.aligned, "aligned", {
+      key: (t) => t.key,
+      title: (t) => t.paper.title,
+      rankHtml: (t) => `<span class="list-item-rank">#${t.paper._rank ?? "?"}</span>`,
+      meta: (t) => {
+        const c = model.consensusPapers.find((p) => p.key === t.key);
+        return `${t.citingCount}/${t.eligibleSlrCount} SLRs · consensus ${c?.citingCount ?? 0}/${model.summary.slrCount}`;
+      },
+    });
+
+  el.querySelectorAll(".list-item").forEach((btn) => {
+    btn.addEventListener("click", () => selectCompare(keyFrom(btn, "key"), btn.dataset.compareCat));
+  });
+}
+
+function selectCompare(key, cat) {
+  if (!key) return;
+  selectedCompareKey = key;
+  selectedCompareCat = cat;
+  renderCompareList($("#top-search")?.value || "");
+  renderCompareDetail(key, cat);
+}
+
+function renderCompareDetail(key, cat) {
+  const panel = $("#top-detail");
+  if (cat === "favorite") {
+    const p = model.consensusPapers.find((x) => x.key === key);
+    if (!p) return;
+    const rate = model.summary.slrCount ? (p.citingCount / model.summary.slrCount) * 100 : 0;
+    panel.innerHTML = `
+      <header class="detail-header">
+        <h2><span class="rank-pill">${p.citingCount}/${model.summary.slrCount}</span> ${esc(p.ref.title)}</h2>
+        <p class="detail-sub mono">${esc(p.key)}</p>
+        <div class="detail-meta">
+          <span>${fmtYear(p.ref.year)}</span>
+          <span>${esc(p.ref.venue || "—")}</span>
+          <span>${p.ref.citationCount ?? "—"} SS citations</span>
+          <span class="tag tag-muted">Outside benchmark</span>
+        </div>
+      </header>
+      <div class="detail-body">
+        <div class="stat-grid compact">
+          <div class="stat-card"><span class="stat-label">Benchmark rank</span><span class="stat-value">—</span></div>
+          <div class="stat-card"><span class="stat-label">SS citations</span><span class="stat-value">${p.ref.citationCount ?? "—"}</span></div>
+          <div class="stat-card"><span class="stat-label">SLRs citing</span><span class="stat-value stat-hit">${p.citingCount}</span></div>
+          <div class="stat-card wide"><span class="stat-label">Consensus rate</span><span class="stat-value">${rate.toFixed(1)}%</span></div>
+        </div>
+        <p class="hint">High SLR consensus but not in the external top-cited benchmark — SLRs cite this more than the field-at-large ranking suggests.</p>
+        <h3>SLRs that cite this paper</h3>
+        ${slrMiniTable(p.citingSlrs)}
+      </div>`;
+    bindSlrMiniTableClicks(panel);
+    return;
+  }
+
+  const t = model.topPapers.find((x) => x.key === key);
+  if (!t) return;
+  const p = t.paper;
+  const citeRate = t.eligibleSlrCount ? (t.citingCount / t.eligibleSlrCount) * 100 : 0;
+  const consensus = model.consensusPapers.find((x) => x.key === key);
+  const badge =
+    cat === "miss"
+      ? `<span class="tag tag-muted">Benchmark miss</span>`
+      : `<span class="tag">In both</span>`;
+
+  panel.innerHTML = `
+    <header class="detail-header">
+      <h2><span class="rank-pill">#${p._rank ?? "?"}</span> ${esc(p.title)}</h2>
+      <p class="detail-sub mono">${esc(t.key)}</p>
+      <div class="detail-meta">
+        <span>${fmtYear(p.year)}</span>
+        ${passBadge(p._pass)}
+        <span>${p.citationCount ?? 0} SS citations</span>
+        ${badge}
+      </div>
+    </header>
+    <div class="detail-body">
+      <div class="stat-grid compact">
+        <div class="stat-card"><span class="stat-label">Benchmark rank</span><span class="stat-value">#${p._rank ?? "?"}</span></div>
+        <div class="stat-card"><span class="stat-label">SS citations</span><span class="stat-value">${p.citationCount ?? 0}</span></div>
+        <div class="stat-card"><span class="stat-label">SLRs citing</span><span class="stat-value ${t.citingCount ? "stat-hit" : "stat-miss"}">${t.citingCount}/${t.eligibleSlrCount}</span></div>
+        <div class="stat-card"><span class="stat-label">SLR consensus</span><span class="stat-value">${consensus?.citingCount ?? 0}/${model.summary.slrCount}</span></div>
+      </div>
+      <div class="citation-rate-bar">
+        <span class="stat-label">SLR citation rate</span>
+        <div class="rate-track"><div class="rate-fill ${citeRate < 10 ? "rate-low" : ""}" style="width:${Math.min(100, citeRate)}%"></div></div>
+        <span class="hint">${citeRate.toFixed(1)}% of eligible SLRs cite this paper</span>
+      </div>
+      <h3>SLRs that cite this paper (${t.citing.length})</h3>
+      ${slrMiniTable(t.citing)}
+    </div>`;
+  bindSlrMiniTableClicks(panel);
 }
 
 function renderSlrList(filter = "") {
@@ -956,13 +1254,26 @@ function renderTopTabContent(t, citeRate, tab) {
   if (!body) return;
 
   if (tab === "summary") {
+    const ratePct = citeRate;
     body.innerHTML = `
       <div class="stat-grid compact">
         <div class="stat-card"><span class="stat-label">Eligible SLRs</span><span class="stat-value">${t.eligibleSlrCount}</span></div>
         <div class="stat-card"><span class="stat-label">Citing (hit)</span><span class="stat-value stat-hit">${t.citingCount}</span></div>
         <div class="stat-card"><span class="stat-label">Missing</span><span class="stat-value stat-miss">${t.missCount}</span></div>
-        <div class="stat-card wide"><span class="stat-label">Citation rate</span><span class="stat-value">${citeRate.toFixed(1)}%</span></div>
+        <div class="stat-card wide"><span class="stat-label">Citation rate</span><span class="stat-value">${ratePct.toFixed(1)}%</span></div>
+      </div>
+      <div class="citation-rate-bar">
+        <span class="stat-label">SLR citation rate vs cohort</span>
+        <div class="rate-track"><div class="rate-fill ${ratePct < 10 ? "rate-low" : ""}" style="width:${Math.min(100, ratePct)}%"></div></div>
+        <span class="hint">${t.paper._pass === "established" ? "Established pass" : t.paper._pass === "recent" ? "Recent pass" : "Two-pass benchmark"} · ${t.paper.citationCount ?? 0} SS citations</span>
+      </div>
+      <div class="detail-action-row">
+        <button type="button" class="btn-link" id="top-view-compare">View in Compare →</button>
       </div>`;
+    body.querySelector("#top-view-compare")?.addEventListener("click", () => {
+      const cat = t.citingCount === 0 || ratePct <= 25 ? "miss" : "aligned";
+      switchToCompareMode(t.key, cat);
+    });
     return;
   }
 
@@ -1006,23 +1317,30 @@ function renderConsensusOverview() {
   panel.innerHTML = `
     <header class="detail-header">
       <h2>SLR consensus bibliography</h2>
-      <p class="detail-sub">Papers ranked by how many SLRs cite them in their reference lists.</p>
+      <p class="detail-sub">Papers ranked by how many SLRs cite them in their reference lists. Charts are in the summary strip above.</p>
     </header>
     <div class="detail-body">
       <div class="stat-grid compact">
         <div class="stat-card"><span class="stat-label">Unique papers cited</span><span class="stat-value">${summary.uniqueCitedPapers}</span></div>
         <div class="stat-card"><span class="stat-label">Max consensus</span><span class="stat-value">${summary.maxConsensusCites}/${summary.slrCount}</span></div>
         <div class="stat-card"><span class="stat-label">In benchmark</span><span class="stat-value">${consensusPapers.filter((p) => p.inTopBenchmark).length}</span></div>
+        <div class="stat-card"><span class="stat-label">Outside benchmark</span><span class="stat-value">${consensusPapers.filter((p) => !p.inTopBenchmark).length}</span></div>
       </div>
-      <div class="chart-card-inline"><canvas id="chart-consensus"></canvas></div>
-      <p class="hint">Blue = in current top-cited benchmark. Grey = cited by SLRs but outside benchmark.</p>
+      <p class="hint">Teal bars in the summary chart = in current top-cited benchmark. Grey = cited by SLRs but outside benchmark.</p>
+      <div class="detail-action-row">
+        <button type="button" class="btn-link" id="consensus-view-compare">Open Compare mode →</button>
+      </div>
     </div>
   `;
-  try {
-    renderConsensusBar($("#chart-consensus"), consensusPapers, 20, summary.slrCount);
-  } catch (e) {
-    console.warn("Consensus chart skipped:", e);
-  }
+  panel.querySelector("#consensus-view-compare")?.addEventListener("click", () => {
+    topMode = "compare";
+    document.querySelectorAll("[data-top-mode]").forEach((b) =>
+      b.classList.toggle("active", b.dataset.topMode === "compare")
+    );
+    updateTopListVisibility();
+    renderCompareList($("#top-search")?.value || "");
+    renderCompareOverview();
+  });
 }
 
 function renderConsensusList(filter = "") {
@@ -1092,7 +1410,8 @@ function renderConsensusDetail(p) {
 $("#slr-search")?.addEventListener("input", (e) => renderSlrList(e.target.value));
 $("#top-search")?.addEventListener("input", (e) => {
   if (topMode === "benchmark") renderTopList(e.target.value);
-  else renderConsensusList(e.target.value);
+  else if (topMode === "consensus") renderConsensusList(e.target.value);
+  else renderCompareList(e.target.value);
 });
 $("#consensus-top-only")?.addEventListener("change", () => renderConsensusList($("#top-search").value));
 

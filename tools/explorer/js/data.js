@@ -203,6 +203,7 @@ export function buildModel(base, settings = DEFAULT_SETTINGS) {
   topPapers.sort((a, b) => (a.paper._rank ?? 999) - (b.paper._rank ?? 999));
 
   const consensusPapers = buildSlrCitedConsensus(slrs, topByKey);
+  const compareSummary = buildTopCompareSummary(topPapers, consensusPapers, slrs.length, topCited.length);
   const pairwiseOverlaps = buildPairwiseOverlaps(slrs);
 
   const covVals = slrs.map((s) => s.coveragePct).filter((v) => Number.isFinite(v));
@@ -232,6 +233,7 @@ export function buildModel(base, settings = DEFAULT_SETTINGS) {
     topCited,
     topByKey,
     consensusPapers,
+    compareSummary,
     pairwiseOverlaps,
     summary,
     meta: base.meta,
@@ -291,6 +293,65 @@ export function buildSlrCitedConsensus(slrs, topByKey) {
       (a.ref.title || "").localeCompare(b.ref.title || "")
   );
   return papers;
+}
+
+const HIGH_CONSENSUS_THRESHOLD = 3;
+
+/** Benchmark vs SLR-consensus divergence for Compare mode and summary KPIs. */
+export function buildTopCompareSummary(topPapers, consensusPapers, slrCount, benchmarkSize) {
+  const consensusByKey = new Map(consensusPapers.map((p) => [p.key, p]));
+
+  function slrRate(t) {
+    return t.eligibleSlrCount ? t.citingCount / t.eligibleSlrCount : 0;
+  }
+
+  const inBoth = topPapers.filter((t) => t.citingCount > 0);
+
+  const benchmarkIgnored = topPapers
+    .filter((t) => slrRate(t) <= 0.25)
+    .sort((a, b) => (a.paper._rank ?? 999) - (b.paper._rank ?? 999));
+
+  const slrFavorites = consensusPapers
+    .filter((p) => !p.inTopBenchmark && p.citingCount >= HIGH_CONSENSUS_THRESHOLD)
+    .sort((a, b) => b.citingCount - a.citingCount);
+
+  const aligned = topPapers
+    .filter((t) => {
+      const c = consensusByKey.get(t.key);
+      if (!c) return false;
+      return slrRate(t) >= 0.2 && c.citingCount >= 2;
+    })
+    .sort((a, b) => (a.paper._rank ?? 999) - (b.paper._rank ?? 999));
+
+  const benchmarkOnly = topPapers.filter((t) => t.citingCount === 0);
+  const consensusOnly = consensusPapers.filter((p) => !p.inTopBenchmark);
+
+  const rates = topPapers.filter((t) => t.eligibleSlrCount > 0).map((t) => slrRate(t) * 100);
+
+  const top10 = topPapers.filter((t) => (t.paper._rank ?? 999) <= 10);
+  const mostMissed =
+    [...top10].sort((a, b) => slrRate(a) - slrRate(b))[0] ?? null;
+
+  const highConsensusOutside = consensusPapers.filter(
+    (p) => !p.inTopBenchmark && p.citingCount >= HIGH_CONSENSUS_THRESHOLD
+  ).length;
+
+  return {
+    inBoth,
+    benchmarkIgnored,
+    slrFavorites,
+    aligned,
+    benchmarkOnly,
+    consensusOnly,
+    overlapPct: benchmarkSize ? (inBoth.length / benchmarkSize) * 100 : 0,
+    inAnySlrBibliography: inBoth.length,
+    highConsensusOutside,
+    medianBenchmarkSlrRate: median(rates),
+    mostMissed,
+    benchmarkSize,
+    slrCount,
+    highConsensusThreshold: HIGH_CONSENSUS_THRESHOLD,
+  };
 }
 
 /** Pairwise reference overlap between every SLR pair (sorted by Jaccard, descending). */

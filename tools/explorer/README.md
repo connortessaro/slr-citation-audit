@@ -49,8 +49,28 @@ The subtitle in the sidebar reflects the active combination.
 |------|---------|
 | **Overview** | Hero insight, KPIs (zero-coverage highlighted), charts, coverage extremes (full width), quick links |
 | **SLRs** | List + tabbed detail: Summary, References, Hits, Misses, Compare |
-| **Top cited** | Benchmark papers or SLR consensus bibliography (toggle); tabbed detail for citing/missing SLRs |
+| **Top cited** | Hybrid layout: summary strip (hero, KPIs, dual charts) + list/detail drill-down |
 | **Methods** | Renders `docs/research_paper_methods_snapshot.md` for the paper |
+
+### Top cited page
+
+The Top cited page uses a **hybrid layout**: a summary strip at the top (always visible) plus a list + detail explorer below.
+
+**Summary strip**
+
+- Hero headline comparing benchmark overlap vs SLR consensus
+- KPIs: benchmark size, median SLR citation rate across benchmark, papers in both lists, high-consensus outside benchmark, most-missed top-10
+- Dual charts: SS benchmark top 10 (citation count) and SLR consensus top 15 (teal = in benchmark)
+
+**Exploration modes**
+
+| Mode | List | Detail |
+|------|------|--------|
+| **Benchmark** | Top-cited corpus by rank | Summary (with citation-rate bar + link to Compare), Citing SLRs, Missing SLRs |
+| **SLR consensus** | Papers ranked by how many SLRs cite them | Consensus stats; optional filter to benchmark papers only |
+| **Compare** | Three sections: benchmark misses, SLR favorites outside benchmark, aligned papers | Overlap viz + lowest citation-rate chart (default); per-paper side-by-side stats when selected |
+
+Compare mode answers: *what do SLRs collectively cite that differs from the external top-cited benchmark?*
 
 ### SLR detail tabs
 
@@ -61,12 +81,15 @@ The subtitle in the sidebar reflects the active combination.
 | Hits / Misses | Eligible benchmark papers cited or not cited |
 | Compare | Pairwise reference overlap (Jaccard) with another SLR |
 
-### Top cited modes
+### Top cited modes (legacy reference)
+
+See **Top cited page** above for the full layout. Quick reference:
 
 | Mode | Content |
 |------|---------|
 | **Benchmark** | Top-cited corpus papers; detail tabs for summary, citing SLRs, missing SLRs |
-| **Consensus** | Papers most cited across SLR bibliographies; optional filter to benchmark only |
+| **SLR consensus** | Papers most cited across SLR bibliographies; optional filter to benchmark only |
+| **Compare** | Benchmark vs SLR-consensus divergence with categorized lists and overlap viz |
 
 Matching uses the same `paper_key` rules as the pipeline (DOI → Semantic Scholar id → normalized title).
 

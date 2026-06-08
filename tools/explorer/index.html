@@ -34,7 +34,7 @@
           </button>
           <button type="button" data-view="top" class="nav-item">
             <span class="nav-label">Top cited</span>
-            <span class="nav-desc">Benchmark &amp; consensus</span>
+            <span class="nav-desc">Benchmark, consensus &amp; compare</span>
           </button>
           <button type="button" data-view="methods" class="nav-item">
             <span class="nav-label">Methods</span>
@@ -162,25 +162,86 @@
           </section>
 
           <!-- Top cited -->
-          <section id="view-top" class="view-panel explorer-split">
-            <aside class="explorer-list">
-              <div class="list-toolbar">
-                <div class="sub-nav" id="top-sub-nav">
-                  <button type="button" class="sub-nav-btn active" data-top-mode="benchmark">Benchmark</button>
-                  <button type="button" class="sub-nav-btn" data-top-mode="consensus">Consensus</button>
+          <section id="view-top" class="view-panel top-page-stack">
+            <div class="top-summary-strip">
+              <div class="panel panel-hero panel-compact">
+                <div class="hero-inner">
+                  <div class="hero-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                    </svg>
+                  </div>
+                  <div class="hero-copy">
+                    <p class="hero-headline" id="top-hero-headline">Loading…</p>
+                    <p class="hero-sub" id="top-hero-sub"></p>
+                  </div>
                 </div>
-                <input type="search" id="top-search" placeholder="Search papers…" class="search-input" />
-                <label class="sidebar-filter" id="consensus-filter-wrap" hidden>
-                  <input type="checkbox" id="consensus-top-only" />
-                  <span id="consensus-top-only-label">In current benchmark only</span>
-                </label>
               </div>
-              <div id="top-list" class="list-scroll"></div>
-              <div id="consensus-list" class="list-scroll" hidden></div>
-            </aside>
-            <div class="explorer-detail">
-              <div id="top-detail" class="detail-shell">
-                <p class="empty">Select a paper from the list.</p>
+              <div class="panel panel-flat top-kpi-panel">
+                <div class="kpi-row kpi-row-compact">
+                  <div class="kpi kpi-support">
+                    <span class="kpi-val" id="top-kpi-benchmark">—</span>
+                    <span class="kpi-lbl">Benchmark size</span>
+                  </div>
+                  <div class="kpi kpi-featured">
+                    <span class="kpi-val" id="top-kpi-median-rate">—</span>
+                    <span class="kpi-lbl">Median SLR cite rate</span>
+                    <span class="kpi-sub">Across benchmark papers</span>
+                  </div>
+                  <div class="kpi kpi-support">
+                    <span class="kpi-val" id="top-kpi-in-both">—</span>
+                    <span class="kpi-lbl">In both lists</span>
+                  </div>
+                  <div class="kpi kpi-support">
+                    <span class="kpi-val" id="top-kpi-outside">—</span>
+                    <span class="kpi-lbl">High consensus outside</span>
+                    <span class="kpi-sub" id="top-kpi-outside-sub">3+ SLRs, not in benchmark</span>
+                  </div>
+                  <div class="kpi kpi-warn">
+                    <span class="kpi-val" id="top-kpi-most-missed">—</span>
+                    <span class="kpi-lbl">Most-missed top-10</span>
+                    <span class="kpi-sub" id="top-kpi-most-missed-sub"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="top-summary-charts">
+                <div class="panel panel-chart top-chart-panel">
+                  <h2 class="card-title">SS benchmark (top 10)</h2>
+                  <div class="chart-body chart-body-compact">
+                    <canvas id="chart-top-summary-benchmark"></canvas>
+                  </div>
+                </div>
+                <div class="panel panel-chart top-chart-panel">
+                  <h2 class="card-title">SLR consensus (top 15)</h2>
+                  <div class="chart-body chart-body-compact">
+                    <canvas id="chart-top-summary-consensus"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="top-explorer-split explorer-split">
+              <aside class="explorer-list">
+                <div class="list-toolbar">
+                  <div class="sub-nav" id="top-sub-nav">
+                    <button type="button" class="sub-nav-btn active" data-top-mode="benchmark">Benchmark</button>
+                    <button type="button" class="sub-nav-btn" data-top-mode="consensus">SLR consensus</button>
+                    <button type="button" class="sub-nav-btn" data-top-mode="compare">Compare</button>
+                  </div>
+                  <input type="search" id="top-search" placeholder="Search papers…" class="search-input" />
+                  <label class="sidebar-filter" id="consensus-filter-wrap" hidden>
+                    <input type="checkbox" id="consensus-top-only" />
+                    <span id="consensus-top-only-label">In current benchmark only</span>
+                  </label>
+                </div>
+                <div id="top-list" class="list-scroll"></div>
+                <div id="consensus-list" class="list-scroll" hidden></div>
+                <div id="compare-list" class="list-scroll" hidden></div>
+              </aside>
+              <div class="explorer-detail">
+                <div id="top-detail" class="detail-shell">
+                  <p class="empty">Select a paper from the list.</p>
+                </div>
               </div>
             </div>
           </section>

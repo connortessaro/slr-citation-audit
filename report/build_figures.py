@@ -1,8 +1,8 @@
 """Render report figures from pipeline outputs.
 
-Reads:
-    data/processed/overlap_matrix.csv
-    data/processed/gap_analysis.csv
+Reads (per source):
+    data/processed/<source>/overlap_matrix.csv
+    data/processed/<source>/gap_analysis.csv
 
 Writes:
     report/figures/coverage_histogram.png
@@ -15,7 +15,6 @@ from __future__ import annotations
 
 import argparse
 import logging
-import sys
 from pathlib import Path
 from typing import Any
 
@@ -24,15 +23,14 @@ matplotlib.use("Agg")  # headless
 import matplotlib.pyplot as plt  # noqa: E402
 import pandas as pd  # noqa: E402
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-
 from lib.config import REPO_ROOT  # noqa: E402
+from lib.paths import SourcePaths  # noqa: E402
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
-OVERLAP_PATH = REPO_ROOT / "data" / "processed" / "overlap_matrix.csv"
-GAP_PATH = REPO_ROOT / "data" / "processed" / "gap_analysis.csv"
+OVERLAP_PATH = REPO_ROOT / "data" / "processed" / "overlap_matrix.csv"  # legacy default
+GAP_PATH = REPO_ROOT / "data" / "processed" / "gap_analysis.csv"  # legacy default
 FIG_DIR = REPO_ROOT / "report" / "figures"
 
 AGE_ORDER = ["0-2y", "3-5y", "6-10y", "10y+", "post-slr", "unknown"]
@@ -131,11 +129,22 @@ def run(
 
 def main() -> None:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--source", choices=["acm", "ss", "ieee"], default=None)
     parser.add_argument("--overlap", type=Path, default=OVERLAP_PATH)
     parser.add_argument("--gaps", type=Path, default=GAP_PATH)
     parser.add_argument("--out", type=Path, default=FIG_DIR)
     args = parser.parse_args()
-    stats = run(args.overlap, args.gaps, args.out)
+
+    overlap = args.overlap
+    gaps = args.gaps
+    out = args.out
+    if args.source:
+        sp = SourcePaths(args.source)  # type: ignore[arg-type]
+        overlap = sp.overlap_out
+        gaps = sp.gaps_out
+        out = FIG_DIR / args.source
+
+    stats = run(overlap, gaps, out)
     print("Coverage stats:", stats)
 
 

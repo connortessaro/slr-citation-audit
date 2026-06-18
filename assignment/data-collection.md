@@ -102,12 +102,13 @@ data/
 To reproduce from scratch:
 ```bash
 cp .env.example .env          # add SEMANTIC_SCHOLAR_API_KEY
-python 01_identify_slrs/search_semantic_scholar.py
-python 01_identify_slrs/merge_and_classify.py
-python 02_extract_refs/fetch_references.py
-python 03_top_cited/fetch_top_cited.py
-python 04_overlap/compute_overlap.py
-python 05_explain_gaps/analyze_gaps.py
+pip install -r requirements.txt
+python3 01_identify_slrs/search_semantic_scholar.py
+python3 01_identify_slrs/merge_and_classify.py
+python3 02_extract_refs/fetch_references.py
+python3 03_top_cited/fetch_top_cited.py
+python3 04_overlap/compute_overlap.py
+python3 05_explain_gaps/analyze_gaps.py
 ```
 
 ---
